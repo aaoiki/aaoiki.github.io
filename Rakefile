@@ -4,12 +4,11 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
-
-# Change your GitHub reponame
 BUILD_PATH = "aasare.github.io"
 
+task default: %w[publish]
 
-desc "Generate blog files"
+desc "Build the blog"
 task :generate do
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
