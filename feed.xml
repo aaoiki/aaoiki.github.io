@@ -6,8 +6,8 @@
 </description>
     <link>aasare.github.io/</link>
     <atom:link href="aasare.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Jan 2016 19:38:14 +0200</pubDate>
-    <lastBuildDate>Fri, 01 Jan 2016 19:38:14 +0200</lastBuildDate>
+    <pubDate>Fri, 01 Jan 2016 21:40:53 +0200</pubDate>
+    <lastBuildDate>Fri, 01 Jan 2016 21:40:53 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -98,8 +98,8 @@ the app to MySQL databse image. I run the app with a very simple command:&lt;/p&
 &lt;p&gt;&lt;img src=&quot;/public/images/docker_bshop_screenshot.png&quot; alt=&quot;Bshop 1&quot; /&gt;
 &lt;img src=&quot;/public/images/docker_bshop_screenshot1.png&quot; alt=&quot;Bshop 2&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;You can find the full project along with Docker file and docker-compose file
-&lt;a href=&quot;bitbucket.org/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can find the full project along with Docker and docker-compose files
+&lt;a href=&quot;https://bitbucket.org/aasare/bshop&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 15 Aug 2015 00:00:00 +0200</pubDate>
         <link>aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker</link>
