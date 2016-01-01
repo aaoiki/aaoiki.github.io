@@ -34,7 +34,7 @@ Y.prototype.load=function(a){function b(){if(e["__mti_fntLst"+c]){var d=e["__mti
     },
     custom: {
       families: ['font-awesome'],
-      urls: ['font-awesome/fonts/*']
+      urls: ['https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css']
     }
   });
 
