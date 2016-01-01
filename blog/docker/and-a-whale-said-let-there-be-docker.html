@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>And a Whale Said Let There Be Docker | Aasare's</title>
+  <meta name="description" content="Every time I had to work on a new machine or I wanted to try a new technology,I used to install a lot of packages and libraries to prepare my developmentenvi...">
+
+  <link rel="canonical" href="aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker">
+  <link rel="alternate" type="application/rss+xml" title="Aasare's" href="aasare.github.io/feed.xml">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/aasare-logo.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/aasare-logo.png" />
+
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <script type="text/javascript" src="/assets/main.js"></script>
+</head>
+
+
+  <body>
+
+    <header>
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      <ul class="title-area">
+        <li class="name">
+          <h1 id="topbar-title"><a href="/">Aasare's</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a><span></span></a></li>
+      </ul>
+
+      <!-- Right Nav Section -->
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="/about"><i class="fa fa-question"></i></a></li>
+          <li><a href="https://twitter.com/aasare_" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://github.com/aasare" target="_blank"><i class="fa fa-github"></i></a></li>
+          <li><a href="https://stackoverflow.com/users/4352712/aasare" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/asalehmoh" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/aasares" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="mailto:asalehmoh@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </section>
+
+    </nav>
+  </div>
+</header>
+
+
+    <div class="row">
+      <div class="medium-12 large-10 medium-centered large-centered columns" role="content">
+        
+  <article>
+
+
+    <div class="row">
+      <div class="large-12 columns text-center">
+        <h1>And a Whale Said Let There Be Docker <small>Docker</small></h1>
+
+        <br>
+
+        <div class="post-sub-info">
+          <h5><i class="fa fa-calendar"> <span>August 15, 2015</span></i></h5>
+        </div>
+
+      </div>
+    </div>
+
+    <br><br>
+
+    <p>Every time I had to work on a new machine or I wanted to try a new technology,
+I used to install a lot of packages and libraries to prepare my development
+environment. I always struggled to manage dependencies and different versions of
+packages. That mostly worked for me but I had to go over this hustle everytime.
+Besides, after some time the machine I was working on used to get a bit slower.</p>
+
+<h3 id="and-then-there-was-docker">And then there was Docker</h3>
+
+<p><img src="/public/images/docker_cover.png" alt="Docker cover" /></p>
+
+<p>I have been recently hearing about virtualization, Linux Containers, Docker, Vagrant, etc.,
+but Docker became sort of the hype these days.
+So I decided to give it a try anyway especially after
+<a href="https://twitter.com/cousine">@cousine</a> had recommended it to me.</p>
+
+<p>So I started this weekend by installing a new version of the beautiful distro
+<a href="https://elementary.io/">Elementary OS</a> and <a href="docker.io">Docker</a>, and set up my
+dotfiles on my main development laptop.</p>
+
+<p>You can install any software on your machine using Docker images
+from database servers to frameworks or tools like Nodejs or Jekyll.
+I installed different images for my local development</p>
+
+<p><img src="/public/images/docker_images_screenshot.png" alt="Docker images" /></p>
+
+<p>As Docker is often used for deployment and packaging dependencies,
+it could also be used for local development.
+This is about satisfying the perfectionist inside me ೕ(•̀ᴗ•́).</p>
+
+<h3 id="example">Example</h3>
+<p>I use <a href="http://jekyllrb.com/">Jekyll</a> to generate this blog.
+Before Docker, I had to install a Ruby version manager such as Rbenv, Ruby, RubyGems, and Jekyll
+just to start blogging. But now all I do is this:</p>
+
+<h4 id="install-docker">1. Install Docker</h4>
+
+<p>It’s in the <a href="https://docs.docker.com/">documentation</a>.</p>
+
+<h4 id="pull-download-a-jekyll-image-from-dockerhubhttpshubdockercom">2. Pull (Download) a Jekyll image from <a href="https://hub.docker.com/">DockerHub</a>:</h4>
+
+<p>I use <a href="https://hub.docker.com/r/grahamc/jekyll/">this image</a>. It does the job very well</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="err">$</span> <span class="n">docker</span> <span class="n">pull</span> <span class="n">grahamc</span><span class="o">/</span><span class="n">jekyll</span>
+  </code></pre></figure>
+
+<h4 id="create-a-new-blog">3. Create a new blog:</h4>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="err">$</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="s2">"$PWD:/src"</span> <span class="o">-</span><span class="nb">p</span> <span class="mi">4000</span><span class="p">:</span><span class="mi">4000</span> <span class="n">grahamc</span><span class="o">/</span><span class="n">jekyll</span> <span class="kp">new</span> <span class="n">my_blog</span>
+  </code></pre></figure>
+
+<p>You may need to change your folder permissions if you didn’t add your user
+  account to docker group</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="err">$</span> <span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="no">R</span> <span class="n">o</span><span class="o">+</span><span class="n">rw</span> <span class="n">my_blog</span>
+  </code></pre></figure>
+
+<h4 id="start-the-app">4. Start the app:</h4>
+
+<p>Open a terminal in your blog directory and run Jekyll server</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="err">$</span> <span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="s2">"$PWD:/src"</span> <span class="o">-</span><span class="nb">p</span> <span class="mi">4000</span><span class="p">:</span><span class="mi">4000</span> <span class="n">grahamc</span><span class="o">/</span><span class="n">jekyll</span> <span class="n">serve</span> <span class="o">-</span><span class="no">H</span>
+  <span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+  </code></pre></figure>
+
+<p>Now if you open <code class="highlighter-rouge">0.0.0.0:4000</code> in the browser, you’ll find your blog
+  working just fine.</p>
+
+<p>That’s it, as easy as that (★^O^★)</p>
+
+<h3 id="more-practical-example">More Practical Example</h3>
+<p>I had a PHP web project for first time so I searched for PHP and Apache Docker
+images and luckily I found a Docker file that installs all the necessary
+packages and dependencies. I cannot exactly remember where I got it from
+besides I changed some lines in the original (anyway, here’s another one that
+<a href="https://github.com/dockerimages/docker-xampp" target="_blank">installs XAMPP</a>).
+I combined it with
+<a href="https://docs.docker.com/compose/" target="_blank">docker-compose</a> to link
+the app to MySQL databse image. I run the app with a very simple command:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span></code></pre></figure>
+
+<p>and everything is working fine</p>
+
+<p><img src="/public/images/docker_bshop_screenshot.png" alt="Bshop 1" />
+<img src="/public/images/docker_bshop_screenshot1.png" alt="Bshop 2" /></p>
+
+<p>You can find the full project along with Docker file and docker-compose file
+<a href="bitbucket.org/" target="_blank">here</a>.</p>
+
+
+    <br>
+    
+  <ul class="inline-list" id="social-buttons">
+    
+    <!-- Facebook -->
+    <li class="facebook"><a href="http://www.facebook.com/sharer.php?t=And a Whale Said Let There Be Docker&u=aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-facebook-official fa-lg"></i></a></li>
+    <!-- Twitter -->
+    <li class="twitter"><a href="http://twitter.com/share?url=aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker&text=And a Whale Said Let There Be Docker&hashtags=docker,linux,containers" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+    <!-- Reddit -->
+    <li class="reddit"><a href="http://reddit.com/submit?url=aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker&title=And a Whale Said Let There Be Docker" target="_blank"><i class="fa fa-reddit fa-lg"></i></a></li>
+    <!-- LinkedIn -->
+    <li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&title=And a Whale Said Let There Be Docker&url=aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+    <!-- Google+ -->
+    <li class="google-plus"><a href="https://plus.google.com/share?url=aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
+    <!-- Pocket -->
+    <li class="pocket"><a href="https://getpocket.com/save?url=aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker&title=And a Whale Said Let There Be Docker" target="_blank"><i class="fa fa-get-pocket fa-lg"></i></a></li>
+  </ul>
+
+
+  </article>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/main_end.js"></script>
+
+  </body>
+
+</html>
