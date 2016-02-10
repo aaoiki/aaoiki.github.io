@@ -68,48 +68,16 @@ blockquote {
 #social-buttons .rss a {
   color: #f26522; }
 
-.fullscreen-image {
-  position: relative;
-  /* <-- Set as the reference for the positioned fullscreen-text */
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto; }
-
-@media screen and (max-width: 1024px) {
-  /* Specific to this particular image */
-  .fullscreen-image {
-    left: 50%;
-    margin-left: -512px;
-    /* 50% */ } }
-.fullscreen-image .fullscreen-text {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.4rem;
-  text-align: center; }
-  .fullscreen-image .fullscreen-text h1 {
+.not-found-page {
+  margin-top: 200px; }
+  .not-found-page h1 {
     color: #FFFFFF !important; }
-  .fullscreen-image .fullscreen-text a {
+  .not-found-page a {
     color: #03C9A9; }
-  .fullscreen-image .fullscreen-text a:hover {
+  .not-found-page a:hover {
     color: #028d76; }
-  .fullscreen-image .fullscreen-text .number {
+  .not-found-page .number {
     color: #03C9A9 !important; }
-
-.fullscreen-image .fullscreen-text:before {
-  content: ' ';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.fullscreen-image .fullscreen-text span {
-  display: inline-block;
-  vertical-align: middle; }
 
 /* Solarized Dark
 For use with Jekyll and Pygments
