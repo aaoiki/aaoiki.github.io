@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>And a Whale Said Let There Be Docker | Aasare's</title>
+  <title>And a Whale Said Let There Be Docker | Aasare</title>
   <meta name="description" content="Every time I had to work on a new machine or I wanted to try a new technology,I used to install a lot of packages and libraries to prepare my developmentenvi...">
 
   <link rel="canonical" href="aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker">
-  <link rel="alternate" type="application/rss+xml" title="Aasare's" href="aasare.github.io/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Aasare" href="aasare.github.io/feed.xml">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/aasare-logo.png" />
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/aasare-logo.png" />
@@ -38,7 +38,7 @@
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
       <ul class="title-area">
         <li class="name">
-          <h1 id="topbar-title"><a href="/">Aasare's</a></h1>
+          <h1 id="topbar-title"><a href="/">Aasare</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a><span></span></a></li>
       </ul>
@@ -67,12 +67,11 @@
   <div class="en-text">
     <div class="row">
       <div class="large-12 columns text-center">
-        <h1>And a Whale Said Let There Be Docker <small>Docker</small></h1>
-
+        <h2>And a Whale Said Let There Be Docker <small>Docker</small></h2>
         <br>
 
         <div class="post-sub-info">
-          <h5><i class="fa fa-clock-o"> <span>August 15, 2015</span></i></h5>
+          <h5><span>August 15, 2015</span></h5>
         </div>
 
       </div>
@@ -114,18 +113,18 @@ This is about satisfying the perfectionist inside me ೕ(•̀ᴗ•́).</p>
 Before Docker, I had to install a Ruby version manager such as Rbenv, Ruby, RubyGems, and Jekyll
 just to start blogging. But now all I do is this:</p>
 
-<p>####1. Install Docker</p>
+<h4 id="install-docker">1. Install Docker</h4>
 
 <p>It’s in the <a href="https://docs.docker.com/">documentation</a>.</p>
 
-<p>####2. Pull (Download) a Jekyll image from <a href="https://hub.docker.com/">DockerHub</a>:</p>
+<h4 id="pull-download-a-jekyll-image-from-dockerhubhttpshubdockercom">2. Pull (Download) a Jekyll image from <a href="https://hub.docker.com/">DockerHub</a>:</h4>
 
 <p>I use <a href="https://hub.docker.com/r/grahamc/jekyll/">this image</a>. It does the job very well</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="err">$</span> <span class="n">docker</span> <span class="n">pull</span> <span class="n">grahamc</span><span class="o">/</span><span class="n">jekyll</span>
   </code></pre></figure>
 
-<p>####3. Create a new blog:</p>
+<h4 id="create-a-new-blog">3. Create a new blog:</h4>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="err">$</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="s2">"$PWD:/src"</span> <span class="o">-</span><span class="nb">p</span> <span class="mi">4000</span><span class="p">:</span><span class="mi">4000</span> <span class="n">grahamc</span><span class="o">/</span><span class="n">jekyll</span> <span class="kp">new</span> <span class="n">my_blog</span>
   </code></pre></figure>
@@ -136,7 +135,7 @@ just to start blogging. But now all I do is this:</p>
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="err">$</span> <span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="no">R</span> <span class="n">o</span><span class="o">+</span><span class="n">rw</span> <span class="n">my_blog</span>
   </code></pre></figure>
 
-<p>####4. Start the app:</p>
+<h4 id="start-the-app">4. Start the app:</h4>
 
 <p>Open a terminal in your blog directory and run Jekyll server</p>
 

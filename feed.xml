@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aasare&#39;s</title>
-    <description>Code, Language, and the Universe
+    <title>Aasare</title>
+    <description>Code &amp;&amp; Language
 </description>
     <link>aasare.github.io/</link>
     <atom:link href="aasare.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Apr 2016 00:02:13 +0200</pubDate>
-    <lastBuildDate>Wed, 06 Apr 2016 00:02:13 +0200</lastBuildDate>
+    <pubDate>Wed, 06 Apr 2016 00:38:56 +0200</pubDate>
+    <lastBuildDate>Wed, 06 Apr 2016 00:38:56 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -153,18 +153,18 @@ This is about satisfying the perfectionist inside me ೕ(•̀ᴗ•́).&lt;/p&g
 Before Docker, I had to install a Ruby version manager such as Rbenv, Ruby, RubyGems, and Jekyll
 just to start blogging. But now all I do is this:&lt;/p&gt;
 
-&lt;p&gt;####1. Install Docker&lt;/p&gt;
+&lt;h4 id=&quot;install-docker&quot;&gt;1. Install Docker&lt;/h4&gt;
 
 &lt;p&gt;It’s in the &lt;a href=&quot;https://docs.docker.com/&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;####2. Pull (Download) a Jekyll image from &lt;a href=&quot;https://hub.docker.com/&quot;&gt;DockerHub&lt;/a&gt;:&lt;/p&gt;
+&lt;h4 id=&quot;pull-download-a-jekyll-image-from-dockerhubhttpshubdockercom&quot;&gt;2. Pull (Download) a Jekyll image from &lt;a href=&quot;https://hub.docker.com/&quot;&gt;DockerHub&lt;/a&gt;:&lt;/h4&gt;
 
 &lt;p&gt;I use &lt;a href=&quot;https://hub.docker.com/r/grahamc/jekyll/&quot;&gt;this image&lt;/a&gt;. It does the job very well&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grahamc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;
   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;####3. Create a new blog:&lt;/p&gt;
+&lt;h4 id=&quot;create-a-new-blog&quot;&gt;3. Create a new blog:&lt;/h4&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;$PWD:/src&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grahamc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_blog&lt;/span&gt;
   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -175,7 +175,7 @@ just to start blogging. But now all I do is this:&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rw&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_blog&lt;/span&gt;
   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;####4. Start the app:&lt;/p&gt;
+&lt;h4 id=&quot;start-the-app&quot;&gt;4. Start the app:&lt;/h4&gt;
 
 &lt;p&gt;Open a terminal in your blog directory and run Jekyll server&lt;/p&gt;
 
@@ -230,8 +230,8 @@ a lot of data into a postgreSQL database and performe some queries on the
 generated data. So this is going to be some kind of a crash course on Ruby and postgreSQL
 (and some optimization).&lt;/p&gt;
 
-&lt;p&gt;###Requirements
-The database contained only two tables. The first one was:&lt;/p&gt;
+&lt;h3 id=&quot;requirements&quot;&gt;Requirements&lt;/h3&gt;
+&lt;p&gt;The database contained only two tables. The first one was:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;ul&gt;
@@ -267,8 +267,8 @@ this is a table that stores which player played where:&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;###Setup
-I created a Ruby script and used &lt;code class=&quot;highlighter-rouge&quot;&gt;pg&lt;/code&gt; gem to connect to the database:&lt;/p&gt;
+&lt;h3 id=&quot;setup&quot;&gt;Setup&lt;/h3&gt;
+&lt;p&gt;I created a Ruby script and used &lt;code class=&quot;highlighter-rouge&quot;&gt;pg&lt;/code&gt; gem to connect to the database:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;pg&#39;&lt;/span&gt;
 
@@ -276,8 +276,8 @@ I created a Ruby script and used &lt;code class=&quot;highlighter-rouge&quot;&gt
                             &lt;span class=&quot;ss&quot;&gt;host: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;localhost&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                             &lt;span class=&quot;ss&quot;&gt;user: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;testuser&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;###Tables
-Now I create the two tables:&lt;/p&gt;
+&lt;h3 id=&quot;tables&quot;&gt;Tables&lt;/h3&gt;
+&lt;p&gt;Now I create the two tables:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;c1&quot;&gt;# create the first table (cup_matches)&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;CREATE TABLE cup_matches (
@@ -295,8 +295,8 @@ Now I create the two tables:&lt;/p&gt;
             position integer,
             PRIMARY KEY(mid,name));&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;###Generating Data
-Here I generate data into the first table. This is pretty straightforward:&lt;/p&gt;
+&lt;h3 id=&quot;generating-data&quot;&gt;Generating Data&lt;/h3&gt;
+&lt;p&gt;Here I generate data into the first table. This is pretty straightforward:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;c1&quot;&gt;# generate data for cup_matches&lt;/span&gt;
 
@@ -370,8 +370,8 @@ My original script contained this part:&lt;/p&gt;
     &lt;span class=&quot;n&quot;&gt;current_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:name_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name_i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;####The Issue
-The second table has a pair of columns as its the primary
+&lt;h4 id=&quot;the-issue&quot;&gt;The Issue&lt;/h4&gt;
+&lt;p&gt;The second table has a pair of columns as its the primary
 key &lt;code class=&quot;highlighter-rouge&quot;&gt;(played_in_pk)&lt;/code&gt;; one is the &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; column and the other is &lt;code class=&quot;highlighter-rouge&quot;&gt;mid&lt;/code&gt; as a
 foreign key. Thus, every row must have a unique (mid, name) pair.&lt;/p&gt;
 
@@ -384,8 +384,8 @@ traverse the whole array especially that I used some fancy methods like &lt;code
 &lt;p&gt;It took about 40 minutes to generate 21440 rows and for some reason it
 got stuck there.&lt;/p&gt;
 
-&lt;p&gt;####Solution
-In my second attempt, I used a postgreSQL &lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT&lt;/code&gt; query to search the table instead. So this was my second solution:&lt;/p&gt;
+&lt;h4 id=&quot;solution&quot;&gt;Solution&lt;/h4&gt;
+&lt;p&gt;In my second attempt, I used a postgreSQL &lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT&lt;/code&gt; query to search the table instead. So this was my second solution:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;58960&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
@@ -446,12 +446,12 @@ as required in the task:&lt;/p&gt;
 
 &lt;p&gt;Here’s the &lt;a href=&quot;https://gist.github.com/aasare/95c8888b36b02a63323c&quot; target=&quot;_blank&quot;&gt;full script on Github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;###Other Solutions?
-There might be other good solutions. One solution is to generate data into a
+&lt;h3 id=&quot;other-solutions&quot;&gt;Other Solutions?&lt;/h3&gt;
+&lt;p&gt;There might be other good solutions. One solution is to generate data into a
 CSV file then copy it to the real tables. If you have any good soultions, please
 let me know in the comments =)&lt;/p&gt;
 
-&lt;p&gt;###Resources&lt;/p&gt;
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.tutorialspoint.com/postgresql/index.htm&quot; target=&quot;_blank&quot;&gt;PostgreSQL tutorials&lt;/a&gt;.&lt;/p&gt;
 

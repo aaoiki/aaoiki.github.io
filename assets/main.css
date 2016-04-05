@@ -7677,13 +7677,13 @@ a {
 /* Default paragraph styles */
 p {
   font-family: inherit;
-  font-size: 1.375rem;
+  font-size: 1.1875rem;
   font-weight: normal;
   line-height: 1.5;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p.lead {
-    font-size: 1.59375rem;
+    font-size: 1.40625rem;
     line-height: 1.6; }
   p aside {
     font-size: 0.875rem;
@@ -7767,7 +7767,7 @@ ul,
 ol,
 dl {
   font-family: inherit;
-  font-size: 1.375rem;
+  font-size: 1.1875rem;
   line-height: 1.5;
   list-style-position: outside;
   margin-bottom: 1.25rem; }
