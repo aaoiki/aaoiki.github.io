@@ -85,8 +85,8 @@ a lot of data into a postgreSQL database and performe some queries on the
 generated data. So this is going to be some kind of a crash course on Ruby and postgreSQL
 (and some optimization).</p>
 
-<h3 id="requirements">Requirements</h3>
-<p>The database contained only two tables. The first one was:</p>
+<p>###Requirements
+The database contained only two tables. The first one was:</p>
 
 <blockquote>
   <ul>
@@ -122,8 +122,8 @@ this is a table that stores which player played where:</li>
   </ul>
 </blockquote>
 
-<h3 id="setup">Setup</h3>
-<p>I created a Ruby script and used <code class="highlighter-rouge">pg</code> gem to connect to the database:</p>
+<p>###Setup
+I created a Ruby script and used <code class="highlighter-rouge">pg</code> gem to connect to the database:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="nb">require</span> <span class="s1">'pg'</span>
 
@@ -131,8 +131,8 @@ this is a table that stores which player played where:</li>
                             <span class="ss">host: </span><span class="s1">'localhost'</span><span class="p">,</span>
                             <span class="ss">user: </span><span class="s1">'testuser'</span><span class="p">)</span></code></pre></figure>
 
-<h3 id="tables">Tables</h3>
-<p>Now I create the two tables:</p>
+<p>###Tables
+Now I create the two tables:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="c1"># create the first table (cup_matches)</span>
   <span class="n">conn</span><span class="p">.</span><span class="nf">exec</span><span class="p">(</span><span class="s2">"CREATE TABLE cup_matches (
@@ -150,8 +150,8 @@ this is a table that stores which player played where:</li>
             position integer,
             PRIMARY KEY(mid,name));"</span><span class="p">)</span></code></pre></figure>
 
-<h3 id="generating-data">Generating Data</h3>
-<p>Here I generate data into the first table. This is pretty straightforward:</p>
+<p>###Generating Data
+Here I generate data into the first table. This is pretty straightforward:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="c1"># generate data for cup_matches</span>
 
@@ -225,8 +225,8 @@ My original script contained this part:</p>
     <span class="n">current_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:name_array</span><span class="p">[</span><span class="n">name_i</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">mid_value</span><span class="p">}</span>
   <span class="k">end</span></code></pre></figure>
 
-<h4 id="the-issue">The Issue</h4>
-<p>The second table has a pair of columns as its the primary
+<p>####The Issue
+The second table has a pair of columns as its the primary
 key <code class="highlighter-rouge">(played_in_pk)</code>; one is the <code class="highlighter-rouge">name</code> column and the other is <code class="highlighter-rouge">mid</code> as a
 foreign key. Thus, every row must have a unique (mid, name) pair.</p>
 
@@ -239,8 +239,8 @@ traverse the whole array especially that I used some fancy methods like <code cl
 <p>It took about 40 minutes to generate 21440 rows and for some reason it
 got stuck there.</p>
 
-<h4 id="solution">Solution</h4>
-<p>In my second attempt, I used a postgreSQL <code class="highlighter-rouge">SELECT</code> query to search the table instead. So this was my second solution:</p>
+<p>####Solution
+In my second attempt, I used a postgreSQL <code class="highlighter-rouge">SELECT</code> query to search the table instead. So this was my second solution:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">58960</span><span class="p">)</span> <span class="k">do</span>
     <span class="k">while</span> <span class="kp">true</span>
@@ -301,12 +301,12 @@ as required in the task:</p>
 
 <p>Here’s the <a href="https://gist.github.com/aasare/95c8888b36b02a63323c" target="_blank">full script on Github</a>.</p>
 
-<h3 id="other-solutions">Other Solutions?</h3>
-<p>There might be other good solutions. One solution is to generate data into a
+<p>###Other Solutions?
+There might be other good solutions. One solution is to generate data into a
 CSV file then copy it to the real tables. If you have any good soultions, please
 let me know in the comments =)</p>
 
-<h3 id="resources">Resources</h3>
+<p>###Resources</p>
 
 <p><a href="http://www.tutorialspoint.com/postgresql/index.htm" target="_blank">PostgreSQL tutorials</a>.</p>
 

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Programmer Tools: Dotfiles | Aasare's</title>
+  <meta name="description" content="We programmers are lazy. We make frameworks, we make CLI tools, we makemethods and call them helpers, and in the realm of being lazy, we package ourconfigura...">
+
+  <link rel="canonical" href="aasare.github.io/blog/development/programmer-tools-dotfiles">
+  <link rel="alternate" type="application/rss+xml" title="Aasare's" href="aasare.github.io/feed.xml">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/aasare-logo.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/aasare-logo.png" />
+
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <script type="text/javascript" src="/assets/main.js"></script>
+
+	<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71932841-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+
+  <body>
+
+    <header>
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      <ul class="title-area">
+        <li class="name">
+          <h1 id="topbar-title"><a href="/">Aasare's</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a><span></span></a></li>
+      </ul>
+
+      <!-- Right Nav Section -->
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="/about"><i class="fa fa-question"></i></a></li>
+          <li><a href="https://twitter.com/aasare_" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://github.com/aasare" target="_blank"><i class="fa fa-github"></i></a></li>
+          <li><a href="https://stackoverflow.com/users/4352712/aasare" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/asalehmoh" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/_aasare" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="mailto:aasarekode@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </section>
+
+    </nav>
+  </div>
+</header>
+
+
+    <div class="row">
+      <div class="medium-12 large-10 medium-centered large-centered columns" role="content">
+        <article>
+  <div class="en-text">
+    <div class="row">
+      <div class="large-12 columns text-center">
+        <h1>Programmer Tools: Dotfiles <small>Development</small></h1>
+
+        <br>
+
+        <div class="post-sub-info">
+          <h5><i class="fa fa-clock-o"> <span>April 6, 2016</span></i></h5>
+        </div>
+
+      </div>
+    </div>
+
+    <br><br>
+
+    <p>We programmers are lazy. We make frameworks, we make CLI tools, we make
+methods and call them helpers, and in the realm of being lazy, we package our
+configuration files and bootstrap them with a simple command so we can run them
+anywhere and that’s called dotfiles!</p>
+
+<h3 id="what-are-they">What are they?</h3>
+
+<p>First of all what is a dotfile? A dotfile is a file that starts with a dot/period
+and hence the name and that how  hidden files are made in Unix-like systems.
+If you are coming from a Unix-like system, you will find some dotfiles in your
+home directory by doing an <code class="highlighter-rouge">$ ls -a ~</code>. They are mostly configuration files.
+You can view the them in Ubuntu file manager by pressing <code class="highlighter-rouge">Ctrl+H</code>.</p>
+
+<h3 id="up-to-the-point">Up to the Point</h3>
+
+<p>I’ve had <a href="https://github.com/aasare/aaku" target="blank">my dotfiles</a>
+for some quite time. I refactored them every once in a while.
+However, My shell was pretty slow on startup when I used
+<a href="https://github.com/robbyrussell/oh-my-zsh" target="blank">Oh-My-Zsh!</a>
+which was awesome but a bit slow. I then converted to
+<a href="https://github.com/sorin-ionescu/prezto" target="blank">Prezto</a>.
+It was convenient for me but still it had many things I never used.
+I ended up writing my Zsh configuration from scratch.</p>
+
+<p>Whether you think
+<a href="https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/" target="blank">Dotfiles Are Meant to Be Forked</a>
+or they should be created from scratch, it’s all about personal taste and needs.</p>
+
+<h3 id="good-tools-do-not-make-a-good-carpenter">Good Tools Do Not Make a Good Carpenter</h3>
+
+<p>After I had done a lot of changes and rewrote almost everything, I kind of became obsessed with
+my dotfiles and how I structure them instead of actually getting the real stuff done.
+So if you are at the same stage, please take care not to fall into that slope.</p>
+
+<blockquote>
+  <div class="ar-text text-center">
+    <h3>
+      كَيْفَ يَطلُبُ العِلْمَ مَن لَهُ حِمَار؟
+    </h3>
+  </div>
+</blockquote>
+
+<p>There’s a story told about
+<a href="https://en.wikipedia.org/wiki/Al-Shafi%E2%80%98i" target="blank">Al-Shafi‘i</a>,
+a Muslim scholar, jurist, and poet who lived in the 8th century, that he used to walk
+for a long time to get to his lectures, he then said: “how can I study if I
+don’t have a ride?” and bought a donkey. After a while he became very busy
+taking care of his donkey and then said: “How I can study when I have a donkey?!”</p>
+
+
+    <br>
+    <div class="medium-8 medium-centered large-6 large-centered columns">
+  <ul class="inline-list" id="social-buttons">
+    <!-- Facebook -->
+    <li class="facebook"><a href="http://www.facebook.com/sharer.php?t=Programmer Tools: Dotfiles&u=aasare.github.io/blog/development/programmer-tools-dotfiles" target="_blank"><i class="fa fa-facebook-official fa-lg"></i></a></li>
+    <!-- Twitter -->
+    <li class="twitter"><a href="http://twitter.com/share?url=http://aasare.github.io/blog/development/programmer-tools-dotfiles&text=Programmer Tools: Dotfiles&hashtags=dotfiles,development&via=aasare_" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+    <!-- Reddit -->
+    <li class="reddit"><a href="http://reddit.com/submit?url=http://aasare.github.io/blog/development/programmer-tools-dotfiles&title=Programmer Tools: Dotfiles" target="_blank"><i class="fa fa-reddit fa-lg"></i></a></li>
+    <!-- LinkedIn -->
+    <li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&title=Programmer Tools: Dotfiles&url=http://aasare.github.io/blog/development/programmer-tools-dotfiles" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+    <!-- Google+ -->
+    <li class="google-plus"><a href="https://plus.google.com/share?url=http://aasare.github.io/blog/development/programmer-tools-dotfiles" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
+    <!-- Pocket -->
+    <li class="pocket"><a href="https://getpocket.com/save?url=aasare.github.io/blog/development/programmer-tools-dotfiles&title=Programmer Tools: Dotfiles" target="_blank"><i class="fa fa-get-pocket fa-lg"></i></a></li>
+  </ul>
+</div>
+
+
+    <br>
+
+    <div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//aasare.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/main_end.js"></script>
+
+  </body>
+
+</html>
