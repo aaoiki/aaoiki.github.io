@@ -5,6 +5,9 @@
 #description {
   color: #171f26; }
 
+.index-title {
+  font-size: 22px; }
+
 .ar-title {
   font-family: 'Amiri', serif; }
 
@@ -7132,14 +7135,14 @@ meta.foundation-mq-topbar {
       color: #606060;
       display: block;
       font-family: "Open Sans", sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: normal;
       padding-left: 1.45833rem;
       padding: 12px 0 12px 1.45833rem;
       text-transform: none;
       width: 100%; }
       .top-bar-section ul li > a.button {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         padding-left: 1.45833rem;
         padding-right: 1.45833rem;
         background-color: #1F3A93;
@@ -7190,7 +7193,7 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li > a.button.info:hover, .top-bar-section ul li > a.button.info:focus {
           color: #FFFFFF; }
     .top-bar-section ul li > button {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       padding-left: 1.45833rem;
       padding-right: 1.45833rem;
       background-color: #1F3A93;
@@ -7702,7 +7705,7 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     color: #1F3A93;
-    font-size: 40%;
+    font-size: 50%;
     line-height: 0; }
 
 h1 {
@@ -7749,7 +7752,7 @@ b {
   line-height: inherit; }
 
 small {
-  font-size: 40%;
+  font-size: 50%;
   line-height: inherit; }
 
 code {
