@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>aasare</title>
+    <title>aaooki</title>
     <description>Code and Language
 </description>
-    <link>aasare.github.io/</link>
-    <atom:link href="aasare.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Apr 2016 00:59:34 +0200</pubDate>
-    <lastBuildDate>Wed, 13 Apr 2016 00:59:34 +0200</lastBuildDate>
+    <link>aaooki.github.io/</link>
+    <atom:link href="aaooki.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 28 Oct 2016 01:49:48 +0200</pubDate>
+    <lastBuildDate>Fri, 28 Oct 2016 01:49:48 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -27,7 +27,7 @@ You can view the them in Ubuntu file manager by pressing &lt;code class=&quot;hi
 
 &lt;h3 id=&quot;up-to-the-point&quot;&gt;Up to the Point&lt;/h3&gt;
 
-&lt;p&gt;I’ve had &lt;a href=&quot;https://github.com/aasare/aaku&quot; target=&quot;blank&quot;&gt;my dotfiles&lt;/a&gt;
+&lt;p&gt;I’ve had &lt;a href=&quot;https://github.com/aaooki/aaku&quot; target=&quot;blank&quot;&gt;my dotfiles&lt;/a&gt;
 for quite some time. I refactored them every once in a while.
 However, My shell was pretty slow on startup when I used
 &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;blank&quot;&gt;Oh-My-Zsh!&lt;/a&gt;
@@ -62,8 +62,8 @@ don’t have a ride?” and bought a donkey. After a while he became very busy
 taking care of his donkey and then said: “How can I study when I have a donkey?!”&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Apr 2016 00:00:00 +0200</pubDate>
-        <link>aasare.github.io/blog/development/programmer-tools-dotfiles</link>
-        <guid isPermaLink="true">aasare.github.io/blog/development/programmer-tools-dotfiles</guid>
+        <link>aaooki.github.io/blog/development/programmer-tools-dotfiles</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/development/programmer-tools-dotfiles</guid>
         
         <category>dotfiles,</category>
         
@@ -107,8 +107,8 @@ languages as a hobby.&lt;/p&gt;
 &lt;p&gt;And feedback is more than welcome of course.&lt;/p&gt;
 </description>
         <pubDate>Sun, 03 Jan 2016 00:00:00 +0200</pubDate>
-        <link>aasare.github.io/blog/hello</link>
-        <guid isPermaLink="true">aasare.github.io/blog/hello</guid>
+        <link>aaooki.github.io/blog/hello</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/hello</guid>
         
         <category>hello,</category>
         
@@ -206,11 +206,11 @@ the app to MySQL databse image. I run the app with a very simple command:&lt;/p&
 &lt;img src=&quot;/public/images/docker_bshop_screenshot1.png&quot; alt=&quot;Bshop 2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You can find the full project along with Docker and docker-compose files
-&lt;a href=&quot;https://bitbucket.org/aasare/bshop&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&quot;https://bitbucket.org/aaooki/bshop&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 15 Aug 2015 00:00:00 +0200</pubDate>
-        <link>aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker</link>
-        <guid isPermaLink="true">aasare.github.io/blog/docker/and-a-whale-said-let-there-be-docker</guid>
+        <link>aaooki.github.io/blog/docker/and-a-whale-said-let-there-be-docker</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/docker/and-a-whale-said-let-there-be-docker</guid>
         
         <category>docker,</category>
         
@@ -328,7 +328,7 @@ My original script contained this part:&lt;/p&gt;
   &lt;span class=&quot;c1&quot;&gt;# array of random names&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;name_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Shinichi&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Nitrogen&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Yan&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Itachi&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Kurosan&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                 &lt;span class=&quot;s1&quot;&gt;&#39;Tamashii&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Ben&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Owen&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Ror&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Bo&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Yama&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Kaminari&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;s1&quot;&gt;&#39;Kintama&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Sasuke&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Aasare&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Leila&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Xou&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Xubuntu&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s1&quot;&gt;&#39;Kintama&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Sasuke&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;aaooki&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Leila&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Xou&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Xubuntu&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                 &lt;span class=&quot;s1&quot;&gt;&#39;Gnomy&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Lolly&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Gintoki&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Kogami&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Kurotora&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Matz&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                 &lt;span class=&quot;s1&quot;&gt;&#39;Yuki&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Yumi&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Kakashi&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Naruto&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;K.O.&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Gohan&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                 &lt;span class=&quot;s1&quot;&gt;&#39;Kagura&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Kuroon&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Ran&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Aurora&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Conan&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Kudo&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -444,7 +444,7 @@ as required in the task:&lt;/p&gt;
                       AND name=&#39;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target_name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&#39;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;pele&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Here’s the &lt;a href=&quot;https://gist.github.com/aasare/95c8888b36b02a63323c&quot; target=&quot;_blank&quot;&gt;full script on Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here’s the &lt;a href=&quot;https://gist.github.com/aaooki/95c8888b36b02a63323c&quot; target=&quot;_blank&quot;&gt;full script on Github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;other-solutions&quot;&gt;Other Solutions?&lt;/h3&gt;
 &lt;p&gt;There might be other good solutions. One solution is to generate data into a
@@ -462,8 +462,8 @@ let me know in the comments =)&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgres-table&quot; target=&quot;_blank&quot;&gt;Import CSV file into PostgreSQL table&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 01 Jun 2015 00:00:00 +0200</pubDate>
-        <link>aasare.github.io/blog/ruby/connect-ruby-to-postgreSQL</link>
-        <guid isPermaLink="true">aasare.github.io/blog/ruby/connect-ruby-to-postgreSQL</guid>
+        <link>aaooki.github.io/blog/ruby/connect-ruby-to-postgreSQL</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/ruby/connect-ruby-to-postgreSQL</guid>
         
         <category>ruby,</category>
         
