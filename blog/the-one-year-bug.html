@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The One Year Old Bug | aaooki</title>
+  <meta name="description" content="I’ve been revisiting my old repositories on GitHub recently to make sure theyare still relevant and, as a side note, to remove the embarassing parts in theco...">
+
+  <link rel="canonical" href="aaooki.github.io/blog/the-one-year-bug">
+  <link rel="alternate" type="application/rss+xml" title="aaooki" href="aaooki.github.io/feed.xml">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/aaooki-logo.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/aaooki-logo.png" />
+
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <script type="text/javascript" src="/assets/main.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88759965-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+
+  <body>
+
+    <header>
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      <ul class="title-area">
+        <li class="name">
+          <h1 id="topbar-title"><a href="/">aaooki</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a><span></span></a></li>
+      </ul>
+
+      <!-- Right Nav Section -->
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="/about">about</a></li>
+          <li><a href="https://twitter.com/aaooki" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://github.com/aaooki" target="_blank"><i class="fa fa-github"></i></a></li>
+          <li><a href="mailto:aaooki7@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </section>
+
+    </nav>
+  </div>
+</header>
+
+
+    <div class="row">
+      <div class="medium-10 large-9 medium-centered large-centered columns" role="content">
+        <article>
+  <div class="en-text">
+    <div class="row">
+      <div class="large-12 columns text-center">
+        <h3>The One Year Old Bug <small>Software Engineering</small></h3>
+        <br>
+
+        <div class="post-sub-info">
+          <h5><span>December 10, 2016</span></h5>
+        </div>
+
+      </div>
+    </div>
+
+    <br><br>
+
+    <p>I’ve been revisiting my old repositories on GitHub recently to make sure they
+are still relevant and, as a side note, to remove the embarassing parts in the
+code. One of the projects I looked into was
+<a href="https://github.com/aaooki/margopher/">margopher</a> which I started back in
+August 2015. I only removed some unused code, and updated the README page after
+which I decided to follow the usage instructions just to make sure everything
+was okay. This was when I found out that when I created and used a margopher
+object one time, I could not use it any more. This because it kept a map of
+states of its input at the object/struct initialization phase but never
+reinitialized the map to reuse it. The solution was to move the initialization
+of the map into the generation phase. This will make a new map everytime the
+generation method is called.</p>
+
+<p>Although how trivial the solution is, and how simple finding the bug seems, I
+ofen catch myself falling into the same trap, that is, I tend to overlook some
+very minute details or rather edge cases that affect the bigger context. This
+occurs specially in larger business projects where there usually are a lot of
+edge cases that must be taken care of. These edge-case bugs may or may not be
+found. An edge-case bug can go unseen for sometime until one of the QA team
+finds about it or, worst case, a client will.</p>
+
+<p>One might think that writing a thorough test suite will, by default, detect
+edge cases and hidden bugs. Well, this is partially true. Writing a complete
+test suite that covers all your system needs fully documented features.
+Requirements should be gathered before starting the implementation phase. This
+might seem obvious, however, sometimes this isn’t the case. A client might come
+with unclear requirements and the picture can only get clearer after some
+prototyping or after the actual implementation. It’s true that with almost
+always changing requirements in the business world, it can be quite difficult
+to update and keep track of the requirements while actually implementing them
+in code.</p>
+
+<blockquote>
+  <p>Don’t assume it,  prove it
+<cite>The pragmatic programmer</cite></p>
+</blockquote>
+
+<p>In essence, even if it is the job of the QA team to discover difficult-to-find
+bugs, our responsibility as developers is to be fully aware about the
+boundaries of the module we are working on.</p>
+
+
+    <br>
+    <div class="medium-8 medium-centered large-6 large-centered columns">
+  <ul class="inline-list" id="social-buttons">
+    <!-- Facebook -->
+    <li class="facebook"><a href="http://www.facebook.com/sharer.php?t=The One Year Old Bug&u=aaooki.github.io/blog/the-one-year-bug" target="_blank"><i class="fa fa-facebook-official fa-lg"></i></a></li>
+    <!-- Twitter -->
+    <li class="twitter"><a href="http://twitter.com/share?url=http://aaooki.github.io/blog/the-one-year-bug&text=The One Year Old Bug&hashtags=software_engineering,bugs&via=aaooki" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+    <!-- Reddit -->
+    <li class="reddit"><a href="http://reddit.com/submit?url=http://aaooki.github.io/blog/the-one-year-bug&title=The One Year Old Bug" target="_blank"><i class="fa fa-reddit fa-lg"></i></a></li>
+    <!-- LinkedIn -->
+    <li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&title=The One Year Old Bug&url=http://aaooki.github.io/blog/the-one-year-bug" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+    <!-- Google+ -->
+    <li class="google-plus"><a href="https://plus.google.com/share?url=http://aaooki.github.io/blog/the-one-year-bug" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
+    <!-- Pocket -->
+    <li class="pocket"><a href="https://getpocket.com/save?url=aaooki.github.io/blog/the-one-year-bug&title=The One Year Old Bug" target="_blank"><i class="fa fa-get-pocket fa-lg"></i></a></li>
+  </ul>
+</div>
+
+
+    <br>
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//aaooki.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+
+
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/main_end.js"></script>
+
+  </body>
+
+</html>
