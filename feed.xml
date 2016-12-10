@@ -6,8 +6,8 @@
 </description>
     <link>aaooki.github.io/</link>
     <atom:link href="aaooki.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2016 21:29:34 +0200</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2016 21:29:34 +0200</lastBuildDate>
+    <pubDate>Sat, 10 Dec 2016 22:18:02 +0200</pubDate>
+    <lastBuildDate>Sat, 10 Dec 2016 22:18:02 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -67,14 +67,13 @@ boundaries of the module we are working on.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Programmer Tools: Dotfiles</title>
+        <title>The Dotfiles</title>
         <description>&lt;p&gt;We programmers are lazy. We make frameworks, we make CLI tools, we make
 methods and call them helpers, and in the realm of being lazy, we package our
 configuration files and bootstrap them with a simple command so we can run them
-anywhere and that’s called dotfiles!&lt;/p&gt;
+anywhere. That’s called dotfiles!&lt;/p&gt;
 
 &lt;h3 id=&quot;what-are-they&quot;&gt;What are they?&lt;/h3&gt;
-
 &lt;p&gt;First of all what is a dotfile? A dotfile is a file that starts with a dot/period
 and hence the name and that how  hidden files are made in Unix-like systems.
 If you are coming from a Unix-like system, you will find some dotfiles in your
@@ -82,7 +81,6 @@ home directory by doing an &lt;code class=&quot;highlighter-rouge&quot;&gt;$ ls 
 You can view the them in Ubuntu file manager by pressing &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+H&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;up-to-the-point&quot;&gt;Up to the Point&lt;/h3&gt;
-
 &lt;p&gt;I’ve had &lt;a href=&quot;https://github.com/aaooki/aaku&quot; target=&quot;blank&quot;&gt;my dotfiles&lt;/a&gt;
 for quite some time. I refactored them every once in a while.
 However, My shell was pretty slow on startup when I used
@@ -97,7 +95,6 @@ I ended up writing my Zsh configuration from scratch.&lt;/p&gt;
 or they should be created from scratch, it’s all about personal taste and needs.&lt;/p&gt;
 
 &lt;h3 id=&quot;good-tools-do-not-make-a-good-carpenter&quot;&gt;Good Tools Do Not Make a Good Carpenter&lt;/h3&gt;
-
 &lt;p&gt;After I had done a lot of changes and rewrote almost everything, I kind of became obsessed with
 my dotfiles and how I structure them instead of actually getting the real stuff done.
 So if you are at the same stage, please take care not to fall into that slope.&lt;/p&gt;
@@ -107,52 +104,43 @@ So if you are at the same stage, please take care not to fall into that slope.&l
     &lt;h3&gt;
       كَيْفَ يَطلُبُ العِلْمَ مَن لَهُ حِمَار؟
     &lt;/h3&gt;
+    &lt;cite&gt;الشافعي&lt;/cite&gt;
   &lt;/div&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;There’s a story told about
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Al-Shafi%E2%80%98i&quot; target=&quot;blank&quot;&gt;Al-Shafi‘i&lt;/a&gt;,
-a Muslim scholar, jurist, and poet who lived in the 8th century, that he used to walk
-for a long time to get to his lectures, he then said: “How can I study if I
-don’t have a ride?” and bought a donkey. After a while he became very busy
-taking care of his donkey and then said: “How can I study when I have a donkey?!”&lt;/p&gt;
+a Muslim scholar, jurist, and poet who lived in the 8th century, that he used
+to walk for a long distance to get to his lectures. He then once said: “How can
+I seek knowledge if I don’t have a ride?” and he bought a donkey. After a
+while, he became very occupied taking care of his donkey cleaning and feeding
+it so he thought: “How can I seek knowledge if I have a ride?!”.&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Apr 2016 00:00:00 +0200</pubDate>
-        <link>aaooki.github.io/blog/programmer-tools-dotfiles</link>
-        <guid isPermaLink="true">aaooki.github.io/blog/programmer-tools-dotfiles</guid>
+        <link>aaooki.github.io/blog/the-dotfiles</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/the-dotfiles</guid>
         
         <category>dotfiles,</category>
         
-        <category>development</category>
+        <category>programmer_tools</category>
         
         
-        <category>Development</category>
+        <category>Tools</category>
         
       </item>
     
       <item>
         <title>Hi مرحباً こんにちは Hallo</title>
-        <description>&lt;p&gt;&lt;em&gt;Here’s a new beginning with a new blog.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;i-should-write-more&quot;&gt;I should write more&lt;/h3&gt;
-
-&lt;p&gt;This is one of the things I want to do this year so I will try to keep up with
-it. Part of why I didn’t write so often is being afraid to be judged. I wrote
-many blog posts and deleted them on my previous blog just because of that. It
-is such a great issue that affects a lot of what I’m doing and I’m trying to
-overcome that &lt;strong&gt;|_・)&lt;/strong&gt;. It even affected my code somehow. So I hope writing more
-will help me with this issue.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;em&gt;Here’s to a new blog.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;why-a-new-blog&quot;&gt;Why a new blog?&lt;/h3&gt;
-
-&lt;p&gt;As I mentioned above, I had another blog (I just took it down) where I barely
+&lt;p&gt;I’ve had another blog (I just took it down) where I barely
 wrote anything for more than a year. I though it might be a good motivation for
 me to write more if I started in a new blog. I made some changes to the theme
-for better readability. I’m probably getting a new custome domain for this
+for better readability. I’m probably getting a new custom domain for this
 blog soon.&lt;/p&gt;
 
 &lt;h3 id=&quot;what-i-will-write-about&quot;&gt;What I will write about&lt;/h3&gt;
-
 &lt;p&gt;I will write many of my thoughts here. Mainly about coding and my journey
 as a young programmer. Also I will write in whatever language it fits (yes, it’s
 a multilingual blog). I think that words appeal in languages (their own
@@ -160,7 +148,7 @@ language) more than others. I might try to translate between two or more
 languages as a hobby.&lt;/p&gt;
 
 &lt;h3 id=&quot;visit-us-more&quot;&gt;Visit us more&lt;/h3&gt;
-&lt;p&gt;And feedback is more than welcome of course.&lt;/p&gt;
+&lt;p&gt;Feedback is more than welcome.&lt;/p&gt;
 </description>
         <pubDate>Sun, 03 Jan 2016 00:00:00 +0200</pubDate>
         <link>aaooki.github.io/blog/hello</link>
@@ -187,26 +175,27 @@ Besides, after some time the machine I was working on used to get a bit slower.&
 
 &lt;p&gt;I have been recently hearing about virtualization, Linux Containers, Docker, Vagrant, etc.,
 but Docker became sort of the hype these days.
-So I decided to give it a try anyway especially after
-&lt;a href=&quot;https://twitter.com/cousine&quot;&gt;@cousine&lt;/a&gt; had recommended it to me.&lt;/p&gt;
+I wanted to give it a try anyway specially after
+&lt;a href=&quot;https://twitter.com/cousine&quot;&gt;@cousine&lt;/a&gt; had recommended using Docker for me.&lt;/p&gt;
 
 &lt;p&gt;So I started this weekend by installing a new version of the beautiful distro
 &lt;a href=&quot;https://elementary.io/&quot;&gt;Elementary OS&lt;/a&gt; and &lt;a href=&quot;docker.io&quot;&gt;Docker&lt;/a&gt;, and set up my
-dotfiles on my main development laptop.&lt;/p&gt;
+&lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; on my main development laptop.&lt;/p&gt;
 
-&lt;p&gt;You can install any software on your machine using Docker images
-from database servers to frameworks or tools like Nodejs or Jekyll.
-I installed different images for my local development&lt;/p&gt;
+&lt;p&gt;You can install and use any of the available packages on your machine using
+Docker images from database servers to frameworks or tools like Nodejs or
+Jekyll. It’s also possible to create your own dockerized images.  I installed
+different kinds of images for my local development&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/images/docker_images_screenshot.png&quot; alt=&quot;Docker images&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As Docker is often used for deployment and packaging dependencies,
 it could also be used for local development.
-This is about satisfying the perfectionist inside me ೕ(•̀ᴗ•́).&lt;/p&gt;
+This is about satisfying the perfectionist side in me ೕ(•̀ᴗ•́).&lt;/p&gt;
 
 &lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
 &lt;p&gt;I use &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; to generate this blog.
-Before Docker, I had to install a Ruby version manager such as Rbenv, Ruby, RubyGems, and Jekyll
+Before Docker, I had to install a Ruby version manager such as rbenv, Ruby, RubyGems, and Jekyll
 just to start blogging. But now all I do is this:&lt;/p&gt;
 
 &lt;h4 id=&quot;install-docker&quot;&gt;1. Install Docker&lt;/h4&gt;
@@ -275,16 +264,16 @@ the app to MySQL databse image. I run the app with a very simple command:&lt;/p&
         <category>containers</category>
         
         
-        <category>Docker</category>
+        <category>Tools</category>
         
       </item>
     
       <item>
         <title>Connect Ruby to PostgreSQL</title>
-        <description>&lt;p&gt;I had this task where I was asked to generate
-a lot of data into a postgreSQL database and performe some queries on the
-generated data. So this is going to be some kind of a crash course on Ruby and postgreSQL
-(and some optimization).&lt;/p&gt;
+        <description>&lt;p&gt;I had this task where it was required to generate a lot of data into a
+postgreSQL database and perform some queries on the generated data. So this is
+going to be some kind of a crash course on Ruby and postgreSQL (and some
+optimization).&lt;/p&gt;
 
 &lt;h3 id=&quot;requirements&quot;&gt;Requirements&lt;/h3&gt;
 &lt;p&gt;The database contained only two tables. The first one was:&lt;/p&gt;
@@ -504,7 +493,7 @@ as required in the task:&lt;/p&gt;
 
 &lt;h3 id=&quot;other-solutions&quot;&gt;Other Solutions?&lt;/h3&gt;
 &lt;p&gt;There might be other good solutions. One solution is to generate data into a
-CSV file then copy it to the real tables. If you have any good soultions, please
+CSV file then copy it to the real tables. If you have any good solutions, please
 let me know in the comments =)&lt;/p&gt;
 
 &lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
@@ -526,7 +515,7 @@ let me know in the comments =)&lt;/p&gt;
         <category>postgresql</category>
         
         
-        <category>Ruby</category>
+        <category>Performance</category>
         
       </item>
     
