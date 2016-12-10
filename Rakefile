@@ -27,3 +27,8 @@ task :publish => [:generate] do
     system "pwd"
   end
 end
+
+desc "Serve All: Run Jekyll server with full options"
+task :sa do
+  exec "jekyll serve --watch --drafts --future"
+end

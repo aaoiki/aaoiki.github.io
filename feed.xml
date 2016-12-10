@@ -6,9 +6,65 @@
 </description>
     <link>aaooki.github.io/</link>
     <atom:link href="aaooki.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Oct 2016 02:04:26 +0200</pubDate>
-    <lastBuildDate>Fri, 28 Oct 2016 02:04:26 +0200</lastBuildDate>
+    <pubDate>Sat, 10 Dec 2016 21:25:17 +0200</pubDate>
+    <lastBuildDate>Sat, 10 Dec 2016 21:25:17 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>The One Year Old Bug</title>
+        <description>&lt;p&gt;I’ve been revisiting my old repositories on GitHub recently to make sure they
+are still relevant and, as a side note, to remove the embarassing parts in the
+code. One of the projects I looked into was
+&lt;a href=&quot;https://github.com/aaooki/margopher/&quot;&gt;margopher&lt;/a&gt; which I started back in
+August 2015. I only removed some unused code, and updated the README page after
+which I decided to follow the usage instructions just to make sure everything
+was okay. This was when I found out that when I created and used a margopher
+object one time, I could not use it any more. This because it kept a map of
+states of its input at the object/struct initialization phase but never
+reinitialized the map to reuse it. The solution was to move the initialization
+of the map into the generation phase. This will make a new map everytime the
+generation method is called.&lt;/p&gt;
+
+&lt;p&gt;Although how trivial the solution is, and how simple finding the bug seems, I
+ofen catch myself falling into the same trap, that is, I tend to overlook some
+very minute details or rather edge cases that affect the bigger context. This
+occurs specially in larger business projects where there usually are a lot of
+edge cases that must be taken care of. These edge-case bugs may or may not be
+found. An edge-case bug can go unseen for sometime until one of the QA team
+finds about it or, worst case, a client will.&lt;/p&gt;
+
+&lt;p&gt;One might think that writing a thorough test suite will, by default, detect
+edge cases and hidden bugs. Well, this is partially true. Writing a complete
+test suite that covers all your system needs fully documented features.
+Requirements should be gathered before starting the implementation phase. This
+might seem obvious, however, sometimes this isn’t the case. A client might come
+with unclear requirements and the picture can only get clearer after some
+prototyping or after the actual implementation. It’s true that with almost
+always changing requirements in the business world, it can be quite difficult
+to update and keep track of the requirements while actually implementing them
+in code.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Don’t assume it,  prove it
+&lt;cite&gt;The pragmatic programmer&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In essence, even if it is the job of the QA team to discover difficult-to-find
+bugs, our responsibility as developers is to be fully aware about the
+boundaries of the module we are working on.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 10 Dec 2016 00:00:00 +0200</pubDate>
+        <link>aaooki.github.io/blog/the-one-year-bug</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/the-one-year-bug</guid>
+        
+        <category>software_engineering,</category>
+        
+        <category>bugs</category>
+        
+        
+        <category>Software Engineering</category>
+        
+      </item>
     
       <item>
         <title>Programmer Tools: Dotfiles</title>
@@ -62,8 +118,8 @@ don’t have a ride?” and bought a donkey. After a while he became very busy
 taking care of his donkey and then said: “How can I study when I have a donkey?!”&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Apr 2016 00:00:00 +0200</pubDate>
-        <link>aaooki.github.io/blog/development/programmer-tools-dotfiles</link>
-        <guid isPermaLink="true">aaooki.github.io/blog/development/programmer-tools-dotfiles</guid>
+        <link>aaooki.github.io/blog/programmer-tools-dotfiles</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/programmer-tools-dotfiles</guid>
         
         <category>dotfiles,</category>
         
@@ -209,8 +265,8 @@ the app to MySQL databse image. I run the app with a very simple command:&lt;/p&
 &lt;a href=&quot;https://bitbucket.org/aaooki/bshop&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 15 Aug 2015 00:00:00 +0200</pubDate>
-        <link>aaooki.github.io/blog/docker/and-a-whale-said-let-there-be-docker</link>
-        <guid isPermaLink="true">aaooki.github.io/blog/docker/and-a-whale-said-let-there-be-docker</guid>
+        <link>aaooki.github.io/blog/and-a-whale-said-let-there-be-docker</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/and-a-whale-said-let-there-be-docker</guid>
         
         <category>docker,</category>
         
@@ -462,8 +518,8 @@ let me know in the comments =)&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgres-table&quot; target=&quot;_blank&quot;&gt;Import CSV file into PostgreSQL table&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 01 Jun 2015 00:00:00 +0200</pubDate>
-        <link>aaooki.github.io/blog/ruby/connect-ruby-to-postgreSQL</link>
-        <guid isPermaLink="true">aaooki.github.io/blog/ruby/connect-ruby-to-postgreSQL</guid>
+        <link>aaooki.github.io/blog/connect-ruby-to-postgreSQL</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/connect-ruby-to-postgreSQL</guid>
         
         <category>ruby,</category>
         
