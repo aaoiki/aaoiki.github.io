@@ -6,8 +6,8 @@
 </description>
     <link>aaooki.github.io/</link>
     <atom:link href="aaooki.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2016 22:18:02 +0200</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2016 22:18:02 +0200</lastBuildDate>
+    <pubDate>Thu, 15 Dec 2016 06:24:03 +0200</pubDate>
+    <lastBuildDate>Thu, 15 Dec 2016 06:24:03 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -68,36 +68,47 @@ boundaries of the module we are working on.&lt;/p&gt;
     
       <item>
         <title>The Dotfiles</title>
-        <description>&lt;p&gt;We programmers are lazy. We make frameworks, we make CLI tools, we make
-methods and call them helpers, and in the realm of being lazy, we package our
-configuration files and bootstrap them with a simple command so we can run them
-anywhere. That’s called dotfiles!&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://threevirtues.com/&quot; target=&quot;blank&quot;&gt;One of the three great virtues of a programmer is laziness&lt;/a&gt;.
+Programming calls for replacing repetitive work with automated tasks.
+We, programmers, create frameworks, CLI tools,
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&quot; target=&quot;blank&quot;&gt;software engineering principles&lt;/a&gt;,
+and helper methods only to avoid repeating our work.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://vimeo.com/158129287&quot; target=&quot;blank&quot;&gt;In this realm of eternal laziness&lt;/a&gt;,
+programmers package their environment settings and configuration files and
+bootstrap them into a single package that needs only one or few commands to
+install. That is called the dotfiles!&lt;/p&gt;
 
 &lt;h3 id=&quot;what-are-they&quot;&gt;What are they?&lt;/h3&gt;
-&lt;p&gt;First of all what is a dotfile? A dotfile is a file that starts with a dot/period
-and hence the name and that how  hidden files are made in Unix-like systems.
-If you are coming from a Unix-like system, you will find some dotfiles in your
-home directory by doing an &lt;code class=&quot;highlighter-rouge&quot;&gt;$ ls -a ~&lt;/code&gt;. They are mostly configuration files.
-You can view the them in Ubuntu file manager by pressing &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+H&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;First of all what is a dotfile? A dotfile, in Unix-like systems, is a file that
+starts with a dot/period and hence the name. They resemble hidden files in
+Windows environment. If you are coming from a Unix-like system, you will find
+some dotfiles in your home directory by doing an &lt;code class=&quot;highlighter-rouge&quot;&gt;$ ls -a ~&lt;/code&gt;. These are mostly
+configuration files. You can view them in Ubuntu file manager (might change for
+different file managers) by pressing &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+H&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;up-to-the-point&quot;&gt;Up to the Point&lt;/h3&gt;
-&lt;p&gt;I’ve had &lt;a href=&quot;https://github.com/aaooki/aaku&quot; target=&quot;blank&quot;&gt;my dotfiles&lt;/a&gt;
-for quite some time. I refactored them every once in a while.
-However, My shell was pretty slow on startup when I used
-&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;blank&quot;&gt;Oh-My-Zsh!&lt;/a&gt;
-which was awesome but a bit slow. I then converted to
-&lt;a href=&quot;https://github.com/sorin-ionescu/prezto&quot; target=&quot;blank&quot;&gt;Prezto&lt;/a&gt;.
-It was convenient for me but still it had many things I never used.
-I ended up writing my Zsh configuration from scratch.&lt;/p&gt;
+&lt;p&gt;I’ve had &lt;a href=&quot;https://github.com/aaooki/aaku&quot; target=&quot;blank&quot;&gt;my dotfiles&lt;/a&gt; for
+quite some time. Every once in a while, I used to refactor them, change how
+they look, or completely change the way they were linked.  More recently, I
+noticed that my shell was pretty slow on startup. I used
+&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;blank&quot;&gt;Oh-My-Zsh!&lt;/a&gt; back
+then which was awesome but, as mentioned, a bit slow. I then wanted to give
+&lt;a href=&quot;https://github.com/sorin-ionescu/prezto&quot; target=&quot;blank&quot;&gt;Prezto&lt;/a&gt; a try.
+Prezto was more convenient for me and faster but still it contained a lot of
+stuff that I never used. Eventually, I ended up writing my Zsh configuration
+from scratch.&lt;/p&gt;
 
-&lt;p&gt;Whether you think
-&lt;a href=&quot;https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/&quot; target=&quot;blank&quot;&gt;Dotfiles Are Meant to Be Forked&lt;/a&gt;
-or they should be created from scratch, it’s all about personal taste and needs.&lt;/p&gt;
+&lt;p&gt;There’s a kind of philosophy here between whether you should
+&lt;a href=&quot;https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/&quot; target=&quot;blank&quot;&gt;fork someone else’s dotfiles and build up from there&lt;/a&gt;
+or start from scratch. However, it’s all about personal taste and needs.&lt;/p&gt;
 
 &lt;h3 id=&quot;good-tools-do-not-make-a-good-carpenter&quot;&gt;Good Tools Do Not Make a Good Carpenter&lt;/h3&gt;
-&lt;p&gt;After I had done a lot of changes and rewrote almost everything, I kind of became obsessed with
-my dotfiles and how I structure them instead of actually getting the real stuff done.
-So if you are at the same stage, please take care not to fall into that slope.&lt;/p&gt;
+&lt;p&gt;After I had made a lot of changes and rewritten almost everything, it kind of
+felt like I became obsessed with my dotfiles and how they looked instead of
+actually getting the real stuff done (A.K.A., using them for programming). This
+is a slippery slope. However important it is to prepare and sharpen the tools
+need for a job, it should not replace the actual work.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;div class=&quot;ar-text text-center&quot;&gt;
