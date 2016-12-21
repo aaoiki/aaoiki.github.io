@@ -6,9 +6,82 @@
 </description>
     <link>aaooki.github.io/</link>
     <atom:link href="aaooki.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Dec 2016 23:01:34 +0200</pubDate>
-    <lastBuildDate>Thu, 15 Dec 2016 23:01:34 +0200</lastBuildDate>
+    <pubDate>Wed, 21 Dec 2016 03:45:58 +0200</pubDate>
+    <lastBuildDate>Wed, 21 Dec 2016 03:45:58 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>I Took Some Time to Create a Time Organizer</title>
+        <description>&lt;p&gt;Im my quest of finding the ultimate productivity framework, I come across the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Pomodoro_Technique&quot; target=&quot;blank&quot;&gt;Pomodoro technique&lt;/a&gt;.
+The basic idea behind it is to divide the work into equal chunks of time and
+take a small break after each set. Usually it goes by working for 25 minutes in
+complete concentration, taking a 5 minutes break and repeating the cycle until
+the the task is completed.&lt;/p&gt;
+
+&lt;h3 id=&quot;motivation&quot;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;It was the beginning of January this year when I decided to use the Pomodoro
+technique to help me study for my finals. However, I could not find a web app
+with a simple interface to use and thought it would be a good practice to build
+it. I remeber it was right before the start of my odd semester final exams when
+I started the project. As you know, finals is the time in which you can achieve
+all what you wanted since the beginning of the semester, except studying of
+course. Having built the app, it actually came of a great help. In fact I’m
+using it right now as I’m writing this post (took me 5 sets to finish it).&lt;/p&gt;
+
+&lt;p&gt;I kept in mind to keep the interface as simple as possible. The home page is
+where you can start/stop the timer. There’s also a tracker page where you can
+keep track of your sets.
+I named it &lt;a href=&quot;http://cherrytomato.herokuapp.com/&quot; target=&quot;blank&quot;&gt;CherryTomato&lt;/a&gt;
+(Pomodoro means Tomato in Italian).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/cherrytomato_screenshot.png&quot; alt=&quot;CherryTomato home&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;architecture&quot;&gt;Architecture&lt;/h3&gt;
+&lt;p&gt;It started out with simple CoffeeScript file that runs and stops the timer and
+served it in a Sinatra app. Then added some more stuff along the way. Besides
+being a simple web app, the reason why I started with Sinatra was that I wanted
+to get out from under Rails umbrella and try some other alternatives for the
+web in Ruby. Of course, this comes with a lot of tradeoffs. Rails embraces the
+convention over configuration philosophy which makes it super easy to setup new
+applications and get to the work quickly. To try something different, I had to
+have some kind of a shift in mind. I also needed to write some bootstrapping
+scripts in order to glue the different components of my app together.&lt;/p&gt;
+
+&lt;p&gt;The architecture is a bit different from the normal MVC Rails-y way. It
+resembles the structure of a normal Ruby gem where the main logic in the app
+lives under &lt;code class=&quot;highlighter-rouge&quot;&gt;lib/&lt;/code&gt; directory whereas the application routes and views are in
+&lt;code class=&quot;highlighter-rouge&quot;&gt;app/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The application layer consists of a single file that defines all the routes to
+the web app. It contains the logic that authorizes the users from Twitter and
+routes them to the home page. It calls two helper classes; one to load the
+assets, and another to configure user sessions.&lt;/p&gt;
+
+&lt;p&gt;For the persistence layer, I used &lt;a href=&quot;http://rom-rb.org/&quot; target=&quot;blank&quot;&gt;rom-rb&lt;/a&gt;
+which philosophy is to decouple different responsibilities and distribute them
+over many components/layers. I had to write a wrapper to load the database
+settings and connect ROM to PostgreSQL. I also wrote a simple method to run the
+migrations.&lt;/p&gt;
+
+&lt;p&gt;Currently, I’m using Heroku experimental tier to host the app. The source code
+is on
+&lt;a href=&quot;https://github.com/aaooki/CherryTomato&quot; target=&quot;blank&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Dec 2016 00:00:00 +0200</pubDate>
+        <link>aaooki.github.io/blog/cherrytomato</link>
+        <guid isPermaLink="true">aaooki.github.io/blog/cherrytomato</guid>
+        
+        <category>time,</category>
+        
+        <category>management,</category>
+        
+        <category>pomodoro_technique</category>
+        
+        
+        <category>Projects</category>
+        
+      </item>
     
       <item>
         <title>The One Year Old Bug</title>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>I Took Some Time to Create a Time Organizer | aaooki</title>
+  <meta name="description" content="Im my quest of finding the ultimate productivity framework, I come across thePomodoro technique.The basic idea behind it is to divide the work into equal chu...">
+
+  <link rel="canonical" href="aaooki.github.io/blog/cherrytomato">
+  <link rel="alternate" type="application/rss+xml" title="aaooki" href="aaooki.github.io/feed.xml">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/aaooki-logo.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/aaooki-logo.png" />
+
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <script type="text/javascript" src="/assets/main.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-88759965-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+
+  <body>
+
+    <header>
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+      <ul class="title-area">
+        <li class="name">
+          <h1 id="topbar-title"><a href="/">aaooki</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a><span></span></a></li>
+      </ul>
+
+      <!-- Right Nav Section -->
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="/about">about</a></li>
+          <li><a href="https://twitter.com/aaooki" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://github.com/aaooki" target="_blank"><i class="fa fa-github"></i></a></li>
+          <li><a href="mailto:aaooki7@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </section>
+
+    </nav>
+  </div>
+</header>
+
+
+    <div class="row">
+      <div class="medium-10 large-9 medium-centered large-centered columns" role="content">
+        <article>
+  <div class="en-text">
+    <div class="row">
+      <div class="large-12 columns text-center">
+        <h3>I Took Some Time to Create a Time Organizer <small>Projects</small></h3>
+        <br>
+
+        <div class="post-sub-info">
+          <h5><span>December 21, 2016</span></h5>
+        </div>
+
+      </div>
+    </div>
+
+    <br><br>
+
+    <p>Im my quest of finding the ultimate productivity framework, I come across the
+<a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="blank">Pomodoro technique</a>.
+The basic idea behind it is to divide the work into equal chunks of time and
+take a small break after each set. Usually it goes by working for 25 minutes in
+complete concentration, taking a 5 minutes break and repeating the cycle until
+the the task is completed.</p>
+
+<h3 id="motivation">Motivation</h3>
+<p>It was the beginning of January this year when I decided to use the Pomodoro
+technique to help me study for my finals. However, I could not find a web app
+with a simple interface to use and thought it would be a good practice to build
+it. I remeber it was right before the start of my odd semester final exams when
+I started the project. As you know, finals is the time in which you can achieve
+all what you wanted since the beginning of the semester, except studying of
+course. Having built the app, it actually came of a great help. In fact I’m
+using it right now as I’m writing this post (took me 5 sets to finish it).</p>
+
+<p>I kept in mind to keep the interface as simple as possible. The home page is
+where you can start/stop the timer. There’s also a tracker page where you can
+keep track of your sets.
+I named it <a href="http://cherrytomato.herokuapp.com/" target="blank">CherryTomato</a>
+(Pomodoro means Tomato in Italian).</p>
+
+<p><img src="/public/images/cherrytomato_screenshot.png" alt="CherryTomato home" /></p>
+
+<h3 id="architecture">Architecture</h3>
+<p>It started out with simple CoffeeScript file that runs and stops the timer and
+served it in a Sinatra app. Then added some more stuff along the way. Besides
+being a simple web app, the reason why I started with Sinatra was that I wanted
+to get out from under Rails umbrella and try some other alternatives for the
+web in Ruby. Of course, this comes with a lot of tradeoffs. Rails embraces the
+convention over configuration philosophy which makes it super easy to setup new
+applications and get to the work quickly. To try something different, I had to
+have some kind of a shift in mind. I also needed to write some bootstrapping
+scripts in order to glue the different components of my app together.</p>
+
+<p>The architecture is a bit different from the normal MVC Rails-y way. It
+resembles the structure of a normal Ruby gem where the main logic in the app
+lives under <code class="highlighter-rouge">lib/</code> directory whereas the application routes and views are in
+<code class="highlighter-rouge">app/</code>.</p>
+
+<p>The application layer consists of a single file that defines all the routes to
+the web app. It contains the logic that authorizes the users from Twitter and
+routes them to the home page. It calls two helper classes; one to load the
+assets, and another to configure user sessions.</p>
+
+<p>For the persistence layer, I used <a href="http://rom-rb.org/" target="blank">rom-rb</a>
+which philosophy is to decouple different responsibilities and distribute them
+over many components/layers. I had to write a wrapper to load the database
+settings and connect ROM to PostgreSQL. I also wrote a simple method to run the
+migrations.</p>
+
+<p>Currently, I’m using Heroku experimental tier to host the app. The source code
+is on
+<a href="https://github.com/aaooki/CherryTomato" target="blank">GitHub</a>.</p>
+
+
+    <br>
+    <div class="medium-8 medium-centered large-6 large-centered columns">
+  <ul class="inline-list" id="social-buttons">
+    <!-- Facebook -->
+    <li class="facebook"><a href="http://www.facebook.com/sharer.php?t=I Took Some Time to Create a Time Organizer&u=aaooki.github.io/blog/cherrytomato" target="_blank"><i class="fa fa-facebook-official fa-lg"></i></a></li>
+    <!-- Twitter -->
+    <li class="twitter"><a href="http://twitter.com/share?url=http://aaooki.github.io/blog/cherrytomato&text=I Took Some Time to Create a Time Organizer&hashtags=time,management,pomodoro_technique&via=aaooki" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+    <!-- Reddit -->
+    <li class="reddit"><a href="http://reddit.com/submit?url=http://aaooki.github.io/blog/cherrytomato&title=I Took Some Time to Create a Time Organizer" target="_blank"><i class="fa fa-reddit fa-lg"></i></a></li>
+    <!-- LinkedIn -->
+    <li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&title=I Took Some Time to Create a Time Organizer&url=http://aaooki.github.io/blog/cherrytomato" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+    <!-- Google+ -->
+    <li class="google-plus"><a href="https://plus.google.com/share?url=http://aaooki.github.io/blog/cherrytomato" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
+    <!-- Pocket -->
+    <li class="pocket"><a href="https://getpocket.com/save?url=aaooki.github.io/blog/cherrytomato&title=I Took Some Time to Create a Time Organizer" target="_blank"><i class="fa fa-get-pocket fa-lg"></i></a></li>
+  </ul>
+</div>
+
+
+    <br>
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//aaooki.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+
+
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/main_end.js"></script>
+
+  </body>
+
+</html>
