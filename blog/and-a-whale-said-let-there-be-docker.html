@@ -33,49 +33,34 @@
 
   <body>
 
-    <header>
-  <div class="contain-to-grid">
-    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-      <ul class="title-area">
-        <li class="name">
-          <h1 id="topbar-title"><a href="/">aaooki</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a><span></span></a></li>
-      </ul>
-
-      <!-- Right Nav Section -->
-      <section class="top-bar-section">
-        <ul class="right">
-          <li><a href="/about">about</a></li>
-          <li><a href="https://twitter.com/aaooki" target="_blank"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="https://github.com/aaooki" target="_blank"><i class="fa fa-github"></i></a></li>
-          <li><a href="mailto:aaooki7@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-        </ul>
-      </section>
-
-    </nav>
+    <div class="navbar">
+  <div class="title">
+    <a href="/">aaooki</a>
   </div>
-</header>
+
+  <ul class="right">
+    <li><a href="/about">about</a></li>
+    <li><a href="https://twitter.com/aaooki" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://github.com/aaooki" target="_blank"><i class="fa fa-github"></i></a></li>
+    <li><a href="mailto:aaooki7@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+  </ul>
+</div>
 
 
     <div class="row">
-      <div class="medium-10 large-9 medium-centered large-centered columns" role="content">
+      <div class="col-7 col-m-8 center" role="content">
         <article>
-  <div class="en-text">
-    <div class="row">
-      <div class="large-12 columns text-center">
-        <h3>And a Whale Said Let There Be Docker <small>Tools</small></h3>
-        <br>
-
-        <div class="post-sub-info">
-          <h5><span>August 15, 2015</span></h5>
-        </div>
-
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="post__en-title">
+        <h3>And a Whale Said Let There Be Docker <small class="post__category">Tools</small></h3>
       </div>
+
+      <h5><span>August 15, 2015</span></h5>
     </div>
+  </div>
 
-    <br><br>
-
+  <div lang="en">
     <p>Every time I had to work on a new machine or I wanted to try a new technology,
 I used to install a lot of packages and libraries to prepare my development
 environment. I always struggled to manage dependencies and different versions of
@@ -166,29 +151,23 @@ the app to MySQL databse image. I run the app with a very simple command:</p>
 <p>You can find the full project along with Docker and docker-compose files
 <a href="https://bitbucket.org/aaooki/bshop" target="_blank">here</a>.</p>
 
+  </div>
 
-    <br>
-    <div class="medium-8 medium-centered large-6 large-centered columns">
-  <ul class="inline-list" id="social-buttons">
-    <!-- Facebook -->
-    <li class="facebook"><a href="http://www.facebook.com/sharer.php?t=And a Whale Said Let There Be Docker&u=aaooki.github.io/blog/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-facebook-official fa-lg"></i></a></li>
-    <!-- Twitter -->
-    <li class="twitter"><a href="http://twitter.com/share?url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker&text=And a Whale Said Let There Be Docker&hashtags=docker,linux,containers&via=aaooki" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
-    <!-- Reddit -->
-    <li class="reddit"><a href="http://reddit.com/submit?url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker&title=And a Whale Said Let There Be Docker" target="_blank"><i class="fa fa-reddit fa-lg"></i></a></li>
-    <!-- LinkedIn -->
-    <li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&title=And a Whale Said Let There Be Docker&url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
-    <!-- Google+ -->
-    <li class="google-plus"><a href="https://plus.google.com/share?url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
-    <!-- Pocket -->
-    <li class="pocket"><a href="https://getpocket.com/save?url=aaooki.github.io/blog/and-a-whale-said-let-there-be-docker&title=And a Whale Said Let There Be Docker" target="_blank"><i class="fa fa-get-pocket fa-lg"></i></a></li>
+  <br>
+  <div class="col-5 center">
+  <ul class="social">
+    <li><a id="twitter" href="http://twitter.com/share?url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker&text=And a Whale Said Let There Be Docker&hashtags=docker,linux,containers&via=aaooki" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+    <li><a id="reddit" href="http://reddit.com/submit?url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker&title=And a Whale Said Let There Be Docker" target="_blank"><i class="fa fa-reddit fa-lg"></i></a></li>
+    <li><a id="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&title=And a Whale Said Let There Be Docker&url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+    <li><a id="google-plus" href="https://plus.google.com/share?url=http://aaooki.github.io/blog/and-a-whale-said-let-there-be-docker" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a></li>
+    <li><a id="pocket" href="https://getpocket.com/save?url=aaooki.github.io/blog/and-a-whale-said-let-there-be-docker&title=And a Whale Said Let There Be Docker" target="_blank"><i class="fa fa-get-pocket fa-lg"></i></a></li>
   </ul>
 </div>
 
 
-    <br>
+  <br>
 
-    <div id="disqus_thread"></div>
+  <div id="disqus_thread"></div>
 <script>
 
 /**
@@ -210,14 +189,10 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                                 
 
-
-  </div>
 </article>
 
       </div>
     </div>
-
-    <script type="text/javascript" src="/assets/main_end.js"></script>
 
   </body>
 
