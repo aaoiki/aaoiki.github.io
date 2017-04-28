@@ -22,10 +22,6 @@ g,0<d.length&&(d=Ba[d[0]])&&(a.c[e]=d))}a.c[e]||(d=Ba[e])&&(a.c[e]=d);for(d=0;d<
   WebFont.load({
     google: {
       families: ['Open+Sans:400,400i,600', 'Amiri:400,700', 'Ubuntu+Mono:400,400i']
-    },
-    custom: {
-      families: ['font-awesome'],
-      urls: ['https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css']
     }
   });
 
