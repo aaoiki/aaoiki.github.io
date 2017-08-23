@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Connect Ruby to PostgreSQL | ahmds</title>
+  <title>Inserting Bulk Data Into Postgres Using Ruby | ahmds</title>
   <meta name="description" content="I had this task where it was required to generate a lot of data into apostgreSQL database and perform some queries on the generated data. So this isgoing to ...">
 
-  <link rel="canonical" href="yahmds.github.io/blog/connect-ruby-to-postgreSQL">
+  <link rel="canonical" href="yahmds.github.io/blog/inserting-bulk-data-into-pg">
   <link rel="alternate" type="application/rss+xml" title="ahmds" href="yahmds.github.io/feed.xml">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/yahmds-logo.png" />
@@ -50,7 +50,7 @@
   <div class="row">
     <div class="col-12 text-center">
       <div class="post__en-title">
-        <h3>Connect Ruby to PostgreSQL <small class="post__category">Performance</small></h3>
+        <h3>Inserting Bulk Data Into Postgres Using Ruby <small class="post__category">Performance</small></h3>
       </div>
 
       <h5><span>June 1, 2015</span></h5>
@@ -161,7 +161,7 @@ My original script contained this part:</p>
   <span class="c1"># array of random names</span>
   <span class="n">name_array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Shinichi'</span><span class="p">,</span> <span class="s1">'Nitrogen'</span><span class="p">,</span> <span class="s1">'Yan'</span><span class="p">,</span> <span class="s1">'Itachi'</span><span class="p">,</span> <span class="s1">'Kurosan'</span><span class="p">,</span>
                 <span class="s1">'Tamashii'</span><span class="p">,</span> <span class="s1">'Ben'</span><span class="p">,</span> <span class="s1">'Owen'</span><span class="p">,</span> <span class="s1">'Ror'</span><span class="p">,</span> <span class="s1">'Bo'</span><span class="p">,</span> <span class="s1">'Yama'</span><span class="p">,</span> <span class="s1">'Kaminari'</span><span class="p">,</span>
-                <span class="s1">'Kintama'</span><span class="p">,</span> <span class="s1">'Sasuke'</span><span class="p">,</span> <span class="s1">'aaoiki'</span><span class="p">,</span> <span class="s1">'Leila'</span><span class="p">,</span> <span class="s1">'Xou'</span><span class="p">,</span> <span class="s1">'Xubuntu'</span><span class="p">,</span>
+                <span class="s1">'Kintama'</span><span class="p">,</span> <span class="s1">'Sasuke'</span><span class="p">,</span> <span class="s1">'Ali'</span><span class="p">,</span> <span class="s1">'Leila'</span><span class="p">,</span> <span class="s1">'Xou'</span><span class="p">,</span> <span class="s1">'Xubuntu'</span><span class="p">,</span>
                 <span class="s1">'Gnomy'</span><span class="p">,</span> <span class="s1">'Lolly'</span><span class="p">,</span> <span class="s1">'Gintoki'</span><span class="p">,</span> <span class="s1">'Kogami'</span><span class="p">,</span> <span class="s1">'Kurotora'</span><span class="p">,</span> <span class="s1">'Matz'</span><span class="p">,</span>
                 <span class="s1">'Yuki'</span><span class="p">,</span> <span class="s1">'Yumi'</span><span class="p">,</span> <span class="s1">'Kakashi'</span><span class="p">,</span> <span class="s1">'Naruto'</span><span class="p">,</span> <span class="s1">'K.O.'</span><span class="p">,</span> <span class="s1">'Gohan'</span><span class="p">,</span>
                 <span class="s1">'Kagura'</span><span class="p">,</span> <span class="s1">'Kuroon'</span><span class="p">,</span> <span class="s1">'Ran'</span><span class="p">,</span> <span class="s1">'Aurora'</span><span class="p">,</span> <span class="s1">'Conan'</span><span class="p">,</span> <span class="s1">'Kudo'</span><span class="p">,</span>
@@ -282,7 +282,7 @@ as required in the task:</p>
 <h3 id="other-solutions">Other Solutions?</h3>
 <p>There might be other good solutions. One solution is to generate data into a
 CSV file then copy it to the real tables. If you have any good solutions, please
-let me know in the comments =)</p>
+let me know.</p>
 
 <h3 id="resources">Resources</h3>
 
@@ -299,27 +299,27 @@ let me know in the comments =)</p>
   <div class="col-5 center">
   <ul class="social">
     <li>
-      <a id="twitter" href="http://twitter.com/share?url=http://yahmds.github.io/blog/connect-ruby-to-postgreSQL&text=Connect Ruby to PostgreSQL&hashtags=ruby,postgresql&via=yahmds" target="_blank">
+      <a id="twitter" href="http://twitter.com/share?url=http://yahmds.github.io/blog/inserting-bulk-data-into-pg&text=Inserting Bulk Data Into Postgres Using Ruby&hashtags=ruby,postgresql&via=yahmds" target="_blank">
         <svg><use xlink:href="/assets/icons-sprite.svg#icon-twitter"></use></svg>
       </a>
     </li>
     <li>
-      <a id="reddit" href="http://reddit.com/submit?url=http://yahmds.github.io/blog/connect-ruby-to-postgreSQL&title=Connect Ruby to PostgreSQL" target="_blank">
+      <a id="reddit" href="http://reddit.com/submit?url=http://yahmds.github.io/blog/inserting-bulk-data-into-pg&title=Inserting Bulk Data Into Postgres Using Ruby" target="_blank">
         <svg><use xlink:href="/assets/icons-sprite.svg#icon-reddit"></use></svg>
       </a>
     </li>
     <li>
-      <a id="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&title=Connect Ruby to PostgreSQL&url=http://yahmds.github.io/blog/connect-ruby-to-postgreSQL" target="_blank">
+      <a id="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&title=Inserting Bulk Data Into Postgres Using Ruby&url=http://yahmds.github.io/blog/inserting-bulk-data-into-pg" target="_blank">
         <svg><use xlink:href="/assets/icons-sprite.svg#icon-linkedin"></use></svg>
       </a>
     </li>
     <li>
-      <a id="googleplus" href="https://plus.google.com/share?url=http://yahmds.github.io/blog/connect-ruby-to-postgreSQL" target="_blank">
+      <a id="googleplus" href="https://plus.google.com/share?url=http://yahmds.github.io/blog/inserting-bulk-data-into-pg" target="_blank">
         <svg><use xlink:href="/assets/icons-sprite.svg#icon-googleplus"></use></svg>
       </a>
     </li>
     <li>
-      <a id="pocket" href="https://getpocket.com/save?url=yahmds.github.io/blog/connect-ruby-to-postgreSQL&title=Connect Ruby to PostgreSQL" target="_blank">
+      <a id="pocket" href="https://getpocket.com/save?url=yahmds.github.io/blog/inserting-bulk-data-into-pg&title=Inserting Bulk Data Into Postgres Using Ruby" target="_blank">
         <svg><use xlink:href="/assets/icons-sprite.svg#icon-pocket"></use></svg>
       </a>
     </li>

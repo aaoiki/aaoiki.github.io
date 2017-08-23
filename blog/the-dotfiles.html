@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>The Dotfiles | ahmds</title>
-  <meta name="description" content="One of the three great virtues of a programmer is laziness.Programming calls for replacing repetitive work with automated tasks.We, programmers, create frame...">
+  <meta name="description" content="One of the three great virtues of a programmer is lazinessand it’s actually culturally acceptable that programmers are lazy by nature(not judging). Programme...">
 
   <link rel="canonical" href="yahmds.github.io/blog/the-dotfiles">
   <link rel="alternate" type="application/rss+xml" title="ahmds" href="yahmds.github.io/feed.xml">
@@ -58,47 +58,55 @@
   </div>
 
   <div lang="en">
-    <p><a href="http://threevirtues.com/" target="blank">One of the three great virtues of a programmer is laziness</a>.
-Programming calls for replacing repetitive work with automated tasks.
-We, programmers, create frameworks, CLI tools,
-<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="blank">software engineering principles</a>,
-and helper methods only to avoid repeating our work.</p>
+    <p><a href="http://threevirtues.com/" target="blank">One of the three great virtues of a programmer is laziness</a>
+and it’s actually culturally acceptable that programmers are lazy by nature
+(not judging). Programmers write software to replace mundane and repetitive
+tasks and let their computers work for them instead, and that’s why, programmers have ever
+since created so many frameworks [aframeworkeveryday.js], libraries,
+and even <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="blank">practices</a>
+only to avoid repeating work (or doing it altogether).</p>
 
-<p><a href="https://vimeo.com/158129287" target="blank">In this realm of eternal laziness</a>,
-programmers package their environment settings and configuration files and
-bootstrap them into a single package that needs only one or few commands to
-install. That is called the dotfiles!</p>
+<p>And <a href="https://vimeo.com/158129287" target="blank">in this realm of eternal laziness</a>,
+programmers make backups of their system settings and coding environment, and
+write scripts to bootstrap and link their configuration files so they can
+easily setup and share them on other machines. These packages are know among
+programmers as dotfiles!</p>
 
 <h3 id="what-are-they">What are they?</h3>
-<p>First of all what is a dotfile? A dotfile, in Unix-like systems, is a file that
-starts with a dot/period and hence the name. They resemble hidden files in
-Windows environment. If you are coming from a Unix-like system, you will find
-some dotfiles in your home directory by doing an <code class="highlighter-rouge">$ ls -a ~</code>. These are mostly
-configuration files. You can view them in Ubuntu file manager (might change for
-different file managers) by pressing <code class="highlighter-rouge">Ctrl+H</code>.</p>
+<p>First of all, what is a dotfile you may ask? A dotfile, in Unix-like systems,
+is a file that starts with a dot/period and hence the name. They resemble
+hidden files in Windows systems. If you are coming from a Unix-like system, you
+will find some dotfiles in your home directory by performing an <code class="highlighter-rouge">$ ls -a ~</code> in
+a terminal. These are mostly configuration files. You can view them in Gnome
+file manager (might have a different keymap for other file managers) by
+pressing <code class="highlighter-rouge">Ctrl+H</code>.</p>
 
 <h3 id="up-to-the-point">Up to the Point</h3>
 <p>I’ve had <a href="https://github.com/yahmds/aaku" target="blank">my dotfiles</a> for
-quite some time. Every once in a while, I used to refactor them, change how
-they look, or completely change the way they were linked.  More recently, I
-noticed that my shell was pretty slow on startup. I used
-<a href="https://github.com/robbyrussell/oh-my-zsh" target="blank">Oh-My-Zsh!</a> back
-then which was awesome but, as mentioned, a bit slow. I then wanted to give
-<a href="https://github.com/sorin-ionescu/prezto" target="blank">Prezto</a> a try.
-Prezto was more convenient for me and faster but still it contained a lot of
-stuff that I never used. Eventually, I ended up writing my Zsh configuration
-from scratch.</p>
+quite some time. Every once in a while, I refactor them, change them
+consistently to suit my uses, or sometimes, I completely change the way they
+are bootstrapped.</p>
 
-<p>There’s a kind of philosophy here between whether you should
+<p>More recently, I noticed that my shell was pretty slow on startup. I was using
+<a href="https://github.com/robbyrussell/oh-my-zsh" target="blank">Oh-My-Zsh</a> back
+then and it was great but, as I mentioned, a bit slow. I wanted to give
+<a href="https://github.com/sorin-ionescu/prezto" target="blank">Prezto</a> a try around
+that time. And I did!  Prezto was more convenient for me, a little smaller than
+Oh-My-Zsh, and faster but still, it shipped with a lot of plugins and
+configurations that I never used (or never knew about as far as I’m concerned).
+Eventually, I ended up writing my ZSH configuration from scratch.</p>
+
+<p>There’s a kind of a division here between whether you should
 <a href="https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/" target="blank">fork someone else’s dotfiles and build up from there</a>
-or start from scratch. However, it’s all about personal taste and needs.</p>
+or start from scratch. In the end, it’s all about personal taste and needs.</p>
 
 <h3 id="good-tools-do-not-make-a-good-carpenter">Good Tools Do Not Make a Good Carpenter</h3>
-<p>After I had made a lot of changes and rewritten almost everything, it kind of
-felt like I became obsessed with my dotfiles and how they looked instead of
-actually getting the real stuff done (A.K.A., using them for programming). This
-is a slippery slope. However important it is to prepare and sharpen the tools
-needed for a job, it should not replace the actual work.</p>
+<p>I have spent (and still spend) a lot of time changing and tweaking my
+environment to my taste and it may look like an obsessions (it probably is),
+let’s not forget one important thing here: using these tools to practice and
+write software is actually more important than the tools themselves.  Although
+I take a great pride in my configurations and tools, I believe it is a slippery
+slope to let a subtask take over your time and replace the actual work.</p>
 
 <blockquote lang="ar">
   <p>
@@ -110,11 +118,11 @@ needed for a job, it should not replace the actual work.</p>
 <p>There’s a story told about
 <a href="https://en.wikipedia.org/wiki/Al-Shafi%E2%80%98i" target="blank">Al-Shafi‘i</a>,
 a Muslim scholar, jurist, and poet who lived in the 8th century, that he had to
-take long walks in order to get to his lectures and classes. He said “How can
-I focus on my studies if I don’t have a donkey to ride?!” and bought himself a
+take long walks in order to get to his lectures and classes. He said: “How could
+I pay attention to my classes if I didn’t have a donkey?!” and bought himself a
 donkey. The story goes that after sometime, Al-Shafi‘i became very occupied
-taking care of his donkey cleaning and feeding it so he said: “How can I
-focus on my studies if I have a donkey?!”.</p>
+taking care of his donkey cleaning and feeding it that he said: “How could I
+pay attention to my classes if I had a donkey?!”.</p>
 
   </div>
 
