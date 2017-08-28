@@ -6,8 +6,8 @@
 </description>
     <link>yahmds.github.io/</link>
     <atom:link href="yahmds.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Aug 2017 00:21:21 +0200</pubDate>
-    <lastBuildDate>Mon, 28 Aug 2017 00:21:21 +0200</lastBuildDate>
+    <pubDate>Mon, 28 Aug 2017 09:16:50 +0200</pubDate>
+    <lastBuildDate>Mon, 28 Aug 2017 09:16:50 +0200</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -85,9 +85,8 @@ is on
       <item>
         <title>The One Year Old Bug</title>
         <description>&lt;p&gt;I’ve been revisiting my old repositories on GitHub recently to make sure they
-are still relevant and, as a side note, to remove the embarassing parts in the
-code. One of the projects I looked into was
-&lt;a href=&quot;https://github.com/yahmds/margopher/&quot;&gt;margopher&lt;/a&gt; which I started back in
+are still relevant and to clean up the code. One of the projects I looked into
+was &lt;a href=&quot;https://github.com/yahmds/margopher/&quot;&gt;margopher&lt;/a&gt; which I started back in
 August 2015. I only removed some unused code, and updated the README page after
 which I decided to follow the usage instructions just to make sure everything
 was okay. This was when I found out that when I created and used a margopher
@@ -236,9 +235,10 @@ but Docker became sort of the hype these days.
 I wanted to give it a try anyway specially after
 &lt;a href=&quot;https://twitter.com/cousine&quot;&gt;@cousine&lt;/a&gt; had recommended using Docker for me.&lt;/p&gt;
 
-&lt;p&gt;So I started this weekend by installing a new version of the beautiful distro
-&lt;a href=&quot;https://elementary.io/&quot;&gt;Elementary OS&lt;/a&gt; and &lt;a href=&quot;docker.io&quot;&gt;Docker&lt;/a&gt;, and set up my
-&lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; on my main development laptop.&lt;/p&gt;
+&lt;p&gt;So I started this weekend by installing a new version of &lt;a href=&quot;https://elementary.io/&quot;&gt;Elementary
+OS&lt;/a&gt; and &lt;a href=&quot;docker.io&quot;&gt;Docker&lt;/a&gt;, and set up my
+&lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; on my main development
+laptop.&lt;/p&gt;
 
 &lt;p&gt;You can install and use any of the available packages on your machine using
 Docker images from database servers to frameworks or tools like Nodejs or
@@ -247,14 +247,14 @@ different kinds of images for my local development&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/images/docker_images_screenshot.png&quot; alt=&quot;Docker images&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;As Docker is often used for deployment and packaging dependencies,
-it could also be used for local development.
-This is about satisfying the perfectionist side in me ೕ(•̀ᴗ•́).&lt;/p&gt;
+&lt;p&gt;As Docker is often used for deployment and packaging dependencies, it could
+also be used for local development.  This is about satisfying the perfectionist
+in me.&lt;/p&gt;
 
 &lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
 &lt;p&gt;I use &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; to generate this blog.
 Before Docker, I had to install a Ruby version manager such as rbenv, Ruby, RubyGems, and Jekyll
-just to start blogging. But now all I do is this:&lt;/p&gt;
+just to start blogging. But now all I do is just this:&lt;/p&gt;
 
 &lt;h4 id=&quot;1-install-docker&quot;&gt;1. Install Docker&lt;/h4&gt;
 
@@ -286,10 +286,8 @@ just to start blogging. But now all I do is this:&lt;/p&gt;
   &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Now if you open &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0:4000&lt;/code&gt; in the browser, you’ll find your blog
+&lt;p&gt;Now if you open &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0:4000&lt;/code&gt; in a browser, you’ll find your blog
   working just fine.&lt;/p&gt;
-
-&lt;p&gt;That’s it, as easy as that (★^O^★)&lt;/p&gt;
 
 &lt;h3 id=&quot;more-practical-example&quot;&gt;More Practical Example&lt;/h3&gt;
 &lt;p&gt;I had a PHP web project for first time so I searched for PHP and Apache Docker
