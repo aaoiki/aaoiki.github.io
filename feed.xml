@@ -6,19 +6,19 @@
 </description>
     <link>yahmds.github.io/</link>
     <atom:link href="yahmds.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Sep 2017 15:51:47 +0200</pubDate>
-    <lastBuildDate>Sun, 10 Sep 2017 15:51:47 +0200</lastBuildDate>
+    <pubDate>Sun, 10 Sep 2017 16:08:58 +0200</pubDate>
+    <lastBuildDate>Sun, 10 Sep 2017 16:08:58 +0200</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
         <title>Go For Competitive Programming</title>
         <description>&lt;p&gt;I first started writing Go during my time at UserTalk and have been using it
-occasionaly since then. Mostly because of its minimal syntax and standard
-library that makes it a great language for writing almost any kind of software.&lt;/p&gt;
+occasionaly since then because of its minimal syntax and standard library that
+makes it a great language for writing almost any kind of software.&lt;/p&gt;
 
 &lt;p&gt;Whenever I’m solving a competitive programming problem, I usually use C or C++
-(whichever works best) to write the solution. Mainly because they both are
-supported by most online judges and programming contests.&lt;/p&gt;
+(whichever works best) to write the solution mainly because they are both
+supported by almost all online judges and programming contests.&lt;/p&gt;
 
 &lt;p&gt;Moreover, I was recently solving a problem on HackerRank and decided to write
 the solution in C. The problem was quite easy but my solution always resulted
