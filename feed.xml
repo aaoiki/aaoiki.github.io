@@ -6,9 +6,55 @@
 </description>
     <link>yahmds.github.io/</link>
     <atom:link href="yahmds.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Aug 2017 09:16:50 +0200</pubDate>
-    <lastBuildDate>Mon, 28 Aug 2017 09:16:50 +0200</lastBuildDate>
+    <pubDate>Sun, 10 Sep 2017 15:51:47 +0200</pubDate>
+    <lastBuildDate>Sun, 10 Sep 2017 15:51:47 +0200</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Go For Competitive Programming</title>
+        <description>&lt;p&gt;I first started writing Go during my time at UserTalk and have been using it
+occasionaly since then. Mostly because of its minimal syntax and standard
+library that makes it a great language for writing almost any kind of software.&lt;/p&gt;
+
+&lt;p&gt;Whenever I’m solving a competitive programming problem, I usually use C or C++
+(whichever works best) to write the solution. Mainly because they both are
+supported by most online judges and programming contests.&lt;/p&gt;
+
+&lt;p&gt;Moreover, I was recently solving a problem on HackerRank and decided to write
+the solution in C. The problem was quite easy but my solution always resulted
+in a Segmentation Fault. Here’s a
+&lt;a href=&quot;https://www.hackerrank.com/challenges/dynamic-array&quot;&gt;link&lt;/a&gt; to the problem if
+you’re asking.
+Luckily, I found out that I could submit the solution in Go, besides other
+languages. So after +30 failed submissions (and out of frustration), I decided
+to translate the C code to Go and boom, it passed all the test cases
+flawlessly.  Go being garbage collected here, unlike C, makes it really easy to
+focus on the solution and leave the task of memory management to the compiler.
+Also, by having a strong standard library, the number of lines in the Go solution
+is about half the number of lines in the C code.  Here’s a screenshot comparing
+the two:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/go_for_cp-go_vs_c.png&quot; alt=&quot;Go vs. C screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Go is minimal, concise, has a huge standard library, performs fast, backed by a
+company like Google, has a growing community, and many online judges already
+support Go on their platforms. Even though writing Go might require some mind
+shift, a programmer can easily adjust themselves to that. I think it’s time for
+the ACM organization to consider it as an official language in the coming ICPC
+contests.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 10 Sep 2017 00:00:00 +0200</pubDate>
+        <link>yahmds.github.io/blog/go-for-cp</link>
+        <guid isPermaLink="true">yahmds.github.io/blog/go-for-cp</guid>
+        
+        <category>Go,</category>
+        
+        <category>CP</category>
+        
+        
+        <category>CP</category>
+        
+      </item>
     
       <item>
         <title>I Took Some Time to Create a Time Organizer</title>
@@ -150,7 +196,7 @@ only to avoid repeating work (or doing it altogether).&lt;/p&gt;
 &lt;p&gt;And &lt;a href=&quot;https://vimeo.com/158129287&quot; target=&quot;blank&quot;&gt;in this realm of eternal laziness&lt;/a&gt;,
 programmers make backups of their system settings and coding environment, and
 write scripts to bootstrap and link their configuration files so they can
-easily setup and share them on other machines. These packages are know among
+easily setup and share them on other machines. These packages are known among
 programmers as dotfiles!&lt;/p&gt;
 
 &lt;h3 id=&quot;what-are-they&quot;&gt;What are they?&lt;/h3&gt;
