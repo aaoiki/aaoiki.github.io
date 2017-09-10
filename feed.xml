@@ -6,8 +6,8 @@
 </description>
     <link>yahmds.github.io/</link>
     <atom:link href="yahmds.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Sep 2017 17:03:28 +0200</pubDate>
-    <lastBuildDate>Sun, 10 Sep 2017 17:03:28 +0200</lastBuildDate>
+    <pubDate>Sun, 10 Sep 2017 17:06:53 +0200</pubDate>
+    <lastBuildDate>Sun, 10 Sep 2017 17:06:53 +0200</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
@@ -371,7 +371,7 @@ the app to MySQL databse image. I run the app with a very simple command:&lt;/p&
       </item>
     
       <item>
-        <title>Inserting Bulk Data Into Postgres Using Ruby</title>
+        <title>Inserting Bulk Data into Postgres Using Ruby</title>
         <description>&lt;p&gt;I had this task where it was required to generate a lot of data into a
 postgreSQL database and perform some queries on the generated data. So this is
 going to be some kind of a crash course on Ruby and postgreSQL (and some
