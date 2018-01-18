@@ -4,7 +4,7 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
-BUILD_PATH = "yahmds.github.io"
+BUILD_PATH = "aonemd.github.io"
 
 task default: %w[publish]
 
