@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Inserting Bulk Data into Postgres Using Ruby | aonemd</title>
-  <meta name="description" content="I had this task where it was required to generate a lot of data into apostgreSQL database and perform some queries on the generated data. So this isgoing to ...">
+    <title>Inserting Bulk Data into Postgres Using Ruby | aonemd</title>
+    <meta name="description" content="I had this task where it was required to generate a lot of data into apostgreSQL database and perform some queries on the generated data. So this isgoing to ...">
+    <link rel="canonical" href="aonemd.github.io/blog/inserting-bulk-data-into-pg">
+    <link rel="alternate" type="application/rss+xml" title="aonemd" href="aonemd.github.io/feed.xml">
 
-  <link rel="canonical" href="aonemd.github.io/blog/inserting-bulk-data-into-pg">
-  <link rel="alternate" type="application/rss+xml" title="aonemd" href="aonemd.github.io/feed.xml">
-
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/yahmds-logo.png" />
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/yahmds-logo.png" />
-
-  <link type="text/css" rel="stylesheet" href="/assets/main.css">
-</head>
+    <link rel="shortcut icon" type="image/x-icon" href="/public/aonemd-logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/aonemd-logo.png" />
+  </head>
 
   <body>
     <div class="navbar">
@@ -27,30 +24,28 @@
     <li><a href="/about">about</a></li>
     <li>
       <a href="https://twitter.com/aonemd" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-twitter"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
       </a>
     </li>
     <li>
       <a href="https://github.com/aonemd" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-github"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg#icon-github"></use></svg>
       </a>
     </li>
     <li>
       <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-mail"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg#icon-mail"></use></svg>
       </a>
     </li>
   </ul>
 </div>
 
 
-    <div class="row">
-      <div class="col-7 col-m-8 center" role="content">
-        <article>
+    <article>
   <div class="row">
     <div class="col-12 text-center">
-      <div class="post__en-title">
-        <h3>Inserting Bulk Data into Postgres Using Ruby <small class="post__category">Performance</small></h3>
+      <div class="view-post__en--title">
+        <h2>Inserting Bulk Data into Postgres Using Ruby <small class="view-post__category">Performance</small></h2>
       </div>
 
       <h5><span>June 1, 2015</span></h5>
@@ -58,8 +53,8 @@
   </div>
 
   <div class="row">
-    <div class="col-10 center">
-      <div lang="en">
+    <div class="col-6 center">
+      <div lang='en'>
         <p>I had this task where it was required to generate a lot of data into a
 postgreSQL database and perform some queries on the generated data. So this is
 going to be some kind of a crash course on Ruby and postgreSQL (and some
@@ -138,11 +133,11 @@ this is a table that stores which player played where:</li>
   <span class="n">round_array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'32th'</span><span class="p">,</span> <span class="s1">'16th'</span><span class="p">,</span> <span class="s1">'8th'</span><span class="p">,</span> <span class="s1">'quarter_final'</span><span class="p">,</span>
                   <span class="s1">'semi_final'</span><span class="p">,</span> <span class="s1">'final'</span><span class="p">]</span>
 
-  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">2680</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">round_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="p">.</span><span class="nf">.</span><span class="mi">2015</span><span class="p">)</span>
-    <span class="n">num_ratings_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">205</span><span class="p">)</span>
-    <span class="n">rating_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">round_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="o">..</span><span class="mi">2015</span><span class="p">)</span>
+    <span class="n">num_ratings_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">205</span><span class="p">)</span>
+    <span class="n">rating_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mf">1.0</span><span class="o">..</span><span class="mf">5.0</span><span class="p">)</span>
 
     <span class="c1"># insert this row</span>
     <span class="n">conn</span><span class="p">.</span><span class="nf">prepare</span><span class="p">(</span><span class="s2">"ins</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
@@ -173,12 +168,12 @@ My original script contained this part:</p>
   <span class="c1"># this array holds hashes of {:name =&gt; mid} that have already been inserted</span>
   <span class="n">current_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">58960</span><span class="p">)</span> <span class="k">do</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">58960</span><span class="p">)</span> <span class="k">do</span>
     <span class="c1"># generate random data</span>
-    <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="p">.</span><span class="nf">.</span><span class="mi">2015</span><span class="p">)</span>
-    <span class="n">position_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">11</span><span class="p">)</span>
-    <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">43</span><span class="p">)</span>
-    <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">2680</span><span class="p">)</span>
+    <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="o">..</span><span class="mi">2015</span><span class="p">)</span>
+    <span class="n">position_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">43</span><span class="p">)</span>
+    <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
 
     <span class="k">while</span> <span class="kp">true</span>
       <span class="c1"># create a hash</span>
@@ -186,8 +181,8 @@ My original script contained this part:</p>
 
       <span class="c1"># check if hash is not in the current_date array</span>
       <span class="k">if</span> <span class="n">current_data</span><span class="p">.</span><span class="nf">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">h</span><span class="o">|</span> <span class="n">h</span> <span class="o">==</span> <span class="nb">hash</span> <span class="p">}</span>
-        <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">43</span><span class="p">)</span>
-        <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">2680</span><span class="p">)</span>
+        <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">43</span><span class="p">)</span>
+        <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
       <span class="k">else</span>
         <span class="k">break</span>
       <span class="k">end</span>
@@ -222,12 +217,12 @@ got stuck there.</p>
 <h4 id="solution">Solution</h4>
 <p>In my second attempt, I used a postgreSQL <code class="highlighter-rouge">SELECT</code> query to search the table instead. So this was my second solution:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">58960</span><span class="p">)</span> <span class="k">do</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">58960</span><span class="p">)</span> <span class="k">do</span>
     <span class="k">while</span> <span class="kp">true</span>
-      <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">43</span><span class="p">)</span>
-      <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="p">.</span><span class="nf">.</span><span class="mi">2015</span><span class="p">)</span>
-      <span class="n">position_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">11</span><span class="p">)</span>
-      <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">2680</span><span class="p">)</span>
+      <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">43</span><span class="p">)</span>
+      <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="o">..</span><span class="mi">2015</span><span class="p">)</span>
+      <span class="n">position_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">11</span><span class="p">)</span>
+      <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
 
       <span class="c1"># SELECT query that searches for the pair (mid_value, name_array[name_i])</span>
       <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">exec</span><span class="p">(</span> <span class="s2">"SELECT * FROM played_in WHERE mid=</span><span class="si">#{</span><span class="n">mid_value</span><span class="si">}</span><span class="s2">
@@ -254,10 +249,10 @@ which was a great success besides it is much simpler now.</p>
 as required in the task:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="c1"># this is where we make 118 rows have the name 'pele'</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">118</span><span class="p">)</span> <span class="k">do</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">118</span><span class="p">)</span> <span class="k">do</span>
 
     <span class="k">while</span> <span class="kp">true</span>
-      <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">2680</span><span class="p">)</span>
+      <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
 
       <span class="c1"># make sure that we don't have a (mid_value, 'pele') pair in the database</span>
       <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">exec</span><span class="p">(</span> <span class="s2">"SELECT * FROM played_in WHERE mid='</span><span class="si">#{</span><span class="n">mid_value</span><span class="si">}</span><span class="s2">'
@@ -304,27 +299,27 @@ let me know.</p>
   <ul class="social">
     <li>
       <a id="twitter" href="http://twitter.com/share?url=http://aonemd.github.io/blog/inserting-bulk-data-into-pg&text=Inserting Bulk Data into Postgres Using Ruby&hashtags=ruby,postgresql&via=aonemd" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-twitter"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
       </a>
     </li>
     <li>
       <a id="reddit" href="http://reddit.com/submit?url=http://aonemd.github.io/blog/inserting-bulk-data-into-pg&title=Inserting Bulk Data into Postgres Using Ruby" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-reddit"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg#icon-reddit"></use></svg>
       </a>
     </li>
     <li>
       <a id="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&title=Inserting Bulk Data into Postgres Using Ruby&url=http://aonemd.github.io/blog/inserting-bulk-data-into-pg" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-linkedin"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg#icon-linkedin"></use></svg>
       </a>
     </li>
     <li>
       <a id="googleplus" href="https://plus.google.com/share?url=http://aonemd.github.io/blog/inserting-bulk-data-into-pg" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-googleplus"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg#icon-googleplus"></use></svg>
       </a>
     </li>
     <li>
       <a id="pocket" href="https://getpocket.com/save?url=aonemd.github.io/blog/inserting-bulk-data-into-pg&title=Inserting Bulk Data into Postgres Using Ruby" target="_blank">
-        <svg><use xlink:href="/assets/icons-sprite.svg#icon-pocket"></use></svg>
+        <svg><use xlink:href="/public/icons-sprite.svg/#icon-pocket"></use></svg>
       </a>
     </li>
   </ul>
@@ -332,9 +327,7 @@ let me know.</p>
 
 </article>
 
-      </div>
-    </div>
 
-    <script type="text/javascript" src="/assets/main.js"></script>
+    <script type="text/javascript" src="/index.js" charset="utf-8"></script>
   </body>
 </html>
