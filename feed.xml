@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Jun 2018 12:32:26 +0200</pubDate>
-    <lastBuildDate>Fri, 01 Jun 2018 12:32:26 +0200</lastBuildDate>
+    <pubDate>Fri, 01 Jun 2018 13:42:25 +0200</pubDate>
+    <lastBuildDate>Fri, 01 Jun 2018 13:42:25 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -34,18 +34,17 @@ which are copies of the communication structures of these organizations.
 &lt;cite&gt;Melvin Conway&lt;/cite&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Thus previous quote is by Melvin Conway and it’s named after him, &lt;em&gt;Conway’s
-Law&lt;/em&gt;. It depicts how communication between teams affect the way their
-systems are structured. The lack of communication within a team will be
-mirrored in the codebase and is going to affect the overall system
-architecture. Thus, Bear programming is a red flag in any team. Here’s what
-I think can be done to mitigate the problem (without turning the post into
-a BuzzFeed-like post):&lt;/p&gt;
+&lt;p&gt;This previous quote is by Melvin Conway and it’s named after him, &lt;em&gt;Conway’s
+Law&lt;/em&gt;. It depicts how communication between teams affect the way their systems
+are structured. The lack of communication within a team will be mirrored in the
+codebase and will affect the overall system architecture. Thus, Bear
+programming is a red flag in any team. Here’s what I think can be done to
+mitigate the problem (without turning the post into a BuzzFeed-like post):&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Having a style guide and running the code through some sort of linter
-keeps the codebase organized and unified in terms of style&lt;/p&gt;
+    &lt;p&gt;Having a style guide and running the code through some sort of a linter keeps
+the codebase organized and unified in terms of style&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;em&gt;Pair programming&lt;/em&gt; helps training the team to work together and
@@ -53,15 +52,15 @@ understand each other. The element of importance in pair programming is
 the actual interaction between the team members&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Having a strong code reviews culture. Code reviews do not only help the
-team learn from one another, they also help finding the differences among
-the team members and narrowing them&lt;/p&gt;
+    &lt;p&gt;Having a strong code review culture. Code reviews do not only help the team
+learn from one another, they also help finding the differences among the team
+members and narrowing them&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Writing better Git commit messages (if you use Git. You probably should)
-by focusing on providing the context or the why of the commit. This is
-also essential to the previous point about code reviews. Git commits are
-a means to relay messages to other developers in the team&lt;/p&gt;
+    &lt;p&gt;Writing better Git commit messages (if you use Git and you probably should)
+by focusing on providing the context or the why of the commit. This is also
+essential to the previous point about code reviews. Git commits are a means
+to relay messages to other developers in the team&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
