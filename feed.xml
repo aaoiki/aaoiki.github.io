@@ -6,9 +6,72 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jun 2018 20:47:24 +0200</pubDate>
-    <lastBuildDate>Sat, 09 Jun 2018 20:47:24 +0200</lastBuildDate>
+    <pubDate>Tue, 12 Jun 2018 00:02:37 +0200</pubDate>
+    <lastBuildDate>Tue, 12 Jun 2018 00:02:37 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Programming on Rails</title>
+        <description>&lt;p&gt;Ruby on Rails is a great web framework. It has changed the way web development
+is done and influenced other frameworks in other programming languages. Even
+admittedly, much of the major success of Ruby is due to the wide spread of
+Rails.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/Ruby_On_Rails_Logo.png&quot; alt=&quot;Rails Logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Being the opinionated framework it is, Rails is built on top of a set of
+conventions and philosophies. It’s said to be
+&lt;a href=&quot;http://david.heinemeierhansson.com/2012/rails-is-omakase.html&quot; target=&quot;blank&quot;&gt;Omakase (お任せ)&lt;/a&gt;
+or chef’s menu of choice (also, watch
+&lt;a href=&quot;https://www.youtube.com/watch?v=E99FnoYqoII&quot; target=&quot;blank&quot;&gt;Rails is Omakase: A Dramatic Reading&lt;/a&gt;).
+Unlike Node’s ExpressJS for example, Rails comes preconfigued with all the
+stack you need to build your app. Its convenience over configuration philosophy
+led it to be one of the easiest and fastest ways to start building apps for the
+web today.&lt;/p&gt;
+
+&lt;p&gt;Of course, this convenience comes at a cost. Apart from the added difficulty to
+maintain when the app grows in complexity (which I won’t talk about in this
+post), the Rails way sets a fixated mindset about programming, namely, web
+programming. Your entire world view to programming is through Rails and the
+Rails way. For instance, the places where you can create your classes, the way
+you connect the backend with the view and the frontend, and the way you write
+helper functions or helper modules are all set by the framework, Rails. I’m not
+discussing here the architectural decisions made by Rails, however; I’m
+pointing to the effect of those decisions on the programmer’s mindset.&lt;/p&gt;
+
+&lt;p&gt;I’ve been doing Rails for around 4 years now. During this period, whenever I’m
+working on a task (be it Rails or non-Rails related), I often caught myself
+looking for a pattern; looking for the framework in it. It’s like my mind wants
+to see all programming as it sees tedious CRUD applications (which are totally
+fine as long as they are solving a problem). The issue here is restricting my
+thought process to only one way of thinking, however; programming, or rather
+the creative thinking it requires, needs more imagination and less restriction.&lt;/p&gt;
+
+&lt;p&gt;Something I also noticed while working with interns is that more fresh minds
+tend to be more flexible than experienced developers. Their minds are not yet
+bloated with way of the framework and they tend be less following to the rules.&lt;/p&gt;
+
+&lt;p&gt;So you might ask what to do in order to free your mind from the Rails way. What
+I suggest is to rebel against Rails. Yes, try different Ruby web frameworks,
+different languages, new stacks, or even developing for platforms other than
+the web altogether. Also, try breaking, bending, and tweaking large, complex
+Rails apps to see how far you can get with Rails. Try a new architecture for
+your Rails app by dividing your business logic and classes into multiple
+layers. The world outside the Rails menu is so vast and diverse but you need to
+see that for yourself.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Jun 2018 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/programming-on-rails</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/programming-on-rails</guid>
+        
+        <category>Ruby,</category>
+        
+        <category>Rails</category>
+        
+        
+        <category>Ruby on Rails</category>
+        
+      </item>
     
       <item>
         <title>Bear Programming</title>
@@ -159,7 +222,7 @@ on and off using the button in the top navigation bar.&lt;/p&gt;
     
       <item>
         <title>التدريب في مصر</title>
-        <description>&lt;p&gt;إذا كنت أحد طلاب كليات الحاسبات في مصر ، فأنت - على الأغلب - على علم بو ضع
+        <description>&lt;p&gt;إذا كنت أحد طلاب كليات الحاسبات في مصر ، فأنت - على الأغلب - على علم بوضع
 الشركات المصرية اللي تقدم تدريباً - غالباً ما يكون في الإجازة الصيفية - لطلاب تلك
 الكليات.&lt;/p&gt;
 
@@ -171,7 +234,7 @@ on and off using the button in the top navigation bar.&lt;/p&gt;
 
 &lt;p&gt;شكل الاستغلال الذي أتحدث عنه هنا هو الاستغلال المادي بالطبع.  فمفهوم التدريب في
 الشركات المصرية يختلف عن مفهومها لدى باقي شركات العالم؛ المتدرب كأي موظف آخر في
-الشركة، عليه نفس المسئوليات لكنه بلا أية حقوق.والأغرب أن بعض تلك الشركات تطلب من
+الشركة، عليه نفس المسئوليات لكنه بلا أية حقوق. والأغرب أن بعض تلك الشركات تطلب من
 المتدرب الحضور والانصراف في مواعيد محددة تماماً كباقي الموظفين.  إذا قمت ببحث
 بسيط في موقع reddit عن “unpaid cs internship” فستجد من أغلب الردود أن الفكرة
 مستهجنة وغريبة على مجال هندسة البرمجيات. وقد يكون مجال البرمجيات أحسن حالاً من
