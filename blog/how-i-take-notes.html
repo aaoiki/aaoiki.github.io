@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How I Take Notes | aonemd</title>
+    <meta name="description" content="Taking notes is indispensable for me. I always advice every programmer toalways take notes of their work. Instead of searching for something every timeI forg...">
+    <link rel="canonical" href="https://aonemd.github.io/blog/how-i-take-notes">
+    <link rel="alternate" type="application/rss+xml" title="aonemd" href="https://aonemd.github.io/feed.xml">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/aonemd-logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/aonemd-logo.png" />
+
+    <link rel="stylesheet" href="/index.css">
+  </head>
+
+  <body class="">
+    <nav>
+  <div class="title">
+    <a href="/">aonemd</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggle">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+
+    <article>
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="view-post__en-title">
+        <h2>How I Take Notes <small class="view-post__category">How I</small></h2>
+      </div>
+
+      <h5><span>June 17, 2018</span></h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 center">
+      <div lang='en'>
+        <p>Taking notes is indispensable for me. I always advice every programmer to
+always take notes of their work. Instead of searching for something every time
+I forget it, I go back to my notes. It has also become helpful when I need to
+study for interviews. I also use those notes as a journal to keep and origanize
+my thoughts when I’m working on a new feature or fixing a bug.</p>
+
+<blockquote>
+  <p>There’s nothing better than a beautiful day at the beach, filled with sun,
+surf and diligent note-taking
+<cite>Pam Beesly, The Office</cite></p>
+</blockquote>
+
+<h3 id="digital-notes">Digital notes</h3>
+
+<p>I started taking notes on small yellow sticky notes, however; it wasn’t that
+efficient when I needed to access my notes when I’m not home or when I’m using
+my phone. Thus, I started taking digital notes on my computer and cellphone.</p>
+
+<p>As I mentioned, I started with sticky notes and a pencil then I moved to
+digital notes. Currently, I use a text editor (you can use any text editor you
+like), Markdown, and a small shell script to find and open notes. For tags and
+organizing the notes, I simply use folders to group them. Here’s what I started
+with initially:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .bashrc or .zshrc</span>
+
+note <span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local </span><span class="nv">notes_dir</span><span class="o">=</span><span class="s2">"/path/to/notes"</span>
+  <span class="k">case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in
+    </span>c<span class="p">)</span>
+      <span class="nb">cd</span> <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">"</span>
+      <span class="p">;;</span>
+    l<span class="p">)</span>
+      <span class="nb">ls</span> <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">"</span>
+      <span class="p">;;</span>
+    p<span class="p">)</span>
+      <span class="nb">pushd</span> <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">"</span>
+      <span class="nv">msg</span><span class="o">=</span><span class="s2">"Regenerated at </span><span class="k">$(</span><span class="nb">date</span> <span class="nt">-u</span> <span class="s1">'+%Y-%m-%d %H:%M:%S'</span><span class="k">)</span><span class="s2"> UTC"</span>
+      git add <span class="nb">.</span>
+      git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$msg</span><span class="s2">"</span>
+      git push origin master
+      <span class="nb">popd</span>
+      <span class="p">;;</span>
+    <span class="k">*</span><span class="p">)</span>
+      vim <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">/</span><span class="nv">$1</span><span class="s2">"</span>
+  <span class="k">esac</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now, you can call the function directly in your shell using:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>note l
+</code></pre></div></div>
+
+<p>or</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>note todo.md
+</code></pre></div></div>
+
+<h3 id="syncing">Syncing</h3>
+
+<p>From the previous script, you can see that I used to use Git to keep and sync
+the notes between my machine and a Git repository. The issue with using Git is
+that I cannot sync and read the notes on my cellphone (as far as I know; I
+didn’t search how to use Git on my phone). To solve this issue, I moved my
+notes to Dropbox (you can use any other method for synchronization). Now it’s
+possible to sync them between my computer and my phone. Here’s the very simple
+script I currently use:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .bashrc or .zshrc</span>
+
+note <span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local </span><span class="nv">notes_dir</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/Dropbox/notes"</span>
+  <span class="k">case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in
+    </span>c<span class="p">)</span>
+      <span class="nb">cd</span> <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">"</span>
+      <span class="p">;;</span>
+    l<span class="p">)</span>
+      <span class="nb">ls</span> <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">"</span>
+      <span class="p">;;</span>
+    <span class="k">*</span><span class="p">)</span>
+      <span class="nb">pushd</span> <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">"</span>
+      vim <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+      <span class="nb">popd
+  </span><span class="k">esac</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+      </div>
+
+    </div>
+  </div>
+
+  
+    <div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="http://twitter.com/share?url=http://https://aonemd.github.io/blog/how-i-take-notes&text=How I Take Notes&hashtags=vim,notes,bash&via=aonemd" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="http://reddit.com/submit?url=http://https://aonemd.github.io/blog/how-i-take-notes&title=How I Take Notes" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&title=How I Take Notes&url=http://https://aonemd.github.io/blog/how-i-take-notes" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=http://https://aonemd.github.io/blog/how-i-take-notes" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https://aonemd.github.io/blog/how-i-take-notes&title=How I Take Notes" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+
+  
+</article>
+
+
+    <script async type="text/javascript" src="/index.js" charset="utf-8"></script>
+  </body>
+</html>
