@@ -70,39 +70,33 @@ optimization).</p>
 <h3 id="requirements">Requirements</h3>
 <p>The database contained only two tables. The first one was:</p>
 
-<blockquote>
-  <ul>
-    <li>cup_matches(mid, round, year, num_ratings, rating)</li>
-    <li>mid is the primary key for matches</li>
-    <li>round is the cup round/level (e.g. 32nd, 16th, quarter_final,SemiFinal, Final)</li>
-    <li>year is the year of the cup.</li>
-    <li>num_ratings is how many people viewed and rated that match</li>
-    <li>rating is the average rating of all viewers</li>
-  </ul>
-</blockquote>
+<ul>
+  <li>cup_matches(mid, round, year, num_ratings, rating)</li>
+  <li>mid is the primary key for matches</li>
+  <li>round is the cup round/level (e.g. 32nd, 16th, quarter_final,SemiFinal, Final)</li>
+  <li>year is the year of the cup.</li>
+  <li>num_ratings is how many people viewed and rated that match</li>
+  <li>rating is the average rating of all viewers</li>
+</ul>
 
 <p>the second one:</p>
 
-<blockquote>
-  <ul>
-    <li>played_in(mid, name, year, position)
+<ul>
+  <li>played_in(mid, name, year, position)
 this is a table that stores which player played where:</li>
-    <li>mid is the match id (from cup_matches table)</li>
-    <li>name is the player name</li>
-    <li>mid+name is the primary key</li>
-    <li>year is the year of the match</li>
-    <li>position is the position number of the player in the match (e.g. 1 for goal keeper, etc…)</li>
-  </ul>
-</blockquote>
+  <li>mid is the match id (from cup_matches table)</li>
+  <li>name is the player name</li>
+  <li>mid+name is the primary key</li>
+  <li>year is the year of the match</li>
+  <li>position is the position number of the player in the match (e.g. 1 for goal keeper, etc…)</li>
+</ul>
 
 <p>and the actual task:</p>
 
-<blockquote>
-  <ul>
-    <li>Write a script that populates the database with 2,680 matches and 58,960 players</li>
-    <li>You must insert players with name that contain the word “pele” 118 times</li>
-  </ul>
-</blockquote>
+<ul>
+  <li>Write a script that populates the database with 2,680 matches and 58,960 players</li>
+  <li>You must insert players with name that contain the word “pele” 118 times</li>
+</ul>
 
 <h3 id="setup">Setup</h3>
 <p>I created a Ruby script and used <code class="highlighter-rouge">pg</code> gem to connect to the database:</p>
