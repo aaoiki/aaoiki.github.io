@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Jun 2018 00:06:22 +0200</pubDate>
-    <lastBuildDate>Mon, 18 Jun 2018 00:06:22 +0200</lastBuildDate>
+    <pubDate>Mon, 18 Jun 2018 17:46:49 +0200</pubDate>
+    <lastBuildDate>Mon, 18 Jun 2018 17:46:49 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -35,10 +35,14 @@ my phone. Thus, I started taking digital notes on my computer and cellphone.&lt;
 digital notes. First, I tried multiple note taking apps but I couldn’t find
 something better than using my favorite text editor to take notes. Besides,
 each app has its own format to store notes. I was looking for something simple
-and with much control over my notes as possible. Currently, I use a text editor
-(you can use any text editor you like), Markdown, and a small shell script to
-find and open notes. For tags and organizing the notes, I simply use folders to
-group them. Here’s what I started with initially:&lt;/p&gt;
+and with much control over my notes as possible.&lt;/p&gt;
+
+&lt;p&gt;Currently, I use a text editor, Markdown, and a small shell script to list and
+open notes. My text editor of choice is Vim. I use Vim in combination with
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ctrlp&lt;/code&gt; for fuzzy file finding and &lt;code class=&quot;highlighter-rouge&quot;&gt;Ag&lt;/code&gt;, the silver searcher, to search across
+files. Of course, you can use your own text editor as most modern text editors
+implement these features out of the box. For tags and organizing the notes, I
+simply use folders to group them. Here’s the script I started with initially:&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# .bashrc or .zshrc&lt;/span&gt;
 
 note &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -94,8 +98,12 @@ note &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot
       &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
       &lt;span class=&quot;nb&quot;&gt;pushd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      vim &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;popd
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$# &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-eq&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+        &lt;/span&gt;vim &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;else
+        &lt;/span&gt;vim &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;.md
+      &lt;span class=&quot;k&quot;&gt;fi
+      &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;popd
   &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -108,7 +116,7 @@ with the Dropbox app.&lt;/p&gt;
 
 &lt;p&gt;Also, until this point, I write and read my notes in Markdown. Although it’s
 possible to do more work and convert the notes into a more readable format such
-as PDF or HTML.&lt;/p&gt;
+as PDF or HTML using something like &lt;code class=&quot;highlighter-rouge&quot;&gt;pandoc&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 17 Jun 2018 00:00:00 +0200</pubDate>
         <link>https://aonemd.github.io/blog/how-i-take-notes</link>

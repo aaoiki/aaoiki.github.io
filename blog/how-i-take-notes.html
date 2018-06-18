@@ -85,10 +85,14 @@ my phone. Thus, I started taking digital notes on my computer and cellphone.</p>
 digital notes. First, I tried multiple note taking apps but I couldn’t find
 something better than using my favorite text editor to take notes. Besides,
 each app has its own format to store notes. I was looking for something simple
-and with much control over my notes as possible. Currently, I use a text editor
-(you can use any text editor you like), Markdown, and a small shell script to
-find and open notes. For tags and organizing the notes, I simply use folders to
-group them. Here’s what I started with initially:</p>
+and with much control over my notes as possible.</p>
+
+<p>Currently, I use a text editor, Markdown, and a small shell script to list and
+open notes. My text editor of choice is Vim. I use Vim in combination with
+<code class="highlighter-rouge">ctrlp</code> for fuzzy file finding and <code class="highlighter-rouge">Ag</code>, the silver searcher, to search across
+files. Of course, you can use your own text editor as most modern text editors
+implement these features out of the box. For tags and organizing the notes, I
+simply use folders to group them. Here’s the script I started with initially:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .bashrc or .zshrc</span>
 
 note <span class="o">()</span> <span class="o">{</span>
@@ -144,8 +148,12 @@ note <span class="o">()</span> <span class="o">{</span>
       <span class="p">;;</span>
     <span class="k">*</span><span class="p">)</span>
       <span class="nb">pushd</span> <span class="s2">"</span><span class="nv">$notes_dir</span><span class="s2">"</span>
-      vim <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
-      <span class="nb">popd
+      <span class="k">if</span> <span class="o">[</span> <span class="nv">$# </span><span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span>vim <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+      <span class="k">else
+        </span>vim <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>.md
+      <span class="k">fi
+      </span><span class="nb">popd
   </span><span class="k">esac</span>
 <span class="o">}</span>
 </code></pre></div></div>
@@ -158,7 +166,7 @@ with the Dropbox app.</p>
 
 <p>Also, until this point, I write and read my notes in Markdown. Although it’s
 possible to do more work and convert the notes into a more readable format such
-as PDF or HTML.</p>
+as PDF or HTML using something like <code class="highlighter-rouge">pandoc</code>.</p>
 
       </div>
 
