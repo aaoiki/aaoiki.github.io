@@ -6,9 +6,73 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Jun 2018 17:46:49 +0200</pubDate>
-    <lastBuildDate>Mon, 18 Jun 2018 17:46:49 +0200</lastBuildDate>
+    <pubDate>Thu, 21 Jun 2018 15:36:15 +0200</pubDate>
+    <lastBuildDate>Thu, 21 Jun 2018 15:36:15 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>On Writing</title>
+        <description>&lt;h2 id=&quot;why-i-write&quot;&gt;Why I write&lt;/h2&gt;
+
+&lt;p&gt;There maybe a lot of reasons for this. For starters, I think writing is a fun
+activity. I write mainly to improve my communication skills, written
+communication skills apparently. Another reason I write for is to give back to
+the communities I’m involved in and maybe benefit someone someday with
+something I wrote. Teaching is such a precious experience. Teaching and
+teaching through writing here does not only benefit the reader but also the
+writer cause when I write, I get to deepen and widen my knowledge base.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Teach and you shall learn.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;writing-is-hard&quot;&gt;Writing is hard&lt;/h2&gt;
+
+&lt;p&gt;Seriously, this is the first thing that came to my mind when I thought of
+writing this article. Although it might be fun to write, it’s very difficult to
+put a good article together. The biggest issue for me is when I have a fairly
+good idea and I can barely write about it at length. Although I believe in
+quality not quantity, some articles can be understood from only the title and a
+title alone cannot make an article. Some other articles feel superficial to me
+after writing them thus I keep writing articles and deleting (or sometimes,
+constantly editing) them.&lt;/p&gt;
+
+&lt;h2 id=&quot;marketing-is-also-hard&quot;&gt;Marketing is also hard&lt;/h2&gt;
+
+&lt;p&gt;Between the downvotes and the harsh comments on Reddit and Hacker News,
+marketing an article is as hard as writing it. Currently, I use Twitter and
+Reddit to share my articles. The downvotes and the harsh comments with no
+constructive feedback are a bit frustrating sometimes even though I believe I
+don’t write for everyone. What I mean by I don’t write for everyone is that the
+targeted audience for each article might differ thus building an audience for the blog is difficult.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-i-write&quot;&gt;How I write&lt;/h2&gt;
+
+&lt;p&gt;Currently the way I write is as follows:&lt;/p&gt;
+
+&lt;p&gt;First, I come up with an idea and/or a title, generate a page for the article,
+and fire up a text editor. I start by writing the main headlines in the
+article. I then start filling the main points as fast as possible without
+editing them. Afterwards, I edit the article, and fix the typos.&lt;/p&gt;
+
+&lt;p&gt;How I want to write though is writing consistently. No matter how many new
+year’s resolutions I may make, I never keep writing consistently as I want to.
+However recently, I’ve been writing every other week or so. I also want to
+write fearlessly. The fear of writing a bad article is what always stops me
+from writing or publishing an article.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Jun 2018 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/on-writing</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/on-writing</guid>
+        
+        <category>writing,</category>
+        
+        <category>blogging</category>
+        
+        
+        <category>Blogging</category>
+        
+      </item>
     
       <item>
         <title>How I Take Notes</title>
@@ -27,7 +91,7 @@ surf and diligent note-taking
 
 &lt;h3 id=&quot;digital-notes&quot;&gt;Digital notes&lt;/h3&gt;
 
-&lt;p&gt;I started taking notes on small yellow sticky notes, however; it wasn’t that
+&lt;p&gt;I started taking notes on small yellow sticky notes however, it wasn’t that
 efficient when I needed to access my notes when I’m not home or when I’m using
 my phone. Thus, I started taking digital notes on my computer and cellphone.&lt;/p&gt;
 
@@ -159,7 +223,7 @@ programming. Your entire world view to programming is through Rails and the
 Rails way. For instance, the places where you can create your classes, the way
 you connect the backend with the view and the frontend, and the way you write
 helper functions or helper modules are all set by the framework, Rails. I’m not
-discussing here the architectural decisions made by Rails, however; I’m
+discussing here the architectural decisions made by Rails however, I’m
 pointing to the effect of those decisions on the programmer’s mindset.&lt;/p&gt;
 
 &lt;p&gt;I’ve been doing Rails for around 4 years now. During this period, whenever I’m
@@ -167,7 +231,7 @@ working on a task (be it Rails or non-Rails related), I often caught myself
 looking for a pattern; looking for the framework in it. It’s like my mind wants
 to see all programming as it sees tedious CRUD applications (which are totally
 fine as long as they are solving a problem). The issue here is restricting my
-thought process to only one way of thinking, however; programming, or rather
+thought process to only one way of thinking however, programming, or rather
 the creative thinking it requires, needs more imagination and less restriction.&lt;/p&gt;
 
 &lt;p&gt;Something I also noticed while working with interns is that more fresh minds
@@ -643,112 +707,6 @@ pay attention to my classes if I had a donkey?!”.&lt;/p&gt;
         <category>dotfiles,</category>
         
         <category>programmer_tools</category>
-        
-        
-        <category>Tools</category>
-        
-      </item>
-    
-      <item>
-        <title>And a Whale Said Let There Be Docker</title>
-        <description>&lt;p&gt;Every time I had to work on a new machine or I wanted to try a new technology,
-I used to install a lot of packages and libraries to prepare my development
-environment. I always struggled to manage dependencies and different versions of
-packages. That mostly worked for me but I had to go over this hustle everytime.
-Besides, after some time the machine I was working on used to get a bit slower.&lt;/p&gt;
-
-&lt;h3 id=&quot;and-then-there-was-docker&quot;&gt;And then there was Docker&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/images/docker_cover.png&quot; alt=&quot;Docker cover&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I have been recently hearing about virtualization, Linux Containers, Docker, Vagrant, etc.,
-but Docker became sort of the hype these days.
-I wanted to give it a try anyway specially after
-&lt;a href=&quot;https://twitter.com/cousine&quot;&gt;@cousine&lt;/a&gt; had recommended using Docker for me.&lt;/p&gt;
-
-&lt;p&gt;So I started this weekend by installing a new version of &lt;a href=&quot;https://elementary.io/&quot;&gt;Elementary
-OS&lt;/a&gt; and &lt;a href=&quot;docker.io&quot;&gt;Docker&lt;/a&gt;, and set up my
-&lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; on my main development
-laptop.&lt;/p&gt;
-
-&lt;p&gt;You can install and use any of the available packages on your machine using
-Docker images from database servers to frameworks or tools like Nodejs or
-Jekyll. It’s also possible to create your own dockerized images.  I installed
-different kinds of images for my local development&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/images/docker_images_screenshot.png&quot; alt=&quot;Docker images&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As Docker is often used for deployment and packaging dependencies, it could
-also be used for local development.  This is about satisfying the perfectionist
-in me.&lt;/p&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;p&gt;I use &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; to generate this blog.
-Before Docker, I had to install a Ruby version manager such as rbenv, Ruby, RubyGems, and Jekyll
-just to start blogging. But now all I do is just this:&lt;/p&gt;
-
-&lt;h4 id=&quot;1-install-docker&quot;&gt;1. Install Docker&lt;/h4&gt;
-
-&lt;p&gt;It’s in the &lt;a href=&quot;https://docs.docker.com/&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;2-pull-download-a-jekyll-image-from-dockerhub&quot;&gt;2. Pull (Download) a Jekyll image from &lt;a href=&quot;https://hub.docker.com/&quot;&gt;DockerHub&lt;/a&gt;:&lt;/h4&gt;
-
-&lt;p&gt;I use &lt;a href=&quot;https://hub.docker.com/r/grahamc/jekyll/&quot;&gt;this image&lt;/a&gt;. It does the job very well&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grahamc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;
-  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;3-create-a-new-blog&quot;&gt;3. Create a new blog:&lt;/h4&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;$PWD:/src&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grahamc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_blog&lt;/span&gt;
-  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You may need to change your folder permissions if you didn’t add your user
-  account to docker group&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rw&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_blog&lt;/span&gt;
-  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;4-start-the-app&quot;&gt;4. Start the app:&lt;/h4&gt;
-
-&lt;p&gt;Open a terminal in your blog directory and run Jekyll server&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;$PWD:/src&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4000&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grahamc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;H&lt;/span&gt;
-  &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;
-  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now if you open &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0:4000&lt;/code&gt; in a browser, you’ll find your blog
-  working just fine.&lt;/p&gt;
-
-&lt;h3 id=&quot;more-practical-example&quot;&gt;More Practical Example&lt;/h3&gt;
-&lt;p&gt;I had a PHP web project for first time so I searched for PHP and Apache Docker
-images and luckily I found a Docker file that installs all the necessary
-packages and dependencies. I cannot exactly remember where I got it from
-besides I changed some lines in the original (anyway, here’s another one that
-&lt;a href=&quot;https://github.com/dockerimages/docker-xampp&quot; target=&quot;_blank&quot;&gt;installs XAMPP&lt;/a&gt;).
-I combined it with
-&lt;a href=&quot;https://docs.docker.com/compose/&quot; target=&quot;_blank&quot;&gt;docker-compose&lt;/a&gt; to link
-the app to MySQL databse image. I run the app with a very simple command:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;compose&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and everything is working fine&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/images/docker_bshop_screenshot.png&quot; alt=&quot;Bshop 1&quot; /&gt;
-&lt;img src=&quot;/public/images/docker_bshop_screenshot1.png&quot; alt=&quot;Bshop 2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find the full project along with Docker and docker-compose files
-&lt;a href=&quot;https://bitbucket.org/aonemd/bshop&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 15 Aug 2015 00:00:00 +0200</pubDate>
-        <link>https://aonemd.github.io/blog/and-a-whale-said-let-there-be-docker</link>
-        <guid isPermaLink="true">https://aonemd.github.io/blog/and-a-whale-said-let-there-be-docker</guid>
-        
-        <category>docker,</category>
-        
-        <category>linux,</category>
-        
-        <category>containers</category>
         
         
         <category>Tools</category>
