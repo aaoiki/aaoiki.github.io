@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Aug 2018 23:21:21 +0200</pubDate>
-    <lastBuildDate>Wed, 22 Aug 2018 23:21:21 +0200</lastBuildDate>
+    <pubDate>Sun, 04 Nov 2018 01:11:57 +0200</pubDate>
+    <lastBuildDate>Sun, 04 Nov 2018 01:11:57 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -321,11 +321,12 @@ pointing to the effect of those decisions on the programmer’s mindset.&lt;/p&g
 
 &lt;p&gt;I’ve been doing Rails for around 4 years now. During this period, whenever I’m
 working on a task (be it Rails or non-Rails related), I often caught myself
-looking for a pattern; looking for the framework in it. It’s like my mind wants
-to see all programming as it sees tedious CRUD applications (which are totally
-fine as long as they are solving a problem). The issue here is restricting my
-thought process to only one way of thinking however, programming, or rather
-the creative thinking it requires, needs more imagination and less restriction.&lt;/p&gt;
+looking to identify a pattern; looking for the framework in it. It’s like my
+mind wants to see all programming as it sees tedious CRUD applications (which
+are totally fine as long as they are solving a problem). The issue here is
+restricting my thought process to only one way of thinking however,
+programming, or rather the creative thinking it requires, needs more
+imagination and less restriction.&lt;/p&gt;
 
 &lt;p&gt;Something I also noticed while working with interns is that more fresh minds
 tend to be more flexible than experienced developers. Their minds are not yet
