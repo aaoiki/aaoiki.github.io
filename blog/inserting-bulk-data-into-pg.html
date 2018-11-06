@@ -320,9 +320,25 @@ let me know.</p>
       
 
       <hr>
-<p>
-  Participate in the discussion on <a href="https://github.com/aonemd/aonemd.github.io/issues/1" target="_blank">GitHub</a>.
+<p id='unlogged-in-message'>
+  To participate in the discussion, <a href="javascript:void(0)" id="login">click to login via GitHub</a>
+  or
+  comment on <a href="https://github.com/aonemd/aonemd.github.io/issues/1" target="_blank">GitHub</a>.
 </p>
+
+<div class="row" id='logged-in-message'>
+  <div class="col-12">
+    <textarea
+      id="comments__editor"
+      name=""
+      placeholder="Join the Discussion ..."
+      onfocus="this.placeholder = ''"
+      onblur="this.placeholder = 'Join the Discussion ...'">
+    </textarea>
+
+    <input type="button" id="comments__add-button" onclick="post_comment();" value="Add">
+  </div>
+</div>
 
 <div id="comments"></div>
 
