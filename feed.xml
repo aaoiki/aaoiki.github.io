@@ -6,9 +6,81 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Nov 2018 22:34:39 +0200</pubDate>
-    <lastBuildDate>Sat, 10 Nov 2018 22:34:39 +0200</lastBuildDate>
+    <pubDate>Sat, 17 Nov 2018 00:04:48 +0200</pubDate>
+    <lastBuildDate>Sat, 17 Nov 2018 00:04:48 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Computer Science Is Not About Programming</title>
+        <description>&lt;p&gt;What’s motivated me to write this post is that a TA at my university was once
+shaming students who graduate university without learning how to program
+properly. This sentence was intriguing to me as I thought to myself that
+computer science is not about programming!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/hamada_helal_hamada_helal.jpg&quot; alt=&quot;Hamada Helal, the king of obvious&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In fact, what I believe is that computer science is about computing. According
+to Merriam-Webster, the definition of computer science is “a branch of science
+that deals with the theory of computation or the design of computers”.  On the
+other hand, programming is merely one way to do computation, supposedly, in a
+short period of time using a big calculator that is a computer (I know, cell
+phones exist!). Having computers do calculations for us is just an extra
+privilege.&lt;/p&gt;
+
+&lt;p&gt;More so, computations don’t have to be done on a computer. An A4 sheet of paper
+and a pencil could be used as a computer, although this is a much slower and
+many times harder to follow and keep track of compared to a regular computer.
+There are indeed many ways to do computation without a programming language.
+There are what’s known as theoretical models of computation. One
+&lt;strong&gt;theoretical&lt;/strong&gt; model of computation is a &lt;a href=&quot;https://www.wikiwand.com/en/Turing_machine&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Turing
+machine&lt;/em&gt;&lt;/a&gt;.  A
+Turing machine is an abstract computer that has an infinite memory and can
+sequentially traverse this memory as needed but we won’t discuss it more in
+this post.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Computer science is about computing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I have seen many students who were excellent students but were poor programmers
+and that’s totally fine. Those students, if they want to, can pick up academia
+and research for example, become computer scientists and excel at that.  In
+contrast, I consider myself a fairly good programmer, however; I also consider
+myself a not-so-good student. It doesn’t have to be a choice between either
+this or that; of course, this is not a rule. One can be a good academic and a
+good programmer at the same time.&lt;/p&gt;
+
+&lt;p&gt;The thing about degrees is that computer science students expect that their
+major should include more “programming” courses and they blame their degrees
+for the lack of computer programming classes (I used to think that way when I
+started my degree). However, what they are missing here is what computer
+science is actually concerned with —namely, the theory behind computation.&lt;/p&gt;
+
+&lt;p&gt;In conclusion, computer programming is only one form of doing computation.
+Understanding the theory behind computation is different from writing programs
+to do the calculations.&lt;/p&gt;
+
+&lt;h3 id=&quot;things-i-read-on-the-topic&quot;&gt;Things I read on the topic&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.freecodecamp.org/is-it-computer-science-or-programming-c01383dacc9c&quot; target=&quot;blank&quot;&gt;Is It “Computer Science” or “Programming”?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://softwareengineering.stackexchange.com/questions/137103/whats-the-difference-between-computer-science-and-programming&quot; target=&quot;blank&quot;&gt;What’s the difference between computer science and programming?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 17 Nov 2018 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/computer-science-is-not-about-programming</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/computer-science-is-not-about-programming</guid>
+        
+        <category>computer_science,</category>
+        
+        <category>programming,</category>
+        
+        <category>education</category>
+        
+        
+        <category>Education</category>
+        
+      </item>
     
       <item>
         <title>How I Improved the Loading Speed of My Blog</title>
@@ -668,61 +740,6 @@ is on
         
         
         <category>Projects</category>
-        
-      </item>
-    
-      <item>
-        <title>The One Year Old Bug</title>
-        <description>&lt;p&gt;I’ve been revisiting my old repositories on GitHub recently to make sure they
-are still relevant and to clean up the code. One of the projects I looked into
-was &lt;a href=&quot;https://github.com/aonemd/margopher/&quot;&gt;margopher&lt;/a&gt; which I started back in
-August 2015. I only removed some unused code, and updated the README page after
-which I decided to follow the usage instructions just to make sure everything
-was okay. This was when I found out that when I created and used a margopher
-object one time, I could not use it any more. This because it kept a map of
-states of its input at the object/struct initialization phase but never
-reinitialized the map to reuse it. The solution was to move the initialization
-of the map into the generation phase. This will make a new map everytime the
-generation method is called.&lt;/p&gt;
-
-&lt;p&gt;Although how trivial the solution is, and how simple finding the bug seems, I
-ofen catch myself falling into the same trap, that is, I tend to overlook some
-very minute details or rather edge cases that affect the bigger context. This
-occurs specially in larger business projects where there usually are a lot of
-edge cases that must be taken care of. These edge-case bugs may or may not be
-found. An edge-case bug can go unseen for sometime until one of the QA team
-finds about it or, worst case, a client will.&lt;/p&gt;
-
-&lt;p&gt;One might think that writing a thorough test suite will, by default, detect
-edge cases and hidden bugs. Well, this is partially true. Writing a complete
-test suite that covers all your system needs fully documented features.
-Requirements should be gathered before starting the implementation phase. This
-might seem obvious, however, sometimes this isn’t the case. A client might come
-with unclear requirements and the picture can only get clearer after some
-prototyping or after the actual implementation. It’s true that with almost
-always changing requirements in the business world, it can be quite difficult
-to update and keep track of the requirements while actually implementing them
-in code.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Don’t assume it,  prove it
-&lt;cite&gt;The pragmatic programmer&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In essence, even if it is the job of the QA team to discover difficult-to-find
-bugs, our responsibility as developers is to be fully aware about the
-boundaries of the module we are working on.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 10 Dec 2016 00:00:00 +0200</pubDate>
-        <link>https://aonemd.github.io/blog/the-one-year-bug</link>
-        <guid isPermaLink="true">https://aonemd.github.io/blog/the-one-year-bug</guid>
-        
-        <category>software_engineering,</category>
-        
-        <category>bugs</category>
-        
-        
-        <category>Software Engineering</category>
         
       </item>
     
