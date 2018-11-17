@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Nov 2018 12:28:10 +0200</pubDate>
-    <lastBuildDate>Sat, 17 Nov 2018 12:28:10 +0200</lastBuildDate>
+    <pubDate>Sat, 17 Nov 2018 12:30:42 +0200</pubDate>
+    <lastBuildDate>Sat, 17 Nov 2018 12:30:42 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -34,7 +34,7 @@ times harder to follow and keep track of compared to a regular computer.  There
 are indeed many ways to do computations without a programming language. A
 theoretical models of computation is a model which describes how a set of
 outputs are computed given a set of inputs. One of the most famous models of
-computation is &lt;a href=&quot;https://www.wikiwand.com/en/Turing_machine&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Turing
+computation is the &lt;a href=&quot;https://www.wikiwand.com/en/Turing_machine&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Turing
 machine&lt;/em&gt;&lt;/a&gt;. A
 Turing machine is an abstract computer that has an infinite memory and can
 sequentially traverse this memory as needed. It resembles a program which takes
