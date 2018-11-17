@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Nov 2018 00:14:27 +0200</pubDate>
-    <lastBuildDate>Sat, 17 Nov 2018 00:14:27 +0200</lastBuildDate>
+    <pubDate>Sat, 17 Nov 2018 12:21:15 +0200</pubDate>
+    <lastBuildDate>Sat, 17 Nov 2018 12:21:15 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -28,15 +28,17 @@ phones exist!). Having computers do calculations for us is just an extra
 privilege.&lt;/p&gt;
 
 &lt;p&gt;More so, computations don’t have to be done on a computer. An A4 sheet of paper
-and a pencil could be used as a computer, although this is a much slower and
-many times harder to follow and keep track of compared to a regular computer.
-There are indeed many ways to do computation without a programming language.
-There are what’s known as theoretical models of computation. One
-&lt;strong&gt;theoretical&lt;/strong&gt; model of computation is a &lt;a href=&quot;https://www.wikiwand.com/en/Turing_machine&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Turing
-machine&lt;/em&gt;&lt;/a&gt;.  A
+and a pencil could be used as a computer, although this is much slower and many
+times harder to follow and keep track of compared to a regular computer.  There
+are indeed many ways to do computations without a programming language. A
+theoretical models of computation is a model which describes how a set of
+outputs are computed given a set of inputs. On of the most famous models of
+computation is &lt;a href=&quot;https://www.wikiwand.com/en/Turing_machine&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Turing
+machine&lt;/em&gt;&lt;/a&gt;. A
 Turing machine is an abstract computer that has an infinite memory and can
-sequentially traverse this memory as needed but we won’t discuss it more in
-this post.&lt;/p&gt;
+sequentially traverse this memory as needed. It resembles a program which takes
+an input and computes an output (in terms of accept or reject) and has access
+to an infinite memory.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Computer science is about computing.&lt;/p&gt;
@@ -58,7 +60,7 @@ science is actually concerned with —namely, the theory behind computation.&lt;
 
 &lt;p&gt;In conclusion, computer programming is only one form of doing computation.
 Understanding the theory behind computation is different from writing programs
-to do the calculations.&lt;/p&gt;
+to do the computation.&lt;/p&gt;
 
 &lt;h3 id=&quot;things-i-read-on-the-topic&quot;&gt;Things I read on the topic&lt;/h3&gt;
 
