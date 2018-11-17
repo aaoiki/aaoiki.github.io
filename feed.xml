@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Nov 2018 13:29:41 +0200</pubDate>
-    <lastBuildDate>Sat, 17 Nov 2018 13:29:41 +0200</lastBuildDate>
+    <pubDate>Sat, 17 Nov 2018 16:14:35 +0200</pubDate>
+    <lastBuildDate>Sat, 17 Nov 2018 16:14:35 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -676,18 +676,20 @@ official language in the coming ICPC contests.&lt;/p&gt;
     
       <item>
         <title>I Took Some Time to Create a Time Tracker</title>
-        <description>&lt;p&gt;Im my quest of finding the ultimate productivity framework, I came across the
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Pomodoro_Technique&quot; target=&quot;blank&quot;&gt;Pomodoro technique&lt;/a&gt;.
+        <description>&lt;p&gt;In my quest of finding the ultimate productivity framework, I came across the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Pomodoro_Technique&quot; target=&quot;blank&quot;&gt;Pomodoro
+technique&lt;/a&gt;.
 The basic idea behind it is to divide the work into equal chunks of time and
 take a small break after each set. Usually it goes by working for 25 minutes in
 complete concentration, taking a 5 minutes break and repeating the cycle until
-the the task is completed.&lt;/p&gt;
+the task is completed.&lt;/p&gt;
 
 &lt;h3 id=&quot;motivation&quot;&gt;Motivation&lt;/h3&gt;
+
 &lt;p&gt;It was the beginning of January this year when I decided to use the Pomodoro
 technique to help me study for my finals. However, I could not find a web app
 with a simple interface to use and thought it would be a good practice to build
-it. I remeber it was right before the start of my odd semester final exams when
+it. I remember it was right before the start of my odd semester final exams when
 I started the project. As you know, finals is the time in which you can achieve
 all what you wanted since the beginning of the semester, except studying of
 course. Having built the app, it actually came of a great help. In fact I’m
@@ -695,12 +697,14 @@ using it right now as I’m writing this post (took me 5 sets to finish it).&lt;
 
 &lt;p&gt;I kept in mind to keep the interface as simple as possible. The home page is
 where you can start/stop the timer. There’s also a tracker page where you can
-keep track of your sets.
-I named it &lt;a href=&quot;http://panadoura.herokuapp.com/&quot; target=&quot;blank&quot;&gt;Panadoura&lt;/a&gt;.&lt;/p&gt;
+keep track of your sets.  I named it
+&lt;a href=&quot;http://panadoura.herokuapp.com/&quot; target=&quot;blank&quot;&gt;Panadoura&lt;/a&gt;. The name
+&lt;em&gt;Panadoura&lt;/em&gt; comes from the Arabic word for tomato.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/public/images/cherrytomato_screenshot.png&quot; alt=&quot;CherryTomato home&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;architecture&quot;&gt;Architecture&lt;/h3&gt;
+
 &lt;p&gt;It started out with simple CoffeeScript file that runs and stops the timer and
 served it in a Sinatra app. Then added some more stuff along the way. Besides
 being a simple web app, the reason why I started with Sinatra was that I wanted
@@ -718,14 +722,23 @@ lives under &lt;code class=&quot;highlighter-rouge&quot;&gt;lib/&lt;/code&gt; di
 
 &lt;p&gt;The application layer consists of a single file that defines all the routes to
 the web app. It contains the logic that authorizes the users from Twitter and
-routes them to the home page. It calls two helper classes; one to load the
-assets, and another to configure user sessions.&lt;/p&gt;
+routes them to the home page. &lt;del&gt;It calls two helper classes; one to load the
+assets, and another to configure user sessions.&lt;/del&gt;&lt;/p&gt;
 
-&lt;p&gt;For the persistence layer, I used &lt;a href=&quot;http://rom-rb.org/&quot; target=&quot;blank&quot;&gt;rom-rb&lt;/a&gt;
-which philosophy is to decouple different responsibilities and distribute them
-over many components/layers. I had to write a wrapper to load the database
-settings and connect ROM to PostgreSQL. I also wrote a simple method to run the
-migrations.&lt;/p&gt;
+&lt;p&gt;For the persistence layer, &lt;del&gt;I used
+&lt;a href=&quot;http://rom-rb.org/&quot; target=&quot;blank&quot;&gt;rom-rb&lt;/a&gt; which philosophy is to decouple
+different responsibilities and distribute them over many components/layers. I
+had to write a wrapper to load the database settings and connect ROM to
+PostgreSQL. I also wrote a simple method to run the migrations.&lt;/del&gt; I used
+&lt;a href=&quot;https://github.com/jeremyevans/sequel&quot; target=&quot;blank&quot;&gt;Sequel&lt;/a&gt; mainly for its
+simplicity and flexibility. In 2018, I rewrote the persistence layer and
+removed rom-rb entirely as I felt it was too complicated and the application at
+hand was so simple feature-wise. I also had to write a wrapper around Sequel to
+connect to the database.&lt;/p&gt;
+
+&lt;p&gt;For the presentation layer, Panadoura is now a Vue.js app backed by a Sinatra
+server. I rewrote the frontend code as well in JavaScript. The assets are now
+bundled into a single JavaScript file using WebPack 4.&lt;/p&gt;
 
 &lt;p&gt;Currently, I’m using Heroku experimental tier to host the app. The source code
 is on
