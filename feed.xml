@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Nov 2018 12:30:42 +0200</pubDate>
-    <lastBuildDate>Sat, 17 Nov 2018 12:30:42 +0200</lastBuildDate>
+    <pubDate>Sat, 17 Nov 2018 13:29:41 +0200</pubDate>
+    <lastBuildDate>Sat, 17 Nov 2018 13:29:41 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -38,8 +38,8 @@ computation is the &lt;a href=&quot;https://www.wikiwand.com/en/Turing_machine&q
 machine&lt;/em&gt;&lt;/a&gt;. A
 Turing machine is an abstract computer that has an infinite memory and can
 sequentially traverse this memory as needed. It resembles a program which takes
-an input and computes an output (in terms of accept or reject) but has access
-to an infinite memory.&lt;/p&gt;
+an input and computes an output (in terms of accepting or rejecting the input)
+but has access to an infinite memory.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Computer science is about computing.&lt;/p&gt;
