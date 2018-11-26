@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Nov 2018 20:33:11 +0200</pubDate>
-    <lastBuildDate>Sun, 25 Nov 2018 20:33:11 +0200</lastBuildDate>
+    <pubDate>Mon, 26 Nov 2018 11:03:20 +0200</pubDate>
+    <lastBuildDate>Mon, 26 Nov 2018 11:03:20 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -157,9 +157,9 @@ faster than it used to:&lt;/p&gt;
   helped a lot in the total loading time of the blog.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;In conclusion, having fewer files for the browser to download, and fewer
-  resources that access the network help greatly in speeding the page load
-  specially for static websites such as blogs.&lt;/p&gt;
+&lt;p&gt;Having fewer files for the browser to download, and fewer resources that
+  access the network help greatly in speeding the page load specially for
+  static websites such as blogs.&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 Aug 2018 00:00:00 +0200</pubDate>
         <link>https://aonemd.github.io/blog/how-i-improved-the-loading-speed-of-my-blog</link>
