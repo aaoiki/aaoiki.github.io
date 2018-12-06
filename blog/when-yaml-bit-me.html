@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>When YAML Bit Me | aonemd</title>
+    <meta name="description" content="Story time! This is the story of a bug I encountered about 3 years ago.Basically, I had a model Book that contained a serialized object attributecalled info ...">
+    <link rel="canonical" href="https://aonemd.github.io/blog/when-yaml-bit-me">
+    <link rel="alternate" type="application/rss+xml" title="aonemd" href="https://aonemd.github.io/feed.xml">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/aonemd-logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/aonemd-logo.png" />
+
+    <link rel="stylesheet" href="/index.css">
+  </head>
+
+  <body class="">
+    <nav>
+  <div class="title">
+    <a href="/">aonemd</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggle">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+
+    <article>
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="view-post__en-title">
+        <h2>When YAML Bit Me <small class="view-post__category">Debugging</small></h2>
+      </div>
+
+      <h5><span>December 7, 2018</span></h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 center">
+      <div lang='en'>
+        <p>Story time! This is the story of a bug I encountered about 3 years ago.
+Basically, I had a model <code class="highlighter-rouge">Book</code> that contained a serialized object attribute
+called <code class="highlighter-rouge">info</code> and <code class="highlighter-rouge">BooksController</code> initially contained this search query:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Book</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="s1">'info LIKE ?'</span><span class="p">,</span> <span class="s2">"%ref: '</span><span class="si">#{</span><span class="n">params</span><span class="p">[</span><span class="ss">:ref</span><span class="p">]</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The bug that surfaced at the time was that some books were not fetched when the
+search query contained alpha-numeric reference numbers (those that contains
+both digits and letters) as some reference numbers were pure digits and some
+were a mix of digits and alphabetical characters.</p>
+
+<p>The main issue with the previous search query is that it assumes that the value
+of <code class="highlighter-rouge">ref</code> is always stored wrapped in single quotes, i.e. <code class="highlighter-rouge">ref: '123'</code> as in the
+case with integer reference numbers, however; alpha-numeric reference numbers
+were stored in the database without the single quotes!</p>
+
+<p>My initial solution was to provide two search queries for each type of
+reference numbers because, at the time, I thought the issue was with the way
+the object was serialized in PostgreSQL. However, and after further
+investigation, the problem turned out to be with YAML.</p>
+
+<p>As it turns out, the main issue was with how YAML (or Psych in Ruby) dumps
+integers and strings differently. Checkout the following code snippet and see
+for yourself:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'psych'</span>
+
+<span class="no">Psych</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="s1">'123'</span><span class="p">)</span>   <span class="c1"># =&gt; "--- '123'\n"</span>
+
+<span class="c1">## vs.</span>
+
+<span class="no">Psych</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span> <span class="c1"># =&gt; "--- hello\n"</span>
+</code></pre></div></div>
+
+<p>This is not a bug in Psych. In fact, the same behavior is found in Python
+implementation, PyYAML:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s">'123'</span><span class="p">)</span>   <span class="c"># =&gt; "'123'\n"</span>
+
+<span class="c">## vs.</span>
+
+<span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span> <span class="c"># =&gt; 'hello\n...\n'</span>
+</code></pre></div></div>
+
+<p>It’s weird to me why YAML doesn’t treat all strings equally and keep or remove
+the quotes all together. This just adds up to the list of <a href="https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html" target="blank">weird behavior of
+YAML</a>.
+Although to be fair, it might be a way to differentiate between integers and
+integers wrapped in quotes when they are dumped and reloaded (I’m not waging a
+war on YAML, I swear).</p>
+
+<p>Eventually, to work around this issue, I had to explicitly convert
+<code class="highlighter-rouge">params[:ref]</code> to an integer iff it could be cast into an integer. This way, we
+can write a single search query and remove the wrapping single quotes for all
+types of reference numbers:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ref</span> <span class="o">=</span> <span class="no">Integer</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:ref</span><span class="p">])</span> <span class="k">rescue</span> <span class="n">params</span><span class="p">[</span><span class="ss">:ref</span><span class="p">]</span>
+
+<span class="no">Book</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="s1">'info LIKE ?'</span><span class="p">,</span> <span class="s2">"%ref: </span><span class="si">#{</span><span class="n">ref</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>That’s it for now. Thanks for reading!</p>
+
+      </div>
+
+      
+        <div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https://aonemd.github.io/blog/when-yaml-bit-me&text=When YAML Bit Me&hashtags=YAML,Rails,PostgreSQL,bugs&via=aonemd" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https://aonemd.github.io/blog/when-yaml-bit-me&title=When YAML Bit Me" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=When YAML Bit Me&url=https://aonemd.github.io/blog/when-yaml-bit-me" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https://aonemd.github.io/blog/when-yaml-bit-me" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https://aonemd.github.io/blog/when-yaml-bit-me&title=When YAML Bit Me" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+
+        <hr>
+
+<input type="hidden" id="issueId" value="15">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/comments.css">
+<script type="text/javascript"
+        src="/comments.js"
+        async>
+</script>
+
+      
+    </div>
+  </div>
+</article>
+
+
+    <script async type="text/javascript" src="/index.js" charset="utf-8"></script>
+  </body>
+</html>

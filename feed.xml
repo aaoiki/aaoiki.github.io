@@ -6,9 +6,94 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Nov 2018 11:15:36 +0200</pubDate>
-    <lastBuildDate>Mon, 26 Nov 2018 11:15:36 +0200</lastBuildDate>
+    <pubDate>Fri, 07 Dec 2018 00:21:14 +0200</pubDate>
+    <lastBuildDate>Fri, 07 Dec 2018 00:21:14 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>When YAML Bit Me</title>
+        <description>&lt;p&gt;Story time! This is the story of a bug I encountered about 3 years ago.
+Basically, I had a model &lt;code class=&quot;highlighter-rouge&quot;&gt;Book&lt;/code&gt; that contained a serialized object attribute
+called &lt;code class=&quot;highlighter-rouge&quot;&gt;info&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;BooksController&lt;/code&gt; initially contained this search query:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'info LIKE ?'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%ref: '&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:ref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;'&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The bug that surfaced at the time was that some books were not fetched when the
+search query contained alpha-numeric reference numbers (those that contains
+both digits and letters) as some reference numbers were pure digits and some
+were a mix of digits and alphabetical characters.&lt;/p&gt;
+
+&lt;p&gt;The main issue with the previous search query is that it assumes that the value
+of &lt;code class=&quot;highlighter-rouge&quot;&gt;ref&lt;/code&gt; is always stored wrapped in single quotes, i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;ref: '123'&lt;/code&gt; as in the
+case with integer reference numbers, however; alpha-numeric reference numbers
+were stored in the database without the single quotes!&lt;/p&gt;
+
+&lt;p&gt;My initial solution was to provide two search queries for each type of
+reference numbers because, at the time, I thought the issue was with the way
+the object was serialized in PostgreSQL. However, and after further
+investigation, the problem turned out to be with YAML.&lt;/p&gt;
+
+&lt;p&gt;As it turns out, the main issue was with how YAML (or Psych in Ruby) dumps
+integers and strings differently. Checkout the following code snippet and see
+for yourself:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'psych'&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Psych&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'123'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &quot;--- '123'\n&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;## vs.&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Psych&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; &quot;--- hello\n&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is not a bug in Psych. In fact, the same behavior is found in Python
+implementation, PyYAML:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;yaml&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;yaml&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'123'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# =&amp;gt; &quot;'123'\n&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;## vs.&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;yaml&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# =&amp;gt; 'hello\n...\n'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s weird to me why YAML doesn’t treat all strings equally and keep or remove
+the quotes all together. This just adds up to the list of &lt;a href=&quot;https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html&quot; target=&quot;blank&quot;&gt;weird behavior of
+YAML&lt;/a&gt;.
+Although to be fair, it might be a way to differentiate between integers and
+integers wrapped in quotes when they are dumped and reloaded (I’m not waging a
+war on YAML, I swear).&lt;/p&gt;
+
+&lt;p&gt;Eventually, to work around this issue, I had to explicitly convert
+&lt;code class=&quot;highlighter-rouge&quot;&gt;params[:ref]&lt;/code&gt; to an integer iff it could be cast into an integer. This way, we
+can write a single search query and remove the wrapping single quotes for all
+types of reference numbers:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:ref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;rescue&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:ref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'info LIKE ?'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%ref: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That’s it for now. Thanks for reading!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 07 Dec 2018 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/when-yaml-bit-me</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/when-yaml-bit-me</guid>
+        
+        <category>YAML,</category>
+        
+        <category>Rails,</category>
+        
+        <category>PostgreSQL,</category>
+        
+        <category>bugs</category>
+        
+        
+        <category>Debugging</category>
+        
+      </item>
     
       <item>
         <title>Computer Science Is Not About Programming</title>
@@ -671,91 +756,6 @@ official language in the coming ICPC contests.&lt;/p&gt;
         
         
         <category>CP</category>
-        
-      </item>
-    
-      <item>
-        <title>I Took Some Time to Create a Time Tracker</title>
-        <description>&lt;p&gt;In my quest of finding the ultimate productivity framework, I came across the
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Pomodoro_Technique&quot; target=&quot;blank&quot;&gt;Pomodoro
-technique&lt;/a&gt;.
-The basic idea behind it is to divide the work into equal chunks of time and
-take a small break after each set. Usually it goes by working for 25 minutes in
-complete concentration, taking a 5 minutes break and repeating the cycle until
-the task is completed.&lt;/p&gt;
-
-&lt;h3 id=&quot;motivation&quot;&gt;Motivation&lt;/h3&gt;
-
-&lt;p&gt;It was the beginning of January this year when I decided to use the Pomodoro
-technique to help me study for my finals. However, I could not find a web app
-with a simple interface to use and thought it would be a good practice to build
-it. I remember it was right before the start of my odd semester final exams when
-I started the project. As you know, finals is the time in which you can achieve
-all what you wanted since the beginning of the semester, except studying of
-course. Having built the app, it actually came of a great help. In fact I’m
-using it right now as I’m writing this post (took me 5 sets to finish it).&lt;/p&gt;
-
-&lt;p&gt;I kept in mind to keep the interface as simple as possible. The home page is
-where you can start/stop the timer. There’s also a tracker page where you can
-keep track of your sets.  I named it
-&lt;a href=&quot;http://panadoura.herokuapp.com/&quot; target=&quot;blank&quot;&gt;Panadoura&lt;/a&gt;. The name
-&lt;em&gt;Panadoura&lt;/em&gt; comes from the Arabic word for tomato.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/images/cherrytomato_screenshot.png&quot; alt=&quot;CherryTomato home&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;architecture&quot;&gt;Architecture&lt;/h3&gt;
-
-&lt;p&gt;It started out with simple CoffeeScript file that runs and stops the timer and
-served it in a Sinatra app. Then added some more stuff along the way. Besides
-being a simple web app, the reason why I started with Sinatra was that I wanted
-to get out from under Rails umbrella and try some other alternatives for the
-web in Ruby. Of course, this comes with a lot of tradeoffs. Rails embraces the
-convention over configuration philosophy which makes it super easy to setup new
-applications and get to the work quickly. To try something different, I had to
-have some kind of a shift in mind. I also needed to write some bootstrapping
-scripts in order to glue the different components of my app together.&lt;/p&gt;
-
-&lt;p&gt;The architecture is a bit different from the normal MVC Rails-y way. It
-resembles the structure of a normal Ruby gem where the main logic in the app
-lives under &lt;code class=&quot;highlighter-rouge&quot;&gt;lib/&lt;/code&gt; directory whereas the application routes and views are in
-&lt;code class=&quot;highlighter-rouge&quot;&gt;app/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The application layer consists of a single file that defines all the routes to
-the web app. It contains the logic that authorizes the users from Twitter and
-routes them to the home page. &lt;del&gt;It calls two helper classes; one to load the
-assets, and another to configure user sessions.&lt;/del&gt;&lt;/p&gt;
-
-&lt;p&gt;For the persistence layer, &lt;del&gt;I used
-&lt;a href=&quot;http://rom-rb.org/&quot; target=&quot;blank&quot;&gt;rom-rb&lt;/a&gt; which philosophy is to decouple
-different responsibilities and distribute them over many components/layers. I
-had to write a wrapper to load the database settings and connect ROM to
-PostgreSQL. I also wrote a simple method to run the migrations.&lt;/del&gt; I used
-&lt;a href=&quot;https://github.com/jeremyevans/sequel&quot; target=&quot;blank&quot;&gt;Sequel&lt;/a&gt; mainly for its
-simplicity and flexibility. In 2018, I rewrote the persistence layer and
-removed rom-rb entirely as I felt it was too complicated and the application at
-hand was so simple feature-wise. I also had to write a wrapper around Sequel to
-connect to the database.&lt;/p&gt;
-
-&lt;p&gt;For the presentation layer, Panadoura is now a Vue.js app backed by a Sinatra
-server. I rewrote the frontend code as well in JavaScript. The assets are now
-bundled into a single JavaScript file using WebPack 4.&lt;/p&gt;
-
-&lt;p&gt;Currently, I’m using Heroku experimental tier to host the app. The source code
-is on
-&lt;a href=&quot;https://github.com/aonemd/panadoura&quot; target=&quot;blank&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 21 Dec 2016 00:00:00 +0200</pubDate>
-        <link>https://aonemd.github.io/blog/panadoura</link>
-        <guid isPermaLink="true">https://aonemd.github.io/blog/panadoura</guid>
-        
-        <category>time,</category>
-        
-        <category>management,</category>
-        
-        <category>pomodoro_technique</category>
-        
-        
-        <category>Projects</category>
         
       </item>
     
