@@ -81,8 +81,8 @@ were stored in the database without the single quotes!</p>
 
 <p>My initial solution was to provide two search queries for each type of
 reference numbers because, at the time, I thought the issue was with the way
-the object was serialized in PostgreSQL. However, and after further
-investigation, the problem turned out to be with YAML.</p>
+the object was stored in PostgreSQL. However, and after further investigation,
+the problem turned out to be with YAML.</p>
 
 <p>As it turns out, the main issue was with how YAML (or Psych in Ruby) dumps
 integers and strings differently. Checkout the following code snippet and see

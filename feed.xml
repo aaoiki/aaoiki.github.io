@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Dec 2018 00:21:14 +0200</pubDate>
-    <lastBuildDate>Fri, 07 Dec 2018 00:21:14 +0200</lastBuildDate>
+    <pubDate>Fri, 07 Dec 2018 09:09:36 +0200</pubDate>
+    <lastBuildDate>Fri, 07 Dec 2018 09:09:36 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -31,8 +31,8 @@ were stored in the database without the single quotes!&lt;/p&gt;
 
 &lt;p&gt;My initial solution was to provide two search queries for each type of
 reference numbers because, at the time, I thought the issue was with the way
-the object was serialized in PostgreSQL. However, and after further
-investigation, the problem turned out to be with YAML.&lt;/p&gt;
+the object was stored in PostgreSQL. However, and after further investigation,
+the problem turned out to be with YAML.&lt;/p&gt;
 
 &lt;p&gt;As it turns out, the main issue was with how YAML (or Psych in Ruby) dumps
 integers and strings differently. Checkout the following code snippet and see
