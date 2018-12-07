@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>When YAML Bit Me | aonemd</title>
-    <meta name="description" content="Story time! This is the story of a bug I encountered about 3 years ago.Basically, I had a model Book that contained a serialized object attributecalled info ...">
+    <meta name="description" content="This is the story of a bug I encountered about 3 years ago.  Basically, I had amodel Book that contained a serialized object attribute called info andBooksCo...">
     <link rel="canonical" href="https://aonemd.github.io/blog/when-yaml-bit-me">
     <link rel="alternate" type="application/rss+xml" title="aonemd" href="https://aonemd.github.io/feed.xml">
 
@@ -62,9 +62,9 @@
   <div class="row">
     <div class="col-6 center">
       <div lang='en'>
-        <p>Story time! This is the story of a bug I encountered about 3 years ago.
-Basically, I had a model <code class="highlighter-rouge">Book</code> that contained a serialized object attribute
-called <code class="highlighter-rouge">info</code> and <code class="highlighter-rouge">BooksController</code> initially contained this search query:</p>
+        <p>This is the story of a bug I encountered about 3 years ago.  Basically, I had a
+model <code class="highlighter-rouge">Book</code> that contained a serialized object attribute called <code class="highlighter-rouge">info</code> and
+<code class="highlighter-rouge">BooksController</code> initially contained this search query:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Book</span><span class="p">.</span><span class="nf">where</span><span class="p">(</span><span class="s1">'info LIKE ?'</span><span class="p">,</span> <span class="s2">"%ref: '</span><span class="si">#{</span><span class="n">params</span><span class="p">[</span><span class="ss">:ref</span><span class="p">]</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
 </code></pre></div></div>

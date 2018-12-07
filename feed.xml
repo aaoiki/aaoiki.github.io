@@ -6,15 +6,15 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Dec 2018 09:09:36 +0200</pubDate>
-    <lastBuildDate>Fri, 07 Dec 2018 09:09:36 +0200</lastBuildDate>
+    <pubDate>Fri, 07 Dec 2018 12:35:15 +0200</pubDate>
+    <lastBuildDate>Fri, 07 Dec 2018 12:35:15 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
         <title>When YAML Bit Me</title>
-        <description>&lt;p&gt;Story time! This is the story of a bug I encountered about 3 years ago.
-Basically, I had a model &lt;code class=&quot;highlighter-rouge&quot;&gt;Book&lt;/code&gt; that contained a serialized object attribute
-called &lt;code class=&quot;highlighter-rouge&quot;&gt;info&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;BooksController&lt;/code&gt; initially contained this search query:&lt;/p&gt;
+        <description>&lt;p&gt;This is the story of a bug I encountered about 3 years ago.  Basically, I had a
+model &lt;code class=&quot;highlighter-rouge&quot;&gt;Book&lt;/code&gt; that contained a serialized object attribute called &lt;code class=&quot;highlighter-rouge&quot;&gt;info&lt;/code&gt; and
+&lt;code class=&quot;highlighter-rouge&quot;&gt;BooksController&lt;/code&gt; initially contained this search query:&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'info LIKE ?'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%ref: '&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:ref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;'&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
