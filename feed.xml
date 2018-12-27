@@ -6,9 +6,164 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 Dec 2018 17:48:08 +0200</pubDate>
-    <lastBuildDate>Tue, 25 Dec 2018 17:48:08 +0200</lastBuildDate>
+    <pubDate>Thu, 27 Dec 2018 13:56:01 +0200</pubDate>
+    <lastBuildDate>Thu, 27 Dec 2018 13:56:01 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Making System Calls From Ruby</title>
+        <description>&lt;p&gt;While I was reading about Linux system calls, I was curious about how to
+perform them in Ruby specially that Ruby isn’t considered a “system”
+programming language. However, It’s very possible to perform system calls using
+Ruby. In this post, I’m going to demonstrate the different ways to make system
+calls using Ruby. But first, let us define what system calls are. Simply put, a
+system call is a way to enter the system kernel, execute an operation, and then
+return from the kernel.&lt;/p&gt;
+
+&lt;p&gt;In the following sections, I’ll demonstrate three [almost] different ways to
+perform system calls from Ruby. All the code is tested on a 64-bit GNU/Linux
+system. Although, there are some notes about differences in other operating
+systems. If you tested something on your operating system and want me to add it
+here, please add a comment or send me a message.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-kernelsyscall&quot;&gt;1. Kernel.syscall&lt;/h3&gt;
+
+&lt;p&gt;This first, and most straight forward way to perform a system call is by using
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Kernel.syscall&lt;/code&gt;. In fact, internally, Kernel.syscall calls the C function
+&lt;code class=&quot;highlighter-rouge&quot;&gt;syscall&lt;/code&gt; directly. This is how it’s done:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;syscall&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;syscall_number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;syscall_arguments&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;syscall_number&lt;/code&gt; is a unique number for each system operation and can be
+obtained for 64-bit Linux systems from &lt;a href=&quot;https://github.com/torvalds/linux/blob/v3.13/arch/x86/syscalls/syscall_64.tbl&quot; target=&quot;blank&quot;&gt;this
+table&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, for example, to perform an exit system call with exit status 1, call the
+following Ruby program:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;syscall&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and check the exit code in your shell:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# =&amp;gt; 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: I’m using Ruby 2.6.0 without the &lt;code class=&quot;highlighter-rouge&quot;&gt;--jit&lt;/code&gt; option to run this example.
+For Ruby versions prior to 2.6.0 on Linux, you might want to use the
+&lt;code class=&quot;highlighter-rouge&quot;&gt;exit_group&lt;/code&gt; system call (with syscall_number 231) instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;exit&lt;/code&gt; to
+terminate all the threads the Ruby process is using otherwise, the Ruby
+process will freeze waiting to terminate the remaining thread(s).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;However, there’s a caveat here. &lt;a href=&quot;https://www.rubydoc.info/stdlib/core/Kernel#syscall-instance_method&quot; target=&quot;blank&quot;&gt;The Ruby
+documentation&lt;/a&gt;
+says that &lt;code class=&quot;highlighter-rouge&quot;&gt;Kernel.syscall&lt;/code&gt; isn’t safe nor it is portable. If you ran the last
+program using the Ruby &lt;code class=&quot;highlighter-rouge&quot;&gt;-v&lt;/code&gt; command line option (for verbose), you’ll see the
+following message:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;warning: We plan to remove a syscall function at future release. DL(Fiddle)
+provides safer alternative.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Thus, &lt;a href=&quot;https://github.com/ruby/fiddle&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Fiddle&lt;/em&gt;&lt;/a&gt; will be our
+next alternative for making system calls in Ruby.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-fiddle&quot;&gt;2. Fiddle&lt;/h3&gt;
+
+&lt;p&gt;Fiddle is a &lt;a href=&quot;https://sourceware.org/libffi/&quot; target=&quot;blank&quot;&gt;libffi&lt;/a&gt; wrapper
+written for Ruby.  Luckily, it is already a part of Ruby’s standard library.
+&lt;em&gt;libffi&lt;/em&gt; is a &lt;strong&gt;foreign function interface (FFI)&lt;/strong&gt; implementation that provides
+a C interface for calling compiled code (functions, really) from your program
+at runtime.&lt;/p&gt;
+
+&lt;p&gt;The following program demonstrates how to use Fiddle to call a C function from
+Ruby:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'fiddle'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;libc&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Fiddle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dlopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/lib/libc.so.6'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Fiddle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'syscall'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Fiddle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TYPE_INT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                                 &lt;span class=&quot;no&quot;&gt;Fiddle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TYPE_INT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Fiddle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TYPE_INT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The code calls the C function &lt;code class=&quot;highlighter-rouge&quot;&gt;syscall&lt;/code&gt; to perform the exit system call.  In
+addition to the name of the function, you have to pass in an array that
+contains the types of each argument the syscall/function takes, and another
+argument for the function return type, which is an integer number in this case.
+For example, the exit syscall function takes two parameters; one for the exit
+syscall itself, the number 60, and another for the exit status, which is 1
+here.  Thus, we have an array of two integers.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: the path to &lt;code class=&quot;highlighter-rouge&quot;&gt;libc&lt;/code&gt; specified in the code will differ for other
+operating systems. For MacOS for example, it should be set to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/lib/libc.dylib&lt;/code&gt;. Please also note that I didn’t test it myself so it
+might be a different value.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Check the exit code:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# =&amp;gt; 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-ffi&quot;&gt;3. FFI&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ffi/ffi&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Ruby-ffi&lt;/em&gt;&lt;/a&gt; is an FFI
+implementation in Ruby.  Other than making system calls, FFI makes it possible
+to fully write C extensions without the need to write pure C code. By far, this
+is the safest, most convenient method as it automatically locates the path to
+the libc library without the need specify it manually as in the case with
+Fiddle above.&lt;/p&gt;
+
+&lt;p&gt;The code that makes a system call looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ffi'&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SyscallRunner&lt;/span&gt;
+  &lt;span class=&quot;kp&quot;&gt;extend&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;FFI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Library&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;ffi_lib&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;FFI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;LIBC&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;attach_function&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:syscall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:int&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;SyscallRunner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;syscall&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Again, you need to pass in an array that contains the types of each argument
+the function takes, and another argument for the function return type.&lt;/p&gt;
+
+&lt;p&gt;And again, check the exit status:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# =&amp;gt; 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Although Ruby might not be considered a system programming language, Ruby is
+capable of going low level and performing system calls in more than one way.
+All the methods delegate the system call  to C syscall function in a way or
+another.  The most secure, most scalable method is using Ruby-ffi to invoke C
+syscall function.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 26 Dec 2018 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/making-system-calls-from-ruby</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/making-system-calls-from-ruby</guid>
+        
+        <category>Ruby,</category>
+        
+        <category>Linux,</category>
+        
+        <category>syscalls,</category>
+        
+        <category>ffi</category>
+        
+        
+        <category>Ruby</category>
+        
+      </item>
     
       <item>
         <title>When YAML Bit Me</title>
@@ -710,52 +865,6 @@ debt) في تلك المشاريع ضخم تصعب معه صيانة المشر�
         
         
         <category>Career</category>
-        
-      </item>
-    
-      <item>
-        <title>Go for Competitive Programming</title>
-        <description>&lt;p&gt;I first started writing Go during my time at UserTalk and have been using it
-occasionaly since then because of its minimal syntax and standard library that
-makes it a great language for writing almost any kind of software.&lt;/p&gt;
-
-&lt;p&gt;Whenever I’m solving a competitive programming problem, I usually use C or C++
-(whichever works best) to write the solution mainly because they are both
-supported by almost all online judges and programming contests.&lt;/p&gt;
-
-&lt;p&gt;Moreover, I was recently solving a problem on HackerRank and decided to write
-the solution in C. The problem was quite easy but my solution always resulted
-in a Segmentation Fault. Here’s a
-&lt;a href=&quot;https://www.hackerrank.com/challenges/dynamic-array&quot;&gt;link&lt;/a&gt; to the problem if
-you’re asking.
-Luckily, I found out that I could submit the solution in Go, besides other
-languages. So after +30 failed submissions (and out of frustration), I decided
-to translate the C code to Go and boom, it passed all the test cases
-flawlessly.  Go being garbage collected here, unlike C, makes it really easy to
-focus on the solution and leave the task of memory management to the compiler.
-Also, by having a strong standard library, the number of lines in the Go solution
-is about half the number of lines in the C code.  Here’s a screenshot comparing
-the two:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/images/go_for_cp-go_vs_c.png&quot; alt=&quot;Go vs. C screenshot&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Go is minimal, concise, has a huge standard library, performs fast, backed by a
-company like Google, has a growing community, and many online judges already
-support it on their platforms and even though writing Go might require some
-mind shift, a programmer can easily adjust themselves to that. These all the
-reasons why I think it’s time for the ACM organization to consider Go as an
-official language in the coming ICPC contests.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 10 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://aonemd.github.io/blog/go-for-cp</link>
-        <guid isPermaLink="true">https://aonemd.github.io/blog/go-for-cp</guid>
-        
-        <category>Go,</category>
-        
-        <category>CP</category>
-        
-        
-        <category>CP</category>
         
       </item>
     
