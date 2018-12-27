@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Dec 2018 13:56:01 +0200</pubDate>
-    <lastBuildDate>Thu, 27 Dec 2018 13:56:01 +0200</lastBuildDate>
+    <pubDate>Thu, 27 Dec 2018 14:05:14 +0200</pubDate>
+    <lastBuildDate>Thu, 27 Dec 2018 14:05:14 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -28,7 +28,7 @@ here, please add a comment or send me a message.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-kernelsyscall&quot;&gt;1. Kernel.syscall&lt;/h3&gt;
 
-&lt;p&gt;This first, and most straight forward way to perform a system call is by using
+&lt;p&gt;This first, and most straightforward way to perform a system call is by using
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Kernel.syscall&lt;/code&gt;. In fact, internally, Kernel.syscall calls the C function
 &lt;code class=&quot;highlighter-rouge&quot;&gt;syscall&lt;/code&gt; directly. This is how it’s done:&lt;/p&gt;
 
