@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Jan 2019 22:30:34 +0200</pubDate>
-    <lastBuildDate>Sat, 12 Jan 2019 22:30:34 +0200</lastBuildDate>
+    <pubDate>Sat, 12 Jan 2019 22:50:28 +0200</pubDate>
+    <lastBuildDate>Sat, 12 Jan 2019 22:50:28 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -17,9 +17,9 @@
 &lt;p&gt;I’m a great hoarder of memes. Seriously, I have a huge folder full of memes and
 GIFs. I collect my memes usually whenever I’m watching a movie or a series by
 taking a screenshot of the scene with subtitles enabled. The issue is, the
-program I use to take screenshots names each new file by the date and time the
+program I use to take screenshots, names each new file by the date and time the
 screenshot was taken. I have a 1200 screenshot folder each named by date and
-time. So, finding a certain screenshot/meme is too much a hassle.&lt;/p&gt;
+time. So finding a certain screenshot/meme is too much a hassle.&lt;/p&gt;
 
 &lt;p&gt;I thus wanted a better way to go through my collection of memes. My goal was to
 rename each screenshot file to the subtitles it contains. I have, in fact, been
