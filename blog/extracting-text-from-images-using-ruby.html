@@ -172,7 +172,7 @@ need all the features the wrapper provides.</p>
 <span class="no">Pathname</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">SRC_DIR</span><span class="p">).</span><span class="nf">children</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
   <span class="c1"># ...</span>
   <span class="n">text</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span>  <span class="n">_</span> <span class="o">=</span>
-    <span class="no">Open3</span><span class="p">.</span><span class="nf">capture3</span><span class="p">(</span><span class="s2">"tesseract </span><span class="si">#{</span><span class="n">tmp_path</span><span class="si">}</span><span class="s2"> stdout -l eng --oem 3 --psm 3"</span><span class="p">)</span>
+    <span class="no">Open3</span><span class="p">.</span><span class="nf">capture3</span><span class="p">(</span><span class="s2">"tesseract </span><span class="si">#{</span><span class="n">tmp_path</span><span class="si">}</span><span class="s2"> stdout -l eng --oem 0 --psm 3"</span><span class="p">)</span>
 
   <span class="nb">puts</span> <span class="n">text</span><span class="p">.</span><span class="nf">strip</span>
 <span class="k">end</span>
