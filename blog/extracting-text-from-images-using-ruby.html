@@ -210,6 +210,15 @@ comparison of running both scripts on a sample of 525 1920x1080 PNG files:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 ocr.py  277.92s user 31.38s system 141% cpu 3:37.85 total
 </code></pre></div></div>
 
+<p><strong>Edit:</strong> <a href="https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edzdwmu/">/u/janko-m on
+Reddit</a>
+pointed me to <a href="https://github.com/libvips/libvips">libvips</a> and I actually
+replaced ImageMagick with libvips. The runtime became 3 times faster than what
+it used to be. Here’s the output of the time command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby ocr.rb  234.74s user 35.64s system 120% cpu 3:45.17 total
+</code></pre></div></div>
+
 <h3 id="accuracy">Accuracy</h3>
 
 <p>In the end, the text in 93% of my screenshots was recognized almost correctly
