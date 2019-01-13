@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Jan 2019 17:30:34 +0200</pubDate>
-    <lastBuildDate>Sun, 13 Jan 2019 17:30:34 +0200</lastBuildDate>
+    <pubDate>Sun, 13 Jan 2019 21:11:55 +0200</pubDate>
+    <lastBuildDate>Sun, 13 Jan 2019 21:11:55 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -144,12 +144,32 @@ I'm coming back as a toilet brush.
 
 &lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
 
+&lt;h3 id=&quot;speed&quot;&gt;Speed&lt;/h3&gt;
+
+&lt;p&gt;As I mentioned earlier, I first started with a &lt;a href=&quot;https://gist.github.com/aonemd/a4895dbdbdf9b7a0bc47bcb051aae5b8&quot; target=&quot;blank&quot;&gt;Python
+script&lt;/a&gt;
+to test Tesseract.  I did a small time comparison between the Ruby version and
+the Python version after some &lt;a href=&quot;https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edxnxzh/&quot; target=&quot;blank&quot;&gt;great
+discussions&lt;/a&gt;
+on &lt;a href=&quot;https://reddit.com/r/ruby&quot; target=&quot;blank&quot;&gt;/r/ruby&lt;/a&gt;. Unfortunately, the
+Python version is much faster. I believe that most of the overhead in the Ruby
+version comes from using ImageMagick for image processing. Here’s the
+comparison of running both scripts on a sample of 525 1920x1080 PNG files:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby ocr.rb  864.69s user 62.12s system 136% cpu 11:19.01 total
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;vs.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 ocr.py  277.92s user 31.38s system 141% cpu 3:37.85 total
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h3 id=&quot;accuracy&quot;&gt;Accuracy&lt;/h3&gt;
 
-&lt;p&gt;In the end, the text in 93% of my screenshots was recognized almost correctly.
-I filtered out the screenshots that don’t contain any subtitles before running
-the script. This means that only 7% of my screenshots were not recognized
-correctly or were recognized as empty text. &lt;a href=&quot;https://github.com/tesseract-ocr/tesseract/wiki/ImproveQuality&quot; target=&quot;blank&quot;&gt;Tesseract
+&lt;p&gt;In the end, the text in 93% of my screenshots was recognized almost correctly
+(with some gibberish noise in some files).  I filtered out the screenshots that
+don’t contain any subtitles before running the script. This means that only 7%
+of my screenshots were not recognized correctly or were recognized as empty
+text.  &lt;a href=&quot;https://github.com/tesseract-ocr/tesseract/wiki/ImproveQuality&quot; target=&quot;blank&quot;&gt;Tesseract
 wiki&lt;/a&gt;
 provides some tips to improve text recognition accuracy mainly, they are all
 about processing the source image before feeding it to Tesseract.&lt;/p&gt;
