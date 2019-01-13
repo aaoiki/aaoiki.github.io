@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Jan 2019 17:10:21 +0200</pubDate>
-    <lastBuildDate>Sun, 13 Jan 2019 17:10:21 +0200</lastBuildDate>
+    <pubDate>Sun, 13 Jan 2019 17:18:01 +0200</pubDate>
+    <lastBuildDate>Sun, 13 Jan 2019 17:18:01 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -151,12 +151,12 @@ I filtered out the screenshots that don’t contain any subtitles before running
 the script. This means that only 7% of my screenshots were not recognized
 correctly or were recognized as empty text. &lt;a href=&quot;https://github.com/tesseract-ocr/tesseract/wiki/ImproveQuality&quot; target=&quot;blank&quot;&gt;Tesseract
 wiki&lt;/a&gt;
-provides some tips to improve text recognization accuracy mainly, they are all
+provides some tips to improve text recognition accuracy mainly, they are all
 about processing the source image before feeding it to Tesseract.&lt;/p&gt;
 
 &lt;h3 id=&quot;duplicates&quot;&gt;Duplicates&lt;/h3&gt;
 
-&lt;p&gt;This is not related to Tesseract itself or text recognization per se, but it’s
+&lt;p&gt;This is not related to Tesseract itself or text recognition per se, but it’s
 more about the script.  If there are more than one screenshot with the same
 subtitles, one image file will overwrite the other. I don’t handle this case in
 my script as of yet; I want to get rid of duplicates anyway.&lt;/p&gt;
