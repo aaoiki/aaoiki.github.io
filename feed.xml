@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Jan 2019 23:16:03 +0200</pubDate>
-    <lastBuildDate>Sat, 12 Jan 2019 23:16:03 +0200</lastBuildDate>
+    <pubDate>Sun, 13 Jan 2019 11:26:45 +0200</pubDate>
+    <lastBuildDate>Sun, 13 Jan 2019 11:26:45 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -50,6 +50,11 @@ sections, I’ll demonstrate the steps the script goes through to recognize the
 subtitles in each screenshot.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-script&quot;&gt;The Script&lt;/h2&gt;
+
+&lt;p&gt;Next is a simpler version of the script I actually used. The full script
+including the part where I process the output text and rename each file to the
+new name is a gist on
+&lt;a href=&quot;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0&quot; target=&quot;blank&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The first part of the script just loops through each file (which is a PNG
 image) in my source directory and reads it as a grayscale image.&lt;/p&gt;
@@ -136,10 +141,6 @@ need all the features the wrapper provides.&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Oh, man. In my next life
 I'm coming back as a toilet brush.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The full script including the part where I process the output text and rename
-each file to the new name is a gist on
-&lt;a href=&quot;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0&quot; target=&quot;blank&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
 
