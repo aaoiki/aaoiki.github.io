@@ -101,7 +101,7 @@ subtitles in each screenshot.</p>
 <p>Next is a simpler version of the script I actually used. The full script
 including the part where I process the output text and rename each file to the
 new name is a gist on
-<a href="https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0" target="blank">GitHub</a>.</p>
+<a href="https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor-rb" target="blank">GitHub</a>.</p>
 
 <p>The first part of the script just loops through each file (a 1920x1080 PNG
 image file) in my source directory and reads it as a grayscale image.</p>
@@ -161,8 +161,7 @@ details in the image are removed except for the vivid subtitles. This file is
 stored under the <code class="highlighter-rouge">TMP_DIR</code> we defined earlier in the script. You can of course
 delete the <code class="highlighter-rouge">TMP_DIR</code> safely or instrument the script to do it for you.</p>
 
-<p><a href="/public/images/extracting_text_example_negative.png"><img src="/public/images/extracting_text_example_negative.png" alt="Example screenshot
-negative" /></a></p>
+<p><a href="/public/images/extracting_text_example_negative.png"><img src="/public/images/extracting_text_example_negative.png" alt="Example screenshot negative" /></a></p>
 
 <h3 id="recognizing-the-text">Recognizing The Text</h3>
 
@@ -210,11 +209,13 @@ comparison of running both scripts on a sample of 525 1920x1080 PNG files:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 ocr.py  277.92s user 31.38s system 141% cpu 3:37.85 total
 </code></pre></div></div>
 
-<p><strong>Edit:</strong> <a href="https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edzdwmu/">/u/janko-m on
+<p><strong>Edit:</strong> <a href="https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edzdwmu/" target="blank">/u/janko-m on
 Reddit</a>
 pointed me to <a href="https://github.com/libvips/libvips">libvips</a> and I actually
-replaced ImageMagick with libvips. The runtime became 3 times faster than what
-it used to be. Here’s the output of the time command:</p>
+replaced ImageMagick with libvips. The script is also <a href="https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor_optimized-rb" target="blank">on
+Github</a>
+The runtime became 3 times faster than what it used to be. Here’s the output of
+the time command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby ocr.rb  234.74s user 35.64s system 120% cpu 3:45.17 total
 </code></pre></div></div>

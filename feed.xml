@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Jan 2019 21:57:25 +0200</pubDate>
-    <lastBuildDate>Sun, 13 Jan 2019 21:57:25 +0200</lastBuildDate>
+    <pubDate>Mon, 14 Jan 2019 09:54:40 +0200</pubDate>
+    <lastBuildDate>Mon, 14 Jan 2019 09:54:40 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -54,7 +54,7 @@ subtitles in each screenshot.&lt;/p&gt;
 &lt;p&gt;Next is a simpler version of the script I actually used. The full script
 including the part where I process the output text and rename each file to the
 new name is a gist on
-&lt;a href=&quot;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0&quot; target=&quot;blank&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&quot;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor-rb&quot; target=&quot;blank&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The first part of the script just loops through each file (a 1920x1080 PNG
 image file) in my source directory and reads it as a grayscale image.&lt;/p&gt;
@@ -114,8 +114,7 @@ details in the image are removed except for the vivid subtitles. This file is
 stored under the &lt;code class=&quot;highlighter-rouge&quot;&gt;TMP_DIR&lt;/code&gt; we defined earlier in the script. You can of course
 delete the &lt;code class=&quot;highlighter-rouge&quot;&gt;TMP_DIR&lt;/code&gt; safely or instrument the script to do it for you.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/public/images/extracting_text_example_negative.png&quot;&gt;&lt;img src=&quot;/public/images/extracting_text_example_negative.png&quot; alt=&quot;Example screenshot
-negative&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/public/images/extracting_text_example_negative.png&quot;&gt;&lt;img src=&quot;/public/images/extracting_text_example_negative.png&quot; alt=&quot;Example screenshot negative&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;recognizing-the-text&quot;&gt;Recognizing The Text&lt;/h3&gt;
 
@@ -163,11 +162,13 @@ comparison of running both scripts on a sample of 525 1920x1080 PNG files:&lt;/p
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python3 ocr.py  277.92s user 31.38s system 141% cpu 3:37.85 total
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; &lt;a href=&quot;https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edzdwmu/&quot;&gt;/u/janko-m on
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; &lt;a href=&quot;https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edzdwmu/&quot; target=&quot;blank&quot;&gt;/u/janko-m on
 Reddit&lt;/a&gt;
 pointed me to &lt;a href=&quot;https://github.com/libvips/libvips&quot;&gt;libvips&lt;/a&gt; and I actually
-replaced ImageMagick with libvips. The runtime became 3 times faster than what
-it used to be. Here’s the output of the time command:&lt;/p&gt;
+replaced ImageMagick with libvips. The script is also &lt;a href=&quot;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor_optimized-rb&quot; target=&quot;blank&quot;&gt;on
+Github&lt;/a&gt;
+The runtime became 3 times faster than what it used to be. Here’s the output of
+the time command:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby ocr.rb  234.74s user 35.64s system 120% cpu 3:45.17 total
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
