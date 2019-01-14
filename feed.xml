@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Jan 2019 13:42:19 +0200</pubDate>
-    <lastBuildDate>Mon, 14 Jan 2019 13:42:19 +0200</lastBuildDate>
+    <pubDate>Mon, 14 Jan 2019 13:44:24 +0200</pubDate>
+    <lastBuildDate>Mon, 14 Jan 2019 13:44:24 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -167,8 +167,8 @@ Reddit&lt;/a&gt;
 pointed me to &lt;a href=&quot;https://github.com/libvips/libvips&quot;&gt;libvips&lt;/a&gt; and I actually
 replaced ImageMagick with libvips. The script is also &lt;a href=&quot;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor_optimized-rb&quot; target=&quot;blank&quot;&gt;on
 GitHub&lt;/a&gt;.
-The runtime became 3 times faster than what it used to be. Here’s the output of
-the time command:&lt;/p&gt;
+The runtime became 3 times faster than what it used to be and, in fact,
+outperformed the Python version. Here’s the output of the time command:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby ocr.rb  234.74s user 35.64s system 120% cpu 3:45.17 total
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
