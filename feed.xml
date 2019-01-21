@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Jan 2019 23:28:05 +0200</pubDate>
-    <lastBuildDate>Mon, 14 Jan 2019 23:28:05 +0200</lastBuildDate>
+    <pubDate>Mon, 21 Jan 2019 15:50:21 +0200</pubDate>
+    <lastBuildDate>Mon, 21 Jan 2019 15:50:21 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -183,6 +183,14 @@ text.  &lt;a href=&quot;https://github.com/tesseract-ocr/tesseract/wiki/ImproveQ
 wiki&lt;/a&gt;
 provides some tips to improve text recognition accuracy mainly, they are all
 about processing the source image before feeding it to Tesseract.&lt;/p&gt;
+
+&lt;h3 id=&quot;different-colors&quot;&gt;Different Colors&lt;/h3&gt;
+
+&lt;p&gt;This is issue occurred with screenshots that contained subtitles in colors
+other than white. I have for example a screenshot with yellow subtitles that
+wasn’t recognized by the original script. I had to use a lower threshold while
+converting the image to a black-and-white binary image so that the subtitles
+wouldn’t be filtered out as noise.&lt;/p&gt;
 
 &lt;h3 id=&quot;duplicates&quot;&gt;Duplicates&lt;/h3&gt;
 
