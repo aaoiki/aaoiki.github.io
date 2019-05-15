@@ -91,8 +91,8 @@ rules them all.</p>
 
 <h3 id="finding-files-by-content">Finding Files By Content</h3>
 
-<p>To find files, Vim has a <code class="highlighter-rouge">:grep</code> or <code class="highlighter-rouge">:vimgrep</code> command which finds files that
-contain a certain pattern. Here’s how to use it in command mode:</p>
+<p>To find files, Vim has a <code class="highlighter-rouge">:grep</code> command which finds files that contain a
+certain pattern. Here’s how to use it in command mode:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
 </code></pre></div></div>
@@ -104,12 +104,17 @@ basic and not very useful, is it?</p>
 
 <p><img src="/public/images/finding_files_in_vim-vimgrep.png" alt="vimgrep in action" /></p>
 
+<p>Vim also has a <code class="highlighter-rouge">:vimgrep</code>  command that works similarly to <code class="highlighter-rouge">:grep</code> command but
+it populates a quickfix list with all the matches. You can cycle between the
+matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix list in a window
+using <code class="highlighter-rouge">:copen</code>.</p>
+
 <p>For more functionality, ease-of-use, and much faster results, I have been using
 a tool as a replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank">Ag, the silver
 searcher</a> and a
 Vim interface for it through
 <a href="https://github.com/rking/ag.vim" target="blank">ag.vim</a> (which has been
-unmaintained for a while now). Ag.vim opens the results in a Quickfix list
+unmaintained for a while now). Ag.vim opens the results in a quickfix list
 window and you can navigate and choose which file to open using the keyboard.
 This was in my <code class="highlighter-rouge">.vimrc</code> for Ag:</p>
 
