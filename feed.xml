@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 May 2019 18:27:32 +0200</pubDate>
-    <lastBuildDate>Wed, 15 May 2019 18:27:32 +0200</lastBuildDate>
+    <pubDate>Wed, 15 May 2019 18:40:26 +0200</pubDate>
+    <lastBuildDate>Wed, 15 May 2019 18:40:26 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -124,8 +124,12 @@ shell config:&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;FZF_DEFAULT_COMMAND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ag -l --nogroup  --nocolor --hidden -g &quot;&quot;'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;fzf.vim provides more useful commands such as &lt;code class=&quot;highlighter-rouge&quot;&gt;GFiles?&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Commits&lt;/code&gt; for Git
-users. You can learn more about fzf.vim commands
+&lt;p&gt;The four key maps above are all on one row in the keyboard so it’s much easier
+to reach out to each of them. Besides, I set my leader to the space bar, so
+it’s even better.&lt;/p&gt;
+
+&lt;p&gt;fzf.vim also provides more useful commands such as &lt;code class=&quot;highlighter-rouge&quot;&gt;GFiles?&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Commits&lt;/code&gt; for
+Git users. You can learn more about fzf.vim commands
 &lt;a href=&quot;https://github.com/junegunn/fzf.vim#commands&quot; target=&quot;blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;You can find my vimrc in my &lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; repository &lt;a href=&quot;https://github.com/aonemd/aaku&quot; target=&quot;blank&quot;&gt;on
