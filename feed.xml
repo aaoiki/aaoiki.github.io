@@ -6,9 +6,149 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 May 2019 01:59:22 +0200</pubDate>
-    <lastBuildDate>Wed, 15 May 2019 01:59:22 +0200</lastBuildDate>
+    <pubDate>Wed, 15 May 2019 17:58:03 +0200</pubDate>
+    <lastBuildDate>Wed, 15 May 2019 17:58:03 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Finding Things in Vim</title>
+        <description>&lt;p&gt;Vim is a very competent text editor and although it comes with tools to find
+files, these tools feel a little primitive for modern text editing and a bit
+slow sometimes. In this post, I will go over different search tools and
+demonstrate how I replaced two different plugins with only a single plugin that
+rules them all.&lt;/p&gt;
+
+&lt;h3 id=&quot;finding-files-by-content&quot;&gt;Finding Files By Content&lt;/h3&gt;
+
+&lt;p&gt;To find files, Vim has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; command which finds files that
+contain a certain pattern. Here’s how to use it in command mode:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;pattern&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The result of this command will be echoed in a shell session where file names
+are listed along with each occurrence of the pattern in those files and you
+have to press the Enter key in order to return back to Vim. That’s it! Pretty
+basic and not very useful, is it?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/finding_files_in_vim-vimgrep.png&quot; alt=&quot;vimgrep in action&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For more functionality, ease-of-use, and much faster results, I have been using
+a tool as a replacement for grep called &lt;a href=&quot;https://github.com/ggreer/the_silver_searcher&quot; target=&quot;blank&quot;&gt;Ag, the silver
+searcher&lt;/a&gt; and a
+Vim interface for it through
+&lt;a href=&quot;https://github.com/rking/ag.vim&quot; target=&quot;blank&quot;&gt;ag.vim&lt;/a&gt; (which has been
+unmaintained for a while now). Ag.vim opens the results in a Quickfix list
+window and you can navigate and choose which file to open using the keyboard.
+This was in my &lt;code class=&quot;highlighter-rouge&quot;&gt;.vimrc&lt;/code&gt; for Ag:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;search from the project root instead of cwd&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:ag_working_path_mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;r&quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;start a search query by pressing \&lt;/span&gt;
+nnoremap \  &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag&lt;span class=&quot;p&quot;&gt;!&amp;lt;&lt;/span&gt;space&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search for word under cursor by pressing |&lt;/span&gt;
+nnoremap \&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;\b&amp;lt;C-R&amp;gt;&amp;lt;C-W&amp;gt;\b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and the below screenshot shows how it looks like in action. Much better view
+and more convenience than having the files listed in the terminal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/finding_files_in_vim-ag.png&quot; alt=&quot;Ag.vim in action&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;finding-files-by-name&quot;&gt;Finding Files By Name&lt;/h3&gt;
+
+&lt;p&gt;For finding files by searching their names, I’ve been using a great plugin
+called &lt;a href=&quot;https://github.com/ctrlpvim/ctrlp.vim&quot; target=&quot;blank&quot;&gt;CtrlP.vim&lt;/a&gt;.
+CtrlP is a fuzzy file searcher written in pure Vimscript. My setup for CtrlP
+looked like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; executable&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ag'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; grepprg&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;ag\ &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;nogroup\ &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;nocolor
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:ctrlp_user_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ag %s -l --nocolor --hidden -g &quot;&quot;'&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:ctrlp_use_caching&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:ctrlp_map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search project files&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;CtrlP&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search project files by lines of code&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;CtrlPLine&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search project files by tags (requirs ctags to be installed)&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;CtrlPTag&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search all open files/buffers&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;CtrlPBuffer&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;CtrlP has served me very well for the past couple of years. However, it can get
+really slow while indexing files under large directories.&lt;/p&gt;
+
+&lt;h3 id=&quot;enter-fzf&quot;&gt;Enter fzf&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/junegunn/fzf&quot; target=&quot;blank&quot;&gt;fzf&lt;/a&gt; is a very fast
+command-line fuzzy finder written in Go. Despite its increasing popularity, I
+have tried to avoid using it for as long as possible since I like keeping my
+dependencies minimal and prefer to use pure Vimscript plugins to having to
+install any external dependencies. However, I had to install it since it’s a
+dependency for this really cool command-line file manager,
+&lt;a href=&quot;https://github.com/mananapr/cfiles&quot; target=&quot;blank&quot;&gt;cfiles&lt;/a&gt;. So I decided I’d
+give it a try anyway. I was mind blown!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/public/images/finding_files_in_vim-commit.png&quot; alt=&quot;aaku git commit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;fzf has a counterpart Vim plugin called
+&lt;a href=&quot;https://github.com/junegunn/fzf.vim&quot; target=&quot;blank&quot;&gt;fzf.vim&lt;/a&gt; which is a
+complementary interface to fzf in Vim with so many awesome features.  One of
+the great features in fzf is that it comes with an interface for popular search
+tools such as Ag and
+&lt;a href=&quot;https://github.com/BurntSushi/ripgrep&quot; target=&quot;blank&quot;&gt;ripgrep&lt;/a&gt;. So I could
+remove the ag.vim plugin and replace CtrlP with only fzf.&lt;/p&gt;
+
+&lt;p&gt;Here’ my current setup for fzf in Vim:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;search project files&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;FZF&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search project files by lines of code&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Lines&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search project files by tags (requirs ctags to be installed)&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Tags&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search all open files/buffers&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Buffers&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+nnoremap \  &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;space&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+nnoremap \&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;R&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;W&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You need to setup fzf’s default find command by setting an env variable in your
+shell config:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;FZF_DEFAULT_COMMAND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ag -l --nogroup  --nocolor --hidden -g &quot;&quot;'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;fzf.vim provides more useful commands such as &lt;code class=&quot;highlighter-rouge&quot;&gt;GFiles?&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Commits&lt;/code&gt; for Git
+users. You can learn more about fzf.vim commands
+&lt;a href=&quot;https://github.com/junegunn/fzf.vim#commands&quot; target=&quot;blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find my vimrc in my &lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; repository &lt;a href=&quot;https://github.com/aonemd/aaku&quot; target=&quot;blank&quot;&gt;on
+GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 May 2019 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/finding-things-in-vim</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/finding-things-in-vim</guid>
+        
+        <category>vim,</category>
+        
+        <category>fzf,</category>
+        
+        <category>ctrlp,</category>
+        
+        <category>fuzzy,</category>
+        
+        <category>search</category>
+        
+        
+        <category>Tools</category>
+        
+      </item>
     
       <item>
         <title>Extracting Text From Images Using Ruby</title>
@@ -958,69 +1098,6 @@ successfully build and maintain their codebase.&lt;/p&gt;
         
         
         <category>Software Engineering</category>
-        
-      </item>
-    
-      <item>
-        <title>Introducing Jack and a New Dark Theme</title>
-        <description>&lt;p&gt;This website is generated by Jekyll, the static site generator. For compiling
-assets (mainly Javascript and stylsheet files), I’ve been using
-&lt;a href=&quot;https://github.com/rails/sprockets&quot; target=&quot;\_blank&quot;&gt;Sprockets&lt;/a&gt; through 
-&lt;a href=&quot;https://github.com/envygeeks/jekyll-assets/&quot; target=&quot;\_blank&quot;&gt;Jekyll Assets&lt;/a&gt;
-gem.  Although recently, and after I had updated the gems in Jekyll’s Gemfile,
-a new update for Jekyll asset was pushed. It appears they decided to change
-their entire interface. This rendered my whole project unusable and I needed to
-change every call to Jekyll Assets new interface in order to fix it.&lt;/p&gt;
-
-&lt;p&gt;At this point, I wanted to fix the blog so I can add new posts (fingers
-crossed) and I was learning some new technologies in the Javascript world. I’ve
-been using Webpack in my Rails apps, Rails 5 in particular. I decided I will
-use Webpack in my Jekyll project to compile and build all the frontend assets.
-At first, I looked for some existing Jekyll projects that use Webpack but
-almost all of them are outdated since the Javascript mantra, it seems, is to
-move fast and update even faster.&lt;/p&gt;
-
-&lt;p&gt;I ended up starting a new Jekyll project and set it up with Webpack. In
-addition to Babel to transpile ES6 code to ES5, I used PostCSS for the
-stylesheets. And this is how Jack came out. Jack is a dark Jekyll theme already
-setup with Webpack, of course. It’s so simple in design that it could be used
-as a template for new Jekyll projects and tweaked as needed. However simple it
-is (and how bad I may be in design), its theme is mobile first and responsive,
-and dark!&lt;/p&gt;
-
-&lt;p&gt;This is how it looks:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/public/images/jack_dark_theme_screenshot.png&quot;&gt;&lt;img src=&quot;/public/images/jack_dark_theme_screenshot.png&quot; alt=&quot;Jack demo&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find the &lt;a href=&quot;https://github.com/aonemd/jack&quot;&gt;source code on GitHub&lt;/a&gt;.
-You can also see a demo &lt;a href=&quot;https://aonemd.github.io/jack/&quot;&gt;through this link&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;After I finished setting up Jack, I migrated all the new changes to my original
-blog. The migration was seamless with only a few small issues. Out of love for
-dark screens and because I always wanted to have a dark website, I also
-migrated the dark theme and made it toggleable. You can toggle the dark theme
-on and off using the button in the top navigation bar.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/public/images/jack_dark_theme_toggle_btn.png&quot;&gt;&lt;img src=&quot;/public/images/jack_dark_theme_toggle_btn.png&quot; alt=&quot;Dark theme toggle button&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;And this is how it looks when it’s toggled on:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/public/images/jack_dark_theme_toggle_btn_2.png&quot;&gt;&lt;img src=&quot;/public/images/jack_dark_theme_toggle_btn_2.png&quot; alt=&quot;Dark theme toggle btn on&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;That’s it for now. Thanks for reading!&lt;/p&gt;
-</description>
-        <pubDate>Mon, 14 May 2018 00:00:00 +0200</pubDate>
-        <link>https://aonemd.github.io/blog/introducing-jack-and-dark-theme</link>
-        <guid isPermaLink="true">https://aonemd.github.io/blog/introducing-jack-and-dark-theme</guid>
-        
-        <category>blog,</category>
-        
-        <category>jekyll,</category>
-        
-        <category>dark_theme</category>
-        
-        
-        <category>Blogging</category>
         
       </item>
     
