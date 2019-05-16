@@ -89,7 +89,7 @@ slow sometimes. In this post, I will go over different search tools and
 demonstrate how I replaced two different plugins with only a single plugin that
 rules them all.</p>
 
-<h3 id="finding-files-by-content">Finding Files By Content</h3>
+<h3 id="finding-files-by-content">Finding Files by Content</h3>
 
 <p>To find files, Vim has a <code class="highlighter-rouge">:grep</code> command which finds files that contain a
 certain pattern. Here’s how to use it in command mode:</p>
@@ -109,14 +109,22 @@ it populates a quickfix list with all the matches. You can cycle between the
 matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix list in a window
 using <code class="highlighter-rouge">:copen</code>.</p>
 
+<p>Here’s how you can have the search result of <code class="highlighter-rouge">:vimgrep</code> open in a quickfix list
+window so you can scroll up and down between results using the keyboard:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">vimgrep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span> <span class="p">|</span> <span class="p">:</span><span class="k">copen</span>
+</code></pre></div></div>
+
 <p>For more functionality, ease-of-use, and much faster results, I have been using
-a tool as a replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank">Ag, the silver
+a tool as a replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank"><em>Ag</em>, the silver
 searcher</a> and a
 Vim interface for it through
-<a href="https://github.com/rking/ag.vim" target="blank">ag.vim</a> (which has been
-unmaintained for a while now). Ag.vim opens the results in a quickfix list
-window and you can navigate and choose which file to open using the keyboard.
-This was in my <code class="highlighter-rouge">.vimrc</code> for Ag:</p>
+<a href="https://github.com/rking/ag.vim" target="blank"><em>ag.vim</em></a> (which has been
+unmaintained for a while now). <em>ag.vim</em> opens the results in a quickfix list
+window by default and you can navigate and choose which file to open using the
+keyboard just like with <code class="highlighter-rouge">:vimgrep</code>. <em>ag.vim</em>, however, adds some <a href="https://github.com/rking/ag.vim#keyboard-shortcuts" target="blank">nice key
+maps</a> for
+better navigation of the results. This is my configuration for <em>ag.vim</em>:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"search from the project root instead of cwd</span>
 <span class="k">let</span> <span class="nv">g:ag_working_path_mode</span><span class="p">=</span><span class="s2">"r"</span>
@@ -126,17 +134,25 @@ nnoremap \  <span class="p">:</span>Ag<span class="p">!&lt;</span>space<span cla
 nnoremap \<span class="p">|</span> <span class="p">:</span>Ag<span class="p">!</span> <span class="s2">"\b&lt;C-R&gt;&lt;C-W&gt;\b"</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;:</span><span class="k">cw</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
-<p>and the below screenshot shows how it looks like in action. Much better view
-and more convenience than having the files listed in the terminal.</p>
+<p>It’s worth noting that it’s possible to make grep use <em>Ag</em> by default instead
+of relying on the default <em>grep</em> program, and thus, having much faster search
+results while keeping the same interface/command that Vim provides out of the
+box:</p>
 
-<p><img src="/public/images/finding_files_in_vim-ag.png" alt="Ag.vim in action" /></p>
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> executable<span class="p">(</span><span class="s1">'ag'</span><span class="p">)</span>
+  <span class="k">set</span> grepprg<span class="p">=</span>ag\ <span class="p">--</span>nogroup\ <span class="p">--</span>nocolor
+<span class="k">endif</span>
 
-<h3 id="finding-files-by-name">Finding Files By Name</h3>
+<span class="c">"call :grep or :vimgrep normally</span>
+</code></pre></div></div>
 
-<p>For finding files by searching their names, I’ve been using a great plugin
-called <a href="https://github.com/ctrlpvim/ctrlp.vim" target="blank">CtrlP.vim</a>.
-CtrlP is a fuzzy file searcher written in pure Vimscript. My setup for CtrlP
-looked like this:</p>
+<h3 id="finding-files-by-name">Finding Files by Name</h3>
+
+<p>For finding files by searching for their names, I’ve been using a great plugin
+called <a href="https://github.com/ctrlpvim/ctrlp.vim" target="blank"><em>ctrlp.vim</em></a>.
+It is a fuzzy file searcher written in pure Vimscript. It can search files by
+file name, by current open buffers, by generated tags, or by line content. My
+setup for <em>ctrlp.vim</em> looks like this:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> executable<span class="p">(</span><span class="s1">'ag'</span><span class="p">)</span>
   <span class="k">set</span> grepprg<span class="p">=</span>ag\ <span class="p">--</span>nogroup\ <span class="p">--</span>nocolor
@@ -155,31 +171,33 @@ nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">r</span> <span class="p">:</span>CtrlPBuffer<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
-<p>CtrlP has served me very well for the past couple of years. However, it can get
-really slow while indexing files under large directories.</p>
+<p><em>ctrlp.vim</em> has served me very well for the past couple of years. However, it
+can get really slow while indexing files under large directories. For example,
+searching files in my home directory, <code class="highlighter-rouge">~/</code>, renders <em>ctrlp.vim</em> almost useless
+as it takes some time to index each file.</p>
 
 <h3 id="enter-fzf">Enter fzf</h3>
 
-<p><a href="https://github.com/junegunn/fzf" target="blank">fzf</a> is a very fast
+<p><a href="https://github.com/junegunn/fzf" target="blank"><em>fzf</em></a> is a very fast
 command-line fuzzy finder written in Go. Despite its increasing popularity, I
 have tried to avoid using it for as long as possible since I like keeping my
 dependencies minimal and prefer to use pure Vimscript plugins to having to
 install any external dependencies. However, I had to install it since it’s a
 dependency for this really cool command-line file manager,
-<a href="https://github.com/mananapr/cfiles" target="blank">cfiles</a>. So I decided I’d
+<a href="https://github.com/mananapr/cfiles" target="blank"><em>cfiles</em></a>. So I decided I’d
 give it a try anyway. I was mind blown!</p>
 
 <p><img src="/public/images/finding_files_in_vim-commit.png" alt="aaku git commit" /></p>
 
-<p>fzf has a counterpart Vim plugin called
-<a href="https://github.com/junegunn/fzf.vim" target="blank">fzf.vim</a> which is a
-complementary interface to fzf in Vim with so many awesome features.  One of
-the great features in fzf is that it comes with an interface for popular search
+<p><em>fzf</em> has a counterpart Vim plugin called
+<a href="https://github.com/junegunn/fzf.vim" target="blank"><em>fzf.vim</em></a> which is a
+complementary interface to <em>fzf</em> in Vim with so many awesome features.  One of
+the great features it provides is that it comes with an interface for popular search
 tools such as Ag and
-<a href="https://github.com/BurntSushi/ripgrep" target="blank">ripgrep</a>. So I could
-remove the ag.vim plugin and replace CtrlP with only fzf.</p>
+<a href="https://github.com/BurntSushi/ripgrep" target="blank"><em>ripgrep</em></a>. So I could
+remove the <em>ag.vim</em> plugin and replace <em>ctrlp.vim</em> with only <em>fzf</em>.</p>
 
-<p>Here’s my current setup for fzf in Vim:</p>
+<p>Here’s all my current setup for finding files in Vim:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"search project files</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">p</span> <span class="p">:</span>FZF<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
@@ -204,8 +222,8 @@ shell config:</p>
 to reach out to each of them. Besides, I set my leader to the space bar, so
 it’s even better.</p>
 
-<p>fzf.vim also provides more useful commands such as <code class="highlighter-rouge">GFiles?</code> and <code class="highlighter-rouge">Commits</code> for
-Git users. You can learn more about fzf.vim commands
+<p><em>fzf.vim</em> also provides more useful commands such as <code class="highlighter-rouge">:GFiles?</code> and <code class="highlighter-rouge">:Commits</code>
+for Git users. You can learn more about its multiple commands
 <a href="https://github.com/junegunn/fzf.vim#commands" target="blank">here</a>.</p>
 
 <p>You can find my vimrc in my <a href="/blog/the-dotfiles">dotfiles</a> repository <a href="https://github.com/aonemd/aaku" target="blank">on
