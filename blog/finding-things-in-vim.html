@@ -16,147 +16,147 @@
 
     <meta name="description" content="Vim is a very competent text editor and although it comes with tools to findfiles, these tools feel a little primitive for modern text editing and a bitslow ...">
 
-<!-- facebook -->
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://aonemd.github.io/blog/finding-things-in-vim" />
-<meta property="og:site_name" content="aonemd" />
-<meta property="og:title" content="Finding Things in Vim" />
-<meta property="og:description" content="Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slo..." />
+    <!-- facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://aonemd.github.io/blog/finding-things-in-vim" />
+    <meta property="og:site_name" content="aonemd" />
+    <meta property="og:title" content="Finding Things in Vim" />
+    <meta property="og:description" content="Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slo..." />
 
-<!-- twitter -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@aonemd" />
-<meta name="twitter:creator" content="@aonemd" />
-<meta name="twitter:title" content="Finding Things in Vim" />
-<meta name="twitter:description" content="Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slo..." />
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@aonemd" />
+    <meta name="twitter:creator" content="@aonemd" />
+    <meta name="twitter:title" content="Finding Things in Vim" />
+    <meta name="twitter:description" content="Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slo..." />
 
 
-<meta property="og:image"      content="https://aonemd.github.io/public/images/finding_files_in_vim-commit.png" />
-<meta name="twitter:image:src" content="https://aonemd.github.io/public/images/finding_files_in_vim-commit.png" />
+    <meta property="og:image"      content="https://aonemd.github.io/public/images/finding_files_in_vim-commit.png" />
+    <meta name="twitter:image:src" content="https://aonemd.github.io/public/images/finding_files_in_vim-commit.png" />
 
 
   </head>
 
   <body class="">
     <nav>
-  <div class="title">
-    <a href="/">a<span>one</span>md</a>
-  </div>
+      <div class="title">
+        <a href="/">a<span>one</span>md</a>
+      </div>
 
-  <label for="toggle">&#9776;</label>
-  <input type="checkbox" id="toggle">
+      <label for="toggle">&#9776;</label>
+      <input type="checkbox" id="toggle">
 
-  <div class="menu">
-    <a href="/about">
-      about
-    </a>
-    <a href="/talks">
-      talks
-    </a>
-    <a href="https://twitter.com/aonemd" target="_blank">
-      <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
-    </a>
-    <a href="https://github.com/aonemd" target="_blank">
-      <svg><use xlink:href="/public/icons-sprite.svg#icon-github"></use></svg>
-    </a>
-    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
-      <svg><use xlink:href="/public/icons-sprite.svg#icon-mail"></use></svg>
-    </a>
-    <a href="/feed.xml" target="_blank">
-      <svg><use xlink:href="/public/icons-sprite.svg#icon-rss"></use></svg>
-    </a>
-    <a href="javascript:void(0)" id="theme-toggle">
-      <svg><use xlink:href="/public/icons-sprite.svg#icon-light-up"></use></svg>
-    </a>
-  </div>
-</nav>
+      <div class="menu">
+        <a href="/about">
+          about
+        </a>
+        <a href="/talks">
+          talks
+        </a>
+        <a href="https://twitter.com/aonemd" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a href="https://github.com/aonemd" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-github"></use></svg>
+        </a>
+        <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-mail"></use></svg>
+        </a>
+        <a href="/feed.xml" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-rss"></use></svg>
+        </a>
+        <a href="javascript:void(0)" id="theme-toggle">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-light-up"></use></svg>
+        </a>
+      </div>
+    </nav>
 
 
     <article>
-  <div class="row">
-    <div class="col-6 center">
-      <div class="view-post__en-title text-center center">
-        <h2>Finding Things in Vim <small class="view-post__category">Tools</small></h2>
-        <b><span>May 15, 2019</span></b>
-      </div>
+      <div class="row">
+        <div class="col-6 center">
+          <div class="view-post__en-title text-center center">
+            <h2>Finding Things in Vim <small class="view-post__category">Tools</small></h2>
+            <b><span>May 15, 2019</span></b>
+          </div>
 
-      <br>
+          <br>
 
-      <div lang='en'>
-        <p>Vim is a very competent text editor and although it comes with tools to find
-files, these tools feel a little primitive for modern text editing and a bit
-slow sometimes. In this post, I will go over different search tools and
-demonstrate how I replaced two different plugins with only a single plugin that
-rules them all.</p>
+          <div lang='en'>
+            <p>Vim is a very competent text editor and although it comes with tools to find
+            files, these tools feel a little primitive for modern text editing and a bit
+            slow sometimes. In this post, I will go over different search tools and
+            demonstrate how I replaced two different plugins with only a single plugin that
+            rules them all.</p>
 
-<h3 id="finding-files-by-content">Finding Files by Content</h3>
+            <h3 id="finding-files-by-content">Finding Files by Content</h3>
 
-<p>To find files, Vim has a <code class="highlighter-rouge">:grep</code> command which finds files that contain a
-certain pattern. Here’s how to use it in command mode:</p>
+            <p>To find files, Vim has a <code class="highlighter-rouge">:grep</code> command which finds files that contain a
+            certain pattern. Here’s how to use it in command mode:</p>
 
-<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
-</code></pre></div></div>
+            <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
+            </code></pre></div></div>
 
-<p>The result of this command will be echoed in a shell session where file names
-are listed along with each occurrence of the pattern in those files and you
-have to press the Enter key in order to return back to Vim. That’s it! Pretty
-basic and not very useful, is it?</p>
+            <p>The result of this command will be echoed in a shell session where file names
+            are listed along with each occurrence of the pattern in those files and you
+            have to press the Enter key in order to return back to Vim. That’s it! Pretty
+            basic and not very useful, is it?</p>
 
-<p><img src="/public/images/finding_files_in_vim-vimgrep.png" alt="vimgrep in action" /></p>
+            <p><img src="/public/images/finding_files_in_vim-vimgrep.png" alt="vimgrep in action" /></p>
 
-<p>Vim also has a <code class="highlighter-rouge">:vimgrep</code>  command that works similarly to <code class="highlighter-rouge">:grep</code> command but
-it populates a quickfix list with all the matches. You can cycle between the
-matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix list in a window
-using <code class="highlighter-rouge">:copen</code>.</p>
+            <p>Vim also has a <code class="highlighter-rouge">:vimgrep</code>  command that works similarly to <code class="highlighter-rouge">:grep</code> command but
+            it populates a quickfix list with all the matches. You can cycle between the
+            matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix list in a window
+            using <code class="highlighter-rouge">:copen</code>.</p>
 
-<p>Here’s how you can have the search result of <code class="highlighter-rouge">:vimgrep</code> open in a quickfix list
-window so you can scroll up and down between results using the keyboard:</p>
+            <p>Here’s how you can have the search result of <code class="highlighter-rouge">:vimgrep</code> open in a quickfix list
+            window so you can scroll up and down between results using the keyboard:</p>
 
-<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">vimgrep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span> <span class="p">|</span> <span class="p">:</span><span class="k">copen</span>
-</code></pre></div></div>
+            <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">vimgrep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span> <span class="p">|</span> <span class="p">:</span><span class="k">copen</span>
+            </code></pre></div></div>
 
-<p>For more functionality, ease-of-use, and much faster results, I have been using
-a tool as a replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank"><em>Ag</em>, the silver
-searcher</a> and a
-Vim interface for it through
-<a href="https://github.com/rking/ag.vim" target="blank"><em>ag.vim</em></a> (which has been
-unmaintained for a while now). <em>ag.vim</em> opens the results in a quickfix list
-window by default and you can navigate and choose which file to open using the
-keyboard just like with <code class="highlighter-rouge">:vimgrep</code>. <em>ag.vim</em>, however, adds some <a href="https://github.com/rking/ag.vim#keyboard-shortcuts" target="blank">nice key
-maps</a> for
-better navigation of the results. This is my configuration for <em>ag.vim</em>:</p>
+            <p>For more functionality, ease-of-use, and much faster results, I have been using
+            a tool as a replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank"><em>Ag</em>, the silver
+              searcher</a> and a
+            Vim interface for it through
+            <a href="https://github.com/rking/ag.vim" target="blank"><em>ag.vim</em></a> (which has been
+            unmaintained for a while now). <em>ag.vim</em> opens the results in a quickfix list
+            window by default and you can navigate and choose which file to open using the
+            keyboard just like with <code class="highlighter-rouge">:vimgrep</code>. <em>ag.vim</em>, however, adds some <a href="https://github.com/rking/ag.vim#keyboard-shortcuts" target="blank">nice key
+              maps</a> for
+            better navigation of the results. This is my configuration for <em>ag.vim</em>:</p>
 
-<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"search from the project root instead of cwd</span>
+            <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"search from the project root instead of cwd</span>
 <span class="k">let</span> <span class="nv">g:ag_working_path_mode</span><span class="p">=</span><span class="s2">"r"</span>
 <span class="c">"start a search query by pressing \</span>
 nnoremap \  <span class="p">:</span>Ag<span class="p">!&lt;</span>space<span class="p">&gt;</span>
 <span class="c">"search for word under cursor by pressing |</span>
 nnoremap \<span class="p">|</span> <span class="p">:</span>Ag<span class="p">!</span> <span class="s2">"\b&lt;C-R&gt;&lt;C-W&gt;\b"</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;:</span><span class="k">cw</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
-</code></pre></div></div>
+            </code></pre></div></div>
 
-<p>It’s worth noting that it’s possible to make grep use <em>Ag</em> by default instead
-of relying on the default <em>grep</em> program, and thus, having much faster search
-results while keeping the same interface/command that Vim provides out of the
-box:</p>
+            <p>It’s worth noting that it’s possible to make grep use <em>Ag</em> by default instead
+            of relying on the default <em>grep</em> program, and thus, having much faster search
+            results while keeping the same interface/command that Vim provides out of the
+            box:</p>
 
-<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> executable<span class="p">(</span><span class="s1">'ag'</span><span class="p">)</span>
+            <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> executable<span class="p">(</span><span class="s1">'ag'</span><span class="p">)</span>
   <span class="k">set</span> grepprg<span class="p">=</span>ag\ <span class="p">--</span>nogroup\ <span class="p">--</span>nocolor
 <span class="k">endif</span>
 
 <span class="c">"call :grep or :vimgrep normally</span>
-</code></pre></div></div>
+            </code></pre></div></div>
 
-<h3 id="finding-files-by-name">Finding Files by Name</h3>
+            <h3 id="finding-files-by-name">Finding Files by Name</h3>
 
-<p>For finding files by searching for their names, I’ve been using a great plugin
-called <a href="https://github.com/ctrlpvim/ctrlp.vim" target="blank"><em>ctrlp.vim</em></a>.
-It is a fuzzy file searcher written in pure Vimscript. You only need to type
-some parts of the name of the file you’re searching for, and you’ll get back a
-list of the best matches. It can search files by file name, by current open
-buffers, by generated tags, or by line content. My setup for <em>ctrlp.vim</em> looks
-like this:</p>
+            <p>For finding files by searching for their names, I’ve been using a great plugin
+            called <a href="https://github.com/ctrlpvim/ctrlp.vim" target="blank"><em>ctrlp.vim</em></a>.
+            It is a fuzzy file searcher written in pure Vimscript. You only need to type
+            some parts of the name of the file you’re searching for, and you’ll get back a
+            list of the best matches. It can search files by file name, by current open
+            buffers, by generated tags, or by line content. My setup for <em>ctrlp.vim</em> looks
+            like this:</p>
 
-<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> executable<span class="p">(</span><span class="s1">'ag'</span><span class="p">)</span>
+            <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> executable<span class="p">(</span><span class="s1">'ag'</span><span class="p">)</span>
   <span class="k">set</span> grepprg<span class="p">=</span>ag\ <span class="p">--</span>nogroup\ <span class="p">--</span>nocolor
   <span class="k">let</span> <span class="nv">g:ctrlp_user_command</span><span class="p">=</span><span class="s1">'ag %s -l --nocolor --hidden -g ""'</span>
   <span class="k">let</span> <span class="nv">g:ctrlp_use_caching</span><span class="p">=</span><span class="m">0</span>
@@ -171,37 +171,37 @@ nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">t</span> <span class="p">:</span>CtrlPTag<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 <span class="c">"search all open files/buffers</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">r</span> <span class="p">:</span>CtrlPBuffer<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
-</code></pre></div></div>
+            </code></pre></div></div>
 
-<p><em>ctrlp.vim</em> has served me very well for the past couple of years. However, it
-can get really slow while indexing files under large directories. For example,
-searching files in my home directory, <code class="highlighter-rouge">~/</code>, renders <em>ctrlp.vim</em> almost useless
-as it takes some time to index each file.</p>
+            <p><em>ctrlp.vim</em> has served me very well for the past couple of years. However, it
+            can get really slow while indexing files under large directories. For example,
+            searching files in my home directory, <code class="highlighter-rouge">~/</code>, renders <em>ctrlp.vim</em> almost useless
+            as it takes some time to index each file.</p>
 
-<h3 id="enter-fzf">Enter fzf</h3>
+            <h3 id="enter-fzf">Enter fzf</h3>
 
-<p><a href="https://github.com/junegunn/fzf" target="blank"><em>fzf</em></a> is a very fast
-command-line fuzzy finder written in Go. Despite its increasing popularity, I
-have tried to avoid using it for as long as possible since I like keeping my
-dependencies minimal and prefer to use pure Vimscript plugins to having to
-install any external dependencies. However, I had to install it since it’s a
-dependency for this really cool command-line file manager,
-<a href="https://github.com/mananapr/cfiles" target="blank"><em>cfiles</em></a>. So I decided I’d
-give it a try anyway. I was mind blown!</p>
+            <p><a href="https://github.com/junegunn/fzf" target="blank"><em>fzf</em></a> is a very fast
+            command-line fuzzy finder written in Go. Despite its increasing popularity, I
+            have tried to avoid using it for as long as possible since I like keeping my
+            dependencies minimal and prefer to use pure Vimscript plugins to having to
+            install any external dependencies. However, I had to install it since it’s a
+            dependency for this really cool command-line file manager,
+            <a href="https://github.com/mananapr/cfiles" target="blank"><em>cfiles</em></a>. So I decided I’d
+            give it a try anyway. I was mind blown!</p>
 
-<p><img src="/public/images/finding_files_in_vim-commit.png" alt="aaku git commit" /></p>
+            <p><img src="/public/images/finding_files_in_vim-commit.png" alt="aaku git commit" /></p>
 
-<p><em>fzf</em> has a counterpart Vim plugin called
-<a href="https://github.com/junegunn/fzf.vim" target="blank"><em>fzf.vim</em></a> which is a
-complementary interface to <em>fzf</em> in Vim with so many awesome features.  One of
-the great features it provides is that it comes with an interface for popular search
-tools such as Ag and
-<a href="https://github.com/BurntSushi/ripgrep" target="blank"><em>ripgrep</em></a>. So I could
-remove the <em>ag.vim</em> plugin and replace <em>ctrlp.vim</em> with only <em>fzf</em>.</p>
+            <p><em>fzf</em> has a counterpart Vim plugin called
+            <a href="https://github.com/junegunn/fzf.vim" target="blank"><em>fzf.vim</em></a> which is a
+            complementary interface to <em>fzf</em> in Vim with so many awesome features.  One of
+            the great features it provides is that it comes with an interface for popular search
+            tools such as Ag and
+            <a href="https://github.com/BurntSushi/ripgrep" target="blank"><em>ripgrep</em></a>. So I could
+            remove the <em>ag.vim</em> plugin and replace <em>ctrlp.vim</em> with only <em>fzf</em>.</p>
 
-<p>Here’s all my current setup for finding files in Vim:</p>
+            <p>Here’s all my current setup for finding files in Vim:</p>
 
-<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"search project files</span>
+            <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"search project files</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">p</span> <span class="p">:</span>FZF<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 <span class="c">"search project files by lines of code</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">o</span> <span class="p">:</span>Lines<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
@@ -212,65 +212,65 @@ nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class
 
 nnoremap \  <span class="p">:</span>Ag<span class="p">&lt;</span>space<span class="p">&gt;</span>
 nnoremap \<span class="p">|</span> <span class="p">:</span>Ag <span class="p">&lt;</span>C<span class="p">-</span>R<span class="p">&gt;&lt;</span>C<span class="p">-</span>W<span class="p">&gt;&lt;</span><span class="k">cr</span><span class="p">&gt;:</span><span class="k">cw</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
-</code></pre></div></div>
+            </code></pre></div></div>
 
-<p>You need to setup fzf’s default find command by setting an env variable in your
-shell config:</p>
+            <p>You need to setup fzf’s default find command by setting an env variable in your
+            shell config:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">FZF_DEFAULT_COMMAND</span><span class="o">=</span><span class="s1">'ag -l --nogroup  --nocolor --hidden -g ""'</span>
-</code></pre></div></div>
+            <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">FZF_DEFAULT_COMMAND</span><span class="o">=</span><span class="s1">'ag -l --nogroup  --nocolor --hidden -g ""'</span>
+            </code></pre></div></div>
 
-<p>The four key maps above are all on one row in the keyboard so it’s much easier
-to reach out to each of them. Besides, I set my leader to the space bar, so
-it’s even better.</p>
+            <p>The four key maps above are all on one row in the keyboard so it’s much easier
+            to reach out to each of them. Besides, I set my leader to the space bar, so
+            it’s even better.</p>
 
-<p><em>fzf.vim</em> also provides more useful commands such as <code class="highlighter-rouge">:GFiles?</code> and <code class="highlighter-rouge">:Commits</code>
-for Git users. You can learn more about its multiple commands
-<a href="https://github.com/junegunn/fzf.vim#commands" target="blank">here</a>.</p>
+            <p><em>fzf.vim</em> also provides more useful commands such as <code class="highlighter-rouge">:GFiles?</code> and <code class="highlighter-rouge">:Commits</code>
+            for Git users. You can learn more about its multiple commands
+            <a href="https://github.com/junegunn/fzf.vim#commands" target="blank">here</a>.</p>
 
-<p>You can find my vimrc in my <a href="/blog/the-dotfiles">dotfiles</a> repository <a href="https://github.com/aonemd/aaku" target="blank">on
-GitHub</a>.</p>
+            <p>You can find my vimrc in my <a href="/blog/the-dotfiles">dotfiles</a> repository <a href="https://github.com/aonemd/aaku" target="blank">on
+              GitHub</a>.</p>
 
+          </div>
+
+
+          <div class="row">
+            <div class="col-12 text-center">
+              <div class="social">
+                <a id="twitter" href="https://twitter.com/share?url=https://aonemd.github.io/blog/finding-things-in-vim&text=Finding Things in Vim&hashtags=vim,fzf,ctrlp,fuzzy,ag,search&via=aonemd" target="_blank">
+                  <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+                </a>
+                <a id="reddit" href="https://reddit.com/submit?url=https://aonemd.github.io/blog/finding-things-in-vim&title=Finding Things in Vim" target="_blank">
+                  <svg><use xlink:href="/public/icons-sprite.svg#icon-reddit"></use></svg>
+                </a>
+                <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Finding Things in Vim&url=https://aonemd.github.io/blog/finding-things-in-vim" target="_blank">
+                  <svg><use xlink:href="/public/icons-sprite.svg#icon-linkedin"></use></svg>
+                </a>
+                <a id="googleplus" href="https://plus.google.com/share?url=https://aonemd.github.io/blog/finding-things-in-vim" target="_blank">
+                  <svg><use xlink:href="/public/icons-sprite.svg#icon-googleplus"></use></svg>
+                </a>
+                <a id="pocket" href="https://getpocket.com/save?url=https://aonemd.github.io/blog/finding-things-in-vim&title=Finding Things in Vim" target="_blank">
+                  <svg><use xlink:href="/public/icons-sprite.svg#icon-pocket"></use></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <input type="hidden" id="issueId" value="18">
+          <div id="comments"></div>
+
+          <link rel="stylesheet" href="/comments.css">
+          <script type="text/javascript"
+                  src="/comments.js"
+                  async>
+          </script>
+
+
+        </div>
       </div>
-
-      
-        <div class="row">
-  <div class="col-12 text-center">
-    <div class="social">
-        <a id="twitter" href="https://twitter.com/share?url=https://aonemd.github.io/blog/finding-things-in-vim&text=Finding Things in Vim&hashtags=vim,fzf,ctrlp,fuzzy,ag,search&via=aonemd" target="_blank">
-          <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
-        </a>
-        <a id="reddit" href="https://reddit.com/submit?url=https://aonemd.github.io/blog/finding-things-in-vim&title=Finding Things in Vim" target="_blank">
-          <svg><use xlink:href="/public/icons-sprite.svg#icon-reddit"></use></svg>
-        </a>
-        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Finding Things in Vim&url=https://aonemd.github.io/blog/finding-things-in-vim" target="_blank">
-          <svg><use xlink:href="/public/icons-sprite.svg#icon-linkedin"></use></svg>
-        </a>
-        <a id="googleplus" href="https://plus.google.com/share?url=https://aonemd.github.io/blog/finding-things-in-vim" target="_blank">
-          <svg><use xlink:href="/public/icons-sprite.svg#icon-googleplus"></use></svg>
-        </a>
-        <a id="pocket" href="https://getpocket.com/save?url=https://aonemd.github.io/blog/finding-things-in-vim&title=Finding Things in Vim" target="_blank">
-          <svg><use xlink:href="/public/icons-sprite.svg#icon-pocket"></use></svg>
-        </a>
-    </div>
-  </div>
-</div>
-
-        <hr>
-
-<input type="hidden" id="issueId" value="18">
-<div id="comments"></div>
-
-<link rel="stylesheet" href="/comments.css">
-<script type="text/javascript"
-        src="/comments.js"
-        async>
-</script>
-
-      
-    </div>
-  </div>
-</article>
+    </article>
 
 
     <script async type="text/javascript" src="/index.js" charset="utf-8"></script>
