@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 May 2019 13:16:59 +0200</pubDate>
-    <lastBuildDate>Fri, 17 May 2019 13:16:59 +0200</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 13:22:27 +0200</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 13:22:27 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -87,6 +87,7 @@ like this:&lt;/p&gt;
   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:ctrlp_use_caching&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;
 
+&lt;span class=&quot;c&quot;&gt;&quot;clear ctrlp.vim key maps&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:ctrlp_map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;&quot;search project files&lt;/span&gt;
 nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;CtrlP&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -122,10 +123,11 @@ counterpart Vim plugin called
 complementary interface to &lt;em&gt;fzf&lt;/em&gt; in Vim with so many awesome features.  One of
 the great features it provides is that it comes with an interface for popular
 search tools such as Ag and
-&lt;a href=&quot;https://github.com/BurntSushi/ripgrep&quot; target=&quot;blank&quot;&gt;&lt;em&gt;ripgrep&lt;/em&gt;&lt;/a&gt;. So I could
-remove the &lt;em&gt;ag.vim&lt;/em&gt; plugin and replace &lt;em&gt;ctrlp.vim&lt;/em&gt; with only &lt;em&gt;fzf&lt;/em&gt;.&lt;/p&gt;
+&lt;a href=&quot;https://github.com/BurntSushi/ripgrep&quot; target=&quot;blank&quot;&gt;&lt;em&gt;ripgrep&lt;/em&gt;&lt;/a&gt; and you can
+fuzzy search the search results! So now I could remove the &lt;em&gt;ag.vim&lt;/em&gt; plugin and
+replace &lt;em&gt;ctrlp.vim&lt;/em&gt; with only &lt;em&gt;fzf&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here’s all my current setup for finding files in Vim:&lt;/p&gt;
+&lt;p&gt;Here’s my current setup for finding files in Vim:&lt;/p&gt;
 
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;search project files&lt;/span&gt;
 nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;FZF&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -136,7 +138,9 @@ nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span cla
 &lt;span class=&quot;c&quot;&gt;&quot;search all open files/buffers&lt;/span&gt;
 nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Buffers&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
 
+&lt;span class=&quot;c&quot;&gt;&quot;start a search query by pressing \&lt;/span&gt;
 nnoremap \  &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;space&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;search for word under cursor by pressing |&lt;/span&gt;
 nnoremap \&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;R&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;W&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 

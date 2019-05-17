@@ -158,6 +158,7 @@ like this:</p>
   <span class="k">let</span> <span class="nv">g:ctrlp_use_caching</span><span class="p">=</span><span class="m">0</span>
 <span class="k">endif</span>
 
+<span class="c">"clear ctrlp.vim key maps</span>
 <span class="k">let</span> <span class="nv">g:ctrlp_map</span> <span class="p">=</span> <span class="s1">''</span>
 <span class="c">"search project files</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">p</span> <span class="p">:</span>CtrlP<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
@@ -193,10 +194,11 @@ counterpart Vim plugin called
 complementary interface to <em>fzf</em> in Vim with so many awesome features.  One of
 the great features it provides is that it comes with an interface for popular
 search tools such as Ag and
-<a href="https://github.com/BurntSushi/ripgrep" target="blank"><em>ripgrep</em></a>. So I could
-remove the <em>ag.vim</em> plugin and replace <em>ctrlp.vim</em> with only <em>fzf</em>.</p>
+<a href="https://github.com/BurntSushi/ripgrep" target="blank"><em>ripgrep</em></a> and you can
+fuzzy search the search results! So now I could remove the <em>ag.vim</em> plugin and
+replace <em>ctrlp.vim</em> with only <em>fzf</em>.</p>
 
-<p>Here’s all my current setup for finding files in Vim:</p>
+<p>Here’s my current setup for finding files in Vim:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"search project files</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">p</span> <span class="p">:</span>FZF<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
@@ -207,7 +209,9 @@ nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class
 <span class="c">"search all open files/buffers</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">r</span> <span class="p">:</span>Buffers<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 
+<span class="c">"start a search query by pressing \</span>
 nnoremap \  <span class="p">:</span>Ag<span class="p">&lt;</span>space<span class="p">&gt;</span>
+<span class="c">"search for word under cursor by pressing |</span>
 nnoremap \<span class="p">|</span> <span class="p">:</span>Ag <span class="p">&lt;</span>C<span class="p">-</span>R<span class="p">&gt;&lt;</span>C<span class="p">-</span>W<span class="p">&gt;&lt;</span><span class="k">cr</span><span class="p">&gt;:</span><span class="k">cw</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
