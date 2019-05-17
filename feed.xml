@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 May 2019 13:37:22 +0200</pubDate>
-    <lastBuildDate>Fri, 17 May 2019 13:37:22 +0200</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 13:45:05 +0200</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 13:45:05 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -48,7 +48,7 @@ Vim interface for it through
 &lt;a href=&quot;https://github.com/rking/ag.vim&quot; target=&quot;blank&quot;&gt;&lt;em&gt;ag.vim&lt;/em&gt;&lt;/a&gt; (which has been
 unmaintained for a while now). &lt;em&gt;ag.vim&lt;/em&gt; opens the results in a quickfix list by
 default and you can navigate and choose which file to open using the keyboard
-just like with &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;. &lt;em&gt;ag.vim&lt;/em&gt;, however, adds some &lt;a href=&quot;https://github.com/rking/ag.vim#keyboard-shortcuts&quot; target=&quot;blank&quot;&gt;nice key
+just like with &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;. &lt;em&gt;ag.vim&lt;/em&gt; however, adds some &lt;a href=&quot;https://github.com/rking/ag.vim#keyboard-shortcuts&quot; target=&quot;blank&quot;&gt;nice key
 maps&lt;/a&gt; for
 better navigation of the results. This is my configuration for &lt;em&gt;ag.vim&lt;/em&gt;:&lt;/p&gt;
 
