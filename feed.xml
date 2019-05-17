@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 May 2019 13:34:11 +0200</pubDate>
-    <lastBuildDate>Fri, 17 May 2019 13:34:11 +0200</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 13:37:22 +0200</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 13:37:22 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -155,7 +155,7 @@ to reach out to each of them. Besides, I set my leader to the space bar, so
 it’s even better.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;fzf.vim&lt;/em&gt; also provides more useful commands such as &lt;code class=&quot;highlighter-rouge&quot;&gt;:GFiles?&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;:Commits&lt;/code&gt;
-for Git users. You can learn more about its multiple commands
+for Git users. You can learn more about its commands
 &lt;a href=&quot;https://github.com/junegunn/fzf.vim#commands&quot; target=&quot;blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;You can find my vimrc in my &lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; repository &lt;a href=&quot;https://github.com/aonemd/aaku&quot; target=&quot;blank&quot;&gt;on
