@@ -96,8 +96,8 @@ certain pattern. It populates a quickfix list with all the matches. You can
 cycle between the matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix
 list in a window using <code class="highlighter-rouge">:copen</code>.</p>
 
-<p>Here’s how you can have the search result of <code class="highlighter-rouge">:vimgrep</code> open in a quickfix list
-window so you can scroll up and down between results using the keyboard:</p>
+<p>Here’s how you can find files and have the search result open in a quickfix
+list so you can scroll up and down the result using the keyboard:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">vimgrep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span> <span class="p">|</span> <span class="p">:</span><span class="k">copen</span>
 </code></pre></div></div>

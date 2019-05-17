@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 May 2019 13:11:54 +0200</pubDate>
-    <lastBuildDate>Fri, 17 May 2019 13:11:54 +0200</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 13:16:59 +0200</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 13:16:59 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -25,8 +25,8 @@ certain pattern. It populates a quickfix list with all the matches. You can
 cycle between the matches using &lt;code class=&quot;highlighter-rouge&quot;&gt;:cnext&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;:cprev&lt;/code&gt;, or open the quickfix
 list in a window using &lt;code class=&quot;highlighter-rouge&quot;&gt;:copen&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here’s how you can have the search result of &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; open in a quickfix list
-window so you can scroll up and down between results using the keyboard:&lt;/p&gt;
+&lt;p&gt;Here’s how you can find files and have the search result open in a quickfix
+list so you can scroll up and down the result using the keyboard:&lt;/p&gt;
 
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;vimgrep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;pattern&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;copen&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
