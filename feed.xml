@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 May 2019 21:12:13 +0200</pubDate>
-    <lastBuildDate>Thu, 16 May 2019 21:12:13 +0200</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 12:33:35 +0200</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 12:33:35 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -20,23 +20,10 @@ rules them all.&lt;/p&gt;
 
 &lt;h3 id=&quot;finding-files-by-content&quot;&gt;Finding Files by Content&lt;/h3&gt;
 
-&lt;p&gt;To find files, Vim has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; command which finds files that contain a
-certain pattern. Here’s how to use it in command mode:&lt;/p&gt;
-
-&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;pattern&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The result of this command will be echoed in a shell session where file names
-are listed along with each occurrence of the pattern in those files and you
-have to press the Enter key in order to return back to Vim. That’s it! Pretty
-basic and not very useful, is it?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/images/finding_files_in_vim-vimgrep.png&quot; alt=&quot;vimgrep in action&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Vim also has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;  command that works similarly to &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; command but
-it populates a quickfix list with all the matches. You can cycle between the
-matches using &lt;code class=&quot;highlighter-rouge&quot;&gt;:cnext&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;:cprev&lt;/code&gt;, or open the quickfix list in a window
-using &lt;code class=&quot;highlighter-rouge&quot;&gt;:copen&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To search files, Vim has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; command that finds files that contain a
+certain pattern. It populates a quickfix list with all the matches. You can
+cycle between the matches using &lt;code class=&quot;highlighter-rouge&quot;&gt;:cnext&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;:cprev&lt;/code&gt;, or open the quickfix
+list in a window using &lt;code class=&quot;highlighter-rouge&quot;&gt;:copen&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here’s how you can have the search result of &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; open in a quickfix list
 window so you can scroll up and down between results using the keyboard:&lt;/p&gt;
@@ -44,8 +31,18 @@ window so you can scroll up and down between results using the keyboard:&lt;/p&g
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;vimgrep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;pattern&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;copen&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;For more functionality, ease-of-use, and much faster results, I have been using
-a tool as a replacement for grep called &lt;a href=&quot;https://github.com/ggreer/the_silver_searcher&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Ag&lt;/em&gt;, the silver
+&lt;p&gt;Vim also has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; command that works similarly to &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; but,
+according to the documentation (try &lt;code class=&quot;highlighter-rouge&quot;&gt;:h grep&lt;/code&gt;), it relies on the external &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt;
+command on your system. Here’s how to use it in the command mode:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;pattern&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; also, just like &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;, will populate a quickfix list but will not
+open a window with the results by default.&lt;/p&gt;
+
+&lt;p&gt;For more convenience, and much faster search, I have been using a tool as a
+replacement for grep called &lt;a href=&quot;https://github.com/ggreer/the_silver_searcher&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Ag&lt;/em&gt;, the silver
 searcher&lt;/a&gt; and a
 Vim interface for it through
 &lt;a href=&quot;https://github.com/rking/ag.vim&quot; target=&quot;blank&quot;&gt;&lt;em&gt;ag.vim&lt;/em&gt;&lt;/a&gt; (which has been
@@ -72,7 +69,7 @@ box:&lt;/p&gt;
   &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; grepprg&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;ag\ &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;nogroup\ &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;nocolor
 &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;
 
-&lt;span class=&quot;c&quot;&gt;&quot;call :grep or :vimgrep normally&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;call :grep normally&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;finding-files-by-name&quot;&gt;Finding Files by Name&lt;/h3&gt;

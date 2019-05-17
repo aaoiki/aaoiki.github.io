@@ -91,23 +91,10 @@ rules them all.</p>
 
 <h3 id="finding-files-by-content">Finding Files by Content</h3>
 
-<p>To find files, Vim has a <code class="highlighter-rouge">:grep</code> command which finds files that contain a
-certain pattern. Here’s how to use it in command mode:</p>
-
-<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
-</code></pre></div></div>
-
-<p>The result of this command will be echoed in a shell session where file names
-are listed along with each occurrence of the pattern in those files and you
-have to press the Enter key in order to return back to Vim. That’s it! Pretty
-basic and not very useful, is it?</p>
-
-<p><img src="/public/images/finding_files_in_vim-vimgrep.png" alt="vimgrep in action" /></p>
-
-<p>Vim also has a <code class="highlighter-rouge">:vimgrep</code>  command that works similarly to <code class="highlighter-rouge">:grep</code> command but
-it populates a quickfix list with all the matches. You can cycle between the
-matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix list in a window
-using <code class="highlighter-rouge">:copen</code>.</p>
+<p>To search files, Vim has a <code class="highlighter-rouge">:vimgrep</code> command that finds files that contain a
+certain pattern. It populates a quickfix list with all the matches. You can
+cycle between the matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix
+list in a window using <code class="highlighter-rouge">:copen</code>.</p>
 
 <p>Here’s how you can have the search result of <code class="highlighter-rouge">:vimgrep</code> open in a quickfix list
 window so you can scroll up and down between results using the keyboard:</p>
@@ -115,8 +102,18 @@ window so you can scroll up and down between results using the keyboard:</p>
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">vimgrep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span> <span class="p">|</span> <span class="p">:</span><span class="k">copen</span>
 </code></pre></div></div>
 
-<p>For more functionality, ease-of-use, and much faster results, I have been using
-a tool as a replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank"><em>Ag</em>, the silver
+<p>Vim also has a <code class="highlighter-rouge">:grep</code> command that works similarly to <code class="highlighter-rouge">:vimgrep</code> but,
+according to the documentation (try <code class="highlighter-rouge">:h grep</code>), it relies on the external <code class="highlighter-rouge">grep</code>
+command on your system. Here’s how to use it in the command mode:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">:grep</code> also, just like <code class="highlighter-rouge">:vimgrep</code>, will populate a quickfix list but will not
+open a window with the results by default.</p>
+
+<p>For more convenience, and much faster search, I have been using a tool as a
+replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank"><em>Ag</em>, the silver
 searcher</a> and a
 Vim interface for it through
 <a href="https://github.com/rking/ag.vim" target="blank"><em>ag.vim</em></a> (which has been
@@ -143,7 +140,7 @@ box:</p>
   <span class="k">set</span> grepprg<span class="p">=</span>ag\ <span class="p">--</span>nogroup\ <span class="p">--</span>nocolor
 <span class="k">endif</span>
 
-<span class="c">"call :grep or :vimgrep normally</span>
+<span class="c">"call :grep normally</span>
 </code></pre></div></div>
 
 <h3 id="finding-files-by-name">Finding Files by Name</h3>
