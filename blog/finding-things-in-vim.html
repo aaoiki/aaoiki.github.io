@@ -31,8 +31,8 @@
 <meta name="twitter:description" content="Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slo..." />
 
 
-<meta property="og:image"      content="https://aonemd.github.io/public/images/finding_files_in_vim-commit.png" />
-<meta name="twitter:image:src" content="https://aonemd.github.io/public/images/finding_files_in_vim-commit.png" />
+<meta property="og:image"      content="https://aonemd.github.io/public/images/vim-logo.png" />
+<meta name="twitter:image:src" content="https://aonemd.github.io/public/images/vim-logo.png" />
 
 
   </head>
@@ -104,8 +104,8 @@ window so you can scroll up and down between results using the keyboard:</p>
 
 <p>Vim also has a <code class="highlighter-rouge">:grep</code> command that works similarly to <code class="highlighter-rouge">:vimgrep</code> but,
 according to the documentation (try <code class="highlighter-rouge">:h grep</code>), it relies on the external <code class="highlighter-rouge">grep</code>
-command on your system. Here’s how to use it in the command mode:</p>
-
+command on your system. Here’s how to use it in the command mode:
+Edit</p>
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
 </code></pre></div></div>
 
@@ -131,7 +131,7 @@ nnoremap \  <span class="p">:</span>Ag<span class="p">!&lt;</span>space<span cla
 nnoremap \<span class="p">|</span> <span class="p">:</span>Ag<span class="p">!</span> <span class="s2">"\b&lt;C-R&gt;&lt;C-W&gt;\b"</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;:</span><span class="k">cw</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
-<p>It’s worth noting that it’s possible to make grep use <em>Ag</em> by default instead
+<p>It’s worth noting that it’s possible to make <code class="highlighter-rouge">:grep</code> use <em>Ag</em> by default instead
 of relying on the default <em>grep</em> program, and thus, having much faster search
 results while keeping the same interface/command that Vim provides out of the
 box:</p>

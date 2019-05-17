@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 May 2019 12:33:35 +0200</pubDate>
-    <lastBuildDate>Fri, 17 May 2019 12:33:35 +0200</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 12:55:33 +0200</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 12:55:33 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -33,8 +33,8 @@ window so you can scroll up and down between results using the keyboard:&lt;/p&g
 
 &lt;p&gt;Vim also has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; command that works similarly to &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; but,
 according to the documentation (try &lt;code class=&quot;highlighter-rouge&quot;&gt;:h grep&lt;/code&gt;), it relies on the external &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt;
-command on your system. Here’s how to use it in the command mode:&lt;/p&gt;
-
+command on your system. Here’s how to use it in the command mode:
+Edit&lt;/p&gt;
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;pattern&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -60,7 +60,7 @@ nnoremap \  &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag&lt;span class=&quot
 nnoremap \&lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Ag&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;\b&amp;lt;C-R&amp;gt;&amp;lt;C-W&amp;gt;\b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;It’s worth noting that it’s possible to make grep use &lt;em&gt;Ag&lt;/em&gt; by default instead
+&lt;p&gt;It’s worth noting that it’s possible to make &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; use &lt;em&gt;Ag&lt;/em&gt; by default instead
 of relying on the default &lt;em&gt;grep&lt;/em&gt; program, and thus, having much faster search
 results while keeping the same interface/command that Vim provides out of the
 box:&lt;/p&gt;
