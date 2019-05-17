@@ -103,14 +103,14 @@ window so you can scroll up and down between results using the keyboard:</p>
 </code></pre></div></div>
 
 <p>Vim also has a <code class="highlighter-rouge">:grep</code> command that works similarly to <code class="highlighter-rouge">:vimgrep</code> but,
-according to the documentation (try <code class="highlighter-rouge">:h grep</code>), it relies on the external <code class="highlighter-rouge">grep</code>
-command on your system. Here’s how to use it in the command mode:
-Edit</p>
+according to the documentation (try <code class="highlighter-rouge">:h grep</code>), it relies on the external
+<code class="highlighter-rouge">grep</code> command on your system. <code class="highlighter-rouge">:vimgrep</code> loads the files in memory so it’s
+might be slower than <code class="highlighter-rouge">:grep</code>. <code class="highlighter-rouge">:grep</code>, just like <code class="highlighter-rouge">:vimgrep</code>, will populate a
+quickfix list and will not open a window with the results by default.  Here’s
+how to use <code class="highlighter-rouge">:grep</code> in the command mode:</p>
+
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
 </code></pre></div></div>
-
-<p><code class="highlighter-rouge">:grep</code> also, just like <code class="highlighter-rouge">:vimgrep</code>, will populate a quickfix list but will not
-open a window with the results by default.</p>
 
 <p>For more convenience, and much faster search, I have been using a tool as a
 replacement for grep called <a href="https://github.com/ggreer/the_silver_searcher" target="blank"><em>Ag</em>, the silver
