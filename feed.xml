@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 May 2019 13:22:27 +0200</pubDate>
-    <lastBuildDate>Fri, 17 May 2019 13:22:27 +0200</lastBuildDate>
+    <pubDate>Fri, 17 May 2019 13:34:11 +0200</pubDate>
+    <lastBuildDate>Fri, 17 May 2019 13:34:11 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -23,7 +23,7 @@ rules them all.&lt;/p&gt;
 &lt;p&gt;To search files, Vim has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; command that finds files that contain a
 certain pattern. It populates a quickfix list with all the matches. You can
 cycle between the matches using &lt;code class=&quot;highlighter-rouge&quot;&gt;:cnext&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;:cprev&lt;/code&gt;, or open the quickfix
-list in a window using &lt;code class=&quot;highlighter-rouge&quot;&gt;:copen&lt;/code&gt;.&lt;/p&gt;
+list in a split window using &lt;code class=&quot;highlighter-rouge&quot;&gt;:copen&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here’s how you can find files and have the search result open in a quickfix
 list so you can scroll up and down the result using the keyboard:&lt;/p&gt;
@@ -34,8 +34,8 @@ list so you can scroll up and down the result using the keyboard:&lt;/p&gt;
 &lt;p&gt;Vim also has a &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; command that works similarly to &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; but,
 according to the documentation (try &lt;code class=&quot;highlighter-rouge&quot;&gt;:h grep&lt;/code&gt;), it relies on the external
 &lt;code class=&quot;highlighter-rouge&quot;&gt;grep&lt;/code&gt; command on your system. &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt; loads the files in memory so it might
-be slower than &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt;, just like &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;, will populate a quickfix
-list and will not open a quickfix list with the results by default.  Here’s how
+be slower than &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt;. Just like &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;:grep&lt;/code&gt; will populate a quickfix
+list and will not open a quickfix list with the results by default. Here’s how
 to use it in the command mode:&lt;/p&gt;
 
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;pattern&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -46,9 +46,9 @@ replacement for grep called &lt;a href=&quot;https://github.com/ggreer/the_silve
 searcher&lt;/a&gt; and a
 Vim interface for it through
 &lt;a href=&quot;https://github.com/rking/ag.vim&quot; target=&quot;blank&quot;&gt;&lt;em&gt;ag.vim&lt;/em&gt;&lt;/a&gt; (which has been
-unmaintained for a while now). &lt;em&gt;ag.vim&lt;/em&gt; opens the results in a quickfix list
-window by default and you can navigate and choose which file to open using the
-keyboard just like with &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;. &lt;em&gt;ag.vim&lt;/em&gt;, however, adds some &lt;a href=&quot;https://github.com/rking/ag.vim#keyboard-shortcuts&quot; target=&quot;blank&quot;&gt;nice key
+unmaintained for a while now). &lt;em&gt;ag.vim&lt;/em&gt; opens the results in a quickfix list by
+default and you can navigate and choose which file to open using the keyboard
+just like with &lt;code class=&quot;highlighter-rouge&quot;&gt;:vimgrep&lt;/code&gt;. &lt;em&gt;ag.vim&lt;/em&gt;, however, adds some &lt;a href=&quot;https://github.com/rking/ag.vim#keyboard-shortcuts&quot; target=&quot;blank&quot;&gt;nice key
 maps&lt;/a&gt; for
 better navigation of the results. This is my configuration for &lt;em&gt;ag.vim&lt;/em&gt;:&lt;/p&gt;
 

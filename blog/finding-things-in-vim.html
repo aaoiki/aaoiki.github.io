@@ -94,7 +94,7 @@ rules them all.</p>
 <p>To search files, Vim has a <code class="highlighter-rouge">:vimgrep</code> command that finds files that contain a
 certain pattern. It populates a quickfix list with all the matches. You can
 cycle between the matches using <code class="highlighter-rouge">:cnext</code> and <code class="highlighter-rouge">:cprev</code>, or open the quickfix
-list in a window using <code class="highlighter-rouge">:copen</code>.</p>
+list in a split window using <code class="highlighter-rouge">:copen</code>.</p>
 
 <p>Here’s how you can find files and have the search result open in a quickfix
 list so you can scroll up and down the result using the keyboard:</p>
@@ -105,8 +105,8 @@ list so you can scroll up and down the result using the keyboard:</p>
 <p>Vim also has a <code class="highlighter-rouge">:grep</code> command that works similarly to <code class="highlighter-rouge">:vimgrep</code> but,
 according to the documentation (try <code class="highlighter-rouge">:h grep</code>), it relies on the external
 <code class="highlighter-rouge">grep</code> command on your system. <code class="highlighter-rouge">:vimgrep</code> loads the files in memory so it might
-be slower than <code class="highlighter-rouge">:grep</code>. <code class="highlighter-rouge">:grep</code>, just like <code class="highlighter-rouge">:vimgrep</code>, will populate a quickfix
-list and will not open a quickfix list with the results by default.  Here’s how
+be slower than <code class="highlighter-rouge">:grep</code>. Just like <code class="highlighter-rouge">:vimgrep</code>, <code class="highlighter-rouge">:grep</code> will populate a quickfix
+list and will not open a quickfix list with the results by default. Here’s how
 to use it in the command mode:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span><span class="k">grep</span> <span class="p">{</span>pattern<span class="p">}</span> <span class="p">{</span><span class="k">files</span><span class="p">}</span>
@@ -117,9 +117,9 @@ replacement for grep called <a href="https://github.com/ggreer/the_silver_search
 searcher</a> and a
 Vim interface for it through
 <a href="https://github.com/rking/ag.vim" target="blank"><em>ag.vim</em></a> (which has been
-unmaintained for a while now). <em>ag.vim</em> opens the results in a quickfix list
-window by default and you can navigate and choose which file to open using the
-keyboard just like with <code class="highlighter-rouge">:vimgrep</code>. <em>ag.vim</em>, however, adds some <a href="https://github.com/rking/ag.vim#keyboard-shortcuts" target="blank">nice key
+unmaintained for a while now). <em>ag.vim</em> opens the results in a quickfix list by
+default and you can navigate and choose which file to open using the keyboard
+just like with <code class="highlighter-rouge">:vimgrep</code>. <em>ag.vim</em>, however, adds some <a href="https://github.com/rking/ag.vim#keyboard-shortcuts" target="blank">nice key
 maps</a> for
 better navigation of the results. This is my configuration for <em>ag.vim</em>:</p>
 
