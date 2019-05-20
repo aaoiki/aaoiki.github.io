@@ -6,9 +6,224 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 May 2019 13:47:43 +0200</pubDate>
-    <lastBuildDate>Fri, 17 May 2019 13:47:43 +0200</lastBuildDate>
+    <pubDate>Mon, 20 May 2019 04:19:33 +0200</pubDate>
+    <lastBuildDate>Mon, 20 May 2019 04:19:33 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Minimal Vim</title>
+        <description>&lt;p&gt;In my previous &lt;a href=&quot;/blog/finding-things-in-vim&quot;&gt;blog post&lt;/a&gt;, I wrote about
+searching files in Vim. In the next five sections, I will go over creating a
+minimal Vim setup with a few dependencies. Although minimal does not
+necessarily mean faster, I’ll keep in mind making Vim perform and open as fast
+as possible.&lt;/p&gt;
+
+&lt;h3 id=&quot;general-settings&quot;&gt;General Settings&lt;/h3&gt;
+
+&lt;p&gt;There are a few must-have settings that are necessary for modern text editing.
+Actually, while writing this blog post, I revisited my .vimrc file and removed
+some of the unneeded settings. I’m currently experimenting Vim without all the
+options I think I don’t need right now.  I’m also trying to comment my settings
+as much as possible.&lt;/p&gt;
+
+&lt;p&gt;There are many settings frameworks or distributions such as
+&lt;a href=&quot;https://github.com/tpope/vim-sensible&quot; target=&quot;blank&quot;&gt;vim-sensible&lt;/a&gt; or
+&lt;a href=&quot;https://github.com/SpaceVim/SpaceVim&quot; target=&quot;blank&quot;&gt;SpaceVim&lt;/a&gt; (although
+they are completely different kinds of frameworks). Personally, I don’t like to
+use these frameworks as a matter fact since the need and the use case may
+differ from one person to another and I prefer to tweak my configuration to my
+own use case. Anyway, As a general rule I like to abide by, I tend to not put
+any settings that I don’t understand in my .vimrc.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Try not to put settings you don’t understand in your .vimrc&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the next block of code, there are some [somewhat opinionated] commented
+settings that you may need to have in your configuration file (I recommend
+reading Vim’s manual for each entry before using it):&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;more characters will be sent to the screen for redrawing&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ttyfast
+&lt;span class=&quot;c&quot;&gt;&quot;time waited for key press(es) to complete. It makes for a faster key response&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ttimeout
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ttimeoutlen&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;50&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;disable file backup (if you don't need it)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; nobackup
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;noswapfile&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;make backspace behave properly in insert mode&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; backspace&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;indent&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;eol&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;start&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;display incomplete commands&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; showcmd
+&lt;span class=&quot;c&quot;&gt;&quot;a better menu in command mode&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; wildmenu
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; wildmode&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;longest&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;full&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;full
+&lt;span class=&quot;c&quot;&gt;&quot;hide buffers instead of closing them even if they contain unwritten changes&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; hidden
+&lt;span class=&quot;c&quot;&gt;&quot;disable soft wrap for lines&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; nowrap
+&lt;span class=&quot;c&quot;&gt;&quot;always display the status line&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; laststatus&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;display line numbers on the left side&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;highlight current line&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; cursorline
+&lt;span class=&quot;c&quot;&gt;&quot;display text width column&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; colorcolumn&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;81&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;new splits will be at the bottom or to the right side of the screen&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; splitbelow
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; splitright
+
+&lt;span class=&quot;c&quot;&gt;&quot;always set autoindenting on&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; autoindent
+
+&lt;span class=&quot;c&quot;&gt;&quot;incremental search&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; incsearch
+&lt;span class=&quot;c&quot;&gt;&quot;highlight search&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; hlsearch
+&lt;span class=&quot;c&quot;&gt;&quot;searches are case insensitive unless they contain at least one capital letter&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; ignorecase
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; smartcase
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;plugins&quot;&gt;Plugins&lt;/h3&gt;
+
+&lt;p&gt;Even though Vim is a powerful text editor, it cannot survive the competition
+with other modern text editors and IDEs without plugins. Luckily, Vim is
+powerful enough to be
+&lt;a href=&quot;https://www.youtube.com/watch?v=ES1L2SPgIDI&quot; target=&quot;blank&quot;&gt;extensible&lt;/a&gt; in
+many ways. This enabled the Vim plugin ecosystem to thrive and grow. To manage
+plugins, I use
+&lt;a href=&quot;https://github.com/junegunn/vim-plug&quot; target=&quot;blank&quot;&gt;vim-plug&lt;/a&gt; which is
+easier to maintain (since it’s only a single file), runs plugin updates
+asynchronously, and it’s faster to load compared to other plugin managers.&lt;/p&gt;
+
+&lt;p&gt;Regardless of the plugin manager, I always try to avoid using plugins as much
+as possible. This is mainly because more plugins means more startup time for
+Vim. More plugins also means more dependencies to manage.&lt;/p&gt;
+
+&lt;p&gt;Using
+&lt;a href=&quot;https://github.com/hyiltiz/vim-plugins-profile&quot; target=&quot;blank&quot;&gt;vim-plugins-profile&lt;/a&gt;,
+the next screenshot shows the top 10 plugins that are taking most of Vim’s
+startup time for me:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/public/images/minimal_vim-profile.png&quot;&gt;&lt;img src=&quot;/public/images/minimal_vim-profile.png&quot; alt=&quot;Vim plugins profiled&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After profiling Vim’s startup time, I replaced
+&lt;a href=&quot;https://github.com/tomtom/tcomment_vim&quot; target=&quot;blank&quot;&gt;tcomment_vim&lt;/a&gt; with
+&lt;a href=&quot;https://github.com/tpope/vim-commentary&quot; target=&quot;blank&quot;&gt;vim-commentary&lt;/a&gt; and
+it actually made a noticeable difference on the startup time of Vim.&lt;/p&gt;
+
+&lt;p&gt;By the way, Vim actually can profile its startup time and dump it to a file
+with &lt;code class=&quot;highlighter-rouge&quot;&gt;vim --startuptime vim.log&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;functions&quot;&gt;Functions&lt;/h3&gt;
+
+&lt;p&gt;Functions are also an integral part of any .vimrc file to complement the work
+of plugins. However, functions like any other pіece of code, can slow you down
+sometimes. Currently, I only have two functions in my Vim configuration file.
+One function for creating and moving between split windows and another function
+for &lt;a href=&quot;https://github.com/junegunn/goyo.vim&quot; target=&quot;blank&quot;&gt;Goyo&lt;/a&gt;’s leave
+event.&lt;/p&gt;
+
+&lt;p&gt;You can profile your functions and check which part of each function that may
+slow Vim down while executing it. As I mentioned above, I only have a few
+functions in my ~/.vimrc file. So, I profiled them and got the result using
+Vim’s profile command. Here’s an example on how to profile the function
+&lt;a href=&quot;https://github.com/aonemd/aaku/blob/master/vim/vimrc#L143&quot; target=&quot;blank&quot;&gt;&lt;em&gt;WinMove(key)&lt;/em&gt;&lt;/a&gt;
+using Vim’s profile command:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;cmd &lt;span class=&quot;s1&quot;&gt;'profile start vimrc.profile'&lt;/span&gt; \
+    &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;cmd &lt;span class=&quot;s1&quot;&gt;'profile! file ~/.vimrc'&lt;/span&gt; \
+    &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;call WinMove('j')&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;And here’s an excerpt of the profiling result:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FUNCTION  WinMove&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    Defined&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;~&lt;/span&gt;/&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;vimrc line &lt;span class=&quot;m&quot;&gt;181&lt;/span&gt;
+Called &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; time
+Total time&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;000384&lt;/span&gt;
+ Self time&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;000081&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;status-line&quot;&gt;Status Line&lt;/h3&gt;
+
+&lt;p&gt;IMHO, the Vim community has invested a lot of time and effort to make colorful
+status lines with lots of weird symbols and many functionalities. Don’t get me
+wrong, I love the aesthetics of a beautiful, colorful status line; however, I
+kind of feel like it can be a bit distracting while writing. What I really
+think is that the status line should not get in the way of the developer; it
+should be a complementary tool not an essential one.&lt;/p&gt;
+
+&lt;p&gt;For me, I’ve updated my status line to have only a few functions that I really
+need while writing. It even differs from the stock status line that comes with
+Vim. Here’s how I currently configure my status line:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;you need this to always display the status line&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; laststatus&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot;modifiedflag, charcount, filepercent, filepath&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; statusline&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;%&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;%&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt;\ %&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;\ %P\ %&lt;span class=&quot;k&quot;&gt;f&lt;/span&gt;\
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And this is how it looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/public/images/minimal_vim-statusline.png&quot;&gt;&lt;img src=&quot;/public/images/minimal_vim-statusline.png&quot; alt=&quot;Minimal statuline&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;file-explorer&quot;&gt;File Explorer&lt;/h3&gt;
+
+&lt;p&gt;I see a lot of Vim users put the plugin
+&lt;a href=&quot;https://github.com/scrooloose/nerdtree&quot; target=&quot;blank&quot;&gt;&lt;em&gt;NERDTree&lt;/em&gt;&lt;/a&gt; in their
+Vim configuration and many online tutorials and articles advice to install it.
+In fact, when I was starting with Vim, I used to have it in my .vimrc as well.
+However, after a while, I found out that Vim actually comes with a file
+explorer called &lt;em&gt;netrw&lt;/em&gt; out of the box.&lt;/p&gt;
+
+&lt;p&gt;To open netrw on the side (a vertical split) like NERDTree, you can run the
+command &lt;code class=&quot;highlighter-rouge&quot;&gt;:Vexplore&lt;/code&gt;, or &lt;code class=&quot;highlighter-rouge&quot;&gt;:Sexplore&lt;/code&gt; to open it in a horizontal split window. As
+with using Vim in general, the more you use it, the more you realize that you
+know nothing about it. As of writing this post, I’ve learned more features that
+I didn’t know existed in netrw. You can always learn about the commands and key
+maps of netrw using &lt;code class=&quot;highlighter-rouge&quot;&gt;:h netrw&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/public/images/minimal_vim-netrw.png&quot;&gt;&lt;img src=&quot;/public/images/minimal_vim-netrw.png&quot; alt=&quot;netrw preview&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Just like NERDTree, You can manipulate files and directories (browse, execute,
+rename, delete, …) from inside netrw.  Moreover, you can configure it to
+behave exactly like NERDTree. Here are the relevant settings in my .vimrc:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:netrw_banner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:netrw_winsize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;20&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:netrw_liststyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:netrw_localrmdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'rm -r'&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&quot;toggle netrw on the left side of the editor&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;Lexplore&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;CR&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;My .vimrc file is now exactly 149 lines after I removed unused plugins and
+redundant settings. You can find my full .vimrc file in my
+&lt;a href=&quot;/blog/the-dotfiles&quot;&gt;dotfiles&lt;/a&gt; repository &lt;a href=&quot;https://github.com/aonemd/aaku&quot; target=&quot;blank&quot;&gt;on
+GitHub&lt;/a&gt;. Thanks for reading!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 May 2019 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/minimal-vim</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/minimal-vim</guid>
+        
+        <category>minimal,</category>
+        
+        <category>vim,</category>
+        
+        <category>software,</category>
+        
+        <category>development,</category>
+        
+        <category>tools</category>
+        
+        
+        <category>Tools</category>
+        
+      </item>
     
       <item>
         <title>Finding Things in Vim</title>
@@ -1046,90 +1261,6 @@ see that for yourself.&lt;/p&gt;
         
         
         <category>Ruby on Rails</category>
-        
-      </item>
-    
-      <item>
-        <title>Bear Programming</title>
-        <description>&lt;p&gt;According to Wikipedia, &lt;em&gt;Pair Programming&lt;/em&gt; is an agile software development
-technique in which two programmers work together at one workstation.&lt;/p&gt;
-
-&lt;p&gt;There’s also a term I call &lt;em&gt;Bear programming&lt;/em&gt; that is not the opposite of
-pair programming. &lt;em&gt;Bear programming&lt;/em&gt; is when a team of programmers that
-work together on a single project starts mauling the code and ripping its
-different parts apart like a group of bears.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/public/images/bear_programming.png&quot; alt=&quot;Bear Photo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Let me clear this. The mauling here refers to writing code that is
-distinguishable to the code written by other team members. You can take a
-look at the codebase in the end and know that it was written by more than
-one person. This rather dysfunctional behavior often occurs because of the
-lack of communication between team members.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Organizations which design systems are constrained to produce designs
-which are copies of the communication structures of these organizations.
-&lt;cite&gt;Melvin Conway&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This previous quote is by Melvin Conway and it’s named after him, &lt;em&gt;Conway’s
-Law&lt;/em&gt;. It depicts how communication between teams affect the way their systems
-are structured. The lack of communication within a team will be mirrored in the
-codebase and will affect the overall system architecture. Thus, Bear
-programming is a red flag in any team. Here’s what I think can be done to
-mitigate the problem (without turning the post into a BuzzFeed-like post):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Having a style guide and running the code through some sort of a linter keeps
-the codebase organized and unified in terms of style&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;Pair programming&lt;/em&gt; helps training the team to work together and
-understand each other. The element of importance in pair programming is
-the actual interaction between the team members&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Having a strong code review culture. Code reviews do not only help the team
-learn from one another, they also help finding the differences among the team
-members and narrowing them&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Writing better Git commit messages (if you use Git and you probably should)
-by focusing on providing the context or the why of the commit. This is also
-essential to the previous point about code reviews. Git commits are a means
-to relay messages to other developers in the team&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In conclusion, lack of communication is a sign of a dysfunctional team, and
-thus; training the team to work together is a must in order for the team to
-successfully build and maintain their codebase.&lt;/p&gt;
-
-&lt;p&gt;That’s it. End of Line.&lt;/p&gt;
-
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.melconway.com/Home/Conways_Law.html&quot;&gt;Conway’s Law&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.thoughtworks.com/insights/blog/demystifying-conways-law&quot;&gt;Demystifying Conway’s Law&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=PJjmw9TRB7s&quot;&gt;Implementing a Strong Code-Review Culture&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 01 Jun 2018 00:00:00 +0200</pubDate>
-        <link>https://aonemd.github.io/blog/bear-programming</link>
-        <guid isPermaLink="true">https://aonemd.github.io/blog/bear-programming</guid>
-        
-        <category>bear_programming,</category>
-        
-        <category>development,</category>
-        
-        <category>product_management</category>
-        
-        
-        <category>Software Engineering</category>
         
       </item>
     

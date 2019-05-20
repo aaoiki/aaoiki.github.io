@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Minimal Vim | aonemd</title>
+    <link rel="canonical" href="https://aonemd.github.io/blog/minimal-vim">
+    <link rel="alternate" type="application/rss+xml" title="aonemd" href="https://aonemd.github.io/feed.xml">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/logo.png" />
+
+    <link rel="stylesheet" href="/index.css">
+
+    <meta name="description" content="In my previous blog post, I wrote aboutsearching files in Vim. In the next five sections, I will go over creating aminimal Vim setup with a few dependencies....">
+
+<!-- facebook -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/blog/minimal-vim" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Minimal Vim" />
+<meta property="og:description" content="In this post we will see how to setup a minimal and faster Vim with as few dependencies as possible." />
+
+<!-- twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Minimal Vim" />
+<meta name="twitter:description" content="In this post we will see how to setup a minimal and faster Vim with as few dependencies as possible." />
+
+
+<meta property="og:image"      content="https://aonemd.github.io/public/images/vim-logo.png" />
+<meta name="twitter:image:src" content="https://aonemd.github.io/public/images/vim-logo.png" />
+
+
+  </head>
+
+  <body class="">
+    <nav>
+  <div class="title">
+    <a href="/">a<span>one</span>md</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="/feed.xml" target="_blank">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggle">
+      <svg><use xlink:href="/public/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+
+    <article>
+  <div class="row">
+    <div class="col-6 center">
+      <div class="view-post__en-title text-center center">
+        <h2>Minimal Vim <small class="view-post__category">Tools</small></h2>
+        <b><span>May 20, 2019</span></b>
+      </div>
+
+      <br>
+
+      <div lang='en'>
+        <p>In my previous <a href="/blog/finding-things-in-vim">blog post</a>, I wrote about
+searching files in Vim. In the next five sections, I will go over creating a
+minimal Vim setup with a few dependencies. Although minimal does not
+necessarily mean faster, I’ll keep in mind making Vim perform and open as fast
+as possible.</p>
+
+<h3 id="general-settings">General Settings</h3>
+
+<p>There are a few must-have settings that are necessary for modern text editing.
+Actually, while writing this blog post, I revisited my .vimrc file and removed
+some of the unneeded settings. I’m currently experimenting Vim without all the
+options I think I don’t need right now.  I’m also trying to comment my settings
+as much as possible.</p>
+
+<p>There are many settings frameworks or distributions such as
+<a href="https://github.com/tpope/vim-sensible" target="blank">vim-sensible</a> or
+<a href="https://github.com/SpaceVim/SpaceVim" target="blank">SpaceVim</a> (although
+they are completely different kinds of frameworks). Personally, I don’t like to
+use these frameworks as a matter fact since the need and the use case may
+differ from one person to another and I prefer to tweak my configuration to my
+own use case. Anyway, As a general rule I like to abide by, I tend to not put
+any settings that I don’t understand in my .vimrc.</p>
+
+<blockquote>
+  <p>Try not to put settings you don’t understand in your .vimrc</p>
+</blockquote>
+
+<p>In the next block of code, there are some [somewhat opinionated] commented
+settings that you may need to have in your configuration file (I recommend
+reading Vim’s manual for each entry before using it):</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"more characters will be sent to the screen for redrawing</span>
+<span class="k">set</span> ttyfast
+<span class="c">"time waited for key press(es) to complete. It makes for a faster key response</span>
+<span class="k">set</span> ttimeout
+<span class="k">set</span> ttimeoutlen<span class="p">=</span><span class="m">50</span>
+<span class="c">"disable file backup (if you don't need it)</span>
+<span class="k">set</span> nobackup
+<span class="k">set</span> <span class="k">noswapfile</span>
+<span class="c">"make backspace behave properly in insert mode</span>
+<span class="k">set</span> backspace<span class="p">=</span>indent<span class="p">,</span>eol<span class="p">,</span><span class="k">start</span>
+<span class="c">"display incomplete commands</span>
+<span class="k">set</span> showcmd
+<span class="c">"a better menu in command mode</span>
+<span class="k">set</span> wildmenu
+<span class="k">set</span> wildmode<span class="p">=</span>longest<span class="p">:</span>full<span class="p">,</span>full
+<span class="c">"hide buffers instead of closing them even if they contain unwritten changes</span>
+<span class="k">set</span> hidden
+<span class="c">"disable soft wrap for lines</span>
+<span class="k">set</span> nowrap
+<span class="c">"always display the status line</span>
+<span class="k">set</span> laststatus<span class="p">=</span><span class="m">2</span>
+<span class="c">"display line numbers on the left side</span>
+<span class="k">set</span> <span class="k">number</span>
+<span class="c">"highlight current line</span>
+<span class="k">set</span> cursorline
+<span class="c">"display text width column</span>
+<span class="k">set</span> colorcolumn<span class="p">=</span><span class="m">81</span>
+<span class="c">"new splits will be at the bottom or to the right side of the screen</span>
+<span class="k">set</span> splitbelow
+<span class="k">set</span> splitright
+
+<span class="c">"always set autoindenting on</span>
+<span class="k">set</span> autoindent
+
+<span class="c">"incremental search</span>
+<span class="k">set</span> incsearch
+<span class="c">"highlight search</span>
+<span class="k">set</span> hlsearch
+<span class="c">"searches are case insensitive unless they contain at least one capital letter</span>
+<span class="k">set</span> ignorecase
+<span class="k">set</span> smartcase
+</code></pre></div></div>
+
+<h3 id="plugins">Plugins</h3>
+
+<p>Even though Vim is a powerful text editor, it cannot survive the competition
+with other modern text editors and IDEs without plugins. Luckily, Vim is
+powerful enough to be
+<a href="https://www.youtube.com/watch?v=ES1L2SPgIDI" target="blank">extensible</a> in
+many ways. This enabled the Vim plugin ecosystem to thrive and grow. To manage
+plugins, I use
+<a href="https://github.com/junegunn/vim-plug" target="blank">vim-plug</a> which is
+easier to maintain (since it’s only a single file), runs plugin updates
+asynchronously, and it’s faster to load compared to other plugin managers.</p>
+
+<p>Regardless of the plugin manager, I always try to avoid using plugins as much
+as possible. This is mainly because more plugins means more startup time for
+Vim. More plugins also means more dependencies to manage.</p>
+
+<p>Using
+<a href="https://github.com/hyiltiz/vim-plugins-profile" target="blank">vim-plugins-profile</a>,
+the next screenshot shows the top 10 plugins that are taking most of Vim’s
+startup time for me:</p>
+
+<p><a href="/public/images/minimal_vim-profile.png"><img src="/public/images/minimal_vim-profile.png" alt="Vim plugins profiled" /></a></p>
+
+<p>After profiling Vim’s startup time, I replaced
+<a href="https://github.com/tomtom/tcomment_vim" target="blank">tcomment_vim</a> with
+<a href="https://github.com/tpope/vim-commentary" target="blank">vim-commentary</a> and
+it actually made a noticeable difference on the startup time of Vim.</p>
+
+<p>By the way, Vim actually can profile its startup time and dump it to a file
+with <code class="highlighter-rouge">vim --startuptime vim.log</code>.</p>
+
+<h3 id="functions">Functions</h3>
+
+<p>Functions are also an integral part of any .vimrc file to complement the work
+of plugins. However, functions like any other pіece of code, can slow you down
+sometimes. Currently, I only have two functions in my Vim configuration file.
+One function for creating and moving between split windows and another function
+for <a href="https://github.com/junegunn/goyo.vim" target="blank">Goyo</a>’s leave
+event.</p>
+
+<p>You can profile your functions and check which part of each function that may
+slow Vim down while executing it. As I mentioned above, I only have a few
+functions in my ~/.vimrc file. So, I profiled them and got the result using
+Vim’s profile command. Here’s an example on how to profile the function
+<a href="https://github.com/aonemd/aaku/blob/master/vim/vimrc#L143" target="blank"><em>WinMove(key)</em></a>
+using Vim’s profile command:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">vim</span> <span class="p">--</span>cmd <span class="s1">'profile start vimrc.profile'</span> \
+    <span class="p">--</span>cmd <span class="s1">'profile! file ~/.vimrc'</span> \
+    <span class="p">-</span><span class="k">c</span> <span class="s2">"call WinMove('j')"</span>
+</code></pre></div></div>
+<p>And here’s an excerpt of the profiling result:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FUNCTION  WinMove<span class="p">()</span>
+    Defined<span class="p">:</span> <span class="p">~</span>/<span class="p">.</span>vimrc line <span class="m">181</span>
+Called <span class="m">1</span> time
+Total time<span class="p">:</span>   <span class="m">0</span><span class="p">.</span><span class="m">000384</span>
+ Self time<span class="p">:</span>   <span class="m">0</span><span class="p">.</span><span class="m">000081</span>
+</code></pre></div></div>
+
+<h3 id="status-line">Status Line</h3>
+
+<p>IMHO, the Vim community has invested a lot of time and effort to make colorful
+status lines with lots of weird symbols and many functionalities. Don’t get me
+wrong, I love the aesthetics of a beautiful, colorful status line; however, I
+kind of feel like it can be a bit distracting while writing. What I really
+think is that the status line should not get in the way of the developer; it
+should be a complementary tool not an essential one.</p>
+
+<p>For me, I’ve updated my status line to have only a few functions that I really
+need while writing. It even differs from the stock status line that comes with
+Vim. Here’s how I currently configure my status line:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"you need this to always display the status line</span>
+<span class="k">set</span> laststatus<span class="p">=</span><span class="m">2</span>
+
+<span class="c">"modifiedflag, charcount, filepercent, filepath</span>
+<span class="k">set</span> statusline<span class="p">=</span>%<span class="p">=</span>%<span class="k">m</span>\ %<span class="k">c</span>\ %P\ %<span class="k">f</span>\
+</code></pre></div></div>
+
+<p>And this is how it looks like:</p>
+
+<p><a href="/public/images/minimal_vim-statusline.png"><img src="/public/images/minimal_vim-statusline.png" alt="Minimal statuline" /></a></p>
+
+<h3 id="file-explorer">File Explorer</h3>
+
+<p>I see a lot of Vim users put the plugin
+<a href="https://github.com/scrooloose/nerdtree" target="blank"><em>NERDTree</em></a> in their
+Vim configuration and many online tutorials and articles advice to install it.
+In fact, when I was starting with Vim, I used to have it in my .vimrc as well.
+However, after a while, I found out that Vim actually comes with a file
+explorer called <em>netrw</em> out of the box.</p>
+
+<p>To open netrw on the side (a vertical split) like NERDTree, you can run the
+command <code class="highlighter-rouge">:Vexplore</code>, or <code class="highlighter-rouge">:Sexplore</code> to open it in a horizontal split window. As
+with using Vim in general, the more you use it, the more you realize that you
+know nothing about it. As of writing this post, I’ve learned more features that
+I didn’t know existed in netrw. You can always learn about the commands and key
+maps of netrw using <code class="highlighter-rouge">:h netrw</code>.</p>
+
+<p><a href="/public/images/minimal_vim-netrw.png"><img src="/public/images/minimal_vim-netrw.png" alt="netrw preview" /></a></p>
+
+<p>Just like NERDTree, You can manipulate files and directories (browse, execute,
+rename, delete, …) from inside netrw.  Moreover, you can configure it to
+behave exactly like NERDTree. Here are the relevant settings in my .vimrc:</p>
+
+<div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">g:netrw_banner</span><span class="p">=</span><span class="m">0</span>
+<span class="k">let</span> <span class="nv">g:netrw_winsize</span><span class="p">=</span><span class="m">20</span>
+<span class="k">let</span> <span class="nv">g:netrw_liststyle</span><span class="p">=</span><span class="m">3</span>
+<span class="k">let</span> <span class="nv">g:netrw_localrmdir</span><span class="p">=</span><span class="s1">'rm -r'</span>
+
+<span class="c">"toggle netrw on the left side of the editor</span>
+nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">n</span> <span class="p">:</span>Lexplore<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>My .vimrc file is now exactly 149 lines after I removed unused plugins and
+redundant settings. You can find my full .vimrc file in my
+<a href="/blog/the-dotfiles">dotfiles</a> repository <a href="https://github.com/aonemd/aaku" target="blank">on
+GitHub</a>. Thanks for reading!</p>
+
+      </div>
+
+      
+        <div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https://aonemd.github.io/blog/minimal-vim&text=Minimal Vim&hashtags=minimal,vim,software,development,tools&via=aonemd" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https://aonemd.github.io/blog/minimal-vim&title=Minimal Vim" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Minimal Vim&url=https://aonemd.github.io/blog/minimal-vim" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https://aonemd.github.io/blog/minimal-vim" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https://aonemd.github.io/blog/minimal-vim&title=Minimal Vim" target="_blank">
+          <svg><use xlink:href="/public/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+
+        <hr>
+
+<input type="hidden" id="issueId" value="19">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/comments.css">
+<script type="text/javascript"
+        src="/comments.js"
+        async>
+</script>
+
+      
+    </div>
+  </div>
+</article>
+
+
+    <script async type="text/javascript" src="/index.js" charset="utf-8"></script>
+  </body>
+</html>
