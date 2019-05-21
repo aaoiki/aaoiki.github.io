@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 May 2019 15:25:27 +0200</pubDate>
-    <lastBuildDate>Tue, 21 May 2019 15:25:27 +0200</lastBuildDate>
+    <pubDate>Tue, 21 May 2019 15:31:36 +0200</pubDate>
+    <lastBuildDate>Tue, 21 May 2019 15:31:36 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -30,7 +30,7 @@ as much as possible.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/tpope/vim-sensible&quot; target=&quot;blank&quot;&gt;vim-sensible&lt;/a&gt; or
 &lt;a href=&quot;https://github.com/SpaceVim/SpaceVim&quot; target=&quot;blank&quot;&gt;SpaceVim&lt;/a&gt; (although
 they are completely different kinds of frameworks). Personally, I don’t like to
-use these frameworks as a matter fact since the need and the use case may
+use these frameworks as a matter of fact since the need and the use case may
 differ from one person to another and I prefer to tweak my configuration to my
 own use case. Anyway, As a general rule I like to abide by, I tend to not put
 any settings that I don’t understand in my .vimrc.&lt;/p&gt;
