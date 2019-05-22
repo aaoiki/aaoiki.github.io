@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 May 2019 02:57:07 +0200</pubDate>
-    <lastBuildDate>Wed, 22 May 2019 02:57:07 +0200</lastBuildDate>
+    <pubDate>Wed, 22 May 2019 02:58:49 +0200</pubDate>
+    <lastBuildDate>Wed, 22 May 2019 02:58:49 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -223,7 +223,7 @@ GitHub&lt;/a&gt;. Thanks for reading!&lt;/p&gt;
       </item>
     
       <item>
-        <title>Action Cable: Rails 5 Most Anticipated Features</title>
+        <title>Action Cable: Rails 5 Most Anticipated Feature</title>
         <description>&lt;p&gt;Action Cable is a simple framework that introduces WebSocket support to
 Rails apps. It provides a server-side as well as a client-side integration
 with WebSocket…&lt;/p&gt;
