@@ -6,9 +6,209 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 May 2019 02:58:49 +0200</pubDate>
-    <lastBuildDate>Wed, 22 May 2019 02:58:49 +0200</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 03:49:45 +0200</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 03:49:45 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Handy Keymaps in Vim</title>
+        <description>&lt;p&gt;In my first two posts in this Vim series, I talked about &lt;a href=&quot;/blog/finding-things-in-vim&quot;&gt;finding files in
+Vim&lt;/a&gt; and &lt;a href=&quot;/blog/minimal-vim&quot;&gt;having a minimal Vim
+setup&lt;/a&gt;.  In this post I’m going to go over some useful
+keymaps and functions you can use in Vim to boost your text editing abilities
+and master the Vim wizardry. I will only cover keymaps that don’t include
+external plugins except for section #2 which will be about generating tags (I
+couldn’t leave this part without covering it).&lt;/p&gt;
+
+&lt;h3 id=&quot;essentials&quot;&gt;Essentials&lt;/h3&gt;
+
+&lt;p&gt;First and for most, the leader key is a special key in Vim that with other
+combination of keys can be mapped to perform certain functions. By default, Vim
+maps the leader to the backslash key. I see many Vimmers (yes, this is a word
+now) set it to the comma key. I, however, like to set it to the space bar; it’s
+a big key in the middle of the keyboard so it’s really easy to find it and use
+it with other key combinations:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;The Leader&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; mapleader&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;\&amp;lt;Space&amp;gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we’ve mapped the leader key, we can start mapping other keys to
+functions.&lt;/p&gt;
+
+&lt;p&gt;The first function in our list will be the save or the write buffer function.
+Instead of using the shift and the semi-colon keys to generate a colon, typing
+w, and then hitting Enter to save the current buffer, I found out that hitting
+the space bar with the letter w is faster and easier to use specially for a
+function that is used many times in the course of writing. This is just two key
+presses instead of four:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;save current buffer&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;w&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;w&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The second function is for replacing the current-under-cursor word with another
+pattern/word. Simply, it copies the word under cursor and inserts it into a
+substitution command call. You only need to type the replacement pattern and
+press the Enter key to actually replace the text:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;replace the word under cursor&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;* &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;%s&lt;span class=&quot;sr&quot;&gt;/\&amp;lt;&amp;lt;c-r&amp;gt;&amp;lt;c-w&amp;gt;\&amp;gt;/&lt;/span&gt;/&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next is a function that is found in many modern text editors, that is, auto
+closing tags. Although sometimes it can get annoying when you don’t need it,
+it’s handy most of the time when writing function definitions, if statements,
+and other control structures in most popular languages. Each of the following
+keymaps simply inserts a closing tag and puts the cursor in between the opening
+and the closing tags:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;autoclose tags&lt;/span&gt;
+inoremap &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&amp;lt;&lt;/span&gt;Left&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+inoremap &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&amp;lt;&lt;/span&gt;Left&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+inoremap &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&amp;lt;&lt;/span&gt;Left&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+inoremap &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;&quot;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;Left&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I feel like this section got really long so here’s one last function. To move a
+line up or down in Vim, normally you’d delete it and paste it into the desired
+target line. This keymap makes it possible to move lines up or down using the
+leader key + k or j (for up and down):&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;move lines around&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;==&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;+&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;==&lt;/span&gt;
+xnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;gv&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;gv
+xnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt;'&lt;span class=&quot;p&quot;&gt;&amp;gt;+&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;gv&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;gv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;generating-tags&quot;&gt;Generating Tags&lt;/h3&gt;
+
+&lt;p&gt;As I mentioned before, this is the only section that includes an external
+dependency. &lt;a href=&quot;https://ctags.io/&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Universal Ctags&lt;/em&gt;&lt;/a&gt; is a tool
+that analyzes the codebase and generates an index file of tags. This index of
+tags can be used to jump between the defintions of functions, classs, and other
+identifiers while navigating the code. You can jump to a tag defintion using
+the &lt;code class=&quot;highlighter-rouge&quot;&gt;:tag IDENTIFIER&lt;/code&gt; command in Vim.&lt;/p&gt;
+
+&lt;p&gt;Since I’m trying not to switch context and leave the text editor as much as
+possible, I made a keymap that generates the list of tags for me without
+leaving Vim. The next block of code tells Vim where to look for tag definitions
+by setting the &lt;code class=&quot;highlighter-rouge&quot;&gt;set tags&lt;/code&gt; entry and maps &lt;code class=&quot;highlighter-rouge&quot;&gt;leader + ct&lt;/code&gt; to generate the tag
+list:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;+=.&lt;/span&gt;git/&lt;span class=&quot;k&quot;&gt;tags&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;ct &lt;span class=&quot;p&quot;&gt;:!&lt;/span&gt;ctags &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;Rf &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;git/&lt;span class=&quot;k&quot;&gt;tags&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;tag&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;relative &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;extra&lt;span class=&quot;p&quot;&gt;=+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;exclude&lt;span class=&quot;p&quot;&gt;=.&lt;/span&gt;git&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;pkg &lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;languages&lt;span class=&quot;p&quot;&gt;=-&lt;/span&gt;sql&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also simplify the command above by moving the flags to a &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.ctags&lt;/code&gt;
+file (each flag alone on a single line) and only having this in your .vimrc:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;ct &lt;span class=&quot;p&quot;&gt;:!&lt;/span&gt;ctags &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;Rf &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;git/&lt;span class=&quot;k&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;manipulating-buffers&quot;&gt;Manipulating Buffers&lt;/h3&gt;
+
+&lt;p&gt;Vim has this notion of buffers. Simply put, &lt;a href=&quot;https://sanctum.geek.nz/arabesque/buffers-windows-tabs/&quot; target=&quot;blank&quot;&gt;a buffer is an open
+file&lt;/a&gt;.
+A window in Vim is a way to view an open buffer.  A tab, on the other hand, is
+a collection of windows. To save you (and myself) the pain, use buffers and
+treat them the way you treat tabs in other text editors. You can read more
+about buffers vs tabs and the best way to use them
+&lt;a href=&quot;https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/&quot; target=&quot;blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Anyway, I have a few keymaps that make it easier to manipulate and deal with
+buffers. For example, to open and close buffers, I have in my .vimrc this block
+of code:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;create a new buffer (save it with :w ./path/to/FILENAME)&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;B &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;enew&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;close current buffer&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;bq &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;bp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;bar&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;bd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt; #&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;close all open buffers&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ba&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;bufdo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;bd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following is for switching between open buffers:&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;Tab to switch to next open buffer&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;Tab&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;bnext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;Shift + Tab to switch to previous open buffer&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;Tab&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;bprevious&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;cycle between last two open buffers&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;^&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can install
+&lt;a href=&quot;https://github.com/ap/vim-buftabline&quot; target=&quot;blank&quot;&gt;vim-buftabline&lt;/a&gt; to
+visualize your open buffers and see how they are being switched by the keymaps
+above.&lt;/p&gt;
+
+&lt;h3 id=&quot;splits-splits-splits&quot;&gt;Splits, Splits, Splits!&lt;/h3&gt;
+
+&lt;p&gt;Window splits are such an important element of my text editing since sometimes
+I need to keep track on multiple files at the same time. Vim provides some
+shortcuts for creating and moving around splits, however; they can be a little
+unintuitive for quick navigation between splits.&lt;/p&gt;
+
+&lt;p&gt;To fix this, I have had a small function in my Vim configuration for a long
+time that makes my life a lot easier. The function is mapped to a set of
+intuitive combination of keys, namely, the control key + any of the navigation
+keys (h, j, k, l).&lt;/p&gt;
+
+&lt;p&gt;What the function does is that it checks first if a split already exists in the
+direction you want to move to. If it does, the function simply moves the focus
+to that split. If there isn’t a split already, the function creates a new split
+and moves the focus to that split. This function I took from someone some long
+time ago. I can’t recall where I got it from, but all the credit is due to the
+original author.&lt;/p&gt;
+
+&lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;move to the split in the direction shown, or create a new split&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;silent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; WinMove&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'h'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;silent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; WinMove&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'j'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;silent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; WinMove&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'k'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;silent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;C&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;call&lt;/span&gt; WinMove&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'l'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt; WinMove&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;key&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;curwin &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; winnr&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  exec &lt;span class=&quot;s2&quot;&gt;&quot;wincmd &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;a:key&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;curwin &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; winnr&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;a:key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'[jk]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;wincmd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;v&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;wincmd&lt;/span&gt; s
+    &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;
+    exec &lt;span class=&quot;s2&quot;&gt;&quot;wincmd &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;a:key&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;endfunction&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Vim is a powerful text editor with great capabilities. You can map multiple
+keys to perform different functionalities in Vim that makes your text editing
+easier.&lt;/p&gt;
+
+&lt;p&gt;All the code in this post is taken from my .vimrc file in my dotfiles
+repository on GitHub. You can check it out
+&lt;a href=&quot;https://github.com/aonemd/aaku&quot; target=&quot;blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 May 2019 00:00:00 +0200</pubDate>
+        <link>https://aonemd.github.io/blog/handy-keymaps-in-vim</link>
+        <guid isPermaLink="true">https://aonemd.github.io/blog/handy-keymaps-in-vim</guid>
+        
+        <category>vim,</category>
+        
+        <category>keymaps,</category>
+        
+        <category>software,</category>
+        
+        <category>development,</category>
+        
+        <category>tools</category>
+        
+        
+        <category>Tools</category>
+        
+      </item>
     
       <item>
         <title>Minimal Vim</title>
@@ -1096,129 +1296,6 @@ from writing or publishing an article.&lt;/p&gt;
         
         
         <category>Blogging</category>
-        
-      </item>
-    
-      <item>
-        <title>How I Take Notes</title>
-        <description>&lt;p&gt;I always advice every programmer to take notes of their work all the time.
-Taking notes has throughout the years become so indispensable for me.  Instead
-of searching for something every time I forget it, I go back to my notes. It
-has also become helpful when I need to study for interviews. I also use those
-notes as a journal to keep and organize my thoughts when I’m working on a new
-feature or fixing a bug.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;There’s nothing better than a beautiful day at the beach, filled with sun,
-surf and diligent note-taking
-&lt;cite&gt;Pam Beesly, The Office&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;digital-notes&quot;&gt;Digital notes&lt;/h3&gt;
-
-&lt;p&gt;I started taking notes on small yellow sticky notes however, it wasn’t that
-efficient when I needed to access my notes when I’m not home or when I’m using
-my phone. Thus, I started taking digital notes on my computer and cellphone.&lt;/p&gt;
-
-&lt;p&gt;As I mentioned, I started with sticky notes and a pencil then I moved to
-digital notes. First, I tried multiple note taking apps but I couldn’t find
-something better than using my favorite text editor to take notes. Besides,
-each app has its own format to store notes. I was looking for something simple
-and with much control over my notes as possible.&lt;/p&gt;
-
-&lt;p&gt;Currently, I use a text editor, Markdown, and a small shell script to list and
-open notes. My text editor of choice is Vim. I use Vim in combination with
-&lt;code class=&quot;highlighter-rouge&quot;&gt;ctrlp&lt;/code&gt; for fuzzy file finding and &lt;code class=&quot;highlighter-rouge&quot;&gt;Ag&lt;/code&gt;, the silver searcher, to search across
-files. Of course, you can use your own text editor as most modern text editors
-implement these features out of the box. For tags and organizing the notes, I
-simply use folders to group them. Here’s the script I started with initially:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# .bashrc or .zshrc&lt;/span&gt;
-
-note &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;notes_dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/path/to/notes&quot;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in
-    &lt;/span&gt;c&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-    l&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-    p&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;pushd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;nv&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Regenerated at &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'+%Y-%m-%d %H:%M:%S'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; UTC&quot;&lt;/span&gt;
-      git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-      git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$msg&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      git push origin master
-      &lt;span class=&quot;nb&quot;&gt;popd&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      vim &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now, you can call the function directly in your shell using:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;note l
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;or&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;note todo.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;syncing&quot;&gt;Syncing&lt;/h3&gt;
-
-&lt;p&gt;From the previous script, you can see that I used to use Git to keep and sync
-the notes between my machine and a Git repository. The issue with using Git is
-that I cannot sync and read the notes on my cellphone (as far as I know; I
-didn’t search how to use Git on my phone). To solve this issue, I moved my
-notes to Dropbox (you can use any other method for synchronization). Now it’s
-possible to sync them between my computer and my phone. Here’s the very simple
-script I currently use:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# .bashrc or .zshrc&lt;/span&gt;
-
-note &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;notes_dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/Dropbox/notes&quot;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in
-    &lt;/span&gt;c&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-    l&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;pushd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$notes_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$# &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-eq&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
-        &lt;/span&gt;vim &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;else
-        &lt;/span&gt;vim &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;.md
-      &lt;span class=&quot;k&quot;&gt;fi
-      &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;popd
-  &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;extras&quot;&gt;Extras&lt;/h3&gt;
-
-&lt;p&gt;For editing notes on the phone, there are multiple apps that I didn’t
-investigate. However, I’m currently using the default text editor that comes
-with the Dropbox app.&lt;/p&gt;
-
-&lt;p&gt;Also, until this point, I write and read my notes in Markdown. Although it’s
-possible to do more work and convert the notes into a more readable format such
-as PDF or HTML using something like &lt;code class=&quot;highlighter-rouge&quot;&gt;pandoc&lt;/code&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 17 Jun 2018 00:00:00 +0200</pubDate>
-        <link>https://aonemd.github.io/blog/how-i-take-notes</link>
-        <guid isPermaLink="true">https://aonemd.github.io/blog/how-i-take-notes</guid>
-        
-        <category>vim,</category>
-        
-        <category>notes,</category>
-        
-        <category>bash</category>
-        
-        
-        <category>Tools</category>
         
       </item>
     
