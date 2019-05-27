@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 May 2019 03:50:21 +0200</pubDate>
-    <lastBuildDate>Mon, 27 May 2019 03:50:21 +0200</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 03:53:03 +0200</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 03:53:03 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -22,7 +22,7 @@ couldn’t leave this part without covering it).&lt;/p&gt;
 
 &lt;h3 id=&quot;essentials&quot;&gt;Essentials&lt;/h3&gt;
 
-&lt;p&gt;First and for most, the leader key is a special key in Vim that with other
+&lt;p&gt;First and foremost, the leader key is a special key in Vim that with other
 combination of keys can be mapped to perform certain functions. By default, Vim
 maps the leader to the backslash key. I see many Vimmers (yes, this is a word
 now) set it to the comma key. I, however, like to set it to the space bar; it’s
@@ -87,8 +87,8 @@ xnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span cla
 &lt;p&gt;As I mentioned before, this is the only section that includes an external
 dependency. &lt;a href=&quot;https://ctags.io/&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Universal Ctags&lt;/em&gt;&lt;/a&gt; is a tool
 that analyzes the codebase and generates an index file of tags. This index of
-tags can be used to jump between the defintions of functions, classs, and other
-identifiers while navigating the code. You can jump to a tag defintion using
+tags can be used to jump between the definitions of functions, class, and other
+identifiers while navigating the code. You can jump to a tag definition using
 the &lt;code class=&quot;highlighter-rouge&quot;&gt;:tag IDENTIFIER&lt;/code&gt; command in Vim.&lt;/p&gt;
 
 &lt;p&gt;Since I’m trying not to switch context and leave the text editor as much as
