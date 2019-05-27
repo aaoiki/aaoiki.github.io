@@ -124,7 +124,7 @@ substitution command call. You only need to type the replacement pattern and
 press the Enter key to actually replace the text:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"replace the word under cursor</span>
-nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span>* <span class="p">:</span>%s<span class="sr">/\&lt;&lt;c-r&gt;&lt;c-w&gt;\&gt;/</span>/<span class="p">&lt;</span><span class="k">left</span><span class="p">&gt;</span>
+nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span>* <span class="p">:</span>%s<span class="sr">/\&lt;&lt;c-r&gt;&lt;c-w&gt;\&gt;/</span>/<span class="k">g</span><span class="p">&lt;</span><span class="k">left</span><span class="p">&gt;&lt;</span><span class="k">left</span><span class="p">&gt;</span>
 </code></pre></div></div>
 
 <p>Next is a function that is found in many modern text editors, that is, auto

@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 May 2019 04:03:39 +0200</pubDate>
-    <lastBuildDate>Mon, 27 May 2019 04:03:39 +0200</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 06:26:18 +0200</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 06:26:18 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -53,7 +53,7 @@ substitution command call. You only need to type the replacement pattern and
 press the Enter key to actually replace the text:&lt;/p&gt;
 
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;replace the word under cursor&lt;/span&gt;
-nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;* &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;%s&lt;span class=&quot;sr&quot;&gt;/\&amp;lt;&amp;lt;c-r&amp;gt;&amp;lt;c-w&amp;gt;\&amp;gt;/&lt;/span&gt;/&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;* &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;%s&lt;span class=&quot;sr&quot;&gt;/\&amp;lt;&amp;lt;c-r&amp;gt;&amp;lt;c-w&amp;gt;\&amp;gt;/&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Next is a function that is found in many modern text editors, that is, auto
