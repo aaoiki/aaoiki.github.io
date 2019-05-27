@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 May 2019 04:00:40 +0200</pubDate>
-    <lastBuildDate>Mon, 27 May 2019 04:00:40 +0200</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 04:03:39 +0200</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 04:03:39 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -16,7 +16,7 @@
 Vim&lt;/a&gt; and &lt;a href=&quot;/blog/minimal-vim&quot;&gt;having a minimal Vim
 setup&lt;/a&gt;.  In this post I’m going to go over some useful
 keymaps and functions you can use in Vim to boost your text editing abilities
-and master the Vim wizardry. I will only cover keymaps that don’t include
+and to master the Vim wizardry. I will only cover keymaps that don’t include
 external plugins except for section #2 which will be about generating tags (I
 couldn’t leave this part without covering it).&lt;/p&gt;
 
