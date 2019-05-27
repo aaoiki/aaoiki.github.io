@@ -6,8 +6,8 @@
 </description>
     <link>https://aonemd.github.io/</link>
     <atom:link href="https://aonemd.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 May 2019 03:53:03 +0200</pubDate>
-    <lastBuildDate>Mon, 27 May 2019 03:53:03 +0200</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 04:00:40 +0200</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 04:00:40 +0200</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -23,11 +23,11 @@ couldn’t leave this part without covering it).&lt;/p&gt;
 &lt;h3 id=&quot;essentials&quot;&gt;Essentials&lt;/h3&gt;
 
 &lt;p&gt;First and foremost, the leader key is a special key in Vim that with other
-combination of keys can be mapped to perform certain functions. By default, Vim
-maps the leader to the backslash key. I see many Vimmers (yes, this is a word
-now) set it to the comma key. I, however, like to set it to the space bar; it’s
-a big key in the middle of the keyboard so it’s really easy to find it and use
-it with other key combinations:&lt;/p&gt;
+combinations of keys can be mapped to perform certain functions. By default,
+Vim maps the leader to the backslash key. I see many Vimmers (yes, this is a
+word now) set it to the comma key. I, however, like to set it to the space bar;
+it’s a big key in the middle of the keyboard so it’s really easy to find it and
+use it with other key combinations:&lt;/p&gt;
 
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;The Leader&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; mapleader&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;\&amp;lt;Space&amp;gt;&quot;&lt;/span&gt;
@@ -72,7 +72,7 @@ inoremap &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;&quot;&lt;sp
 
 &lt;p&gt;I feel like this section got really long so here’s one last function. To move a
 line up or down in Vim, normally you’d delete it and paste it into the desired
-target line. This keymap makes it possible to move lines up or down using the
+target line. These keymaps make it possible to move lines up or down using the
 leader key + k or j (for up and down):&lt;/p&gt;
 
 &lt;div class=&quot;language-vimscript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&quot;move lines around&lt;/span&gt;
@@ -87,9 +87,9 @@ xnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span cla
 &lt;p&gt;As I mentioned before, this is the only section that includes an external
 dependency. &lt;a href=&quot;https://ctags.io/&quot; target=&quot;blank&quot;&gt;&lt;em&gt;Universal Ctags&lt;/em&gt;&lt;/a&gt; is a tool
 that analyzes the codebase and generates an index file of tags. This index of
-tags can be used to jump between the definitions of functions, class, and other
-identifiers while navigating the code. You can jump to a tag definition using
-the &lt;code class=&quot;highlighter-rouge&quot;&gt;:tag IDENTIFIER&lt;/code&gt; command in Vim.&lt;/p&gt;
+tags can be used to jump between the definitions of functions, classes, and
+other identifiers while navigating the code. You can jump to a tag definition
+using the &lt;code class=&quot;highlighter-rouge&quot;&gt;:tag IDENTIFIER&lt;/code&gt; command in Vim.&lt;/p&gt;
 
 &lt;p&gt;Since I’m trying not to switch context and leave the text editor as much as
 possible, I made a keymap that generates the list of tags for me without
@@ -114,7 +114,7 @@ file&lt;/a&gt;.
 A window in Vim is a way to view an open buffer.  A tab, on the other hand, is
 a collection of windows. To save you (and myself) the pain, use buffers and
 treat them the way you treat tabs in other text editors. You can read more
-about buffers vs tabs and the best way to use them
+about buffers versus tabs and the best way to use them
 &lt;a href=&quot;https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/&quot; target=&quot;blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Anyway, I have a few keymaps that make it easier to manipulate and deal with
@@ -135,7 +135,7 @@ nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span cla
 nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;Tab&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;bnext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;&quot;Shift + Tab to switch to previous open buffer&lt;/span&gt;
 nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;S&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;Tab&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;bprevious&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&quot;cycle between last two open buffers&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&quot;leader key twice to cycle between last two open buffers&lt;/span&gt;
 nnoremap &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;leader&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;^&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 

@@ -94,11 +94,11 @@ couldn’t leave this part without covering it).</p>
 <h3 id="essentials">Essentials</h3>
 
 <p>First and foremost, the leader key is a special key in Vim that with other
-combination of keys can be mapped to perform certain functions. By default, Vim
-maps the leader to the backslash key. I see many Vimmers (yes, this is a word
-now) set it to the comma key. I, however, like to set it to the space bar; it’s
-a big key in the middle of the keyboard so it’s really easy to find it and use
-it with other key combinations:</p>
+combinations of keys can be mapped to perform certain functions. By default,
+Vim maps the leader to the backslash key. I see many Vimmers (yes, this is a
+word now) set it to the comma key. I, however, like to set it to the space bar;
+it’s a big key in the middle of the keyboard so it’s really easy to find it and
+use it with other key combinations:</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"The Leader</span>
 <span class="k">let</span> mapleader<span class="p">=</span><span class="s2">"\&lt;Space&gt;"</span>
@@ -143,7 +143,7 @@ inoremap <span class="s2">" "</span>"<span class="p">&lt;</span>Left<span class=
 
 <p>I feel like this section got really long so here’s one last function. To move a
 line up or down in Vim, normally you’d delete it and paste it into the desired
-target line. This keymap makes it possible to move lines up or down using the
+target line. These keymaps make it possible to move lines up or down using the
 leader key + k or j (for up and down):</p>
 
 <div class="language-vimscript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"move lines around</span>
@@ -158,9 +158,9 @@ xnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class
 <p>As I mentioned before, this is the only section that includes an external
 dependency. <a href="https://ctags.io/" target="blank"><em>Universal Ctags</em></a> is a tool
 that analyzes the codebase and generates an index file of tags. This index of
-tags can be used to jump between the definitions of functions, class, and other
-identifiers while navigating the code. You can jump to a tag definition using
-the <code class="highlighter-rouge">:tag IDENTIFIER</code> command in Vim.</p>
+tags can be used to jump between the definitions of functions, classes, and
+other identifiers while navigating the code. You can jump to a tag definition
+using the <code class="highlighter-rouge">:tag IDENTIFIER</code> command in Vim.</p>
 
 <p>Since I’m trying not to switch context and leave the text editor as much as
 possible, I made a keymap that generates the list of tags for me without
@@ -185,7 +185,7 @@ file</a>.
 A window in Vim is a way to view an open buffer.  A tab, on the other hand, is
 a collection of windows. To save you (and myself) the pain, use buffers and
 treat them the way you treat tabs in other text editors. You can read more
-about buffers vs tabs and the best way to use them
+about buffers versus tabs and the best way to use them
 <a href="https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/" target="blank">here</a>.</p>
 
 <p>Anyway, I have a few keymaps that make it easier to manipulate and deal with
@@ -206,7 +206,7 @@ nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class
 nnoremap <span class="p">&lt;</span>Tab<span class="p">&gt;</span> <span class="p">:</span><span class="k">bnext</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 <span class="c">"Shift + Tab to switch to previous open buffer</span>
 nnoremap <span class="p">&lt;</span>S<span class="p">-</span>Tab<span class="p">&gt;</span> <span class="p">:</span><span class="k">bprevious</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
-<span class="c">"cycle between last two open buffers</span>
+<span class="c">"leader key twice to cycle between last two open buffers</span>
 nnoremap <span class="p">&lt;</span>leader<span class="p">&gt;&lt;</span>leader<span class="p">&gt;</span> <span class="p">&lt;</span><span class="k">c</span><span class="p">-</span>^<span class="p">&gt;</span>
 </code></pre></div></div>
 
