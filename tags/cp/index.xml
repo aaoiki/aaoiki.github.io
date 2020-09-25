@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CP on aonemd</title>
+    <link>https://aonemd.github.io/tags/cp/</link>
+    <description>Recent content in CP on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Sep 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/cp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go for Competitive Programming</title>
+      <link>https://aonemd.github.io/posts/go-for-cp/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/go-for-cp/</guid>
+      <description>I first started writing Go during my time at UserTalk and have been using it occasionaly since then because of its minimal syntax and standard library that makes it a great language for writing almost any kind of software.
+Whenever I&amp;rsquo;m solving a competitive programming problem, I usually use C or C++ (whichever works best) to write the solution mainly because they are both supported by almost all online judges and programming contests.</description>
+    </item>
+    
+  </channel>
+</rss>

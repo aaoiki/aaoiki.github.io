@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talks on aonemd</title>
+    <link>https://aonemd.github.io/talks/</link>
+    <description>Recent content in Talks on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aonemd.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dev Tools</title>
+      <link>https://aonemd.github.io/talks/dev-tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/talks/dev-tools/</guid>
+      <description>An internal talk in which I discussed development tools in Unix-like environments and how to set them up. The notes can be found here.</description>
+    </item>
+    
+    <item>
+      <title>Git Serious</title>
+      <link>https://aonemd.github.io/talks/git-serious/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/talks/git-serious/</guid>
+      <description>An advanced to medium Git targeted talk which covered various tips and tricks in Git. The notes can be found here.</description>
+    </item>
+    
+  </channel>
+</rss>

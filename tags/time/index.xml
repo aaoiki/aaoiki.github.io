@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>time on aonemd</title>
+    <link>https://aonemd.github.io/tags/time/</link>
+    <description>Recent content in time on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Dec 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/time/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Took Some Time to Create a Time Tracker</title>
+      <link>https://aonemd.github.io/posts/panadoura/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/panadoura/</guid>
+      <description>In my quest of finding the ultimate productivity framework, I came across the Pomodoro technique. The basic idea behind it is to divide the work into equal chunks of time and take a small break after each set. Usually it goes by working for 25 minutes in complete concentration, taking a 5 minutes break and repeating the cycle until the task is completed.
+Motivation It was the beginning of January this year when I decided to use the Pomodoro technique to help me study for my finals.</description>
+    </item>
+    
+  </channel>
+</rss>

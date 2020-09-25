@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on aonemd</title>
+    <link>https://aonemd.github.io/tags/ruby/</link>
+    <description>Recent content in Ruby on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Action Cable: Rails 5 Most Anticipated Feature</title>
+      <link>https://aonemd.github.io/posts/intro-to-actioncable/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/intro-to-actioncable/</guid>
+      <description>Action Cable is a simple framework that introduces WebSocket support to Rails apps. It provides a server-side as well as a client-side integration with WebSocket&amp;hellip;
+This post was originally posted on Robusta Studio&amp;rsquo;s blog on 6 Septemper, 2016. To read the full article, please visit this link.</description>
+    </item>
+    
+    <item>
+      <title>Extracting Text From Images Using Ruby</title>
+      <link>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</guid>
+      <description>tldr; show me the code.
+I&amp;rsquo;m a great hoarder of memes. Seriously, I have a huge folder full of memes and GIFs. I collect my memes usually whenever I&amp;rsquo;m watching a movie or a series by taking a screenshot of the scene with subtitles enabled. The issue is, the program I use to take screenshots, names each new file by the date and time the screenshot was taken. I have a 1200 screenshot folder each named by date and time.</description>
+    </item>
+    
+    <item>
+      <title>Making System Calls From Ruby</title>
+      <link>https://aonemd.github.io/posts/making-system-calls-from-ruby/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/making-system-calls-from-ruby/</guid>
+      <description>While I was reading about Linux system calls, I was curious about how to perform them in Ruby specially that Ruby isn&amp;rsquo;t considered a &amp;ldquo;system&amp;rdquo; programming language. However, It&amp;rsquo;s very possible to perform system calls using Ruby. In this post, I&amp;rsquo;m going to demonstrate the different ways to make system calls using Ruby. But first, let us define what system calls are. Simply put, a system call is a way to enter the system kernel, execute an operation, and then return from the kernel.</description>
+    </item>
+    
+    <item>
+      <title>Programming on Rails</title>
+      <link>https://aonemd.github.io/posts/programming-on-rails/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/programming-on-rails/</guid>
+      <description>Ruby on Rails is a great web framework. It has changed the way web development is done and influenced other frameworks in other programming languages. Even admittedly, much of the major success of Ruby is due to the wide spread of Rails.
+Being the opinionated framework it is, Rails is built on top of a set of conventions and philosophies. It&amp;rsquo;s said to be Omakase (お任せ) or chef&amp;rsquo;s menu of choice (also, watch Rails is Omakase: A Dramatic Reading).</description>
+    </item>
+    
+    <item>
+      <title>Inserting Bulk Data into Postgres Using Ruby</title>
+      <link>https://aonemd.github.io/posts/inserting-bulk-data-into-pg/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/inserting-bulk-data-into-pg/</guid>
+      <description>I had this task where it was required to generate a lot of data into a postgreSQL database and perform some queries on the generated data. So this is going to be some kind of a crash course on Ruby and postgreSQL (and some optimization).
+Requirements The database contained only two tables. The first one was:
+ cup_matches(mid, round, year, num_ratings, rating) mid is the primary key for matches round is the cup round/level (e.</description>
+    </item>
+    
+  </channel>
+</rss>

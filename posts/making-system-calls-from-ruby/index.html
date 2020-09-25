@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>Making System Calls From Ruby | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/posts/making-system-calls-from-ruby/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Making System Calls From Ruby" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Making System Calls From Ruby" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  <meta property="og:image"      content="/images/logo.png" />
+  <meta name="twitter:image:src" content="/images/logo.png" />
+
+</head>
+
+  <body class=""><nav>
+  <div class="title">
+    <a href="/">a<span>one</span>md</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>Making System Calls From Ruby <small class="view-post__category">Systems</small></h2>
+          <b><span>December 26, 2018</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p>While I was reading about Linux system calls, I was curious about how to
+perform them in Ruby specially that Ruby isn&rsquo;t considered a &ldquo;system&rdquo;
+programming language. However, It&rsquo;s very possible to perform system calls using
+Ruby. In this post, I&rsquo;m going to demonstrate the different ways to make system
+calls using Ruby. But first, let us define what system calls are. Simply put, a
+system call is a way to enter the system kernel, execute an operation, and then
+return from the kernel.</p>
+<p>In the following sections, I&rsquo;ll demonstrate three [almost] different ways to
+perform system calls from Ruby. All the code is tested on a 64-bit GNU/Linux
+system. Although there are some notes about differences in other operating
+systems, if you tested something on your operating system and want me to add it
+here, please add a comment or send me a message.</p>
+<h3 id="1-kernelsyscall">1. Kernel.syscall</h3>
+<p>This first, and most straightforward way to perform a system call is by using
+<code>Kernel.syscall</code>. In fact, internally, Kernel.syscall calls the C function
+<code>syscall</code> directly. This is how it&rsquo;s done:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">syscall</span> <span class="n">syscall_number</span><span class="p">,</span> <span class="n">syscall_arguments</span><span class="o">...</span>
+</code></pre></div><p><code>syscall_number</code> is a unique number for each system operation and can be
+obtained for 64-bit Linux systems from <a target="_blank" href="https://github.com/torvalds/linux/blob/v3.13/arch/x86/syscalls/syscall_64.tbl">this table</a>.</p>
+<p>So, for example, to perform an exit system call with exit status 1, call the
+following Ruby program:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">syscall</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">1</span>
+</code></pre></div><p>and check the exit code in your shell:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nv">$?</span> <span class="c1"># =&gt; 1</span>
+</code></pre></div><blockquote>
+<p>Note: I&rsquo;m using Ruby 2.6.0 without the <code>--jit</code> option to run this example.
+For Ruby versions prior to 2.6.0 on Linux, you might want to use the
+<code>exit_group</code> system call (with syscall_number 231) instead of <code>exit</code> to
+terminate all the threads the Ruby process is using otherwise, the Ruby
+process will freeze waiting to terminate the remaining thread(s).</p>
+</blockquote>
+<p>However, there&rsquo;s a caveat here. <a target="_blank" href="https://www.rubydoc.info/stdlib/core/Kernel#syscall-instance_method">The Ruby documentation</a>
+says that <code>Kernel.syscall</code> isn&rsquo;t safe nor it is portable. If you ran the last
+program using the Ruby <code>-v</code> command line option (for verbose), you&rsquo;ll see the
+following message:</p>
+<blockquote>
+<p><code>warning: We plan to remove a syscall function at future release. DL(Fiddle) provides safer alternative.</code></p>
+</blockquote>
+<p>Thus, <a target="_blank" href="https://github.com/ruby/fiddle"><em>Fiddle</em></a> will be our
+next alternative for making system calls in Ruby.</p>
+<h3 id="2-fiddle">2. Fiddle</h3>
+<p>Fiddle is a <a target="_blank" href="https://sourceware.org/libffi/">libffi</a> wrapper
+written for Ruby.  Luckily, it is already a part of Ruby&rsquo;s standard library.
+<em>libffi</em> is a <strong>foreign function interface (FFI)</strong> implementation that provides
+a C interface for calling compiled code (functions, really) from your program
+at runtime.</p>
+<p>The following program demonstrates how to use Fiddle to call a C function from
+Ruby:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;fiddle&#39;</span>
+
+<span class="n">libc</span>     <span class="o">=</span> <span class="no">Fiddle</span><span class="o">.</span><span class="n">dlopen</span><span class="p">(</span><span class="s1">&#39;/lib/libc.so.6&#39;</span><span class="p">)</span>
+<span class="n">function</span> <span class="o">=</span> <span class="no">Fiddle</span><span class="o">::</span><span class="no">Function</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">libc</span><span class="o">[</span><span class="s1">&#39;syscall&#39;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="no">Fiddle</span><span class="o">::</span><span class="no">TYPE_INT</span><span class="p">,</span>
+                                                 <span class="no">Fiddle</span><span class="o">::</span><span class="no">TYPE_INT</span><span class="o">]</span><span class="p">,</span> <span class="no">Fiddle</span><span class="o">::</span><span class="no">TYPE_INT</span><span class="p">)</span>
+
+<span class="n">function</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div><p>The code calls the C function <code>syscall</code> to perform the exit system call.  In
+addition to the name of the function, you have to pass in an array that
+contains the types of each argument the syscall/function takes, and another
+argument for the function return type, which is an integer number in this case.
+For example, the exit syscall function takes two parameters; one for the exit
+syscall itself, the number 60, and another for the exit status, which is 1
+here.  Thus, we have an array of two integers.</p>
+<blockquote>
+<p>Note: the path to <code>libc</code> specified in the code will differ for other
+operating systems. For MacOS for example, it should be set to
+<code>/usr/lib/libc.dylib</code>. Please also note that I didn&rsquo;t test it myself so it
+might be a different value.</p>
+</blockquote>
+<p>Check the exit code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nv">$?</span> <span class="c1"># =&gt; 1</span>
+</code></pre></div><h3 id="3-ffi">3. FFI</h3>
+<p><a target="_blank" href="https://github.com/ffi/ffi"><em>Ruby-ffi</em></a> is an FFI
+implementation in Ruby.  Other than making system calls, FFI makes it possible
+to fully write C extensions without the need to write pure C code. By far, this
+is the safest, most convenient method as it automatically locates the path to
+the libc library without the need to specify it manually as in the case with
+Fiddle above.</p>
+<p>The code that makes a system call looks like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;ffi&#39;</span>
+
+<span class="k">module</span> <span class="nn">SyscallRunner</span>
+  <span class="kp">extend</span> <span class="no">FFI</span><span class="o">::</span><span class="no">Library</span>
+  <span class="n">ffi_lib</span> <span class="no">FFI</span><span class="o">::</span><span class="no">Library</span><span class="o">::</span><span class="no">LIBC</span>
+  <span class="n">attach_function</span> <span class="ss">:syscall</span><span class="p">,</span> <span class="o">[</span><span class="ss">:int</span><span class="p">,</span> <span class="ss">:int</span><span class="o">]</span><span class="p">,</span> <span class="ss">:int</span>
+<span class="k">end</span>
+
+<span class="no">SyscallRunner</span><span class="o">.</span><span class="n">syscall</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">1</span>
+</code></pre></div><p>Again, you need to pass in an array that contains the types of each argument
+the function takes, and another argument for the function return type.</p>
+<p>And again, check the exit status:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nv">$?</span> <span class="c1"># =&gt; 1</span>
+</code></pre></div><h3 id="conclusion">Conclusion</h3>
+<p>Although Ruby might not be considered a system programming language, Ruby is
+capable of going low level and performing system calls in more than one way.
+All the methods delegate the system call  to C syscall function in a way or
+another.  The most secure, most scalable method is using Ruby-ffi to invoke C
+syscall function.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fmaking-system-calls-from-ruby%2f&text=Making%20System%20Calls%20From%20Ruby&hashtags=%23Ruby%20%23Linux%20%23syscalls%20%23ffi%20&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2fmaking-system-calls-from-ruby%2f&title=Making%20System%20Calls%20From%20Ruby" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Making%20System%20Calls%20From%20Ruby&url=https%3a%2f%2faonemd.github.io%2fposts%2fmaking-system-calls-from-ruby%2f&&summary=While%20I%20was%20reading%20about%20Linux%20system%20calls%2c%20I%20was%20curious%20about%20how%20to%20perform%20them%20in%20Ruby%20specially%20that%20Ruby%20isn%26rsquo%3bt%20considered%20a%20%26ldquo%3bsystem%26rdquo%3b%20programming%20language.%20However%2c%20It%26rsquo%3bs%20very%20possible%20to%20perform%20system%20calls%20using%20Ruby.%20In%20this%20post%2c%20I%26rsquo%3bm%20going%20to%20demonstrate%20the%20different%20ways%20to%20make%20system%20calls%20using%20Ruby.%20But%20first%2c%20let%20us%20define%20what%20system%20calls%20are.%20Simply%20put%2c%20a%20system%20call%20is%20a%20way%20to%20enter%20the%20system%20kernel%2c%20execute%20an%20operation%2c%20and%20then%20return%20from%20the%20kernel.&source=https://aonemd.github.io" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fmaking-system-calls-from-ruby%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2fmaking-system-calls-from-ruby%2f&title=Making%20System%20Calls%20From%20Ruby" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="16">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

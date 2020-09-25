@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>development on aonemd</title>
+    <link>https://aonemd.github.io/tags/development/</link>
+    <description>Recent content in development on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handy Keymaps in Vim</title>
+      <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
+      <description>In my first two posts in this Vim series, I talked about finding files in Vim and having a minimal Vim setup. In this post I&amp;rsquo;m going to go over some useful keymaps and functions you can use in Vim to boost your text editing abilities and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include external plugins except for section #2 which will be about generating tags (I couldn&amp;rsquo;t leave this part without covering it).</description>
+    </item>
+    
+    <item>
+      <title>Minimal Vim</title>
+      <link>https://aonemd.github.io/posts/minimal-vim/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
+      <description>In my previous blog post, I wrote about searching files in Vim. In the next five sections, I will go over creating a minimal Vim setup with a few dependencies. Although minimal does not necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast as possible.
+General Settings There are a few must-have settings that are necessary for modern text editing. Actually, while writing this blog post, I revisited my .</description>
+    </item>
+    
+    <item>
+      <title>Bear Programming</title>
+      <link>https://aonemd.github.io/posts/bear-programming/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/bear-programming/</guid>
+      <description>According to Wikipedia, Pair Programming is an agile software development technique in which two programmers work together at one workstation.
+There&amp;rsquo;s also a term I call Bear programming that is not the opposite of pair programming. Bear programming is when a team of programmers that work together on a single project starts mauling the code and ripping its different parts apart like a group of bears.
+Let me clear this. The mauling here refers to writing code that is distinguishable to the code written by other team members.</description>
+    </item>
+    
+  </channel>
+</rss>

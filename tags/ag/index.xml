@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ag on aonemd</title>
+    <link>https://aonemd.github.io/tags/ag/</link>
+    <description>Recent content in ag on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/ag/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Finding Things in Vim</title>
+      <link>https://aonemd.github.io/posts/finding-things-in-vim/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/finding-things-in-vim/</guid>
+      <description>Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slow sometimes. In this post, I will go over different search tools and demonstrate how I replaced two different plugins with only a single plugin that rules them all.
+Finding Files by Content To search files, Vim has a :vimgrep command that finds files that contain a certain pattern.</description>
+    </item>
+    
+  </channel>
+</rss>

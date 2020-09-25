@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>I Took Some Time to Create a Time Tracker | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="In this post, I will demonstrate my Pomodoro app and the structure I used to build the project.">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/posts/panadoura/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="I Took Some Time to Create a Time Tracker" />
+<meta property="og:description" content="In this post, I will demonstrate my Pomodoro app and the structure I used to build the project." />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="I Took Some Time to Create a Time Tracker" />
+<meta name="twitter:description" content="In this post, I will demonstrate my Pomodoro app and the structure I used to build the project." />
+
+
+  <meta property="og:image"      content="/images/cherrytomato_screenshot.png" />
+  <meta name="twitter:image:src" content="/images/cherrytomato_screenshot.png" />
+
+</head>
+
+  <body class=""><nav>
+  <div class="title">
+    <a href="/">a<span>one</span>md</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>I Took Some Time to Create a Time Tracker <small class="view-post__category">Projects</small></h2>
+          <b><span>December 21, 2016</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p>In my quest of finding the ultimate productivity framework, I came across the
+<a target="_blank" href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro technique</a>.
+The basic idea behind it is to divide the work into equal chunks of time and
+take a small break after each set. Usually it goes by working for 25 minutes in
+complete concentration, taking a 5 minutes break and repeating the cycle until
+the task is completed.</p>
+<h3 id="motivation">Motivation</h3>
+<p>It was the beginning of January this year when I decided to use the Pomodoro
+technique to help me study for my finals. However, I could not find a web app
+with a simple interface to use and thought it would be a good practice to build
+it. I remember it was right before the start of my odd semester final exams when
+I started the project. As you know, finals is the time in which you can achieve
+all what you wanted since the beginning of the semester, except studying of
+course. Having built the app, it actually came of a great help. In fact I&rsquo;m
+using it right now as I&rsquo;m writing this post (took me 5 sets to finish it).</p>
+<p>I kept in mind to keep the interface as simple as possible. The home page is
+where you can start/stop the timer. There&rsquo;s also a tracker page where you can
+keep track of your sets.  I named it
+<a target="_blank" href="http://panadoura.herokuapp.com/">Panadoura</a>. The name
+<em>Panadoura</em> comes from the Arabic word for tomato.</p>
+<p><img src="/images/cherrytomato_screenshot.png" alt="CherryTomato home"></p>
+<h3 id="architecture">Architecture</h3>
+<p>It started out with simple CoffeeScript file that runs and stops the timer and
+served it in a Sinatra app. Then added some more stuff along the way. Besides
+being a simple web app, the reason why I started with Sinatra was that I wanted
+to get out from under Rails umbrella and try some other alternatives for the
+web in Ruby. Of course, this comes with a lot of tradeoffs. Rails embraces the
+convention over configuration philosophy which makes it super easy to setup new
+applications and get to the work quickly. To try something different, I had to
+have some kind of a shift in mind. I also needed to write some bootstrapping
+scripts in order to glue the different components of my app together.</p>
+<p>The architecture is a bit different from the normal MVC Rails-y way. It
+resembles the structure of a normal Ruby gem where the main logic in the app
+lives under <code>lib/</code> directory whereas the application routes and views are in
+<code>app/</code>.</p>
+<p>The application layer consists of a single file that defines all the routes to
+the web app. It contains the logic that authorizes the users from Twitter and
+routes them to the home page. <del>It calls two helper classes; one to load the
+assets, and another to configure user sessions.</del></p>
+<p>For the persistence layer, <del>I used
+<a target="_blank" href="http://rom-rb.org/">rom-rb</a> which philosophy is to decouple
+different responsibilities and distribute them over many components/layers. I
+had to write a wrapper to load the database settings and connect ROM to
+PostgreSQL. I also wrote a simple method to run the migrations.</del> I used
+<a target="_blank" href="https://github.com/jeremyevans/sequel">Sequel</a> mainly for its
+simplicity and flexibility. In 2018, I rewrote the persistence layer and
+removed rom-rb entirely as I felt it was too complicated and the application at
+hand was so simple feature-wise. I also had to write a wrapper around Sequel to
+connect to the database.</p>
+<p>For the presentation layer, Panadoura is now a Vue.js app backed by a Sinatra
+server. I rewrote the frontend code as well in JavaScript. The assets are now
+bundled into a single JavaScript file using WebPack 4.</p>
+<p>Currently, I&rsquo;m using Heroku experimental tier to host the app. The source code
+is on
+<a target="_blank" href="https://github.com/aonemd/panadoura">GitHub</a>.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fpanadoura%2f&text=I%20Took%20Some%20Time%20to%20Create%20a%20Time%20Tracker&hashtags=%23time%20%23management%20%23pomodoro_technique%20&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2fpanadoura%2f&title=I%20Took%20Some%20Time%20to%20Create%20a%20Time%20Tracker" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=I%20Took%20Some%20Time%20to%20Create%20a%20Time%20Tracker&url=https%3a%2f%2faonemd.github.io%2fposts%2fpanadoura%2f&&summary=In%20my%20quest%20of%20finding%20the%20ultimate%20productivity%20framework%2c%20I%20came%20across%20the%20Pomodoro%20technique.%20The%20basic%20idea%20behind%20it%20is%20to%20divide%20the%20work%20into%20equal%20chunks%20of%20time%20and%20take%20a%20small%20break%20after%20each%20set.%20Usually%20it%20goes%20by%20working%20for%2025%20minutes%20in%20complete%20concentration%2c%20taking%20a%205%20minutes%20break%20and%20repeating%20the%20cycle%20until%20the%20task%20is%20completed.%0aMotivation%20It%20was%20the%20beginning%20of%20January%20this%20year%20when%20I%20decided%20to%20use%20the%20Pomodoro%20technique%20to%20help%20me%20study%20for%20my%20finals.&source=https://aonemd.github.io" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fpanadoura%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2fpanadoura%2f&title=I%20Took%20Some%20Time%20to%20Create%20a%20Time%20Tracker" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="5">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

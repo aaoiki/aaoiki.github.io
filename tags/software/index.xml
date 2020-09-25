@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software on aonemd</title>
+    <link>https://aonemd.github.io/tags/software/</link>
+    <description>Recent content in software on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handy Keymaps in Vim</title>
+      <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
+      <description>In my first two posts in this Vim series, I talked about finding files in Vim and having a minimal Vim setup. In this post I&amp;rsquo;m going to go over some useful keymaps and functions you can use in Vim to boost your text editing abilities and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include external plugins except for section #2 which will be about generating tags (I couldn&amp;rsquo;t leave this part without covering it).</description>
+    </item>
+    
+    <item>
+      <title>Minimal Vim</title>
+      <link>https://aonemd.github.io/posts/minimal-vim/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
+      <description>In my previous blog post, I wrote about searching files in Vim. In the next five sections, I will go over creating a minimal Vim setup with a few dependencies. Although minimal does not necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast as possible.
+General Settings There are a few must-have settings that are necessary for modern text editing. Actually, while writing this blog post, I revisited my .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>Extracting Text From Images Using Ruby | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Extracting Text From Images Using Ruby" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Extracting Text From Images Using Ruby" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  <meta property="og:image"      content="/images/logo.png" />
+  <meta name="twitter:image:src" content="/images/logo.png" />
+
+</head>
+
+  <body class=""><nav>
+  <div class="title">
+    <a href="/">a<span>one</span>md</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>Extracting Text From Images Using Ruby <small class="view-post__category">Computer Vision</small></h2>
+          <b><span>January 12, 2019</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p><strong>tldr;</strong> <a href="#the-script">show me the code</a>.</p>
+<p>I&rsquo;m a great hoarder of memes. Seriously, I have a huge folder full of memes and
+GIFs. I collect my memes usually whenever I&rsquo;m watching a movie or a series by
+taking a screenshot of the scene with subtitles enabled. The issue is, the
+program I use to take screenshots, names each new file by the date and time the
+screenshot was taken. I have a 1200 screenshot folder each named by date and
+time. So finding a certain screenshot/meme is too much a hassle.</p>
+<p>I thus wanted a better way to go through my collection of memes. My goal was to
+rename each screenshot file to the subtitles it contains. I have, in fact, been
+procrastinating this task for a long time now and the mid-year recess was the
+perfect time to start a small project.</p>
+<p>To read the subtitles out of my images, Google search led me to
+<a target="_blank" href="https://github.com/tesseract-ocr/tesseract">Tesseract</a>.
+Tesseract is a tool that recognizes the text in images using Optical Character
+Recognition (OCR). I started first experimenting with Tesseract and its
+wrapper, <a target="_blank" href="https://github.com/madmaze/pytesseract">pytesseract</a>
+in Python and used OpenCV for image processing and it worked perfectly right
+from the start!</p>
+<p>I started with a small Ruby script to read my images, process, and recognize
+the text in each one of them. However, unfortunately, Ruby lacks in good
+tooling for computer vision or image processing. I couldn&rsquo;t find a good OpenCV
+wrapper in Ruby except for
+<a target="_blank" href="https://github.com/ruby-opencv/ruby-opencv">ruby-opencv</a>
+which is quite outdated and only supports OpenCV v2 (<a target="_blank" href="https://opencv.org/releases.html">Version 4 of OpenCV</a> is now released by
+the way).</p>
+<p>After some tinkering with ImageMagick and its Ruby wrapper,
+<a target="_blank" href="https://github.com/minimagick/minimagick">MiniMagick</a>, I
+could finally achieve the same results I got in Python. So, in the few next
+sections, I&rsquo;ll demonstrate the steps the script goes through to recognize the
+subtitles in each screenshot.</p>
+<h2 id="the-script">The Script</h2>
+<p>Next is a simpler version of the script I actually used. The full script
+including the part where I process the output text and rename each file to the
+new name is a gist on
+<a target="_blank" href="https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor-rb">GitHub</a>.</p>
+<p>The first part of the script just loops through each file (a 1920x1080 PNG
+image file) in my source directory and reads it as a grayscale image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;pathname&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;open3&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;mini_magick&#39;</span>
+
+<span class="no">SRC_DIR</span> <span class="o">=</span> <span class="s1">&#39;/path/to/src/dir&#39;</span><span class="o">.</span><span class="n">freeze</span>
+<span class="no">TMP_DIR</span> <span class="o">=</span> <span class="s1">&#39;/path/to/tmp/dir&#39;</span><span class="o">.</span><span class="n">freeze</span>
+
+<span class="no">Dir</span><span class="o">.</span><span class="n">mkdir</span> <span class="no">TMP_DIR</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">exists?</span><span class="p">(</span><span class="no">TMP_DIR</span><span class="p">)</span>
+
+<span class="no">Pathname</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SRC_DIR</span><span class="p">)</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="n">src_path</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">realpath</span>
+  <span class="n">tmp_path</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">#{</span><span class="no">TMP_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">f</span><span class="o">.</span><span class="n">basename</span><span class="si">}</span><span class="s2">&#34;</span>
+
+  <span class="n">img</span> <span class="o">=</span> <span class="no">MiniMagick</span><span class="o">::</span><span class="no">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">src_path</span><span class="p">)</span>
+  <span class="n">img</span><span class="o">.</span><span class="n">colorspace</span><span class="p">(</span><span class="s1">&#39;Gray&#39;</span><span class="p">)</span>
+  <span class="n">img</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tmp_path</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div><p>Let&rsquo;s take the following screenshot as an example and feed it to the script.
+First, we load it normally:</p>
+<p><a href="/images/extracting_text_example.png"><img src="/images/extracting_text_example.png" alt="Example screenshot"></a></p>
+<p>then we convert it to grayscale. This is what it looks like:</p>
+<p><a href="/images/extracting_text_example_grayscale.png"><img src="/images/extracting_text_example_grayscale.png" alt="Example screenshot grayscale"></a></p>
+<h3 id="cleaning-the-image">Cleaning The Image</h3>
+<p>The second part is where all the image processing happens. Basically, the
+script negates the image to black and white to remove all the noise. This
+improves the ability of Tesseract to read the text in the image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># ...</span>
+
+<span class="no">Pathname</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SRC_DIR</span><span class="p">)</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="c1"># ...</span>
+  <span class="no">MiniMagick</span><span class="o">::</span><span class="no">Tool</span><span class="o">::</span><span class="no">Magick</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">magick</span><span class="o">|</span>
+    <span class="n">magick</span> <span class="o">&lt;&lt;</span> <span class="n">tmp_path</span>
+    <span class="n">magick</span><span class="o">.</span><span class="n">negate</span>
+    <span class="n">magick</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="s2">&#34;007%&#34;</span><span class="p">)</span>    <span class="c1"># I couldn&#39;t prevent myself</span>
+    <span class="n">magick</span><span class="o">.</span><span class="n">negate</span>
+    <span class="n">magick</span> <span class="o">&lt;&lt;</span> <span class="n">tmp_path</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div><p>This is what image looks like after processing. You can see how almost all the
+details in the image are removed except for the vivid subtitles. This file is
+stored under the <code>TMP_DIR</code> we defined earlier in the script. You can of course
+delete the <code>TMP_DIR</code> safely or instrument the script to do it for you.</p>
+<p><a href="/images/extracting_text_example_negative.png"><img src="/images/extracting_text_example_negative.png" alt="Example screenshot negative"></a></p>
+<h3 id="recognizing-the-text">Recognizing The Text</h3>
+<p>In this part, we call Tesseract command on our image and get back our
+recognized text. We could have used a Ruby wrapper around Tesseract, and
+<a target="_blank" href="https://github.com/dannnylo/rtesseract">rtesseract</a> is a
+great wrapper, however; we only need to call a simple command here so we don&rsquo;t
+need all the features the wrapper provides.</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># ...</span>
+
+<span class="no">Pathname</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SRC_DIR</span><span class="p">)</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="c1"># ...</span>
+  <span class="n">text</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span>  <span class="n">_</span> <span class="o">=</span>
+    <span class="no">Open3</span><span class="o">.</span><span class="n">capture3</span><span class="p">(</span><span class="s2">&#34;tesseract </span><span class="si">#{</span><span class="n">tmp_path</span><span class="si">}</span><span class="s2"> stdout -l eng --oem 0 --psm 3&#34;</span><span class="p">)</span>
+
+  <span class="nb">puts</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span>
+<span class="k">end</span>
+</code></pre></div><p>and this is the final output of our script:</p>
+<pre><code>Oh, man. In my next life
+I'm coming back as a toilet brush.
+</code></pre><h2 id="results">Results</h2>
+<h3 id="speed">Speed</h3>
+<p>As I mentioned earlier, I first started with a <a target="_blank" href="https://gist.github.com/aonemd/a4895dbdbdf9b7a0bc47bcb051aae5b8">Python script</a>
+to test Tesseract.  I did a small time comparison between the Ruby version and
+the Python version after some <a target="_blank" href="https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edxnxzh/">great discussions</a>
+on <a target="_blank" href="https://reddit.com/r/ruby">/r/ruby</a>. Unfortunately, the
+Python version is much faster. I believe that most of the overhead in the Ruby
+version comes from using ImageMagick for image processing. Here&rsquo;s the
+comparison of running both scripts on a sample of 525 1920x1080 PNG files:</p>
+<pre><code>ruby ocr.rb  864.69s user 62.12s system 136% cpu 11:19.01 total
+</code></pre><p>vs.</p>
+<pre><code>python3 ocr.py  277.92s user 31.38s system 141% cpu 3:37.85 total
+</code></pre><p><strong>Edit:</strong> <a target="_blank" href="https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edzdwmu/">/u/janko-m on Reddit</a>
+pointed me to <a href="https://github.com/libvips/libvips">libvips</a> and I actually
+replaced ImageMagick with libvips. The script is also <a target="_blank" href="https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor_optimized-rb">on GitHub</a>.
+The runtime became 3 times faster than what it used to be and, in fact,
+outperformed the Python version. Here&rsquo;s the output of the time command:</p>
+<pre><code>ruby ocr.rb  234.74s user 35.64s system 120% cpu 3:45.17 total
+</code></pre><h3 id="accuracy">Accuracy</h3>
+<p>In the end, the text in 93% of my screenshots was recognized almost correctly
+(with some gibberish noise in some files).  I filtered out the screenshots that
+don&rsquo;t contain any subtitles before running the script. This means that only 7%
+of my screenshots were not recognized correctly or were recognized as empty
+text.  <a target="_blank" href="https://github.com/tesseract-ocr/tesseract/wiki/ImproveQuality">Tesseract wiki</a>
+provides some tips to improve text recognition accuracy mainly, they are all
+about processing the source image before feeding it to Tesseract.</p>
+<h3 id="different-colors">Different Colors</h3>
+<p>This issue occurred with screenshots that contained subtitles in colors
+other than white. I have for example a screenshot with yellow subtitles that
+wasn&rsquo;t recognized by the original script. I had to use a lower threshold while
+converting the image to a black-and-white binary image so that the subtitles
+wouldn&rsquo;t be filtered out as noise.</p>
+<h3 id="duplicates">Duplicates</h3>
+<p>This is not related to Tesseract itself or text recognition per se, but it&rsquo;s
+more about the script.  If there are more than one screenshot with the same
+subtitles, one image file will overwrite the other. I don&rsquo;t handle this case in
+my script as of yet; I want to get rid of duplicates anyway.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fextracting-text-from-images-using-ruby%2f&text=Extracting%20Text%20From%20Images%20Using%20Ruby&hashtags=%23Ruby%20%23Computer_Vision%20%23OCR%20%23Image_Magick%20%23Tesseract%20&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2fextracting-text-from-images-using-ruby%2f&title=Extracting%20Text%20From%20Images%20Using%20Ruby" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Extracting%20Text%20From%20Images%20Using%20Ruby&url=https%3a%2f%2faonemd.github.io%2fposts%2fextracting-text-from-images-using-ruby%2f&&summary=tldr%3b%20show%20me%20the%20code.%0aI%26rsquo%3bm%20a%20great%20hoarder%20of%20memes.%20Seriously%2c%20I%20have%20a%20huge%20folder%20full%20of%20memes%20and%20GIFs.%20I%20collect%20my%20memes%20usually%20whenever%20I%26rsquo%3bm%20watching%20a%20movie%20or%20a%20series%20by%20taking%20a%20screenshot%20of%20the%20scene%20with%20subtitles%20enabled.%20The%20issue%20is%2c%20the%20program%20I%20use%20to%20take%20screenshots%2c%20names%20each%20new%20file%20by%20the%20date%20and%20time%20the%20screenshot%20was%20taken.%20I%20have%20a%201200%20screenshot%20folder%20each%20named%20by%20date%20and%20time.&source=https://aonemd.github.io" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fextracting-text-from-images-using-ruby%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2fextracting-text-from-images-using-ruby%2f&title=Extracting%20Text%20From%20Images%20Using%20Ruby" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="17">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

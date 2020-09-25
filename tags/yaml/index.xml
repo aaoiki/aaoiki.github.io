@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YAML on aonemd</title>
+    <link>https://aonemd.github.io/tags/yaml/</link>
+    <description>Recent content in YAML on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/yaml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>When YAML Bit Me</title>
+      <link>https://aonemd.github.io/posts/when-yaml-bit-me/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/when-yaml-bit-me/</guid>
+      <description>This is the story of a bug I encountered about 3 years ago. Basically, I had a model Book that contained a serialized object attribute called info and BooksController initially contained this search query:
+Book.where(&amp;#39;info LIKE ?&amp;#39;, &amp;#34;%ref: &amp;#39;#{params[:ref]}&amp;#39;&amp;#34;) The bug that surfaced at the time was that some books were not fetched when the search query contained alpha-numeric reference numbers (those that contains both digits and letters) as some reference numbers were pure digits and some were a mix of digits and alphabetical characters.</description>
+    </item>
+    
+  </channel>
+</rss>

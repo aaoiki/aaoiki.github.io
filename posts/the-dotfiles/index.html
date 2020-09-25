@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>The Dotfiles | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/posts/the-dotfiles/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="The Dotfiles" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="The Dotfiles" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  <meta property="og:image"      content="/images/logo.png" />
+  <meta name="twitter:image:src" content="/images/logo.png" />
+
+</head>
+
+  <body class=""><nav>
+  <div class="title">
+    <a href="/">a<span>one</span>md</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>The Dotfiles <small class="view-post__category">Tools</small></h2>
+          <b><span>January 01, 0001</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p><a target="_blank" href="http://threevirtues.com/">One of the three great virtues of a programmer is laziness</a>
+and it&rsquo;s actually culturally acceptable that programmers are lazy by nature
+(not judging). Programmers write software to replace mundane and repetitive
+tasks and let their computers work for them instead, and that&rsquo;s why, programmers have ever
+since created so many frameworks [aframeworkeveryday.js], libraries,
+and even <a target="_blank" href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">practices</a>
+only to avoid repeating work (or doing it altogether).</p>
+<p>And <a target="_blank" href="https://vimeo.com/158129287">in this realm of eternal laziness</a>,
+programmers make backups of their system settings and coding environment, and
+write scripts to bootstrap and link their configuration files so they can
+easily setup and share them on other machines. These packages are known among
+programmers as dotfiles!</p>
+<h3 id="what-are-they">What are they?</h3>
+<p>First of all, what is a dotfile you may ask? A dotfile, in Unix-like systems,
+is a file that starts with a dot/period and hence the name. They resemble
+hidden files in Windows systems. If you are coming from a Unix-like system, you
+will find some dotfiles in your home directory by performing an <code>$ ls -a ~</code> in
+a terminal. These are mostly configuration files. You can view them in Gnome
+file manager (might have a different keymap for other file managers) by
+pressing <code>Ctrl+H</code>.</p>
+<h3 id="up-to-the-point">Up to the Point</h3>
+<p>I&rsquo;ve had <a target="_blank" href="https://github.com/aonemd/aaku">my dotfiles</a> for
+quite some time. Every once in a while, I refactor them, change them
+consistently to suit my uses, or sometimes, I completely change the way they
+are bootstrapped.</p>
+<p>More recently, I noticed that my shell was pretty slow on startup. I was using
+<a target="_blank" href="https://github.com/robbyrussell/oh-my-zsh">Oh-My-Zsh</a> back
+then and it was great but, as I mentioned, slow. I wanted to give
+<a target="_blank" href="https://github.com/sorin-ionescu/prezto">Prezto</a> a try around
+that time. And I did! Prezto was more convenient for me, a little smaller than
+Oh-My-Zsh, and a little faster but still, it shipped with a lot of plugins and
+configurations that I never used (or never knew about as far as I&rsquo;m concerned).
+Eventually, I ended up writing my ZSH configuration from scratch.</p>
+<p>There&rsquo;s a kind of a division here between whether you should
+<a target="_blank" href="https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/">fork someone else&rsquo;s dotfiles and build up from there</a>
+or start from scratch. In the end, it&rsquo;s all about personal taste and needs.</p>
+<h3 id="good-tools-do-not-make-a-good-carpenter">Good Tools Do Not Make a Good Carpenter</h3>
+<p>I have spent (and still spend) a lot of time changing and tweaking my
+environment to my taste and it may look like an obsessions (it probably is),
+let&rsquo;s not forget one important thing here: using these tools to practice and
+write software is actually more important than the tools themselves.  Although
+I take a great pride in my configurations and tools, I believe it is a slippery
+slope to let a subtask take over your time and replace the actual work.</p>
+<blockquote lang="ar">
+  <p>
+    كَيْفَ يَطلُبُ العِلْمَ مَن لَهُ حِمَار؟
+  </p>
+  <cite>الشافعي</cite>
+</blockquote>
+<p>There&rsquo;s a story told about
+<a target="_blank" href="https://en.wikipedia.org/wiki/Al-Shafi%E2%80%98i">Al-Shafi‘i</a>,
+a Muslim scholar, jurist, and poet who lived in the 8th century, that he had to
+take long walks in order to get to his lectures and classes. He said: &ldquo;How could
+I pay attention to my classes if I didn&rsquo;t have a donkey?!&rdquo; and bought himself a
+donkey. The story goes that after sometime, Al-Shafi‘i became very occupied
+taking care of his donkey cleaning and feeding it that he said: &ldquo;How could I
+pay attention to my classes if I had a donkey?!&rdquo;.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fthe-dotfiles%2f&text=The%20Dotfiles&hashtags=%23dotfiles%20%23programmer_tools%20&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2fthe-dotfiles%2f&title=The%20Dotfiles" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=The%20Dotfiles&url=https%3a%2f%2faonemd.github.io%2fposts%2fthe-dotfiles%2f&&summary=One%20of%20the%20three%20great%20virtues%20of%20a%20programmer%20is%20laziness%20and%20it%26rsquo%3bs%20actually%20culturally%20acceptable%20that%20programmers%20are%20lazy%20by%20nature%20%28not%20judging%29.%20Programmers%20write%20software%20to%20replace%20mundane%20and%20repetitive%20tasks%20and%20let%20their%20computers%20work%20for%20them%20instead%2c%20and%20that%26rsquo%3bs%20why%2c%20programmers%20have%20ever%20since%20created%20so%20many%20frameworks%20%5baframeworkeveryday.js%5d%2c%20libraries%2c%20and%20even%20practices%20only%20to%20avoid%20repeating%20work%20%28or%20doing%20it%20altogether%29.%0aAnd%20in%20this%20realm%20of%20eternal%20laziness%2c%20programmers%20make%20backups%20of%20their%20system%20settings%20and%20coding%20environment%2c%20and%20write%20scripts%20to%20bootstrap%20and%20link%20their%20configuration%20files%20so%20they%20can%20easily%20setup%20and%20share%20them%20on%20other%20machines.&source=https://aonemd.github.io" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fthe-dotfiles%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2fthe-dotfiles%2f&title=The%20Dotfiles" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="3">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

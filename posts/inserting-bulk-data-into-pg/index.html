@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>Inserting Bulk Data into Postgres Using Ruby | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/posts/inserting-bulk-data-into-pg/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Inserting Bulk Data into Postgres Using Ruby" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Inserting Bulk Data into Postgres Using Ruby" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  <meta property="og:image"      content="/images/logo.png" />
+  <meta name="twitter:image:src" content="/images/logo.png" />
+
+</head>
+
+  <body class=""><nav>
+  <div class="title">
+    <a href="/">a<span>one</span>md</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>Inserting Bulk Data into Postgres Using Ruby <small class="view-post__category">Performance</small></h2>
+          <b><span>June 01, 2015</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p>I had this task where it was required to generate a lot of data into a
+postgreSQL database and perform some queries on the generated data. So this is
+going to be some kind of a crash course on Ruby and postgreSQL (and some
+optimization).</p>
+<h3 id="requirements">Requirements</h3>
+<p>The database contained only two tables. The first one was:</p>
+<ul>
+<li>cup_matches(mid, round, year, num_ratings, rating)</li>
+<li>mid is the primary key for matches</li>
+<li>round is the cup round/level (e.g. 32nd, 16th, quarter_final,SemiFinal, Final)</li>
+<li>year is the year of the cup.</li>
+<li>num_ratings is how many people viewed and rated that match</li>
+<li>rating is the average rating of all viewers</li>
+</ul>
+<p>the second one:</p>
+<ul>
+<li>played_in(mid, name, year, position)
+this is a table that stores which player played where:</li>
+<li>mid is the match id (from cup_matches table)</li>
+<li>name is the player name</li>
+<li>mid+name is the primary key</li>
+<li>year is the year of the match</li>
+<li>position is the position number of the player in the match (e.g. 1 for goal keeper, etc&hellip;)</li>
+</ul>
+<p>and the actual task:</p>
+<ul>
+<li>Write a script that populates the database with 2,680 matches and 58,960 players</li>
+<li>You must insert players with name that contain the word “pele” 118 times</li>
+</ul>
+<h3 id="setup">Setup</h3>
+<p>I created a Ruby script and used <code>pg</code> gem to connect to the database:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby">  <span class="nb">require</span> <span class="s1">&#39;pg&#39;</span>
+
+  <span class="n">conn</span> <span class="o">=</span> <span class="no">PG</span><span class="o">::</span><span class="no">Connection</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="ss">dbname</span><span class="p">:</span> <span class="s1">&#39;mydb&#39;</span><span class="p">,</span>
+                            <span class="ss">host</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+                            <span class="ss">user</span><span class="p">:</span> <span class="s1">&#39;testuser&#39;</span><span class="p">)</span></code></pre></div>
+<h3 id="tables">Tables</h3>
+<p>Now I create the two tables:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby">  <span class="c1"># create the first table (cup_matches)</span>
+  <span class="n">conn</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="s2">&#34;CREATE TABLE cup_matches (
+</span><span class="s2">              mid serial PRIMARY KEY,
+</span><span class="s2">              round varchar(20),
+</span><span class="s2">              year integer,
+</span><span class="s2">              num_ratings integer,
+</span><span class="s2">              rating real);&#34;</span><span class="p">)</span>
+
+  <span class="c1"># create the second table (played_in)</span>
+  <span class="n">conn</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="s2">&#34;create table played_in(
+</span><span class="s2">            mid integer references cup_matches(mid),
+</span><span class="s2">            name varchar(80),
+</span><span class="s2">            year integer,
+</span><span class="s2">            position integer,
+</span><span class="s2">            PRIMARY KEY(mid,name));&#34;</span><span class="p">)</span></code></pre></div>
+<h3 id="generating-data">Generating Data</h3>
+<p>Here I generate data into the first table. This is pretty straightforward:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby">  <span class="c1"># generate data for cup_matches</span>
+
+  <span class="n">round_array</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;32th&#39;</span><span class="p">,</span> <span class="s1">&#39;16th&#39;</span><span class="p">,</span> <span class="s1">&#39;8th&#39;</span><span class="p">,</span> <span class="s1">&#39;quarter_final&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;semi_final&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="o">]</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">round_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="o">..</span><span class="mi">2015</span><span class="p">)</span>
+    <span class="n">num_ratings_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">205</span><span class="p">)</span>
+    <span class="n">rating_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">..</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># insert this row</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&#34;ins</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span>
+                <span class="s2">&#34;INSERT INTO cup_matches(round, year, num_ratings, rating)
+</span><span class="s2">                  VALUES ($1, $2, $3, $4)&#34;</span><span class="p">)</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">exec_prepared</span><span class="p">(</span><span class="s2">&#34;ins</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span>
+                          <span class="o">[</span><span class="n">round_array</span><span class="o">[</span><span class="n">round_i</span><span class="o">]</span><span class="p">,</span> <span class="n">year_value</span><span class="p">,</span>
+                          <span class="n">num_ratings_value</span><span class="p">,</span> <span class="n">rating_value</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">end</span></code></pre></div>
+<p>Up until this point everything works fine but when I wanted to insert
+data into the second table, things started to get really slow.
+My original script contained this part:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby">  <span class="c1"># generate data for played_in</span>
+
+  <span class="c1"># array of random names</span>
+  <span class="n">name_array</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;Shinichi&#39;</span><span class="p">,</span> <span class="s1">&#39;Nitrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Yan&#39;</span><span class="p">,</span> <span class="s1">&#39;Itachi&#39;</span><span class="p">,</span> <span class="s1">&#39;Kurosan&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Tamashii&#39;</span><span class="p">,</span> <span class="s1">&#39;Ben&#39;</span><span class="p">,</span> <span class="s1">&#39;Owen&#39;</span><span class="p">,</span> <span class="s1">&#39;Ror&#39;</span><span class="p">,</span> <span class="s1">&#39;Bo&#39;</span><span class="p">,</span> <span class="s1">&#39;Yama&#39;</span><span class="p">,</span> <span class="s1">&#39;Kaminari&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Kintama&#39;</span><span class="p">,</span> <span class="s1">&#39;Sasuke&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Leila&#39;</span><span class="p">,</span> <span class="s1">&#39;Xou&#39;</span><span class="p">,</span> <span class="s1">&#39;Xubuntu&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Gnomy&#39;</span><span class="p">,</span> <span class="s1">&#39;Lolly&#39;</span><span class="p">,</span> <span class="s1">&#39;Gintoki&#39;</span><span class="p">,</span> <span class="s1">&#39;Kogami&#39;</span><span class="p">,</span> <span class="s1">&#39;Kurotora&#39;</span><span class="p">,</span> <span class="s1">&#39;Matz&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Yuki&#39;</span><span class="p">,</span> <span class="s1">&#39;Yumi&#39;</span><span class="p">,</span> <span class="s1">&#39;Kakashi&#39;</span><span class="p">,</span> <span class="s1">&#39;Naruto&#39;</span><span class="p">,</span> <span class="s1">&#39;K.O.&#39;</span><span class="p">,</span> <span class="s1">&#39;Gohan&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Kagura&#39;</span><span class="p">,</span> <span class="s1">&#39;Kuroon&#39;</span><span class="p">,</span> <span class="s1">&#39;Ran&#39;</span><span class="p">,</span> <span class="s1">&#39;Aurora&#39;</span><span class="p">,</span> <span class="s1">&#39;Conan&#39;</span><span class="p">,</span> <span class="s1">&#39;Kudo&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Lol&#39;</span><span class="p">,</span> <span class="s1">&#39;Yami&#39;</span><span class="p">,</span> <span class="s1">&#39;Sabasa&#39;</span><span class="p">,</span> <span class="s1">&#39;Namik&#39;</span><span class="p">,</span> <span class="s1">&#39;Goku&#39;</span><span class="p">,</span> <span class="s1">&#39;Tintin&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Gara&#39;</span><span class="p">,</span> <span class="s1">&#39;Aiomi&#39;</span><span class="o">]</span>
+
+  <span class="c1"># this array holds hashes of {:name =&gt; mid} that have already been inserted</span>
+  <span class="n">current_data</span> <span class="o">=</span> <span class="o">[]</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">58960</span><span class="p">)</span> <span class="k">do</span>
+    <span class="c1"># generate random data</span>
+    <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="o">..</span><span class="mi">2015</span><span class="p">)</span>
+    <span class="n">position_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">43</span><span class="p">)</span>
+    <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="kp">true</span>
+      <span class="c1"># create a hash</span>
+      <span class="nb">hash</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:name_array</span><span class="o">[</span><span class="n">name_i</span><span class="o">]</span> <span class="o">=&gt;</span> <span class="n">mid_value</span><span class="p">}</span>
+
+      <span class="c1"># check if hash is not in the current_date array</span>
+      <span class="k">if</span> <span class="n">current_data</span><span class="o">.</span><span class="n">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">h</span><span class="o">|</span> <span class="n">h</span> <span class="o">==</span> <span class="nb">hash</span> <span class="p">}</span>
+        <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">43</span><span class="p">)</span>
+        <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="k">break</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&#34;inse</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span>
+                  <span class="s2">&#34;INSERT INTO played_in(mid, name, year, position)
+</span><span class="s2">                  VALUES ($1, $2, $3, $4)&#34;</span><span class="p">)</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">exec_prepared</span><span class="p">(</span><span class="s2">&#34;inse</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span>
+                      <span class="o">[</span><span class="n">mid_value</span><span class="p">,</span> <span class="n">name_array</span><span class="o">[</span><span class="n">name_i</span><span class="o">]</span><span class="p">,</span>
+                      <span class="n">year_value</span><span class="p">,</span> <span class="n">position_value</span><span class="o">]</span><span class="p">)</span>
+
+    <span class="c1"># append the unqiue (:name =&gt; mid) hash into the current_data array</span>
+    <span class="n">current_data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:name_array</span><span class="o">[</span><span class="n">name_i</span><span class="o">]</span> <span class="o">=&gt;</span> <span class="n">mid_value</span><span class="p">}</span>
+  <span class="k">end</span></code></pre></div>
+<h4 id="the-issue">The Issue</h4>
+<p>The second table has a pair of columns as its the primary
+key <code>(played_in_pk)</code>; one is the <code>name</code> column and the other is <code>mid</code> as a
+foreign key. Thus, every row must have a unique (mid, name) pair.</p>
+<p>My approach was to save all the unique pairs in an array,
+generate a random pair, then loop until we find a unique pair that was not used before.
+This took a lot of time when current_data array got bigger as it had to
+traverse the whole array especially that I used some fancy methods like <code>Enumerable#detect</code> and
+<code>Enumerable#include?</code> which are both O(n).</p>
+<p>It took about 40 minutes to generate 21440 rows and for some reason it
+got stuck there.</p>
+<h4 id="solution">Solution</h4>
+<p>In my second attempt, I used a postgreSQL <code>SELECT</code> query to search the table instead. So this was my second solution:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby">  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">58960</span><span class="p">)</span> <span class="k">do</span>
+    <span class="k">while</span> <span class="kp">true</span>
+      <span class="n">name_i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="mi">43</span><span class="p">)</span>
+      <span class="n">year_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2000</span><span class="o">..</span><span class="mi">2015</span><span class="p">)</span>
+      <span class="n">position_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">11</span><span class="p">)</span>
+      <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
+
+      <span class="c1"># SELECT query that searches for the pair (mid_value, name_array[name_i])</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span> <span class="s2">&#34;SELECT * FROM played_in WHERE mid=</span><span class="si">#{</span><span class="n">mid_value</span><span class="si">}</span><span class="s2">
+</span><span class="s2">                          AND name=&#39;</span><span class="si">#{</span><span class="n">name_array</span><span class="o">[</span><span class="n">name_i</span><span class="o">]</span><span class="si">}</span><span class="s2">&#39; &#34;</span> <span class="p">)</span>
+
+      <span class="c1"># loop until we have result array empty</span>
+      <span class="c1"># i.e., (mid_value, name_array[name_i]) is not used</span>
+      <span class="k">break</span> <span class="k">unless</span> <span class="n">result</span><span class="o">.</span><span class="n">any?</span>
+    <span class="k">end</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">&#34;inse</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;INSERT INTO
+</span><span class="s2">                  played_in(mid, name, year, position)
+</span><span class="s2">                  VALUES ($1, $2, $3, $4)&#34;</span><span class="p">)</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">exec_prepared</span><span class="p">(</span><span class="s2">&#34;inse</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span>
+                      <span class="o">[</span><span class="n">mid_value</span><span class="p">,</span> <span class="n">name_array</span><span class="o">[</span><span class="n">name_i</span><span class="o">]</span><span class="p">,</span>
+                      <span class="n">year_value</span><span class="p">,</span> <span class="n">position_value</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">end</span></code></pre></div>
+<p>This made the script much faster. It generated 58960 rows in about 20 minutes
+which was a great success besides it is much simpler now.</p>
+<p>This is the last part where I changed exactly 118 rows to have the name <code>pele</code>
+as required in the task:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby">  <span class="c1"># this is where we make 118 rows have the name &#39;pele&#39;</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">118</span><span class="p">)</span> <span class="k">do</span>
+
+    <span class="k">while</span> <span class="kp">true</span>
+      <span class="n">mid_value</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">2680</span><span class="p">)</span>
+
+      <span class="c1"># make sure that we don&#39;t have a (mid_value, &#39;pele&#39;) pair in the database</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span> <span class="s2">&#34;SELECT * FROM played_in WHERE mid=&#39;</span><span class="si">#{</span><span class="n">mid_value</span><span class="si">}</span><span class="s2">&#39;
+</span><span class="s2">                          AND name=&#39;pele&#39; &#34;</span> <span class="p">)</span>
+
+      <span class="c1"># break if mid_value is valid to use</span>
+      <span class="k">break</span> <span class="k">unless</span> <span class="n">result</span><span class="o">.</span><span class="n">any?</span>
+    <span class="k">end</span>
+
+    <span class="c1"># retrieve all rows that have mid_value</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span> <span class="s2">&#34;SELECT * FROM played_in WHERE mid=&#39;</span><span class="si">#{</span><span class="n">mid_value</span><span class="si">}</span><span class="s2">&#39;&#34;</span> <span class="p">)</span>
+
+    <span class="c1"># result is an array of rows</span>
+    <span class="c1"># retrieve the name (row[1]) from the first row of the result (result[0])</span>
+    <span class="n">target_name</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">getvalue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># update this row to have name=&#39;pele&#39;</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">exec_params</span><span class="p">(</span><span class="s2">&#34;UPDATE played_in SET name = $1 WHERE mid=</span><span class="si">#{</span><span class="n">mid_value</span><span class="si">}</span><span class="s2">
+</span><span class="s2">                      AND name=&#39;</span><span class="si">#{</span><span class="n">target_name</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">,</span>  <span class="o">[</span><span class="s1">&#39;pele&#39;</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">end</span></code></pre></div>
+<p>Here&rsquo;s the <a target="_blank" href="https://gist.github.com/aonemd/95c8888b36b02a63323c">full script on Github</a>.</p>
+<h3 id="other-solutions">Other Solutions?</h3>
+<p>There might be other good solutions. One solution is to generate data into a
+CSV file then copy it to the real tables. If you have any good solutions, please
+let me know.</p>
+<h3 id="resources">Resources</h3>
+<p><a href="http://www.tutorialspoint.com/postgresql/index.htm">PostgreSQL tutorials</a></p>
+<p><a href="http://deveiate.org/code/pg/index.html">PG gem documentation</a></p>
+<p><a href="http://deveiate.org/code/pg/PG/Result.html">PGresult class documentation</a></p>
+<p><a href="http://stackoverflow.com/questions/2987433/how-to-import-csv-file-data-into-a-postgres-table">Import CSV file into PostgreSQL table</a></p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2finserting-bulk-data-into-pg%2f&text=Inserting%20Bulk%20Data%20into%20Postgres%20Using%20Ruby&hashtags=%23ruby%20%23postgresql%20&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2finserting-bulk-data-into-pg%2f&title=Inserting%20Bulk%20Data%20into%20Postgres%20Using%20Ruby" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Inserting%20Bulk%20Data%20into%20Postgres%20Using%20Ruby&url=https%3a%2f%2faonemd.github.io%2fposts%2finserting-bulk-data-into-pg%2f&&summary=I%20had%20this%20task%20where%20it%20was%20required%20to%20generate%20a%20lot%20of%20data%20into%20a%20postgreSQL%20database%20and%20perform%20some%20queries%20on%20the%20generated%20data.%20So%20this%20is%20going%20to%20be%20some%20kind%20of%20a%20crash%20course%20on%20Ruby%20and%20postgreSQL%20%28and%20some%20optimization%29.%0aRequirements%20The%20database%20contained%20only%20two%20tables.%20The%20first%20one%20was%3a%0a%20cup_matches%28mid%2c%20round%2c%20year%2c%20num_ratings%2c%20rating%29%20mid%20is%20the%20primary%20key%20for%20matches%20round%20is%20the%20cup%20round%2flevel%20%28e.&source=https://aonemd.github.io" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2finserting-bulk-data-into-pg%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2finserting-bulk-data-into-pg%2f&title=Inserting%20Bulk%20Data%20into%20Postgres%20Using%20Ruby" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="1">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

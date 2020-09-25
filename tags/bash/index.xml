@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on aonemd</title>
+    <link>https://aonemd.github.io/tags/bash/</link>
+    <description>Recent content in bash on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Take Notes</title>
+      <link>https://aonemd.github.io/posts/how-i-take-notes/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/how-i-take-notes/</guid>
+      <description>I always advice every programmer to take notes of their work all the time. Taking notes has throughout the years become so indispensable for me. Instead of searching for something every time I forget it, I go back to my notes. It has also become helpful when I need to study for interviews. I also use those notes as a journal to keep and organize my thoughts when I&amp;rsquo;m working on a new feature or fixing a bug.</description>
+    </item>
+    
+  </channel>
+</rss>

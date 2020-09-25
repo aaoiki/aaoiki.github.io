@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programmer_tools on aonemd</title>
+    <link>https://aonemd.github.io/tags/programmer_tools/</link>
+    <description>Recent content in programmer_tools on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://aonemd.github.io/tags/programmer_tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Dotfiles</title>
+      <link>https://aonemd.github.io/posts/the-dotfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/the-dotfiles/</guid>
+      <description>One of the three great virtues of a programmer is laziness and it&amp;rsquo;s actually culturally acceptable that programmers are lazy by nature (not judging). Programmers write software to replace mundane and repetitive tasks and let their computers work for them instead, and that&amp;rsquo;s why, programmers have ever since created so many frameworks [aframeworkeveryday.js], libraries, and even practices only to avoid repeating work (or doing it altogether).
+And in this realm of eternal laziness, programmers make backups of their system settings and coding environment, and write scripts to bootstrap and link their configuration files so they can easily setup and share them on other machines.</description>
+    </item>
+    
+  </channel>
+</rss>

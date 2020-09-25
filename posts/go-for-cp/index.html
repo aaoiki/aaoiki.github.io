@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>Go for Competitive Programming | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/public/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/posts/go-for-cp/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Go for Competitive Programming" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Go for Competitive Programming" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  <meta property="og:image"      content="/images/logo.png" />
+  <meta name="twitter:image:src" content="/images/logo.png" />
+
+</head>
+
+  <body class=""><nav>
+  <div class="title">
+    <a href="/">a<span>one</span>md</a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about">
+      about
+    </a>
+    <a href="/talks">
+      talks
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>Go for Competitive Programming <small class="view-post__category">CP</small></h2>
+          <b><span>September 10, 2017</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p>I first started writing Go during my time at UserTalk and have been using it
+occasionaly since then because of its minimal syntax and standard library that
+makes it a great language for writing almost any kind of software.</p>
+<p>Whenever I&rsquo;m solving a competitive programming problem, I usually use C or C++
+(whichever works best) to write the solution mainly because they are both
+supported by almost all online judges and programming contests.</p>
+<p>Moreover, I was recently solving a problem on HackerRank and decided to write
+the solution in C. The problem was quite easy but my solution always resulted
+in a Segmentation Fault. Here&rsquo;s a
+<a target="_blank" href="https://www.hackerrank.com/challenges/dynamic-array">link</a> to the problem if
+you&rsquo;re asking.
+Luckily, I found out that I could submit the solution in Go, besides other
+languages. So after +30 failed submissions (and out of frustration), I decided
+to translate the C code to Go and boom, it passed all the test cases
+flawlessly.  Go being garbage collected here, unlike C, makes it really easy to
+focus on the solution and leave the task of memory management to the compiler.
+Also, by having a strong standard library, the number of lines in the Go solution
+is about half the number of lines in the C code.  Here&rsquo;s a screenshot comparing
+the two:</p>
+<p><img src="/images/go_for_cp-go_vs_c.png" alt="Go vs. C screenshot"></p>
+<p>Go is minimal, concise, has a huge standard library, performs fast, backed by a
+company like Google, has a growing community, and many online judges already
+support it on their platforms and even though writing Go might require some
+mind shift, a programmer can easily adjust themselves to that. These all the
+reasons why I think it&rsquo;s time for the ACM organization to consider Go as an
+official language in the coming ICPC contests.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fgo-for-cp%2f&text=Go%20for%20Competitive%20Programming&hashtags=%23Go%20%23CP%20&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2fgo-for-cp%2f&title=Go%20for%20Competitive%20Programming" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Go%20for%20Competitive%20Programming&url=https%3a%2f%2faonemd.github.io%2fposts%2fgo-for-cp%2f&&summary=I%20first%20started%20writing%20Go%20during%20my%20time%20at%20UserTalk%20and%20have%20been%20using%20it%20occasionaly%20since%20then%20because%20of%20its%20minimal%20syntax%20and%20standard%20library%20that%20makes%20it%20a%20great%20language%20for%20writing%20almost%20any%20kind%20of%20software.%0aWhenever%20I%26rsquo%3bm%20solving%20a%20competitive%20programming%20problem%2c%20I%20usually%20use%20C%20or%20C%2b%2b%20%28whichever%20works%20best%29%20to%20write%20the%20solution%20mainly%20because%20they%20are%20both%20supported%20by%20almost%20all%20online%20judges%20and%20programming%20contests.&source=https://aonemd.github.io" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fgo-for-cp%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2fgo-for-cp%2f&title=Go%20for%20Competitive%20Programming" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="6">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

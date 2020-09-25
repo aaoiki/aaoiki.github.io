@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image_Magick on aonemd</title>
+    <link>https://aonemd.github.io/tags/image_magick/</link>
+    <description>Recent content in Image_Magick on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/image_magick/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Extracting Text From Images Using Ruby</title>
+      <link>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</guid>
+      <description>tldr; show me the code.
+I&amp;rsquo;m a great hoarder of memes. Seriously, I have a huge folder full of memes and GIFs. I collect my memes usually whenever I&amp;rsquo;m watching a movie or a series by taking a screenshot of the scene with subtitles enabled. The issue is, the program I use to take screenshots, names each new file by the date and time the screenshot was taken. I have a 1200 screenshot folder each named by date and time.</description>
+    </item>
+    
+  </channel>
+</rss>

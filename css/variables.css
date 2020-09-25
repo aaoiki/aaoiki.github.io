@@ -1,0 +1,26 @@
+:root {
+  --white:          #ffffff;
+  --off-white:      #f2f2f2;
+  --dark-matter:    #1b1918;
+  --lighter-dark:   #211f1d;
+  --ebony-clay:     #22313F;
+  --high-blue:      #45aaf2;
+  --clear-chill:    #1B9CFC;
+  --jackson-purple: #1F3A93;
+  --smoke:          #eeeeee;
+  --gray:           #606060;
+  --black:          #000000;
+
+  --background-color: var(--white);
+  --foreground-color: var(--ebony-clay);
+  --secondary-color:  var(--jackson-purple);
+
+  --dark-background-color: var(--dark-matter);
+  --dark-foreground-color: var(--off-white);
+  --dark-secondary-color:  var(--high-blue);
+
+  --latin-font:        'Open Sans', sans-serif;
+  --latin-header-font: 'Merriweather', serif;
+  --arabic-font:       'Amiri', serif;
+  --monospace-font:    'Ubuntu Mono', monospace;
+}

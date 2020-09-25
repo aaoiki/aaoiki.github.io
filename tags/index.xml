@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on aonemd</title>
+    <link>https://aonemd.github.io/tags/</link>
+    <description>Recent content in Tags on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>development</title>
+      <link>https://aonemd.github.io/tags/development/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keymaps</title>
+      <link>https://aonemd.github.io/tags/keymaps/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/keymaps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://aonemd.github.io/tags/software/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://aonemd.github.io/tags/tools/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://aonemd.github.io/tags/vim/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ActionCable</title>
+      <link>https://aonemd.github.io/tags/actioncable/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/actioncable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>minimal</title>
+      <link>https://aonemd.github.io/tags/minimal/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/minimal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rails</title>
+      <link>https://aonemd.github.io/tags/rails/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>https://aonemd.github.io/tags/ruby/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ag</title>
+      <link>https://aonemd.github.io/tags/ag/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/ag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ctrlp</title>
+      <link>https://aonemd.github.io/tags/ctrlp/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/ctrlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fuzzy</title>
+      <link>https://aonemd.github.io/tags/fuzzy/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/fuzzy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fzf</title>
+      <link>https://aonemd.github.io/tags/fzf/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/fzf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>search</title>
+      <link>https://aonemd.github.io/tags/search/</link>
+      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer_Vision</title>
+      <link>https://aonemd.github.io/tags/computer_vision/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/computer_vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Image_Magick</title>
+      <link>https://aonemd.github.io/tags/image_magick/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/image_magick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OCR</title>
+      <link>https://aonemd.github.io/tags/ocr/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/ocr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tesseract</title>
+      <link>https://aonemd.github.io/tags/tesseract/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/tesseract/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ffi</title>
+      <link>https://aonemd.github.io/tags/ffi/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/ffi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://aonemd.github.io/tags/linux/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syscalls</title>
+      <link>https://aonemd.github.io/tags/syscalls/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/syscalls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bugs</title>
+      <link>https://aonemd.github.io/tags/bugs/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/bugs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://aonemd.github.io/tags/postgresql/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>YAML</title>
+      <link>https://aonemd.github.io/tags/yaml/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/yaml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>computer_science</title>
+      <link>https://aonemd.github.io/tags/computer_science/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/computer_science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>education</title>
+      <link>https://aonemd.github.io/tags/education/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://aonemd.github.io/tags/programming/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://aonemd.github.io/tags/css/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>frontend</title>
+      <link>https://aonemd.github.io/tags/frontend/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://aonemd.github.io/tags/javascript/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://aonemd.github.io/tags/performance/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blogging</title>
+      <link>https://aonemd.github.io/tags/blogging/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>writing</title>
+      <link>https://aonemd.github.io/tags/writing/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://aonemd.github.io/tags/bash/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>notes</title>
+      <link>https://aonemd.github.io/tags/notes/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bear_programming</title>
+      <link>https://aonemd.github.io/tags/bear_programming/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/bear_programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>product_management</title>
+      <link>https://aonemd.github.io/tags/product_management/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/product_management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://aonemd.github.io/tags/blog/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dark_theme</title>
+      <link>https://aonemd.github.io/tags/dark_theme/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/dark_theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://aonemd.github.io/tags/jekyll/</link>
+      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Career</title>
+      <link>https://aonemd.github.io/tags/career/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CS</title>
+      <link>https://aonemd.github.io/tags/cs/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/cs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Internships</title>
+      <link>https://aonemd.github.io/tags/internships/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/internships/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CP</title>
+      <link>https://aonemd.github.io/tags/cp/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/cp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://aonemd.github.io/tags/go/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>management</title>
+      <link>https://aonemd.github.io/tags/management/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pomodoro_technique</title>
+      <link>https://aonemd.github.io/tags/pomodoro_technique/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/pomodoro_technique/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>time</title>
+      <link>https://aonemd.github.io/tags/time/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/time/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software_engineering</title>
+      <link>https://aonemd.github.io/tags/software_engineering/</link>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/software_engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotfiles</title>
+      <link>https://aonemd.github.io/tags/dotfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/dotfiles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programmer_tools</title>
+      <link>https://aonemd.github.io/tags/programmer_tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/tags/programmer_tools/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
