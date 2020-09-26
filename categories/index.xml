@@ -5,6 +5,142 @@
     <link>https://aonemd.github.io/categories/</link>
     <description>Recent content in Categories on aonemd</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://aonemd.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tools</title>
+      <link>https://aonemd.github.io/categories/tools/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://aonemd.github.io/categories/vim/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>https://aonemd.github.io/categories/ruby/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby on Rails</title>
+      <link>https://aonemd.github.io/categories/ruby-on-rails/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/ruby-on-rails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer Vision</title>
+      <link>https://aonemd.github.io/categories/computer-vision/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/computer-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Systems</title>
+      <link>https://aonemd.github.io/categories/systems/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Education</title>
+      <link>https://aonemd.github.io/categories/education/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frontend</title>
+      <link>https://aonemd.github.io/categories/frontend/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/frontend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>https://aonemd.github.io/categories/performance/</link>
+      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://aonemd.github.io/categories/blogging/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Engineering</title>
+      <link>https://aonemd.github.io/categories/software-engineering/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Career</title>
+      <link>https://aonemd.github.io/categories/career/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Competitive Programming</title>
+      <link>https://aonemd.github.io/categories/competitive-programming/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/competitive-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://aonemd.github.io/categories/go/</link>
+      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://aonemd.github.io/categories/projects/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/projects/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

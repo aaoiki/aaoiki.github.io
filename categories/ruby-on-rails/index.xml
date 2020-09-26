@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Rails on aonemd</title>
+    <link>https://aonemd.github.io/categories/ruby-on-rails/</link>
+    <description>Recent content in Ruby on Rails on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/categories/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Action Cable: Rails 5 Most Anticipated Feature</title>
+      <link>https://aonemd.github.io/posts/intro-to-actioncable/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/intro-to-actioncable/</guid>
+      <description>Action Cable is a simple framework that introduces WebSocket support to Rails apps. It provides a server-side as well as a client-side integration with WebSocket&amp;hellip;
+This post was originally posted on Robusta Studio&amp;rsquo;s blog on 6 Septemper, 2016. To read the full article, please visit this link.</description>
+    </item>
+    
+    <item>
+      <title>Programming on Rails</title>
+      <link>https://aonemd.github.io/posts/programming-on-rails/</link>
+      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/programming-on-rails/</guid>
+      <description>Ruby on Rails is a great web framework. It has changed the way web development is done and influenced other frameworks in other programming languages. Even admittedly, much of the major success of Ruby is due to the wide spread of Rails.
+Being the opinionated framework it is, Rails is built on top of a set of conventions and philosophies. It&amp;rsquo;s said to be Omakase (お任せ) or chef&amp;rsquo;s menu of choice (also, watch Rails is Omakase: A Dramatic Reading).</description>
+    </item>
+    
+  </channel>
+</rss>

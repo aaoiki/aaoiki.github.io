@@ -80,6 +80,7 @@ img {
   --ebony-clay:     #22313F;
   --high-blue:      #45aaf2;
   --clear-chill:    #1B9CFC;
+  --olympic:        #008cee;
   --jackson-purple: #1F3A93;
   --smoke:          #eeeeee;
   --gray:           #606060;
@@ -87,7 +88,7 @@ img {
 
   --background-color: var(--white);
   --foreground-color: var(--ebony-clay);
-  --secondary-color:  var(--jackson-purple);
+  --secondary-color:  var(--olympic);
 
   --dark-background-color: var(--dark-matter);
   --dark-foreground-color: var(--off-white);
@@ -209,34 +210,48 @@ tbody tr:nth-child(odd) {
   }
 
 :root {
-  --height: 65px;
+  --height: 80px;
 }
 
 nav {
   background-color: #1b1918;
   background-color: var(--dark-background-color);
   height: auto;
-  line-height: 65px;
+  line-height: 80px;
   line-height: var(--height);
-  min-height: 65px;
+  min-height: 80px;
   min-height: var(--height);
   padding: 0 15px;
   margin-bottom: 35px
 }
 
-nav .title a {
-    color: #f2f2f2 !important;
-    color: var(--off-white) !important;
-    font-size: 28px;
-    font-weight: 300;
-    text-decoration: none;
-    float: left;
-    margin: 0 16px
+nav .title {
+    width: 220px
   }
 
-nav .title a span {
-      font-weight: 600;
+nav .title a {
+      line-height: 80px;
+      line-height: var(--height);
+      width: 100%;
+      color: #f2f2f2 !important;
+      color: var(--off-white) !important;
+      font-size: 28px;
+      font-weight: 300;
+      text-decoration: none;
+      float: left;
+      margin: 0 16px
     }
+
+nav .title a img.logo {
+        width: 80px;
+        height: auto;
+        float: left;
+      }
+
+nav .title a span b {
+          color: #1B9CFC;
+          color: var(--clear-chill);
+        }
 
 nav .menu {
     text-align: center;
@@ -251,7 +266,7 @@ nav .menu a {
       color: var(--gray) !important;
       text-decoration: none;
       font-size: 18px;
-      line-height: 65px;
+      line-height: 80px;
       line-height: var(--height);
 
       clear: right;
@@ -278,11 +293,16 @@ nav .menu a svg:hover {
           transition: fill .2s ease-in-out;
         }
 
+nav .menu a.active {
+      color: #008cee !important;
+      color: var(--secondary-color) !important;
+    }
+
 nav label {
     color: #606060;
     color: var(--gray);
     font-size: 26px;
-    line-height: 65px;
+    line-height: 80px;
     line-height: var(--height);
     cursor: pointer;
     margin: 0 16px;
@@ -301,6 +321,13 @@ nav #toggle:checked + .menu {
   }
 
 @media only screen and (min-width: 1200px) {
+  nav {
+    padding: 0 80px
+  }
+        nav .title a img.logo {
+          width: 83px;
+        }
+
     nav .menu {
       margin: 0 16px 0 0;
       text-align: right;
@@ -808,7 +835,7 @@ body.dark .navbar li a:hover {
     }
 
 a {
-  color: #1F3A93;
+  color: #008cee;
   color: var(--secondary-color);
   text-decoration: none
 }
@@ -830,7 +857,7 @@ a:hover {
 }
 
 .view-post__category {
-  color: #1F3A93;
+  color: #008cee;
   color: var(--secondary-color);
 }
 
@@ -846,5 +873,26 @@ a:hover {
 
 .talk__item {
   margin-bottom: 50px;
+}
+
+.category-post {
+  margin-bottom: 20px
+}
+
+.category-post .category-post__category {
+    font-size: 18px;
+  }
+
+.category-post .category-post__title {
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-left: 40px;
+  }
+
+@media only screen and (min-width: 1200px) {
+  .category-post {
+    margin-left: 20%;
+  }
 }
 

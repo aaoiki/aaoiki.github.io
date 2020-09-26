@@ -8,7 +8,7 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/development/</loc>
+    <loc>https://aonemd.github.io/categories/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -18,32 +18,17 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/keymaps/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aonemd.github.io/posts/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/software/</loc>
+    <loc>https://aonemd.github.io/categories/tools/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/tools/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/vim/</loc>
+    <loc>https://aonemd.github.io/categories/vim/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,38 +38,18 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/actioncable/</loc>
-    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/minimal/</loc>
-    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aonemd.github.io/posts/minimal-vim/</loc>
     <lastmod>2019-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/rails/</loc>
+    <loc>https://aonemd.github.io/categories/ruby/</loc>
     <lastmod>2019-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/ruby/</loc>
+    <loc>https://aonemd.github.io/categories/ruby-on-rails/</loc>
     <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/ag/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/ctrlp/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -93,22 +58,7 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/fuzzy/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/fzf/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/search/</loc>
-    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/computer_vision/</loc>
+    <loc>https://aonemd.github.io/categories/computer-vision/</loc>
     <lastmod>2019-01-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,57 +68,17 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/image_magick/</loc>
-    <lastmod>2019-01-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/ocr/</loc>
-    <lastmod>2019-01-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/tesseract/</loc>
-    <lastmod>2019-01-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/ffi/</loc>
-    <lastmod>2018-12-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/linux/</loc>
-    <lastmod>2018-12-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aonemd.github.io/posts/making-system-calls-from-ruby/</loc>
     <lastmod>2018-12-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/syscalls/</loc>
+    <loc>https://aonemd.github.io/categories/systems/</loc>
     <lastmod>2018-12-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/bugs/</loc>
-    <lastmod>2018-12-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/postgresql/</loc>
-    <lastmod>2018-12-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aonemd.github.io/posts/when-yaml-bit-me/</loc>
-    <lastmod>2018-12-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/yaml/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -178,27 +88,12 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/computer_science/</loc>
+    <loc>https://aonemd.github.io/categories/education/</loc>
     <lastmod>2018-11-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/education/</loc>
-    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/programming/</loc>
-    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/css/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/frontend/</loc>
+    <loc>https://aonemd.github.io/categories/frontend/</loc>
     <lastmod>2018-08-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -208,17 +103,12 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/javascript/</loc>
+    <loc>https://aonemd.github.io/categories/performance/</loc>
     <lastmod>2018-08-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/performance/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/blogging/</loc>
+    <loc>https://aonemd.github.io/categories/blogging/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -228,22 +118,7 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/writing/</loc>
-    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/bash/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aonemd.github.io/posts/how-i-take-notes/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/notes/</loc>
     <lastmod>2018-06-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -258,23 +133,8 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/bear_programming/</loc>
+    <loc>https://aonemd.github.io/categories/software-engineering/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/product_management/</loc>
-    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/blog/</loc>
-    <lastmod>2018-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/dark_theme/</loc>
-    <lastmod>2018-05-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -283,22 +143,7 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/jekyll/</loc>
-    <lastmod>2018-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/career/</loc>
-    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/cs/</loc>
-    <lastmod>2017-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/internships/</loc>
+    <loc>https://aonemd.github.io/categories/career/</loc>
     <lastmod>2017-12-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -308,12 +153,12 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/cp/</loc>
+    <loc>https://aonemd.github.io/categories/competitive-programming/</loc>
     <lastmod>2017-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/go/</loc>
+    <loc>https://aonemd.github.io/categories/go/</loc>
     <lastmod>2017-09-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -328,23 +173,8 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/management/</loc>
+    <loc>https://aonemd.github.io/categories/projects/</loc>
     <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/pomodoro_technique/</loc>
-    <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/time/</loc>
-    <lastmod>2016-12-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/software_engineering/</loc>
-    <lastmod>2016-12-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -362,23 +192,11 @@
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/categories/</loc>
-  </url>
-  
-  <url>
     <loc>https://aonemd.github.io/talks/dev-tools/</loc>
   </url>
   
   <url>
-    <loc>https://aonemd.github.io/tags/dotfiles/</loc>
-  </url>
-  
-  <url>
     <loc>https://aonemd.github.io/talks/git-serious/</loc>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/tags/programmer_tools/</loc>
   </url>
   
   <url>

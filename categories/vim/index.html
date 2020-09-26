@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>Vim | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/categories/vim/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Vim" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Vim" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  <meta property="og:image"      content="/images/logo.png" />
+  <meta name="twitter:image:src" content="/images/logo.png" />
+
+</head>
+
+  <body class="">
+
+<nav>
+  <div class="title">
+    <a href="/">
+      <img src="/images/logo.png" class="logo">
+      &nbsp;
+      <span>a<b>one</b>md</span>
+    </a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="menu">
+    <a href="/about" class="">
+      about
+    </a>
+    <a href="/talks" class="">
+      talks
+    </a>
+    <a href="/categories" class="">
+      categories
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-light-up"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Blogging</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/on-writing/"> On Writing</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/introducing-jack-and-dark-theme/"> Introducing Jack and a New Dark Theme</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Career</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='ar'><a href="https://aonemd.github.io/posts/interning-in-egypt/"> التدريب في مصر</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Competitive programming</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/go-for-cp/"> Go for Competitive Programming</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Computer vision</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/"> Extracting Text From Images Using Ruby</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Education</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/computer-science-is-not-about-programming/"> Computer Science Is Not About Programming</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Frontend</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/"> How I Improved the Loading Speed of My Blog</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Go</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/go-for-cp/"> Go for Competitive Programming</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Performance</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/"> How I Improved the Loading Speed of My Blog</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/inserting-bulk-data-into-pg/"> Inserting Bulk Data into Postgres Using Ruby</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Projects</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/panadoura/"> I Took Some Time to Create a Time Tracker</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Ruby</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/intro-to-actioncable/"> Action Cable: Rails 5 Most Anticipated Feature</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/"> Extracting Text From Images Using Ruby</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/making-system-calls-from-ruby/"> Making System Calls From Ruby</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/when-yaml-bit-me/"> When YAML Bit Me</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/programming-on-rails/"> Programming on Rails</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/inserting-bulk-data-into-pg/"> Inserting Bulk Data into Postgres Using Ruby</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Ruby on rails</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/intro-to-actioncable/"> Action Cable: Rails 5 Most Anticipated Feature</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/programming-on-rails/"> Programming on Rails</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Software engineering</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/bear-programming/"> Bear Programming</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/the-one-year-bug/"> The One Year Old Bug</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Systems</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/making-system-calls-from-ruby/"> Making System Calls From Ruby</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Tools</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/handy-keymaps-in-vim/"> Handy Keymaps in Vim</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/minimal-vim/"> Minimal Vim</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/finding-things-in-vim/"> Finding Things in Vim</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/how-i-take-notes/"> How I Take Notes</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/the-dotfiles/"> The Dotfiles</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="category-post">
+      <div class="row">
+        <div class="col-8 col-m-12 center">
+          <div class="category-post__category">
+            <span>Vim</span>
+          </div>
+
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/handy-keymaps-in-vim/"> Handy Keymaps in Vim</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/minimal-vim/"> Minimal Vim</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/finding-things-in-vim/"> Finding Things in Vim</a></span>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="category-post__title">
+                <span lang='en'><a href="https://aonemd.github.io/posts/how-i-take-notes/"> How I Take Notes</a></span>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

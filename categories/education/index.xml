@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Education on aonemd</title>
+    <link>https://aonemd.github.io/categories/education/</link>
+    <description>Recent content in Education on aonemd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/categories/education/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Science Is Not About Programming</title>
+      <link>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</guid>
+      <description>This is not yet another war post about the difference between this and that. In fact, what&amp;rsquo;s motivated me to write this post is a TA at my university who was shaming students who graduate university without learning how to program properly. This idea was intriguing to me as I thought to myself that computer science is not about programming!
+Actually, what I believe is that computer science is about computing.</description>
+    </item>
+    
+  </channel>
+</rss>
