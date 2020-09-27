@@ -142,5 +142,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Docker</title>
+      <link>https://aonemd.github.io/categories/docker/</link>
+      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -801,17 +801,25 @@ pre > code {
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  background-color: var(--background-color);
+}
+
+body.transition {
+  transition: color 0.1s ease-out 0s, background 0.1s ease-out 0s;
+}
+
+body.light {
   color: #22313F;
   color: var(--foreground-color);
+  background-color: #ffffff;
+  background-color: var(--background-color);
 }
 
 body.dark {
+  color: #f2f2f2;
+  color: var(--dark-foreground-color);
   background-color: #1b1918;
   background-color: var(--dark-background-color);
-  color: #f2f2f2;
-  color: var(--dark-foreground-color)
+  opacity: 1
 }
 
 body.dark a {

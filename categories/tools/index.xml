@@ -55,5 +55,14 @@ Finding Files by Content To search files, Vim has a :vimgrep command that finds 
 And in this realm of eternal laziness, programmers make backups of their system settings and coding environment, and write scripts to bootstrap and link their configuration files so they can easily setup and share them on other machines.</description>
     </item>
     
+    <item>
+      <title>And a Whale Said Let There Be Docker</title>
+      <link>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</link>
+      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</guid>
+      <description>Every time I had to work on a new machine or I wanted to try a new technology, I used to install a lot of packages and libraries to prepare my development environment. I always struggled to manage dependencies and different versions of packages. That mostly worked for me but I had to go over this hustle everytime. Besides, after some time the machine I was working on used to get a bit slower.</description>
+    </item>
+    
   </channel>
 </rss>
