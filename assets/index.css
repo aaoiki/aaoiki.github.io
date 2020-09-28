@@ -221,7 +221,7 @@ nav {
   line-height: var(--height);
   min-height: 80px;
   min-height: var(--height);
-  padding: 0 15px;
+  padding: 0 20px;
   margin-bottom: 35px
 }
 
@@ -238,8 +238,7 @@ nav .title a {
       font-size: 28px;
       font-weight: 300;
       text-decoration: none;
-      float: left;
-      margin: 0 16px
+      float: left
     }
 
 nav .title a img.logo {
@@ -316,16 +315,41 @@ nav #toggle {
     display: none;
   }
 
-nav #toggle:checked + .menu {
+nav #toggle:checked + .empty-row + .menu {
     display: block;
   }
+
+@media only screen and (min-width: 640px) {
+  nav {
+    padding: 0 40px
+  }
+
+    nav .title {
+      width: 220px
+    }
+        nav .title a img.logo {
+          width: 83px;
+        }
+
+        nav .title a span {
+          display: inline;
+        }
+}
 
 @media only screen and (min-width: 1200px) {
   nav {
     padding: 0 80px
   }
+
+    nav .title {
+      width: 220px
+    }
         nav .title a img.logo {
           width: 83px;
+        }
+
+        nav .title a span {
+          display: inline;
         }
 
     nav .menu {
@@ -340,6 +364,10 @@ nav #toggle:checked + .menu {
       }
 
     nav label {
+      display: none;
+    }
+
+    nav .row.empty-row {
       display: none;
     }
 }
