@@ -72,6 +72,10 @@ img {
   float:        none !important;
 }
 
+.inverted {
+  transform: scaleX(-1);
+}
+
 :root {
   --white:          #ffffff;
   --off-white:      #f2f2f2;
@@ -130,19 +134,19 @@ h1, h2, h3, h4, h5, h6 {
 small { font-size: 30%; }
 
 blockquote {
-  background-color: #211f1d;
-  background-color: var(--lighter-dark);
-  color: #f2f2f2;
-  color: var(--off-white);
-  border: 1px solid #211f1d;
-  border: 1px solid var(--lighter-dark);
+  background-color: #eeeeee;
+  background-color: var(--smoke);
+  color: #22313F;
+  color: var(--foreground-color);
+  border: 1px solid #eeeeee;
+  border: 1px solid var(--smoke);
   margin: 1.5em 10px;
   padding: 30px 10px
 }
 
 blockquote:before {
     content: open-quote;
-    font-size: 4em;
+    font-size: 3em;
     line-height: 0.1em;
     margin-right: 0.25em;
     vertical-align: -0.4em;
@@ -869,6 +873,15 @@ body.dark .navbar li a:hover {
       color: #f2f2f2;
       color: var(--off-white);
     }
+
+body.dark blockquote {
+    background-color: #211f1d;
+    background-color: var(--lighter-dark);
+    color: #f2f2f2;
+    color: var(--dark-foreground-color);
+    border: 1px solid #211f1d;
+    border: 1px solid var(--lighter-dark);
+  }
 
 a {
   color: #008cee;
