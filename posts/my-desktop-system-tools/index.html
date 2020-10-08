@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>My Desktop System Tools | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="In this post, I demonstrate my Linux system tools on the desktop and how I choose each tool.">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.github.io/posts/my-desktop-system-tools/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="My Desktop System Tools" />
+<meta property="og:description" content="In this post, I demonstrate my Linux system tools on the desktop and how I choose each tool." />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="My Desktop System Tools" />
+<meta name="twitter:description" content="In this post, I demonstrate my Linux system tools on the desktop and how I choose each tool." />
+
+
+  <meta property="og:image"      content="/images/logo.png" />
+  <meta name="twitter:image:src" content="/images/logo.png" />
+
+</head>
+
+  <body class="light">
+
+<nav>
+  <div class="title">
+    <a href="/">
+      <img src="/images/logo.png" class="logo">
+      <span>&nbsp; a<b>one</b>md</span>
+    </a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="row empty-row"></div>
+
+  <div class="menu">
+    <a href="/about" class="">
+      about
+    </a>
+    <a href="/talks" class="">
+      talks
+    </a>
+    <a href="/categories" class="">
+      categories
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="https://gitlab.com/aonemd" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-gitlab"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="/index.xml" target="_blank">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss-squared"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element" class="inverted">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-moon-fill"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>My Desktop System Tools <small class="view-post__category">Tools</small></h2>
+          <b><span>October 08, 2020</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p>In this post, I will go over how I setup my desktop system for programming and
+general media usage. Please note that this setup is heavily keyboard driven
+since I rarely use the touchpad or the mouse except maybe for web browsing or
+graphics software.</p>
+<h3 id="machine">Machine</h3>
+<p>My main machine is a 2017 Thinkpad X1 Carbon. I like it for it&rsquo;s small size,
+light weight, and Linux support. It is mainly a programming machine for me. It
+doesn&rsquo;t contain a dedicated graphics card so it has low power consumption and
+zero issues with Linux in that regard (no fan noises). Although, I may have
+some issues with the quality control of the machine.</p>
+<h3 id="operating-system">Operating System</h3>
+<p>My operating system for years has been exclusively GNU/Linux (to the point that
+now I get confused if I tried to use a Windows 10 machine). I have used and
+tried many many distributions of Linux be it Debian based, SUSE based, Red Hat
+based, and finally Arch Linux based systems. I have had my fair share of distro
+hopping along the years. However, Arch Linux has been on my machine for the
+longest time without a reinstall compared to other systems. Although known as a
+rolling release system, Arch Linux has been very stable on my machine with
+almost zero issues even though I don&rsquo;t do system updates on a regular basis (I
+update the system whenever I remember or when I can afford to restart my
+machine). The benefit of using Arch Linux is that it is bare bones so I can
+customize it however I want. Also, the benefit of always having the most
+updated software is a great feature.</p>
+<p>I wrote a comprehensive guide for installing Arch Linux on
+<a href="https://gist.github.com/aonemd/96fd9bf2e42df4869a099f433c074907">GitHub</a>.</p>
+<h3 id="desktop-environment">Desktop Environment</h3>
+<p>The Linux world and the free software world in general have a great variety in
+the available tools and software. This includes the desktop environments.  I
+have tried many desktop environments as well and finally got to the point that
+no desktop environment is the best desktop environment. Well, that&rsquo;s not
+totally correct. A desktop environment is a nothing but a bunch of tools
+bundled and installed together. These tools include things like the graphical
+use interface with a tool bar and a system tray, an app finder, a window
+manager, a file manager, notification daemon, a login session manager, and so
+many other tools for various tasks. The issue here is that each desktop
+environment installs so many packages that are probably not at all needed by
+everyone. For me, I like to use certain tools that may render desktop
+environment default installed tools redundant.</p>
+<p>This is the reason I turned into using minimal tools to manage my desktop and
+thus, creating my own desktop environment (sort of).</p>
+<p>For starters, my graphical user interface is rendered and managed by the X11
+windowing system. Although,
+<a href='https://wayland.freedesktop.org/' target='_blank'><em>Wayland</em></a>
+popularity is rising, most of the current Linux GUI software is compatible with
+the X protocol.</p>
+<p>To manage my windows, I use a tiling window manager; one that tiles the windows
+next to each other by default instead of stacking them on top of each other.
+There are many window managers that operate differently. The most popular
+window managers are
+<a href='https://i3wm.org/' target='_blank'><em>i3wm</em></a>,
+<a href='https://awesomewm.org/index.html' target='_blank'><em>Awesome</em></a>, and
+<a href='https://xmonad.org/' target='_blank'><em>XMonad</em></a>. I suggest starting
+out with <em>i3wm</em> and experimenting from there.  My window manager of choice is
+<a href='https://dwm.suckless.org/' target='_blank'><em>dwm</em></a>.
+I chose <em>dwm</em> mainly because it&rsquo;s so minimal and its config file is written in
+C instead of a special DSL. <em>dwm</em> is a part of a group of tools known as the
+<a href='https://suckless.org/' target='_blank'><em>suckless</em></a> tools.</p>
+<p>Since <em>dwm</em> is minimal, it doesn&rsquo;t come with a tool bar by default. The user
+needs to write their own bar. I see most users write an infinite loop in bash
+and output the data they need into the bar. However, I don&rsquo;t think this is an
+efficient approach. <a href="http://github.com/aonemd/onpar">I wrote my own bar in Go</a>
+that schedules each section of the bar to run concurrently. It&rsquo;s been running
+on my system for years and I barely feel it running.</p>
+<p><img src="https://i.imgur.com/wPGoFWA.png" alt="My Desktop"></p>
+<h3 id="terminal-emulator">Terminal Emulator</h3>
+<p>Again and again, the Linux world enjoys a great variety of available software.
+For terminal emulators, my choice has been the
+<a href='https://st.suckless.org/' target='_blank'><em>st</em></a>
+terminal. The <em>st</em> terminal emulator is also a
+part of the suckless tools and is very minimal and light.  It&rsquo;s configured in C
+as well. A more extremely fast, full-featured terminal emulator I&rsquo;d recommend
+is <a href='https://sw.kovidgoyal.net/kitty/' target='_blank'><em>kitty</em></a>.</p>
+<h3 id="text-editor">Text Editor</h3>
+<p>For text editing, I use Vim exclusively. Although, I have been fascinated by
+the capabilities of Visual Studio Code recently, I always go for Vim for its
+minimal text editing workflow and the ability to run it inside a terminal
+emulator session so it&rsquo;s usable everywhere, be it the desktop or the server.  I
+have written <a href="/categories#vim">a small series of posts</a> about configuring Vim.</p>
+<h3 id="file-manager">File manager</h3>
+<p>Since I started with a keyboard driven setup, my file manager should be
+keyboard driven as well.  There are many good CLI file managers. I have been
+using
+<a href='https://github.com/ranger/ranger' target='_blank'><em>ranger</em></a> for a long time.
+However, I recently discovered <a href='https://github.com/jarun/nnn' target='_blank'><em>nnn</em></a>
+which is faster (written in C), minimal, and more modular. I have to say that I
+cheat sometimes and use <em>Thunar</em> (mainly to manage external devices such as USB
+sticks and mobile devices).</p>
+<h3 id="media-software">Media Software</h3>
+<p>My media software usage is very light. I only have
+<a href='https://www.videolan.org/vlc/' target='_blank'><em>VLC</em></a> for video and
+<a href='https://cmus.github.io/' target='_blank'><em>cmus</em></a> for music. Some people use
+<a href='https://mpv.io/' target='_blank'><em>MPV</em></a> which, to me, looks like a
+great option but I have yet to invest some time using it to make the final
+decision (I will probably update this post with my findings).</p>
+<h3 id="final-note">Final Note</h3>
+<p>I advice you to experiment and evaluate different tools and try to customize
+your system to your liking. I understand that the great variety of available
+tools can lead to some kind of choice overload bias (more options, more
+difficult time to choose), however; just starting somewhere (even starting out
+with popular tools) can lead to better evaluation and better decision making.</p>
+<p>Finally, if you want some inspiration, you can take a look at <a href="https://github.com/aonemd/aaku">my configuration
+files on GitHub</a>.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fmy-desktop-system-tools%2f&text=My%20Desktop%20System%20Tools&hashtags=desktop%2clinux%2csystem%2ctools&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="facebook" href="https://facebook.com/share.php?u=https%3a%2f%2faonemd.github.io%2fposts%2fmy-desktop-system-tools%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-facebook"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2fmy-desktop-system-tools%2f&title=My%20Desktop%20System%20Tools" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=My%20Desktop%20System%20Tools&url=https%3a%2f%2faonemd.github.io%2fposts%2fmy-desktop-system-tools%2f&&summary=In%20this%20post%2c%20I%20will%20go%20over%20how%20I%20setup%20my%20desktop%20system%20for%20programming%20and%20general%20media%20usage.%20Please%20note%20that%20this%20setup%20is%20heavily%20keyboard%20driven%20since%20I%20rarely%20use%20the%20touchpad%20or%20the%20mouse%20except%20maybe%20for%20web%20browsing%20or%20graphics%20software.%0aMachine%20My%20main%20machine%20is%20a%202017%20Thinkpad%20X1%20Carbon.%20I%20like%20it%20for%20it%26rsquo%3bs%20small%20size%2c%20light%20weight%2c%20and%20Linux%20support.%20It%20is%20mainly%20a%20programming%20machine%20for%20me.&source=https://aonemd.github.io" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fmy-desktop-system-tools%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
+        </a>
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2fmy-desktop-system-tools%2f&title=My%20Desktop%20System%20Tools" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="25">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>

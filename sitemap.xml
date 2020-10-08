@@ -4,12 +4,27 @@
   
   <url>
     <loc>https://aonemd.github.io/</loc>
-    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://aonemd.github.io/categories/</loc>
-    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aonemd.github.io/posts/my-desktop-system-tools/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aonemd.github.io/posts/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aonemd.github.io/categories/tools/</loc>
+    <lastmod>2020-10-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +34,6 @@
   
   <url>
     <loc>https://aonemd.github.io/posts/love-and-fear/</loc>
-    <lastmod>2020-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/posts/</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,11 +49,6 @@
   
   <url>
     <loc>https://aonemd.github.io/posts/handy-keymaps-in-vim/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aonemd.github.io/categories/tools/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
