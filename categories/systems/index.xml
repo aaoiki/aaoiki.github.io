@@ -3,18 +3,11 @@
   <channel>
     <title>Systems on aonemd</title>
     <link>https://aonemd.github.io/categories/systems/</link>
-    <description>Recent content in Systems on aonemd</description>
+    <description>Recent content in Systems on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/categories/systems/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Making System Calls From Ruby</title>
-      <link>https://aonemd.github.io/posts/making-system-calls-from-ruby/</link>
-      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/making-system-calls-from-ruby/</guid>
-      <description>While I was reading about Linux system calls, I was curious about how to perform them in Ruby specially that Ruby isn&amp;rsquo;t considered a &amp;ldquo;system&amp;rdquo; programming language. However, It&amp;rsquo;s very possible to perform system calls using Ruby. In this post, I&amp;rsquo;m going to demonstrate the different ways to make system calls using Ruby. But first, let us define what system calls are. Simply put, a system call is a way to enter the system kernel, execute an operation, and then return from the kernel.</description>
-    </item>
     
   </channel>
 </rss>

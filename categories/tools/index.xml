@@ -3,76 +3,23 @@
   <channel>
     <title>Tools on aonemd</title>
     <link>https://aonemd.github.io/categories/tools/</link>
-    <description>Recent content in Tools on aonemd</description>
+    <description>Recent content in Tools on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My Desktop System Tools</title>
-      <link>https://aonemd.github.io/posts/my-desktop-system-tools/</link>
-      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/my-desktop-system-tools/</guid>
-      <description>In this post, I will go over how I setup my desktop system for programming and general media usage. Please note that this setup is heavily keyboard driven since I rarely use the touchpad or the mouse except maybe for web browsing or graphics software.
-Machine My main machine is a 2017 Thinkpad X1 Carbon. I like it for it&amp;rsquo;s small size, light weight, and Linux support. It is mainly a programming machine for me.</description>
-    </item>
     
-    <item>
-      <title>Handy Keymaps in Vim</title>
-      <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
-      <description>In my first two posts in this Vim series, I talked about finding files in Vim and having a minimal Vim setup. In this post I&amp;rsquo;m going to go over some useful keymaps and functions you can use in Vim to boost your text editing abilities and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include external plugins except for section #2 which will be about generating tags (I couldn&amp;rsquo;t leave this part without covering it).</description>
-    </item>
     
-    <item>
-      <title>Minimal Vim</title>
-      <link>https://aonemd.github.io/posts/minimal-vim/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
-      <description>In my previous blog post, I wrote about searching files in Vim. In the next five sections, I will go over creating a minimal Vim setup with a few dependencies. Although minimal does not necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast as possible.
-General Settings There are a few must-have settings that are necessary for modern text editing. Actually, while writing this blog post, I revisited my .</description>
-    </item>
     
-    <item>
-      <title>Finding Things in Vim</title>
-      <link>https://aonemd.github.io/posts/finding-things-in-vim/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/finding-things-in-vim/</guid>
-      <description>Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slow sometimes. In this post, I will go over different search tools and demonstrate how I replaced two different plugins with only a single plugin that rules them all.
-Finding Files by Content To search files, Vim has a :vimgrep command that finds files that contain a certain pattern.</description>
-    </item>
     
-    <item>
-      <title>How I Take Notes</title>
-      <link>https://aonemd.github.io/posts/how-i-take-notes/</link>
-      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/how-i-take-notes/</guid>
-      <description>I always advice every programmer to take notes of their work all the time. Taking notes has throughout the years become so indispensable for me. Instead of searching for something every time I forget it, I go back to my notes. It has also become helpful when I need to study for interviews. I also use those notes as a journal to keep and organize my thoughts when I&amp;rsquo;m working on a new feature or fixing a bug.</description>
-    </item>
     
-    <item>
-      <title>The Dotfiles</title>
-      <link>https://aonemd.github.io/posts/the-dotfiles/</link>
-      <pubDate>Wed, 06 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/the-dotfiles/</guid>
-      <description>One of the three great virtues of a programmer is laziness and it&amp;rsquo;s actually culturally acceptable that programmers are lazy by nature (not judging). Programmers write software to replace mundane and repetitive tasks and let their computers work for them instead, and that&amp;rsquo;s why, programmers have ever since created so many frameworks [aframeworkeveryday.js], libraries, and even practices only to avoid repeating work (or doing it altogether).
-And in this realm of eternal laziness, programmers make backups of their system settings and coding environment, and write scripts to bootstrap and link their configuration files so they can easily setup and share them on other machines.</description>
-    </item>
     
-    <item>
-      <title>And a Whale Said Let There Be Docker</title>
-      <link>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</link>
-      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</guid>
-      <description>Every time I had to work on a new machine or I wanted to try a new technology, I used to install a lot of packages and libraries to prepare my development environment. I always struggled to manage dependencies and different versions of packages. That mostly worked for me but I had to go over this hustle everytime. Besides, after some time the machine I was working on used to get a bit slower.</description>
-    </item>
     
   </channel>
 </rss>

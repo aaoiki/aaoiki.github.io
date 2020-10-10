@@ -3,260 +3,1344 @@
   <channel>
     <title>aonemd</title>
     <link>https://aonemd.github.io/</link>
-    <description>Recent content on aonemd</description>
+    <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My Desktop System Tools</title>
-      <link>https://aonemd.github.io/posts/my-desktop-system-tools/</link>
-      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/my-desktop-system-tools/</guid>
-      <description>In this post, I will go over how I setup my desktop system for programming and general media usage. Please note that this setup is heavily keyboard driven since I rarely use the touchpad or the mouse except maybe for web browsing or graphics software.
-Machine My main machine is a 2017 Thinkpad X1 Carbon. I like it for it&amp;rsquo;s small size, light weight, and Linux support. It is mainly a programming machine for me.</description>
-    </item>
-    
-    <item>
-      <title>Love and Fear</title>
-      <link>https://aonemd.github.io/posts/love-and-fear/</link>
-      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      <item>
+        <title>My Desktop System Tools</title>
+        <link>https://aonemd.github.io/posts/my-desktop-system-tools/</link>
+        <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/my-desktop-system-tools/</guid>
+        <description>&lt;p&gt;In this post, I will go over how I setup my desktop system for programming and
+general media usage. Please note that this setup is heavily keyboard driven
+since I rarely use the touchpad or the mouse except maybe for web browsing or
+graphics software.&lt;/p&gt;
+&lt;h3 id=&#34;machine&#34;&gt;Machine&lt;/h3&gt;
+&lt;p&gt;My main machine is a 2017 Thinkpad X1 Carbon. I like it for it&amp;rsquo;s small size,
+light weight, and Linux support. It is mainly a programming machine for me. It
+doesn&amp;rsquo;t contain a dedicated graphics card so it has low power consumption and
+zero issues with Linux in that regard (no fan noises). Although, I may have
+some issues with the quality control of the machine.&lt;/p&gt;
+&lt;h3 id=&#34;operating-system&#34;&gt;Operating System&lt;/h3&gt;
+&lt;p&gt;My operating system for years has been exclusively GNU/Linux (to the point that
+now I get confused if I tried to use a Windows 10 machine). I have used and
+tried many many distributions of Linux be it Debian based, SUSE based, Red Hat
+based, and finally Arch Linux based systems. I have had my fair share of distro
+hopping along the years. However, Arch Linux has been on my machine for the
+longest time without a reinstall compared to other systems. Although known as a
+rolling release system, Arch Linux has been very stable on my machine with
+almost zero issues even though I don&amp;rsquo;t do system updates on a regular basis (I
+update the system whenever I remember or when I can afford to restart my
+machine). The benefit of using Arch Linux is that it is bare bones so I can
+customize it however I want. Also, the benefit of always having the most
+updated software is a great feature.&lt;/p&gt;
+&lt;p&gt;I wrote a comprehensive guide for installing Arch Linux on
+&lt;a href=&#34;https://gist.github.com/aonemd/96fd9bf2e42df4869a099f433c074907&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;desktop-environment&#34;&gt;Desktop Environment&lt;/h3&gt;
+&lt;p&gt;The Linux world and the free software world in general have a great variety in
+the available tools and software. This includes the desktop environments.  I
+have tried many desktop environments as well and finally got to the point that
+no desktop environment is the best desktop environment. Well, that&amp;rsquo;s not
+totally correct. A desktop environment is a nothing but a bunch of tools
+bundled and installed together. These tools include things like the graphical
+use interface with a tool bar and a system tray, an app finder, a window
+manager, a file manager, notification daemon, a login session manager, and so
+many other tools for various tasks. The issue here is that each desktop
+environment installs so many packages that are probably not at all needed by
+everyone. For me, I like to use certain tools that may render desktop
+environment default installed tools redundant.&lt;/p&gt;
+&lt;p&gt;This is the reason I turned into using minimal tools to manage my desktop and
+thus, creating my own desktop environment (sort of).&lt;/p&gt;
+&lt;p&gt;For starters, my graphical user interface is rendered and managed by the X11
+windowing system. Although,
+&lt;a href=&#39;https://wayland.freedesktop.org/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;Wayland&lt;/em&gt;&lt;/a&gt;
+popularity is rising, most of the current Linux GUI software is compatible with
+the X protocol.&lt;/p&gt;
+&lt;p&gt;To manage my windows, I use a tiling window manager; one that tiles the windows
+next to each other by default instead of stacking them on top of each other.
+There are many window managers that operate differently. The most popular
+window managers are
+&lt;a href=&#39;https://i3wm.org/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;i3wm&lt;/em&gt;&lt;/a&gt;,
+&lt;a href=&#39;https://awesomewm.org/index.html&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;Awesome&lt;/em&gt;&lt;/a&gt;, and
+&lt;a href=&#39;https://xmonad.org/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;XMonad&lt;/em&gt;&lt;/a&gt;. I suggest starting
+out with &lt;em&gt;i3wm&lt;/em&gt; and experimenting from there.  My window manager of choice is
+&lt;a href=&#39;https://dwm.suckless.org/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;dwm&lt;/em&gt;&lt;/a&gt;.
+I chose &lt;em&gt;dwm&lt;/em&gt; mainly because it&amp;rsquo;s so minimal and its config file is written in
+C instead of a special DSL. &lt;em&gt;dwm&lt;/em&gt; is a part of a group of tools known as the
+&lt;a href=&#39;https://suckless.org/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;suckless&lt;/em&gt;&lt;/a&gt; tools.&lt;/p&gt;
+&lt;p&gt;Since &lt;em&gt;dwm&lt;/em&gt; is minimal, it doesn&amp;rsquo;t come with a tool bar by default. The user
+needs to write their own bar. I see most users write an infinite loop in bash
+and output the data they need into the bar. However, I don&amp;rsquo;t think this is an
+efficient approach. &lt;a href=&#34;http://github.com/aonemd/onpar&#34;&gt;I wrote my own bar in Go&lt;/a&gt;
+that schedules each section of the bar to run concurrently. It&amp;rsquo;s been running
+on my system for years and I barely feel it running.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/wPGoFWA.png&#34; alt=&#34;My Desktop&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;terminal-emulator&#34;&gt;Terminal Emulator&lt;/h3&gt;
+&lt;p&gt;Again and again, the Linux world enjoys a great variety of available software.
+For terminal emulators, my choice has been the
+&lt;a href=&#39;https://st.suckless.org/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;st&lt;/em&gt;&lt;/a&gt;
+terminal. The &lt;em&gt;st&lt;/em&gt; terminal emulator is also a
+part of the suckless tools and is very minimal and light.  It&amp;rsquo;s configured in C
+as well. A more extremely fast, full-featured terminal emulator I&amp;rsquo;d recommend
+is &lt;a href=&#39;https://sw.kovidgoyal.net/kitty/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;kitty&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;text-editor&#34;&gt;Text Editor&lt;/h3&gt;
+&lt;p&gt;For text editing, I use Vim exclusively. Although, I have been fascinated by
+the capabilities of Visual Studio Code recently, I always go for Vim for its
+minimal text editing workflow and the ability to run it inside a terminal
+emulator session so it&amp;rsquo;s usable everywhere, be it the desktop or the server.  I
+have written &lt;a href=&#34;https://aonemd.github.io/categories#vim&#34;&gt;a small series of posts&lt;/a&gt; about configuring Vim.&lt;/p&gt;
+&lt;h3 id=&#34;file-manager&#34;&gt;File manager&lt;/h3&gt;
+&lt;p&gt;Since I started with a keyboard driven setup, my file manager should be
+keyboard driven as well.  There are many good CLI file managers. I have been
+using
+&lt;a href=&#39;https://github.com/ranger/ranger&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;ranger&lt;/em&gt;&lt;/a&gt; for a long time.
+However, I recently discovered &lt;a href=&#39;https://github.com/jarun/nnn&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;nnn&lt;/em&gt;&lt;/a&gt;
+which is faster (written in C), minimal, and more modular. I have to say that I
+cheat sometimes and use &lt;em&gt;Thunar&lt;/em&gt; (mainly to manage external devices such as USB
+sticks and mobile devices).&lt;/p&gt;
+&lt;h3 id=&#34;media-software&#34;&gt;Media Software&lt;/h3&gt;
+&lt;p&gt;My media software usage is very light. I only have
+&lt;a href=&#39;https://www.videolan.org/vlc/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;VLC&lt;/em&gt;&lt;/a&gt; for video and
+&lt;a href=&#39;https://cmus.github.io/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;cmus&lt;/em&gt;&lt;/a&gt; for music. Some people use
+&lt;a href=&#39;https://mpv.io/&#39; target=&#39;_blank&#39;&gt;&lt;em&gt;MPV&lt;/em&gt;&lt;/a&gt; which, to me, looks like a
+great option but I have yet to invest some time using it to make the final
+decision (I will probably update this post with my findings).&lt;/p&gt;
+&lt;h3 id=&#34;final-note&#34;&gt;Final Note&lt;/h3&gt;
+&lt;p&gt;I advise you to experiment and evaluate different tools and try to customize
+your system to your liking. I understand that the great variety of available
+tools can lead to some kind of choice overload bias (more options, more
+difficult time to choose), however; just starting somewhere (even starting out
+with popular tools) can lead to better evaluation and better decision making.&lt;/p&gt;
+&lt;p&gt;Finally, if you want some inspiration, you can take a look at &lt;a href=&#34;https://github.com/aonemd/aaku&#34;&gt;my configuration
+files on GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/love-and-fear/</guid>
-      <description>I remember once, in crossing the Atlantic, to have gone upon the deck of the ship at midnight, when a dense black cloud enveloped the sky, and the great deep was roaring madly under the lashes of demoniac winds. My feeling was not of danger or fear (which is a base surrender of the immortal soul), but of utter desolation and loneliness; a little speck of life shut in by a tremendous darkness.</description>
-    </item>
-    
-    <item>
-      <title>Another Brick in the Wall</title>
-      <link>https://aonemd.github.io/posts/another-brick-in-the-wall/</link>
-      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      <item>
+        <title>Love and Fear</title>
+        <link>https://aonemd.github.io/posts/love-and-fear/</link>
+        <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/love-and-fear/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;I remember once, in crossing the Atlantic, to have gone upon the deck of the
+ship at midnight, when a dense black cloud enveloped the sky, and the great
+deep was roaring madly under the lashes of demoniac winds. My feeling was not
+of danger or fear (which is a base surrender of the immortal soul), but of
+utter desolation and loneliness; a little speck of life shut in by a tremendous
+darkness.  When I was young, I believed the same nonsense that a lot of people
+believe about happiness - that it comes from the flashy veneer of the American
+dream: money, status, and power. But then I grew up (unlike too many other
+people, who only grow older) and I began to see that these things often
+destroyed happiness. I learned that happiness only comes from inner qualities,
+such as courage, altruism, and optimism. Happiness comes from the self. But
+where is the self? Who is the self? Who are you? If you don&amp;rsquo;t know, you&amp;rsquo;ll
+never be happy, because you&amp;rsquo;ll never be able to connect with the inner core
+qualities that make happiness possible. You&amp;rsquo;ll just travel through life in
+circles, always going, always intent - never arriving, never content. You
+should, in fact, be able to describe exactly who you are, right now, in the
+proverbial 25 words or less.  And yet, there is a solitude, which each and
+every one of us has always carried with him, more inaccessible than the
+ice-cold mountains, more profound than the midnight sea; the solitude of self.
+Our inner being, which we call ourself, no eye nor touch of man or angel has
+ever pierced. Such is individual life. Who, I ask you, can take, dare take, on
+himself the rights, the duties, the responsibilities of another human soul?&amp;hellip;
+&amp;hellip;if we&amp;rsquo;re ever going to be truly happy&amp;hellip;we need to be willing to charge
+headlong into the inferno of our most horrific fears - eyes open, intellect and
+spirit at the ready - even as our survival instincts are screaming, &amp;lsquo;Run! Run!
+Get out!&amp;rsquo; That takes courage, and that&amp;rsquo;s why courage is one of the
+prerequisites for happiness. Courage, they say, is not the lack of fear, but
+the ability to take action in spite of it. But where does that ability come
+from? What power grants the strength to overcome the sick, shaky feeling of
+fear? Only one power is that strong: love. In the ultimate analysis, human
+beings have only two essential primal feelings: fear and love. Fear impels us
+to survive, and love enables us to thrive. This complementary pair of feelings
+has been the driving force of human history. Fear is the product of the
+reptilian brain, hardwired into every fiber of our being, and love is the
+product of the neocortical higher brain, where spirit and intellect reside.
+Thus, the dance of the spirit and reptile - the shifting balance between the
+neocortex and the reptilian brain - is the dance of love and fear. For you to
+be happy, love must lead this dance.  Nature loves courage. You make the
+commitment and nature will respond to that commitment by removing impossible
+obstacles. Dream the impossible dream and the world will not grind you under,
+it will lift you up. This is the trick. This is what all these teachers and
+philosophers who really counted, who really touched the alchemical gold, this
+is what they understood. This is the shamanic dance in the waterfall. This is
+how magic is done. By hurling yourself into the abyss and discovering it&amp;rsquo;s a
+feather bed.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This quote is not mine. I have read it a while ago in a YouTube comment and I
+knew I had to keep it in my notes for difficult times. Now I want to share with
+you. I couldn&amp;rsquo;t trace the origin of the quote so all credits are due to the
+original writer/author.&lt;/p&gt;
+&lt;p&gt;In search for a purpose, we often direct our efforts into materialistic goals.
+However, materialistic objects do and will get old and dull. What doesn&amp;rsquo;t get
+old though, is responsibility. This responsibility, however; is never easy to
+take on. Thus, in order to face the truth of oneself and to take on
+responsibility, one needs courage; the courage to say what they mean, to do
+what they believe in, to ask for and get what they want, and to live up to
+their potential and up to their values.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t have much to say after this so I will just end the post with this
+quote:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Truth and responsibility is the secret to a meaningful life, and without the
+meaningful life, then all you have is suffering and nihilism and despair and
+self-contempt.
+&lt;cite&gt;Dr Jordan Peterson&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/another-brick-in-the-wall/</guid>
-      <description>This post has been in my drafts since the beginning of 2016. I wanted to postpone releasing it until I have the full view. And now that I have just received the results of my last course at university, I think it&amp;rsquo;s time to finally publish this post. Since this comes from my own experience, I cannot remain objective in this post. Also, the first two drafts of this post has nothing to do with its current form.</description>
-    </item>
-    
-    <item>
-      <title>Handy Keymaps in Vim</title>
-      <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <item>
+        <title>Another Brick in the Wall</title>
+        <link>https://aonemd.github.io/posts/another-brick-in-the-wall/</link>
+        <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/another-brick-in-the-wall/</guid>
+        <description>&lt;p&gt;This post has been in my drafts since the beginning of 2016. I wanted to
+postpone releasing it until I have the full view. And now that I have just
+received the results of my last course at university, I think it&amp;rsquo;s time to
+finally publish this post. Since this comes from my own experience, I cannot
+remain objective in this post. Also, the first two drafts of this post has
+nothing to do with its current form.&lt;/p&gt;
+&lt;p&gt;Okay, here&amp;rsquo;s the short story: I got into university for a computer engineering
+degree in 2012, hated every living second of it, decided to focus on
+self-learning instead, got myself a few positions as a software engineer,
+neglected my studies, decided to finish university anyway, and finally I
+graduated!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/another_brick_in_the_wall-plan.png&#34; alt=&#34;My 5-year plan&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You and I might as well ask why I would go back and finish university after I
+got an actual paying job. I went as far as leaving my job at the time in order
+to focus on my studies. Well, I believe I had two reasons. First of all, I
+wanted to finish what I started.  The second reason is, specially coming from a
+third-world nation, I wanted to have that official piece of paper that denotes
+I know stuff although, realistically, I might know nothing, but hey, it&amp;rsquo;s the
+state of the world we live in!&lt;/p&gt;
+&lt;p&gt;Now enough about me, let&amp;rsquo;s talk about computer science education. It&amp;rsquo;s widely
+debated over the internet whether to go to university for computer science or
+to go to a 6-month boot camp that teaches web development basics. Well, in my
+opinion, neither of them alone teaches you enough to get a software
+engineering job nowadays.&lt;/p&gt;
+&lt;p&gt;One might say that a computer science degree will teach you the theoretical
+fundamentals and the required time management skills, or will give you the
+credibility and the opportunity for networking with peers. This all may be
+true, but there are caveats.&lt;/p&gt;
+&lt;p&gt;My biggest issue with formal computer science education is having to follow a
+predefined set of courses blindly. The issue here is that the student does not
+get to see the full picture of the scientific material and only gets to see a
+very narrow scope through the teacher&amp;rsquo;s vision because, of course, it&amp;rsquo;s all
+part of a course that should be concluded in 3 months maximum. Now, take that
+one course and multiply it by 5 or 6 courses a semester in different topics and
+you get yourself scrapes of knowledge from here and there without understanding
+why you&amp;rsquo;re learning any of that.&lt;/p&gt;
+&lt;p&gt;The formal computer science education system does not take into consideration
+that people may have different interests. Specially, in the field of computer
+science, there are many fields that have their practical applications and their
+demanding job markets. Another important aspect that is often neglected in
+formal education in general, is that people learn differently. The formal
+education system aims at producing graduates with similar educational
+backgrounds but with the same mentality which, in my humble opinion, is not
+right.&lt;/p&gt;
+&lt;p&gt;The last issue I&amp;rsquo;m going to discuss in this post is the scientific material.
+Well, to put it simply, the scientific material often felt dry or flat and out
+of touch with reality. Being fed up during my recent courses, I started asking
+questions. A funny incident took place in one of my compiler lectures. I asked
+my professor (whom I respect greatly. Seriously, The professor is one of the
+greatest teachers I&amp;rsquo;ve ever had) about a method/algorithm that we were being
+taught in the course. I asked about if I looked into the code of a real
+compiler, could I find the implementation of such algorithm. The professor
+clearly said: &amp;ldquo;No&amp;rdquo;. I then asked why. The professor said: &amp;ldquo;because I invented
+it!&amp;rdquo; I can say with almost certainty that most of the courses I took followed
+that same pattern.&lt;/p&gt;
+&lt;p&gt;In my opinion, those &amp;ldquo;caveats&amp;rdquo;, are reflected on the job market of software
+engineering which is notorious for the need of constant self-learnings.&lt;/p&gt;
+&lt;p&gt;I would like to conclude this post with saying that I do not encourage nor
+discourage a certain path towards software engineering. I believe every
+individual has their different case. For me, the important part in any path you
+choose is having the patience and persistence to continue learning and going
+forward.&lt;/p&gt;
+&lt;h3 id=&#34;articles-i-enjoyed-reading&#34;&gt;Articles I enjoyed reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://tobi.lutke.com/blogs/news/11280301-the-apprentice-programmer&#34;&gt;The Apprentice Programmer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://joequery.me/code/the-self-hating-web-developer/&#34;&gt;The self-hating Web Developer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codewithoutrules.com/2017/04/06/you-dont-need-a-cs-degree/&#34;&gt;You don’t need a Computer Science degree&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
-      <description>In my first two posts in this Vim series, I talked about finding files in Vim and having a minimal Vim setup. In this post I&amp;rsquo;m going to go over some useful keymaps and functions you can use in Vim to boost your text editing abilities and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include external plugins except for section #2 which will be about generating tags (I couldn&amp;rsquo;t leave this part without covering it).</description>
-    </item>
-    
-    <item>
-      <title>Action Cable: Rails 5 Most Anticipated Feature</title>
-      <link>https://aonemd.github.io/posts/intro-to-actioncable/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      <item>
+        <title>Handy Keymaps in Vim</title>
+        <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
+        <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
+        <description>&lt;p&gt;In my first two posts in this Vim series, I talked about &lt;a href=&#34;https://aonemd.github.io/blog/finding-things-in-vim&#34;&gt;finding files in
+Vim&lt;/a&gt; and &lt;a href=&#34;https://aonemd.github.io/blog/minimal-vim&#34;&gt;having a minimal Vim
+setup&lt;/a&gt;.  In this post I&amp;rsquo;m going to go over some useful
+keymaps and functions you can use in Vim to boost your text editing abilities
+and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include
+external plugins except for section #2 which will be about generating tags (I
+couldn&amp;rsquo;t leave this part without covering it).&lt;/p&gt;
+&lt;h3 id=&#34;essentials&#34;&gt;Essentials&lt;/h3&gt;
+&lt;p&gt;First and foremost, the leader key is a special key in Vim that with other
+combinations of keys can be mapped to perform certain functions. By default,
+Vim maps the leader to the backslash key. I see many Vimmers (yes, this is a
+word now) set it to the comma key. I, however, like to set it to the space bar;
+it&amp;rsquo;s a big key in the middle of the keyboard so it&amp;rsquo;s really easy to find it and
+use it with other key combinations:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;The Leader&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mapleader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;\&amp;lt;Space&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that we&amp;rsquo;ve mapped the leader key, we can start mapping other keys to
+functions.&lt;/p&gt;
+&lt;p&gt;The first function in our list will be the save or the write buffer function.
+Instead of using the shift and the semi-colon keys to generate a colon, typing
+w, and then hitting Enter to save the current buffer, I found out that hitting
+the space bar with the letter w is faster and easier to use specially for a
+function that is used many times in the course of writing. This is just two key
+presses instead of four:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;save current buffer&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The second function is for replacing the current-under-cursor word with another
+pattern/word. Simply, it copies the word under cursor and inserts it into a
+substitution command call. You only need to type the replacement pattern and
+press the Enter key to actually replace the text:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;replace the word under cursor&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;* :%&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;sr&#34;&gt;/\&amp;lt;&amp;lt;c-r&amp;gt;&amp;lt;c-w&amp;gt;\&amp;gt;/&lt;/span&gt;/&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next is a function that is found in many modern text editors, that is, auto
+closing tags. Although sometimes it can get annoying when you don&amp;rsquo;t need it,
+it&amp;rsquo;s handy most of the time when writing function definitions, if statements,
+and other control structures in most popular languages. Each of the following
+keymaps simply inserts a closing tag and puts the cursor in between the opening
+and the closing tags:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;autoclose tags&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; { {}&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; [ []&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;inoremap&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;&amp;#34;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Left&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I feel like this section got really long so here&amp;rsquo;s one last function. To move a
+line up or down in Vim, normally you&amp;rsquo;d delete it and paste it into the desired
+target line. These keymaps make it possible to move lines up or down using the
+leader key + k or j (for up and down):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;move lines around&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;-2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;==&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;+&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;==&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;-2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gv&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;xnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&amp;#39;&lt;span class=&#34;p&#34;&gt;&amp;gt;+&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gv&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;generating-tags&#34;&gt;Generating Tags&lt;/h3&gt;
+&lt;p&gt;As I mentioned before, this is the only section that includes an external
+dependency. &lt;a target=&#34;_blank&#34; href=&#34;https://ctags.io/&#34;&gt;&lt;em&gt;Universal Ctags&lt;/em&gt;&lt;/a&gt; is a tool
+that analyzes the codebase and generates an index file of tags. This index of
+tags can be used to jump between the definitions of functions, classes, and
+other identifiers while navigating the code. You can jump to a tag definition
+using the &lt;code&gt;:tag IDENTIFIER&lt;/code&gt; command in Vim.&lt;/p&gt;
+&lt;p&gt;Since I&amp;rsquo;m trying not to switch context and leave the text editor as much as
+possible, I made a keymap that generates the list of tags for me without
+leaving Vim. The next block of code tells Vim where to look for tag definitions
+by setting the &lt;code&gt;set tags&lt;/code&gt; entry and maps &lt;code&gt;leader + ct&lt;/code&gt; to generate the tag
+list:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;+=&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;git&lt;/span&gt;/&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ct&lt;/span&gt; :&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ctags&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Rf&lt;/span&gt; .&lt;span class=&#34;nx&#34;&gt;git&lt;/span&gt;/&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;relative&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;extra&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exclude&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;git&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pkg&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;languages&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also simplify the command above by moving the flags to a &lt;code&gt;~/.ctags&lt;/code&gt;
+file (each flag alone on a single line) and only having this in your .vimrc:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ct&lt;/span&gt; :&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ctags&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Rf&lt;/span&gt; .&lt;span class=&#34;nx&#34;&gt;git&lt;/span&gt;/&lt;span class=&#34;nx&#34;&gt;tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;manipulating-buffers&#34;&gt;Manipulating Buffers&lt;/h3&gt;
+&lt;p&gt;Vim has this notion of buffers. Simply put, &lt;a target=&#34;_blank&#34; href=&#34;https://sanctum.geek.nz/arabesque/buffers-windows-tabs/&#34;&gt;a buffer is an open file&lt;/a&gt;.
+A window in Vim is a way to view an open buffer.  A tab, on the other hand, is
+a collection of windows. To save you (and myself) the pain, use buffers and
+treat them the way you treat tabs in other text editors. You can read more
+about buffers versus tabs and the best way to use them
+&lt;a target=&#34;_blank&#34; href=&#34;https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Anyway, I have a few keymaps that make it easier to manipulate and deal with
+buffers. For example, to open and close buffers, I have in my .vimrc this block
+of code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;create a new buffer (save it with :w ./path/to/FILENAME)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;enew&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;close current buffer&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;bq&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;bp&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;bar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;bd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; #&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;close all open buffers&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ba&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;bufdo&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;bd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The following is for switching between open buffers:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;Tab to switch to next open buffer&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Tab&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;bnext&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;Shift + Tab to switch to previous open buffer&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Tab&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;bprevious&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;leader key twice to cycle between last two open buffers&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;^&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can install
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/ap/vim-buftabline&#34;&gt;vim-buftabline&lt;/a&gt; to
+visualize your open buffers and see how they are being switched by the keymaps
+above.&lt;/p&gt;
+&lt;h3 id=&#34;splits-splits-splits&#34;&gt;Splits, Splits, Splits!&lt;/h3&gt;
+&lt;p&gt;Window splits are such an important element of my text editing since sometimes
+I need to keep track on multiple files at the same time. Vim provides some
+shortcuts for creating and moving around splits, however; they can be a little
+unintuitive for quick navigation between splits.&lt;/p&gt;
+&lt;p&gt;To fix this, I have had a small function in my Vim configuration for a long
+time that makes my life a lot easier. The function is mapped to a set of
+intuitive combination of keys, namely, the control key + any of the navigation
+keys (h, j, k, l).&lt;/p&gt;
+&lt;p&gt;What the function does is that it checks first if a split already exists in the
+direction you want to move to. If it does, the function simply moves the focus
+to that split. If there isn&amp;rsquo;t a split already, the function creates a new split
+and moves the focus to that split. This function I took from someone some long
+time ago. I can&amp;rsquo;t recall where I got it from, but all the credit is due to the
+original author.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;move to the split in the direction shown, or create a new split&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;silent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;WinMove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;h&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;silent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;WinMove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;j&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;silent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;WinMove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;k&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;silent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;WinMove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;l&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;WinMove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;curwin&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;winnr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;exec&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;wincmd &amp;#34;&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;curwin&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;winnr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;match&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;[jk]&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;wincmd&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;wincmd&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;endif&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;exec&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;wincmd &amp;#34;&lt;/span&gt;.&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;endif&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endfunction&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Vim is a powerful text editor with great capabilities. You can map multiple
+keys to perform different functionalities in Vim that makes your text editing
+easier.&lt;/p&gt;
+&lt;p&gt;All the code in this post is taken from my .vimrc file in my dotfiles
+repository on GitHub. You can check it out
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/intro-to-actioncable/</guid>
-      <description>Action Cable is a simple framework that introduces WebSocket support to Rails apps. It provides a server-side as well as a client-side integration with WebSocket&amp;hellip;
-This post was originally posted on Robusta Studio&amp;rsquo;s blog on 6 Septemper, 2016. To read the full article, please visit this link.</description>
-    </item>
-    
-    <item>
-      <title>Minimal Vim</title>
-      <link>https://aonemd.github.io/posts/minimal-vim/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      <item>
+        <title>Action Cable: Rails 5 Most Anticipated Feature</title>
+        <link>https://aonemd.github.io/posts/intro-to-actioncable/</link>
+        <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/intro-to-actioncable/</guid>
+        <description>&lt;p&gt;Action Cable is a simple framework that introduces WebSocket support to
+Rails apps. It provides a server-side as well as a client-side integration
+with WebSocket&amp;hellip;&lt;/p&gt;
+&lt;p&gt;This post was originally posted on &lt;a target=&#34;_blank&#34; href=&#34;https://robustastudio.com&#34;&gt;Robusta Studio&lt;/a&gt;&amp;rsquo;s
+blog on 6 Septemper, 2016. To read the full article, please visit
+&lt;a href=&#34;https://blog.robustastudio.com/development-utilities/action-cable-rails-5-anticipated-feature/&#34;&gt;this link&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
-      <description>In my previous blog post, I wrote about searching files in Vim. In the next five sections, I will go over creating a minimal Vim setup with a few dependencies. Although minimal does not necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast as possible.
-General Settings There are a few must-have settings that are necessary for modern text editing. Actually, while writing this blog post, I revisited my .</description>
-    </item>
-    
-    <item>
-      <title>Finding Things in Vim</title>
-      <link>https://aonemd.github.io/posts/finding-things-in-vim/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+      <item>
+        <title>Minimal Vim</title>
+        <link>https://aonemd.github.io/posts/minimal-vim/</link>
+        <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
+        <description>&lt;p&gt;In my previous &lt;a href=&#34;https://aonemd.github.io/blog/finding-things-in-vim&#34;&gt;blog post&lt;/a&gt;, I wrote about
+searching files in Vim. In the next five sections, I will go over creating a
+minimal Vim setup with a few dependencies. Although minimal does not
+necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast
+as possible.&lt;/p&gt;
+&lt;h3 id=&#34;general-settings&#34;&gt;General Settings&lt;/h3&gt;
+&lt;p&gt;There are a few must-have settings that are necessary for modern text editing.
+Actually, while writing this blog post, I revisited my .vimrc file and removed
+some of the unneeded settings. I&amp;rsquo;m currently experimenting Vim without all the
+options I think I don&amp;rsquo;t need right now.  I&amp;rsquo;m also trying to comment my settings
+as much as possible.&lt;/p&gt;
+&lt;p&gt;There are many settings frameworks or distributions such as
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/tpope/vim-sensible&#34;&gt;vim-sensible&lt;/a&gt; or
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/SpaceVim/SpaceVim&#34;&gt;SpaceVim&lt;/a&gt; (although
+they are completely different kinds of frameworks). Personally, I don&amp;rsquo;t like to
+use these frameworks as a matter of fact since the need and the use case may
+differ from one person to another and I prefer to tweak my configuration to my
+own use case. Anyway, As a general rule I like to abide by, I tend to not put
+any settings that I don&amp;rsquo;t understand in my .vimrc.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Try not to put settings you don&amp;rsquo;t understand in your .vimrc&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In the next block of code, there are some [somewhat opinionated] commented
+settings that you may need to have in your configuration file (I recommend
+reading Vim&amp;rsquo;s manual for each entry before using it):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-viml&#34; data-lang=&#34;viml&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;more characters will be sent to the screen for redrawing&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ttyfast&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;time waited for key press(es) to complete. It makes for a faster key response&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ttimeout&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ttimeoutlen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;50&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;make backspace behave properly in insert mode&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;backspace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;indent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;eol&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;display incomplete commands&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;showcmd&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;a better menu in command mode&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;wildmenu&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;wildmode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;longest&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;full&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;full&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;hide buffers instead of closing them even if they contain unwritten changes&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hidden&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;disable soft wrap for lines&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nowrap&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;always display the status line&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;laststatus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;display line numbers on the left side&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;highlight current line&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cursorline&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;display text width column&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;colorcolumn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;81&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;new splits will be at the bottom or to the right side of the screen&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;splitbelow&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;splitright&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;always set autoindenting on&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;autoindent&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;incremental search&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;incsearch&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;highlight search&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hlsearch&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;searches are case insensitive unless they contain at least one capital letter&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ignorecase&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;smartcase&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;plugins&#34;&gt;Plugins&lt;/h3&gt;
+&lt;p&gt;Even though Vim is a powerful text editor, it cannot survive the competition
+with other modern text editors and IDEs without plugins. Luckily, Vim is
+powerful enough to be
+&lt;a target=&#34;_blank&#34; href=&#34;https://www.youtube.com/watch?v=ES1L2SPgIDI&#34;&gt;extensible&lt;/a&gt; in
+many ways. This enabled the Vim plugin ecosystem to thrive and grow. To manage
+plugins, I use
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;vim-plug&lt;/a&gt; which is
+easier to maintain (since it&amp;rsquo;s only a single file), runs plugin updates
+asynchronously, and it&amp;rsquo;s faster to load compared to other plugin managers.&lt;/p&gt;
+&lt;p&gt;Regardless of the plugin manager, I always try to avoid using plugins as much
+as possible. This is mainly because more plugins means more startup time for
+Vim. More plugins also means more dependencies to manage.&lt;/p&gt;
+&lt;p&gt;Using
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/hyiltiz/vim-plugins-profile&#34;&gt;vim-plugins-profile&lt;/a&gt;,
+the next screenshot shows the top 10 plugins that are taking most of Vim&amp;rsquo;s
+startup time for me:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/minimal_vim-profile.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/minimal_vim-profile.png&#34; alt=&#34;Vim plugins profiled&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;After profiling Vim&amp;rsquo;s startup time, I replaced
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/tomtom/tcomment_vim&#34;&gt;tcomment_vim&lt;/a&gt; with
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/tpope/vim-commentary&#34;&gt;vim-commentary&lt;/a&gt; and
+it actually made a noticeable difference on the startup time of Vim.&lt;/p&gt;
+&lt;p&gt;By the way, Vim actually can profile its startup time and dump it to a file
+with &lt;code&gt;vim --startuptime vim.log&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;functions&#34;&gt;Functions&lt;/h3&gt;
+&lt;p&gt;Functions are also an integral part of any .vimrc file to complement the work
+of plugins. However, functions like any other pіece of code, can slow you down
+sometimes. Currently, I only have two functions in my Vim configuration file.
+One function for creating and moving between split windows and another function
+for &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/goyo.vim&#34;&gt;Goyo&lt;/a&gt;&amp;rsquo;s leave
+event.&lt;/p&gt;
+&lt;p&gt;You can profile your functions and check which part of each function that may
+slow Vim down while executing it. As I mentioned above, I only have a few
+functions in my ~/.vimrc file. So, I profiled them and got the result using
+Vim&amp;rsquo;s profile command. Here&amp;rsquo;s an example on how to profile the function
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku/blob/master/vim/vimrc#L143&#34;&gt;&lt;em&gt;WinMove(key)&lt;/em&gt;&lt;/a&gt;
+using Vim&amp;rsquo;s profile command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;nx&#34;&gt;vim&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cmd&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;profile start vimrc.profile&amp;#39;&lt;/span&gt; \&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cmd&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;profile! file ~/.vimrc&amp;#39;&lt;/span&gt; \&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;call WinMove(&amp;#39;j&amp;#39;)&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And here&amp;rsquo;s an excerpt of the profiling result:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;nx&#34;&gt;FUNCTION&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;WinMove&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;Defined&lt;/span&gt;: &lt;span class=&#34;p&#34;&gt;~&lt;/span&gt;/.&lt;span class=&#34;nx&#34;&gt;vimrc&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;line&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;181&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Called&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Total&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;:   &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;.&lt;span class=&#34;m&#34;&gt;000384&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Self&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;:   &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;.&lt;span class=&#34;m&#34;&gt;000081&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;status-line&#34;&gt;Status Line&lt;/h3&gt;
+&lt;p&gt;IMHO, the Vim community has invested a lot of time and effort to make colorful
+status lines with lots of weird symbols and many functionalities. Don&amp;rsquo;t get me
+wrong, I love the aesthetics of a beautiful, colorful status line; however, I
+kind of feel like it can be a bit distracting while writing. What I really
+think is that the status line should not get in the way of the developer; it
+should be a complementary tool not an essential one.&lt;/p&gt;
+&lt;p&gt;For me, I&amp;rsquo;ve updated my status line to have only a few functions that I really
+need while writing. It even differs from the stock status line that comes with
+Vim. Here&amp;rsquo;s how I currently configure my status line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;you need this to always display the status line&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;laststatus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;modifiedflag, charcount, filepercent, filepath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;statusline&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;%&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;%&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;\ %&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;\ %&lt;span class=&#34;nx&#34;&gt;P&lt;/span&gt;\ %&lt;span class=&#34;nx&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And this is how it looks like:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/minimal_vim-statusline.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/minimal_vim-statusline.png&#34; alt=&#34;Minimal statuline&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;file-explorer&#34;&gt;File Explorer&lt;/h3&gt;
+&lt;p&gt;I see a lot of Vim users put the plugin
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/scrooloose/nerdtree&#34;&gt;&lt;em&gt;NERDTree&lt;/em&gt;&lt;/a&gt; in their
+Vim configuration and many online tutorials and articles advice to install it.
+In fact, when I was starting with Vim, I used to have it in my .vimrc as well.
+However, after a while, I found out that Vim actually comes with a file
+explorer called &lt;em&gt;netrw&lt;/em&gt; out of the box.&lt;/p&gt;
+&lt;p&gt;To open netrw on the side (a vertical split) like NERDTree, you can run the
+command &lt;code&gt;:Vexplore&lt;/code&gt;, or &lt;code&gt;:Sexplore&lt;/code&gt; to open it in a horizontal split window. As
+with using Vim in general, the more you use it, the more you realize that you
+know nothing about it. As of writing this post, I&amp;rsquo;ve learned more features that
+I didn&amp;rsquo;t know existed in netrw. You can always learn about the commands and key
+maps of netrw using &lt;code&gt;:h netrw&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/minimal_vim-netrw.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/minimal_vim-netrw.png&#34; alt=&#34;netrw preview&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Just like NERDTree, You can manipulate files and directories (browse, execute,
+rename, delete, &amp;hellip;) from inside netrw.  Moreover, you can configure it to
+behave exactly like NERDTree. Here are the relevant settings in my .vimrc:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-viml&#34; data-lang=&#34;viml&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;netrw_banner&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;netrw_winsize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;netrw_liststyle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;netrw_localrmdir&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;rm -r&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;toggle netrw on the left side of the editor&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;Lexplore&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;My .vimrc file is now exactly 149 lines after I removed unused plugins and
+redundant settings. You can find my full .vimrc file in my
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku&#34;&gt;dotfiles](/blog/the-dotfiles) repository [on GitHub&lt;/a&gt;. Thanks for reading!&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/finding-things-in-vim/</guid>
-      <description>Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slow sometimes. In this post, I will go over different search tools and demonstrate how I replaced two different plugins with only a single plugin that rules them all.
-Finding Files by Content To search files, Vim has a :vimgrep command that finds files that contain a certain pattern.</description>
-    </item>
-    
-    <item>
-      <title>Extracting Text From Images Using Ruby</title>
-      <link>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</link>
-      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      <item>
+        <title>Finding Things in Vim</title>
+        <link>https://aonemd.github.io/posts/finding-things-in-vim/</link>
+        <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/finding-things-in-vim/</guid>
+        <description>&lt;p&gt;Vim is a very competent text editor and although it comes with tools to find
+files, these tools feel a little primitive for modern text editing and a bit
+slow sometimes. In this post, I will go over different search tools and
+demonstrate how I replaced two different plugins with only a single plugin that
+rules them all.&lt;/p&gt;
+&lt;h3 id=&#34;finding-files-by-content&#34;&gt;Finding Files by Content&lt;/h3&gt;
+&lt;p&gt;To search files, Vim has a &lt;code&gt;:vimgrep&lt;/code&gt; command that finds files that contain a
+certain pattern. It populates a quickfix list with all the matches. You can
+cycle between the matches using &lt;code&gt;:cnext&lt;/code&gt; and &lt;code&gt;:cprev&lt;/code&gt;, or open the quickfix
+list in a split window using &lt;code&gt;:copen&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s how you can find files and have the search result open in a quickfix
+list so you can scroll up and down the result using the keyboard:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vimgrep&lt;/span&gt; {&lt;span class=&#34;nx&#34;&gt;pattern&lt;/span&gt;} {&lt;span class=&#34;nx&#34;&gt;files&lt;/span&gt;} &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;copen&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Vim also has a &lt;code&gt;:grep&lt;/code&gt; command that works similarly to &lt;code&gt;:vimgrep&lt;/code&gt; but,
+according to the documentation (try &lt;code&gt;:h grep&lt;/code&gt;), it relies on the external
+&lt;code&gt;grep&lt;/code&gt; command on your system. &lt;code&gt;:vimgrep&lt;/code&gt; loads the files in memory so it might
+be slower than &lt;code&gt;:grep&lt;/code&gt;. Just like &lt;code&gt;:vimgrep&lt;/code&gt;, &lt;code&gt;:grep&lt;/code&gt; will populate a quickfix
+list and will not open a quickfix list with the results by default. Here&amp;rsquo;s how
+to use it in the command mode:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;grep&lt;/span&gt; {&lt;span class=&#34;nx&#34;&gt;pattern&lt;/span&gt;} {&lt;span class=&#34;nx&#34;&gt;files&lt;/span&gt;}&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For more convenience, and much faster search, I have been using a tool as a
+replacement for grep called &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/ggreer/the_silver_searcher&#34;&gt;&lt;em&gt;Ag&lt;/em&gt;, the silver searcher&lt;/a&gt; and a
+Vim interface for it through
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/rking/ag.vim&#34;&gt;&lt;em&gt;ag.vim&lt;/em&gt;&lt;/a&gt; (which has been
+unmaintained for a while now). &lt;em&gt;ag.vim&lt;/em&gt; opens the results in a quickfix list by
+default and you can navigate and choose which file to open using the keyboard
+just like with &lt;code&gt;:vimgrep&lt;/code&gt;. &lt;em&gt;ag.vim&lt;/em&gt;, however, adds some &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/rking/ag.vim#keyboard-shortcuts&#34;&gt;nice key maps&lt;/a&gt; for
+better navigation of the results. This is my configuration for &lt;em&gt;ag.vim&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search from the project root instead of cwd&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;ag_working_path_mode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;start a search query by pressing \&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; \  :&lt;span class=&#34;nx&#34;&gt;Ag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;space&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search for word under cursor by pressing |&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; \&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;Ag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;\b&amp;lt;C-R&amp;gt;&amp;lt;C-W&amp;gt;\b&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;cw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It&amp;rsquo;s worth noting that it&amp;rsquo;s possible to make &lt;code&gt;:grep&lt;/code&gt; use &lt;em&gt;Ag&lt;/em&gt; by default instead
+of relying on the default &lt;em&gt;grep&lt;/em&gt; program, and thus, having much faster search
+results while keeping the same interface/command that Vim provides out of the
+box:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;executable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ag&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;grepprg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ag&lt;/span&gt;\ &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nogroup&lt;/span&gt;\ &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nocolor&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endif&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;call :grep normally&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;finding-files-by-name&#34;&gt;Finding Files by Name&lt;/h3&gt;
+&lt;p&gt;For finding files by searching for their names, I&amp;rsquo;ve been using a great plugin
+called &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/ctrlpvim/ctrlp.vim&#34;&gt;&lt;em&gt;ctrlp.vim&lt;/em&gt;&lt;/a&gt;.
+It is a fuzzy file searcher written in pure vim. You only need to type
+some parts of the name of the file you&amp;rsquo;re searching for, and you&amp;rsquo;ll get back a
+list of the best matches. It can search files by file name, by current open
+buffers, by generated tags, or by line content. My setup for &lt;em&gt;ctrlp.vim&lt;/em&gt; looks
+like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;executable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ag&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;ctrlp_user_command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ag %s -l --nocolor --hidden -g &amp;#34;&amp;#34;&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;ctrlp_use_caching&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endif&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;clear ctrlp.vim key maps&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;ctrlp_map&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search project files&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;CtrlP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search project files by lines of code&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;o&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;CtrlPLine&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search project files by tags (requirs ctags to be installed)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;CtrlPTag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search all open files/buffers&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;CtrlPBuffer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;ctrlp.vim&lt;/em&gt; has served me very well for the past couple of years. However, it
+can get really slow while indexing files under large directories. For example,
+searching files in my home directory, &lt;code&gt;~/&lt;/code&gt;, renders &lt;em&gt;ctrlp.vim&lt;/em&gt; almost useless
+as it takes some time to index each file.&lt;/p&gt;
+&lt;h3 id=&#34;enter-fzf&#34;&gt;Enter fzf&lt;/h3&gt;
+&lt;p&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/fzf&#34;&gt;&lt;em&gt;fzf&lt;/em&gt;&lt;/a&gt; is a very fast
+command-line fuzzy finder written in Go. Despite its increasing popularity, I
+have tried to avoid using it for as long as possible since I like keeping my
+dependencies minimal and prefer to use pure vim plugins to having to
+install any external dependencies. However, I had to install it since it&amp;rsquo;s a
+dependency for this really cool command-line file manager,
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/mananapr/cfiles&#34;&gt;&lt;em&gt;cfiles&lt;/em&gt;&lt;/a&gt;. So I decided I&amp;rsquo;d
+give it a try anyway. I was mind blown!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/finding_files_in_vim-commit.png&#34; alt=&#34;aaku git commit&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Not only can you fuzzy search for your files in the terminal, &lt;em&gt;fzf&lt;/em&gt; also has a
+counterpart Vim plugin called
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/fzf.vim&#34;&gt;&lt;em&gt;fzf.vim&lt;/em&gt;&lt;/a&gt; which is a
+complementary interface to &lt;em&gt;fzf&lt;/em&gt; in Vim with so many awesome features.  One of
+the great features it provides is that it comes with an interface for popular
+search tools such as Ag and
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/BurntSushi/ripgrep&#34;&gt;&lt;em&gt;ripgrep&lt;/em&gt;&lt;/a&gt; and you can
+fuzzy search the search results! So now I could remove the &lt;em&gt;ag.vim&lt;/em&gt; plugin and
+replace &lt;em&gt;ctrlp.vim&lt;/em&gt; with only &lt;em&gt;fzf&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s my current setup for finding files in Vim:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search project files&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;FZF&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search project files by lines of code&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;o&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;Lines&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search project files by tags (requirs ctags to be installed)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;Tags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search all open files/buffers&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;Buffers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;start a search query by pressing \&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; \  :&lt;span class=&#34;nx&#34;&gt;Ag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;space&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;search for word under cursor by pressing |&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; \&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;Ag&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;W&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;:&lt;span class=&#34;nx&#34;&gt;cw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You need to setup fzf&amp;rsquo;s default find command by setting an env variable in your
+shell config:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FZF_DEFAULT_COMMAND&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ag -l --nogroup  --nocolor --hidden -g &amp;#34;&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The four key maps above are all on one row in the keyboard so it&amp;rsquo;s much easier
+to reach out to each of them. Besides, I set my leader to the space bar, so
+it&amp;rsquo;s even better.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;fzf.vim&lt;/em&gt; also provides more useful commands such as &lt;code&gt;:GFiles?&lt;/code&gt; and &lt;code&gt;:Commits&lt;/code&gt;
+for Git users. You can learn more about its commands
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/fzf.vim#commands&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can find my vimrc in my &lt;a href=&#34;https://aonemd.github.io/blog/the-dotfiles&#34;&gt;dotfiles&lt;/a&gt; repository
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku&#34;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</guid>
-      <description>tldr; show me the code.
-I&amp;rsquo;m a great hoarder of memes. Seriously, I have a huge folder full of memes and GIFs. I collect my memes usually whenever I&amp;rsquo;m watching a movie or a series by taking a screenshot of the scene with subtitles enabled. The issue is, the program I use to take screenshots, names each new file by the date and time the screenshot was taken. I have a 1200 screenshot folder each named by date and time.</description>
-    </item>
-    
-    <item>
-      <title>Making System Calls From Ruby</title>
-      <link>https://aonemd.github.io/posts/making-system-calls-from-ruby/</link>
-      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>Extracting Text From Images Using Ruby</title>
+        <link>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</link>
+        <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;tldr;&lt;/strong&gt; &lt;a href=&#34;#the-script&#34;&gt;show me the code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a great hoarder of memes. Seriously, I have a huge folder full of memes and
+GIFs. I collect my memes usually whenever I&amp;rsquo;m watching a movie or a series by
+taking a screenshot of the scene with subtitles enabled. The issue is, the
+program I use to take screenshots, names each new file by the date and time the
+screenshot was taken. I have a 1200 screenshot folder each named by date and
+time. So finding a certain screenshot/meme is too much a hassle.&lt;/p&gt;
+&lt;p&gt;I thus wanted a better way to go through my collection of memes. My goal was to
+rename each screenshot file to the subtitles it contains. I have, in fact, been
+procrastinating this task for a long time now and the mid-year recess was the
+perfect time to start a small project.&lt;/p&gt;
+&lt;p&gt;To read the subtitles out of my images, Google search led me to
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/tesseract-ocr/tesseract&#34;&gt;Tesseract&lt;/a&gt;.
+Tesseract is a tool that recognizes the text in images using Optical Character
+Recognition (OCR). I started first experimenting with Tesseract and its
+wrapper, &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/madmaze/pytesseract&#34;&gt;pytesseract&lt;/a&gt;
+in Python and used OpenCV for image processing and it worked perfectly right
+from the start!&lt;/p&gt;
+&lt;p&gt;I started with a small Ruby script to read my images, process, and recognize
+the text in each one of them. However, unfortunately, Ruby lacks in good
+tooling for computer vision or image processing. I couldn&amp;rsquo;t find a good OpenCV
+wrapper in Ruby except for
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/ruby-opencv/ruby-opencv&#34;&gt;ruby-opencv&lt;/a&gt;
+which is quite outdated and only supports OpenCV v2 (&lt;a target=&#34;_blank&#34; href=&#34;https://opencv.org/releases.html&#34;&gt;Version 4 of OpenCV&lt;/a&gt; is now released by
+the way).&lt;/p&gt;
+&lt;p&gt;After some tinkering with ImageMagick and its Ruby wrapper,
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/minimagick/minimagick&#34;&gt;MiniMagick&lt;/a&gt;, I
+could finally achieve the same results I got in Python. So, in the few next
+sections, I&amp;rsquo;ll demonstrate the steps the script goes through to recognize the
+subtitles in each screenshot.&lt;/p&gt;
+&lt;h2 id=&#34;the-script&#34;&gt;The Script&lt;/h2&gt;
+&lt;p&gt;Next is a simpler version of the script I actually used. The full script
+including the part where I process the output text and rename each file to the
+new name is a gist on
+&lt;a target=&#34;_blank&#34; href=&#34;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor-rb&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The first part of the script just loops through each file (a 1920x1080 PNG
+image file) in my source directory and reads it as a grayscale image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;pathname&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;open3&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;mini_magick&amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;SRC_DIR&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/path/to/src/dir&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;freeze&lt;/span&gt;
+&lt;span class=&#34;no&#34;&gt;TMP_DIR&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;/path/to/tmp/dir&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;freeze&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;Dir&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mkdir&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;TMP_DIR&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;unless&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;File&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;exists?&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;TMP_DIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;Pathname&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;SRC_DIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;children&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;src_path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;realpath&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;tmp_path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;TMP_DIR&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;basename&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;MiniMagick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Image&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;src_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;colorspace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Gray&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tmp_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s take the following screenshot as an example and feed it to the script.
+First, we load it normally:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/extracting_text_example.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/extracting_text_example.png&#34; alt=&#34;Example screenshot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;then we convert it to grayscale. This is what it looks like:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/extracting_text_example_grayscale.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/extracting_text_example_grayscale.png&#34; alt=&#34;Example screenshot grayscale&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cleaning-the-image&#34;&gt;Cleaning The Image&lt;/h3&gt;
+&lt;p&gt;The second part is where all the image processing happens. Basically, the
+script negates the image to black and white to remove all the noise. This
+improves the ability of Tesseract to read the text in the image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ...&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;Pathname&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;SRC_DIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;children&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# ...&lt;/span&gt;
+  &lt;span class=&#34;no&#34;&gt;MiniMagick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Tool&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Magick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tmp_path&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;negate&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;threshold&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;007%&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# I couldn&amp;#39;t prevent myself&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;negate&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;magick&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tmp_path&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is what image looks like after processing. You can see how almost all the
+details in the image are removed except for the vivid subtitles. This file is
+stored under the &lt;code&gt;TMP_DIR&lt;/code&gt; we defined earlier in the script. You can of course
+delete the &lt;code&gt;TMP_DIR&lt;/code&gt; safely or instrument the script to do it for you.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/extracting_text_example_negative.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/extracting_text_example_negative.png&#34; alt=&#34;Example screenshot negative&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;recognizing-the-text&#34;&gt;Recognizing The Text&lt;/h3&gt;
+&lt;p&gt;In this part, we call Tesseract command on our image and get back our
+recognized text. We could have used a Ruby wrapper around Tesseract, and
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/dannnylo/rtesseract&#34;&gt;rtesseract&lt;/a&gt; is a
+great wrapper, however; we only need to call a simple command here so we don&amp;rsquo;t
+need all the features the wrapper provides.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ...&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;Pathname&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;SRC_DIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;children&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;# ...&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+    &lt;span class=&#34;no&#34;&gt;Open3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;capture3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;tesseract &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tmp_path&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; stdout -l eng --oem 0 --psm 3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+  &lt;span class=&#34;nb&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;strip&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and this is the final output of our script:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Oh, man. In my next life
+I&#39;m coming back as a toilet brush.
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;h3 id=&#34;speed&#34;&gt;Speed&lt;/h3&gt;
+&lt;p&gt;As I mentioned earlier, I first started with a &lt;a target=&#34;_blank&#34; href=&#34;https://gist.github.com/aonemd/a4895dbdbdf9b7a0bc47bcb051aae5b8&#34;&gt;Python script&lt;/a&gt;
+to test Tesseract.  I did a small time comparison between the Ruby version and
+the Python version after some &lt;a target=&#34;_blank&#34; href=&#34;https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edxnxzh/&#34;&gt;great discussions&lt;/a&gt;
+on &lt;a target=&#34;_blank&#34; href=&#34;https://reddit.com/r/ruby&#34;&gt;/r/ruby&lt;/a&gt;. Unfortunately, the
+Python version is much faster. I believe that most of the overhead in the Ruby
+version comes from using ImageMagick for image processing. Here&amp;rsquo;s the
+comparison of running both scripts on a sample of 525 1920x1080 PNG files:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ruby ocr.rb  864.69s user 62.12s system 136% cpu 11:19.01 total
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;vs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 ocr.py  277.92s user 31.38s system 141% cpu 3:37.85 total
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; &lt;a target=&#34;_blank&#34; href=&#34;https://www.reddit.com/r/ruby/comments/afbq1z/extracting_text_from_images_using_ruby/edzdwmu/&#34;&gt;/u/janko-m on Reddit&lt;/a&gt;
+pointed me to &lt;a href=&#34;https://github.com/libvips/libvips&#34;&gt;libvips&lt;/a&gt; and I actually
+replaced ImageMagick with libvips. The script is also &lt;a target=&#34;_blank&#34; href=&#34;https://gist.github.com/aonemd/7bb3c4760d9e47a9ce8e270198cb40a0#file-subtitle_extractor_optimized-rb&#34;&gt;on GitHub&lt;/a&gt;.
+The runtime became 3 times faster than what it used to be and, in fact,
+outperformed the Python version. Here&amp;rsquo;s the output of the time command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ruby ocr.rb  234.74s user 35.64s system 120% cpu 3:45.17 total
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;accuracy&#34;&gt;Accuracy&lt;/h3&gt;
+&lt;p&gt;In the end, the text in 93% of my screenshots was recognized almost correctly
+(with some gibberish noise in some files).  I filtered out the screenshots that
+don&amp;rsquo;t contain any subtitles before running the script. This means that only 7%
+of my screenshots were not recognized correctly or were recognized as empty
+text.  &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/tesseract-ocr/tesseract/wiki/ImproveQuality&#34;&gt;Tesseract wiki&lt;/a&gt;
+provides some tips to improve text recognition accuracy mainly, they are all
+about processing the source image before feeding it to Tesseract.&lt;/p&gt;
+&lt;h3 id=&#34;different-colors&#34;&gt;Different Colors&lt;/h3&gt;
+&lt;p&gt;This issue occurred with screenshots that contained subtitles in colors
+other than white. I have for example a screenshot with yellow subtitles that
+wasn&amp;rsquo;t recognized by the original script. I had to use a lower threshold while
+converting the image to a black-and-white binary image so that the subtitles
+wouldn&amp;rsquo;t be filtered out as noise.&lt;/p&gt;
+&lt;h3 id=&#34;duplicates&#34;&gt;Duplicates&lt;/h3&gt;
+&lt;p&gt;This is not related to Tesseract itself or text recognition per se, but it&amp;rsquo;s
+more about the script.  If there are more than one screenshot with the same
+subtitles, one image file will overwrite the other. I don&amp;rsquo;t handle this case in
+my script as of yet; I want to get rid of duplicates anyway.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/making-system-calls-from-ruby/</guid>
-      <description>While I was reading about Linux system calls, I was curious about how to perform them in Ruby specially that Ruby isn&amp;rsquo;t considered a &amp;ldquo;system&amp;rdquo; programming language. However, It&amp;rsquo;s very possible to perform system calls using Ruby. In this post, I&amp;rsquo;m going to demonstrate the different ways to make system calls using Ruby. But first, let us define what system calls are. Simply put, a system call is a way to enter the system kernel, execute an operation, and then return from the kernel.</description>
-    </item>
-    
-    <item>
-      <title>When YAML Bit Me</title>
-      <link>https://aonemd.github.io/posts/when-yaml-bit-me/</link>
-      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>Making System Calls From Ruby</title>
+        <link>https://aonemd.github.io/posts/making-system-calls-from-ruby/</link>
+        <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/making-system-calls-from-ruby/</guid>
+        <description>&lt;p&gt;While I was reading about Linux system calls, I was curious about how to
+perform them in Ruby specially that Ruby isn&amp;rsquo;t considered a &amp;ldquo;system&amp;rdquo;
+programming language. However, It&amp;rsquo;s very possible to perform system calls using
+Ruby. In this post, I&amp;rsquo;m going to demonstrate the different ways to make system
+calls using Ruby. But first, let us define what system calls are. Simply put, a
+system call is a way to enter the system kernel, execute an operation, and then
+return from the kernel.&lt;/p&gt;
+&lt;p&gt;In the following sections, I&amp;rsquo;ll demonstrate three [almost] different ways to
+perform system calls from Ruby. All the code is tested on a 64-bit GNU/Linux
+system. Although there are some notes about differences in other operating
+systems, if you tested something on your operating system and want me to add it
+here, please add a comment or send me a message.&lt;/p&gt;
+&lt;h3 id=&#34;1-kernelsyscall&#34;&gt;1. Kernel.syscall&lt;/h3&gt;
+&lt;p&gt;This first, and most straightforward way to perform a system call is by using
+&lt;code&gt;Kernel.syscall&lt;/code&gt;. In fact, internally, Kernel.syscall calls the C function
+&lt;code&gt;syscall&lt;/code&gt; directly. This is how it&amp;rsquo;s done:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;nb&#34;&gt;syscall&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;syscall_number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;syscall_arguments&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;syscall_number&lt;/code&gt; is a unique number for each system operation and can be
+obtained for 64-bit Linux systems from &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/torvalds/linux/blob/v3.13/arch/x86/syscalls/syscall_64.tbl&#34;&gt;this table&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So, for example, to perform an exit system call with exit status 1, call the
+following Ruby program:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;nb&#34;&gt;syscall&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and check the exit code in your shell:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Note: I&amp;rsquo;m using Ruby 2.6.0 without the &lt;code&gt;--jit&lt;/code&gt; option to run this example.
+For Ruby versions prior to 2.6.0 on Linux, you might want to use the
+&lt;code&gt;exit_group&lt;/code&gt; system call (with syscall_number 231) instead of &lt;code&gt;exit&lt;/code&gt; to
+terminate all the threads the Ruby process is using otherwise, the Ruby
+process will freeze waiting to terminate the remaining thread(s).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;However, there&amp;rsquo;s a caveat here. &lt;a target=&#34;_blank&#34; href=&#34;https://www.rubydoc.info/stdlib/core/Kernel#syscall-instance_method&#34;&gt;The Ruby documentation&lt;/a&gt;
+says that &lt;code&gt;Kernel.syscall&lt;/code&gt; isn&amp;rsquo;t safe nor it is portable. If you ran the last
+program using the Ruby &lt;code&gt;-v&lt;/code&gt; command line option (for verbose), you&amp;rsquo;ll see the
+following message:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;warning: We plan to remove a syscall function at future release. DL(Fiddle) provides safer alternative.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thus, &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/ruby/fiddle&#34;&gt;&lt;em&gt;Fiddle&lt;/em&gt;&lt;/a&gt; will be our
+next alternative for making system calls in Ruby.&lt;/p&gt;
+&lt;h3 id=&#34;2-fiddle&#34;&gt;2. Fiddle&lt;/h3&gt;
+&lt;p&gt;Fiddle is a &lt;a target=&#34;_blank&#34; href=&#34;https://sourceware.org/libffi/&#34;&gt;libffi&lt;/a&gt; wrapper
+written for Ruby.  Luckily, it is already a part of Ruby&amp;rsquo;s standard library.
+&lt;em&gt;libffi&lt;/em&gt; is a &lt;strong&gt;foreign function interface (FFI)&lt;/strong&gt; implementation that provides
+a C interface for calling compiled code (functions, really) from your program
+at runtime.&lt;/p&gt;
+&lt;p&gt;The following program demonstrates how to use Fiddle to call a C function from
+Ruby:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;fiddle&amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;libc&lt;/span&gt;     &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Fiddle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dlopen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/lib/libc.so.6&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Fiddle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;libc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;syscall&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Fiddle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;TYPE_INT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+                                                 &lt;span class=&#34;no&#34;&gt;Fiddle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;TYPE_INT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Fiddle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;TYPE_INT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;call&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The code calls the C function &lt;code&gt;syscall&lt;/code&gt; to perform the exit system call.  In
+addition to the name of the function, you have to pass in an array that
+contains the types of each argument the syscall/function takes, and another
+argument for the function return type, which is an integer number in this case.
+For example, the exit syscall function takes two parameters; one for the exit
+syscall itself, the number 60, and another for the exit status, which is 1
+here.  Thus, we have an array of two integers.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: the path to &lt;code&gt;libc&lt;/code&gt; specified in the code will differ for other
+operating systems. For MacOS for example, it should be set to
+&lt;code&gt;/usr/lib/libc.dylib&lt;/code&gt;. Please also note that I didn&amp;rsquo;t test it myself so it
+might be a different value.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Check the exit code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-ffi&#34;&gt;3. FFI&lt;/h3&gt;
+&lt;p&gt;&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/ffi/ffi&#34;&gt;&lt;em&gt;Ruby-ffi&lt;/em&gt;&lt;/a&gt; is an FFI
+implementation in Ruby.  Other than making system calls, FFI makes it possible
+to fully write C extensions without the need to write pure C code. By far, this
+is the safest, most convenient method as it automatically locates the path to
+the libc library without the need to specify it manually as in the case with
+Fiddle above.&lt;/p&gt;
+&lt;p&gt;The code that makes a system call looks like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;ffi&amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;SyscallRunner&lt;/span&gt;
+  &lt;span class=&#34;kp&#34;&gt;extend&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;FFI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Library&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;ffi_lib&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;FFI&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Library&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;LIBC&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;attach_function&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:syscall&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:int&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;SyscallRunner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;syscall&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Again, you need to pass in an array that contains the types of each argument
+the function takes, and another argument for the function return type.&lt;/p&gt;
+&lt;p&gt;And again, check the exit status:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; 1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Although Ruby might not be considered a system programming language, Ruby is
+capable of going low level and performing system calls in more than one way.
+All the methods delegate the system call  to C syscall function in a way or
+another.  The most secure, most scalable method is using Ruby-ffi to invoke C
+syscall function.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/when-yaml-bit-me/</guid>
-      <description>This is the story of a bug I encountered about 3 years ago. Basically, I had a model Book that contained a serialized object attribute called info and BooksController initially contained this search query:
-Book.where(&amp;#39;info LIKE ?&amp;#39;, &amp;#34;%ref: &amp;#39;#{params[:ref]}&amp;#39;&amp;#34;) The bug that surfaced at the time was that some books were not fetched when the search query contained alpha-numeric reference numbers (those that contains both digits and letters) as some reference numbers were pure digits and some were a mix of digits and alphabetical characters.</description>
-    </item>
-    
-    <item>
-      <title>Computer Science Is Not About Programming</title>
-      <link>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</link>
-      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>When YAML Bit Me</title>
+        <link>https://aonemd.github.io/posts/when-yaml-bit-me/</link>
+        <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/when-yaml-bit-me/</guid>
+        <description>&lt;p&gt;This is the story of a bug I encountered about 3 years ago.  Basically, I had a
+model &lt;code&gt;Book&lt;/code&gt; that contained a serialized object attribute called &lt;code&gt;info&lt;/code&gt; and
+&lt;code&gt;BooksController&lt;/code&gt; initially contained this search query:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;no&#34;&gt;Book&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;info LIKE ?&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%ref: &amp;#39;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The bug that surfaced at the time was that some books were not fetched when the
+search query contained alpha-numeric reference numbers (those that contains
+both digits and letters) as some reference numbers were pure digits and some
+were a mix of digits and alphabetical characters.&lt;/p&gt;
+&lt;p&gt;The main issue with the previous search query is that it assumes that the value
+of &lt;code&gt;ref&lt;/code&gt; is always stored wrapped in single quotes, i.e. &lt;code&gt;ref: &#39;123&#39;&lt;/code&gt; as in the
+case with integer reference numbers, however; alpha-numeric reference numbers
+were stored in the database without the single quotes!&lt;/p&gt;
+&lt;p&gt;My initial solution was to provide two search queries for each type of
+reference numbers because, at the time, I thought the issue was with the way
+the object was stored in PostgreSQL. However, and after further investigation,
+the problem turned out to be with YAML.&lt;/p&gt;
+&lt;p&gt;As it turns out, the main issue was with how YAML (or Psych in Ruby) dumps
+integers and strings differently. Checkout the following code snippet and see
+for yourself:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;psych&amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;Psych&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#34;--- &amp;#39;123&amp;#39;\n&amp;#34;&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;## vs.&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;Psych&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#34;--- hello\n&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is not a bug in Psych. In fact, the same behavior is found in Python
+implementation, PyYAML:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;yaml&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;yaml&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#34;&amp;#39;123&amp;#39;\n&amp;#34;&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;## vs.&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;yaml&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#39;hello\n...\n&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It&amp;rsquo;s weird to me why YAML doesn&amp;rsquo;t treat all strings equally and keep or remove
+the quotes all together. This just adds up to the list of &lt;a target=&#34;_blank&#34; href=&#34;https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html&#34;&gt;weird behavior of YAML&lt;/a&gt;.
+Although to be fair, it might be a way to differentiate between integers and
+integers wrapped in quotes when they are dumped and reloaded (I&amp;rsquo;m not waging a
+war on YAML, I swear).&lt;/p&gt;
+&lt;p&gt;Eventually, to work around this issue, I had to explicitly convert
+&lt;code&gt;params[:ref]&lt;/code&gt; to an integer iff it could be cast into an integer. This way, we
+can write a single search query and remove the wrapping single quotes for all
+types of reference numbers:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;n&#34;&gt;ref&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;rescue&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;no&#34;&gt;Book&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;info LIKE ?&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%ref: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it for now. Thanks for reading!&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</guid>
-      <description>This is not yet another war post about the difference between this and that. In fact, what&amp;rsquo;s motivated me to write this post is a TA at my university who was shaming students who graduate university without learning how to program properly. This idea was intriguing to me as I thought to myself that computer science is not about programming!
-Actually, what I believe is that computer science is about computing.</description>
-    </item>
-    
-    <item>
-      <title>How I Improved the Loading Speed of My Blog</title>
-      <link>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>Computer Science Is Not About Programming</title>
+        <link>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</link>
+        <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</guid>
+        <description>&lt;p&gt;This is not yet another war post about the difference between this and that. In
+fact, what&amp;rsquo;s motivated me to write this post is a TA at my university who was
+shaming students who graduate university without learning how to program
+properly. This idea was intriguing to me as I thought to myself that computer
+science is not about programming!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/hamada_helal_hamada_helal.jpg&#34; alt=&#34;Hamada Helal, the king of obvious&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Actually, what I believe is that computer science is about computing. According
+to Merriam-Webster, the definition of computer science is &amp;ldquo;a branch of science
+that deals with the theory of computation or the design of computers&amp;rdquo;.  On the
+other hand, programming is merely one way to do computation, supposedly, in a
+short period of time using a big calculator that is a computer (I know, cell
+phones exist!). Having computers do calculations for us is just an extra
+privilege.&lt;/p&gt;
+&lt;p&gt;More so, computations don&amp;rsquo;t have to be done on a computer. An A4 sheet of paper
+and a pencil could be used as a computer, although this is much slower and many
+times harder to follow and keep track of compared to a regular computer.  There
+are indeed many ways to do computations without a programming language. A
+theoretical model of computation is a model which describes how a set of
+outputs are computed given a set of inputs. One of the most famous models of
+computation is the &lt;a target=&#34;_blank&#34; href=&#34;https://www.wikiwand.com/en/Turing_machine&#34;&gt;&lt;em&gt;Turing machine&lt;/em&gt;&lt;/a&gt;.
+A Turing machine is an abstract computer that has an infinite memory and can
+sequentially traverse this memory as needed. It resembles a program which takes
+an input and computes an output (in terms of accepting or rejecting the input)
+but has access to an infinite memory.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Computer science is about computing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I have seen many students who were excellent students but were poor programmers
+and that&amp;rsquo;s totally fine. Those students, if they want to, can pick up academia
+and research for example, become computer scientists and excel at that.  In
+contrast, I consider myself a fairly good programmer, however; I also consider
+myself a not-so-good student. It doesn&amp;rsquo;t have to be a choice between either of
+this or that; of course, this is not a general rule. One can be a good academic
+and a good programmer at the same time.&lt;/p&gt;
+&lt;p&gt;The thing about degrees is that computer science students expect that their
+major should include more &amp;ldquo;programming&amp;rdquo; courses and they blame their degrees
+for the lack of computer programming classes (I used to think that way when I
+started my degree). However, what they are missing here is what computer
+science is actually concerned with —namely, the theory behind computation.&lt;/p&gt;
+&lt;p&gt;In conclusion, computer programming is only one form of doing computation.
+Understanding the theory behind computation is different from writing programs
+to do the computation.&lt;/p&gt;
+&lt;h3 id=&#34;things-i-read-on-the-topic&#34;&gt;Things I read on the topic&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.freecodecamp.org/is-it-computer-science-or-programming-c01383dacc9c&#34;&gt;Is It “Computer Science” or “Programming”?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://softwareengineering.stackexchange.com/questions/137103/whats-the-difference-between-computer-science-and-programming&#34;&gt;What&amp;rsquo;s the difference between computer science and programming?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</guid>
-      <description>In this post I&amp;rsquo;m going to demonstrate the steps I took in order to improve the loading speed of my blog. First of all, this blog is generated by Jekyll, the static site generator. I only build my static files and deploy them to GitHub pages. I use Webpack to compile my assets and then I use Jekyll to build the whole blog.
-Around a year ago, I started on a mission to optimize the loading speed of my blog after feeling that it was slow and had some rendering issues.</description>
-    </item>
-    
-    <item>
-      <title>On Writing</title>
-      <link>https://aonemd.github.io/posts/on-writing/</link>
-      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>How I Improved the Loading Speed of My Blog</title>
+        <link>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</link>
+        <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</guid>
+        <description>&lt;p&gt;In this post I&amp;rsquo;m going to demonstrate the steps I took in order to improve the
+loading speed of my blog. First of all, this blog is generated by
+&lt;a target=&#34;_blank&#34; href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;, the static site generator.  I
+only build my static files and deploy them to GitHub pages. I use Webpack to
+compile my assets and then I use Jekyll to build the whole blog.&lt;/p&gt;
+&lt;p&gt;Around a year ago, I started on a mission to optimize the loading speed of my
+blog after feeling that it was slow and had some rendering issues. The next two
+screenshots demonstrate the difference in terms of loading time before and
+after the optimization:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/blog_performance_old.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/blog_performance_old.png&#34; alt=&#34;Old Blog Loading&#34;&gt;&lt;/a&gt;
+&amp;laquo; old blog loading in 3.56s in Chrome developer tools &amp;raquo;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/blog_performance_new.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/blog_performance_new.png&#34; alt=&#34;New Blog Loading&#34;&gt;&lt;/a&gt;
+&amp;laquo; new blog loading in 600ms in chrome developer tools &amp;raquo;&lt;/p&gt;
+&lt;p&gt;In the next few points, I will list the steps I took to make my blog load
+faster than it used to:&lt;/p&gt;
+&lt;h3 id=&#34;1-zurb-foundation&#34;&gt;1. Zurb Foundation&lt;/h3&gt;
+&lt;p&gt;The first thing I started with was completely removing Zurb Foundation, the
+CSS framework. I was using Foundation mainly for its grid system but I never
+really used most of its other components. In spite of that, I was,
+unknowingly, importing all its components into my main SCSS file (which, of
+course, was atrocious). I totally removed Foundation and replaced it with
+vanilla CSS (compiled PostCSS, actually). My main &lt;code&gt;index.css&lt;/code&gt; file was 242KB
+in size. Now, it&amp;rsquo;s a 6.3KB file.&lt;/p&gt;
+&lt;h3 id=&#34;2-font-awesome--font-icons&#34;&gt;2. Font Awesome &amp;amp; Font Icons&lt;/h3&gt;
+&lt;p&gt;This was based on an advice from the great frontend guru &lt;a target=&#34;_blank&#34; href=&#34;https://twitter.com/ahmadalfy&#34;&gt;Ahmad Alfy&lt;/a&gt;:
+replacing Font Awesome with SVGs. There are already many
+&lt;a target=&#34;_blank&#34; href=&#34;https://css-tricks.com/icon-fonts-vs-svg/&#34;&gt;articles&lt;/a&gt; that
+discuss the case for using SVGs instead of font icons. For me, having a
+smaller file size to download by specifically adding only the icons I need to
+the sprite file, and not seeing empty squares when the file is yet to be
+downloaded are two great advantages of using SVGs.&lt;/p&gt;
+&lt;h3 id=&#34;3-google-analytics&#34;&gt;3. Google Analytics&lt;/h3&gt;
+&lt;p&gt;Although it might be useful to some, I didn&amp;rsquo;t really use analytics that much.
+For me, the added download time did not justify using Google Analytics
+specially that the uncached &lt;code&gt;analytics.js&lt;/code&gt; file alone loads from Google
+servers in about 200ms.&lt;/p&gt;
+&lt;h3 id=&#34;4-disqus-comments&#34;&gt;4. Disqus Comments&lt;/h3&gt;
+&lt;p&gt;I believe enabling comments in my blog is essential for opening a two-way
+channel of feedback. However, &lt;a target=&#34;_blank&#34; href=&#34;http://donw.io/post/github-comments/#whats-wrong-with-disqus&#34;&gt;the biggest issue with disqus&lt;/a&gt;
+is that it loads too many files and makes API calls to different servers for
+tracking and analytics. I have recently worked on an implementation of blog
+comments backed by GitHub issues but I haven&amp;rsquo;t deployed it yet.&lt;/p&gt;
+&lt;h3 id=&#34;5-javascript&#34;&gt;5. Javascript&lt;/h3&gt;
+&lt;p&gt;When I started working on this optimization, I wanted a Javascript-free
+experience in my blog. That is, I wanted to have every functionality working
+normally with or without Javascript. Removing Foundation was a big step in
+this direction because, with removing it, its Javascript depdencies were
+removed as well. I currently, use Javascript for exactly two functions; one
+for loading fonts using &lt;em&gt;Web Font Loader&lt;/em&gt;, and the other is for toggling
+between the light and the dark theme (Yes, there&amp;rsquo;s a &lt;a href=&#34;https://aonemd.github.io/blog/introducing-jack-and-dark-theme&#34;&gt;dark theme&lt;/a&gt; in this blog).
+Previously, two JS files were downloaded with a total size of 222KB and
+loaded in about 77ms.  Now, it&amp;rsquo;s just a single 20KB file that loads in ~20ms.
+Having Javascript files load asynchronously using &lt;code&gt;async&lt;/code&gt; to load the main
+index.js file also helped a lot in the total loading time of the blog.&lt;/p&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Having fewer files for the browser to download, and fewer resources that
+access the network help greatly in speeding the page load specially for
+static websites such as blogs.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/on-writing/</guid>
-      <description>Why I write There maybe a lot of reasons for this. For starters, I think writing is a fun activity. I write mainly to improve my communication skills, written communication skills apparently. Another reason I write for is to give back to the communities I&amp;rsquo;m involved in and maybe benefit someone someday with something I wrote. Teaching is such a precious experience. Teaching and teaching through writing here does not only benefit the reader but also the writer cause when I write, I get to deepen and widen my knowledge base.</description>
-    </item>
-    
-    <item>
-      <title>How I Take Notes</title>
-      <link>https://aonemd.github.io/posts/how-i-take-notes/</link>
-      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>On Writing</title>
+        <link>https://aonemd.github.io/posts/on-writing/</link>
+        <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/on-writing/</guid>
+        <description>&lt;h3 id=&#34;why-i-write&#34;&gt;Why I write&lt;/h3&gt;
+&lt;p&gt;There maybe a lot of reasons for this. For starters, I think writing is a fun
+activity. I write mainly to improve my communication skills, written
+communication skills apparently. Another reason I write for is to give back to
+the communities I&amp;rsquo;m involved in and maybe benefit someone someday with
+something I wrote. Teaching is such a precious experience. Teaching and
+teaching through writing here does not only benefit the reader but also the
+writer cause when I write, I get to deepen and widen my knowledge base.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Teach and you shall learn.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;writing-is-hard&#34;&gt;Writing is hard&lt;/h3&gt;
+&lt;p&gt;Seriously, this is the first thing that came to my mind when I thought of
+writing this article. Although it might be fun to write, it&amp;rsquo;s very difficult to
+put a good article together. The biggest issue for me is when I have a fairly
+good idea and I can barely write about it at length. Although I believe in
+quality not quantity, some articles can be understood from only the title and a
+title alone cannot make an article. Some other articles feel superficial to me
+after writing them thus I keep writing articles and deleting (or sometimes,
+constantly editing) them.&lt;/p&gt;
+&lt;h3 id=&#34;marketing-is-also-hard&#34;&gt;Marketing is also hard&lt;/h3&gt;
+&lt;p&gt;Between the downvotes and the harsh comments on Reddit and Hacker News,
+marketing an article is as hard as writing it. Currently, I use Twitter and
+Reddit to share my articles. The downvotes and the harsh comments with no
+constructive feedback are a bit frustrating sometimes even though I believe I
+don&amp;rsquo;t write for everyone. What I mean by I don&amp;rsquo;t write for everyone is that the
+targeted audience for each article might differ thus building an audience for the blog is difficult.&lt;/p&gt;
+&lt;h3 id=&#34;how-i-write&#34;&gt;How I write&lt;/h3&gt;
+&lt;p&gt;Currently the way I write is as follows:&lt;/p&gt;
+&lt;p&gt;First, I come up with an idea and/or a title, generate a page for the article,
+and fire up a text editor. I start by writing the main headlines in the
+article. I then start filling the main points as fast as possible without
+editing them. Afterwards, I edit the article, and fix the typos.&lt;/p&gt;
+&lt;p&gt;How I want to write though is writing consistently. No matter how many new
+year&amp;rsquo;s resolutions I may make, I never keep writing consistently as I want to.
+However recently, I&amp;rsquo;ve been writing every other week or so. I also want to
+write fearlessly. The fear of writing a bad article is what always stops me
+from writing or publishing an article.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/how-i-take-notes/</guid>
-      <description>I always advice every programmer to take notes of their work all the time. Taking notes has throughout the years become so indispensable for me. Instead of searching for something every time I forget it, I go back to my notes. It has also become helpful when I need to study for interviews. I also use those notes as a journal to keep and organize my thoughts when I&amp;rsquo;m working on a new feature or fixing a bug.</description>
-    </item>
-    
-    <item>
-      <title>Programming on Rails</title>
-      <link>https://aonemd.github.io/posts/programming-on-rails/</link>
-      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>How I Take Notes</title>
+        <link>https://aonemd.github.io/posts/how-i-take-notes/</link>
+        <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/how-i-take-notes/</guid>
+        <description>&lt;p&gt;I always advice every programmer to take notes of their work all the time.
+Taking notes has throughout the years become so indispensable for me.  Instead
+of searching for something every time I forget it, I go back to my notes. It
+has also become helpful when I need to study for interviews. I also use those
+notes as a journal to keep and organize my thoughts when I&amp;rsquo;m working on a new
+feature or fixing a bug.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There&amp;rsquo;s nothing better than a beautiful day at the beach, filled with sun,
+surf and diligent note-taking
+&lt;cite&gt;Pam Beesly, The Office&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;digital-notes&#34;&gt;Digital notes&lt;/h3&gt;
+&lt;p&gt;I started taking notes on small yellow sticky notes however, it wasn&amp;rsquo;t that
+efficient when I needed to access my notes when I&amp;rsquo;m not home or when I&amp;rsquo;m using
+my phone. Thus, I started taking digital notes on my computer and cellphone.&lt;/p&gt;
+&lt;p&gt;As I mentioned, I started with sticky notes and a pencil then I moved to
+digital notes. First, I tried multiple note taking apps but I couldn&amp;rsquo;t find
+something better than using my favorite text editor to take notes. Besides,
+each app has its own format to store notes. I was looking for something simple
+and with much control over my notes as possible.&lt;/p&gt;
+&lt;p&gt;Currently, I use a text editor, Markdown, and a small shell script to list and
+open notes. My text editor of choice is Vim. I use Vim in combination with
+&lt;code&gt;ctrlp&lt;/code&gt; for fuzzy file finding and &lt;code&gt;Ag&lt;/code&gt;, the silver searcher, to search across
+files. Of course, you can use your own text editor as most modern text editors
+implement these features out of the box. For tags and organizing the notes, I
+simply use folders to group them. Here&amp;rsquo;s the script I started with initially:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# .bashrc or .zshrc&lt;/span&gt;
+
+note &lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;notes_dir&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/path/to/notes&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; in
+    c&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+    l&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+      ls &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+    p&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;nb&#34;&gt;pushd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Regenerated at &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date -u &lt;span class=&#34;s1&#34;&gt;&amp;#39;+%Y-%m-%d %H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; UTC&amp;#34;&lt;/span&gt;
+      git add .
+      git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$msg&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      git push origin master
+      &lt;span class=&#34;nb&#34;&gt;popd&lt;/span&gt;
+      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+    *&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+      vim &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, you can call the function directly in your shell using:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ note l
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ note todo.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;syncing&#34;&gt;Syncing&lt;/h3&gt;
+&lt;p&gt;From the previous script, you can see that I used to use Git to keep and sync
+the notes between my machine and a Git repository. The issue with using Git is
+that I cannot sync and read the notes on my cellphone (as far as I know; I
+didn&amp;rsquo;t search how to use Git on my phone). To solve this issue, I moved my
+notes to Dropbox (you can use any other method for synchronization). Now it&amp;rsquo;s
+possible to sync them between my computer and my phone. Here&amp;rsquo;s the very simple
+script I currently use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# .bashrc or .zshrc&lt;/span&gt;
+
+note &lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;notes_dir&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/Dropbox/notes&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; in
+    c&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+    l&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+      ls &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
+    *&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;nb&#34;&gt;pushd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$#&lt;/span&gt; -eq &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+        vim &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+        vim &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;.md
+      &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+      &lt;span class=&#34;nb&#34;&gt;popd&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;extras&#34;&gt;Extras&lt;/h3&gt;
+&lt;p&gt;For editing notes on the phone, there are multiple apps that I didn&amp;rsquo;t
+investigate. However, I&amp;rsquo;m currently using the default text editor that comes
+with the Dropbox app.&lt;/p&gt;
+&lt;p&gt;Also, until this point, I write and read my notes in Markdown. Although it&amp;rsquo;s
+possible to do more work and convert the notes into a more readable format such
+as PDF or HTML using something like &lt;code&gt;pandoc&lt;/code&gt;.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/programming-on-rails/</guid>
-      <description>Ruby on Rails is a great web framework. It has changed the way web development is done and influenced other frameworks in other programming languages. Even admittedly, much of the major success of Ruby is due to the wide spread of Rails.
-Being the opinionated framework it is, Rails is built on top of a set of conventions and philosophies. It&amp;rsquo;s said to be Omakase (お任せ) or chef&amp;rsquo;s menu of choice (also, watch Rails is Omakase: A Dramatic Reading).</description>
-    </item>
-    
-    <item>
-      <title>Bear Programming</title>
-      <link>https://aonemd.github.io/posts/bear-programming/</link>
-      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      <item>
+        <title>Programming on Rails</title>
+        <link>https://aonemd.github.io/posts/programming-on-rails/</link>
+        <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/programming-on-rails/</guid>
+        <description>&lt;p&gt;Ruby on Rails is a great web framework. It has changed the way web development
+is done and influenced other frameworks in other programming languages. Even
+admittedly, much of the major success of Ruby is due to the wide spread of
+Rails.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/Ruby_On_Rails_Logo.png&#34; alt=&#34;Rails Logo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Being the opinionated framework it is, Rails is built on top of a set of
+conventions and philosophies. It&amp;rsquo;s said to be
+&lt;a target=&#34;_blank&#34; href=&#34;http://david.heinemeierhansson.com/2012/rails-is-omakase.html&#34;&gt;Omakase (お任せ)&lt;/a&gt;
+or chef&amp;rsquo;s menu of choice (also, watch
+&lt;a target=&#34;_blank&#34; href=&#34;https://www.youtube.com/watch?v=E99FnoYqoII&#34;&gt;Rails is Omakase: A Dramatic Reading&lt;/a&gt;).
+Unlike Node&amp;rsquo;s ExpressJS for example, Rails comes preconfigured with all the
+stack you need to build your app. Its convenience over configuration led it to
+be one of the easiest and fastest ways to start building apps for the web
+today.&lt;/p&gt;
+&lt;p&gt;Of course, this convenience comes at a cost. Apart from the added difficulty to
+maintain when the app grows in complexity (which I won&amp;rsquo;t talk about in this
+post), the Rails way sets a fixated mindset about programming, namely, web
+programming. Your entire world view to programming is through Rails and the
+Rails way. For instance, the places where you can create your classes, the way
+you connect the backend with the view and the frontend, and the way you write
+helper functions or helper modules are all set by the framework, Rails. I&amp;rsquo;m not
+discussing here the architectural decisions made by Rails however, I&amp;rsquo;m
+pointing to the effect of those decisions on the programmer&amp;rsquo;s mindset.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve been doing Rails for around 4 years now. During this period, whenever I&amp;rsquo;m
+working on a task (be it Rails or non-Rails related), I often caught myself
+looking to identify a pattern; looking for the framework in it. It&amp;rsquo;s like my
+mind wants to see all programming as it sees tedious CRUD applications (which
+are totally fine as long as they are solving a problem). The issue here is
+restricting my thought process to only one way of thinking however,
+programming, or rather the creative thinking it requires, needs more
+imagination and less restriction.&lt;/p&gt;
+&lt;p&gt;Something I also noticed while working with interns is that more fresh minds
+tend to be more flexible than experienced developers. Their minds are not yet
+bloated with way of the framework and they tend be less following to the rules.&lt;/p&gt;
+&lt;p&gt;So you might ask what to do in order to free your mind from the Rails way. What
+I suggest is to rebel against Rails. Yes, try different Ruby web frameworks,
+different languages, new stacks, or even developing for platforms other than
+the web altogether. Also, try breaking, bending, and tweaking large, complex
+Rails apps to see how far you can get with Rails. Try a new architecture for
+your Rails app by dividing your business logic and classes into multiple
+layers. The world outside the Rails menu is so vast and diverse but you need to
+see that for yourself.&lt;/p&gt;
+</description>
+      </item>
       
-      <guid>https://aonemd.github.io/posts/bear-programming/</guid>
-      <description>According to Wikipedia, Pair Programming is an agile software development technique in which two programmers work together at one workstation.
-There&amp;rsquo;s also a term I call Bear programming that is not the opposite of pair programming. Bear programming is when a team of programmers that work together on a single project starts mauling the code and ripping its different parts apart like a group of bears.
-Let me clear this. The mauling here refers to writing code that is distinguishable to the code written by other team members.</description>
-    </item>
-    
-    <item>
-      <title>Introducing Jack and a New Dark Theme</title>
-      <link>https://aonemd.github.io/posts/introducing-jack-and-dark-theme/</link>
-      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/introducing-jack-and-dark-theme/</guid>
-      <description>This website is generated by Jekyll, the static site generator. For compiling assets (mainly Javascript and stylsheet files), I’ve been using Sprockets through Jekyll Assets gem. Although recently, and after I had updated the gems in Jekyll’s Gemfile, a new update for Jekyll asset was pushed. It appears they decided to change their entire interface. This rendered my whole project unusable and I needed to change every call to Jekyll Assets new interface in order to fix it.</description>
-    </item>
-    
-    <item>
-      <title>التدريب في مصر</title>
-      <link>https://aonemd.github.io/posts/interning-in-egypt/</link>
-      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/interning-in-egypt/</guid>
-      <description>إذا كنت أحد طلاب كليات الحاسبات في مصر ، فأنت - على الأغلب - على علم بوضع الشركات المصرية اللي تقدم تدريباً - غالباً ما يكون في الإجازة الصيفية - لطلاب تلك الكليات.
-تُلزم كليات الحاسبات الطلاب قضاء مدة ثلاثة أشهر في إحدى الشركات قبل التخرج. ومن ذلك تقوم شركات البرمجيات المصرية بعملية أشبه بالمتاجرة بالطلاب حيث يتقدم الطالب لشركةٍ ما كمتدرب، ليتفاجئ أنه وباقي الموظفين في الشركة متدربون ولا يوجد موظفون أكثر خبرة اللهم إلا القليل.</description>
-    </item>
-    
-    <item>
-      <title>Go for Competitive Programming</title>
-      <link>https://aonemd.github.io/posts/go-for-cp/</link>
-      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/go-for-cp/</guid>
-      <description>I first started writing Go during my time at UserTalk and have been using it occasionaly since then because of its minimal syntax and standard library that makes it a great language for writing almost any kind of software.
-Whenever I&amp;rsquo;m solving a competitive programming problem, I usually use C or C++ (whichever works best) to write the solution mainly because they are both supported by almost all online judges and programming contests.</description>
-    </item>
-    
-    <item>
-      <title>I Took Some Time to Create a Time Tracker</title>
-      <link>https://aonemd.github.io/posts/panadoura/</link>
-      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/panadoura/</guid>
-      <description>In my quest of finding the ultimate productivity framework, I came across the Pomodoro technique. The basic idea behind it is to divide the work into equal chunks of time and take a small break after each set. Usually it goes by working for 25 minutes in complete concentration, taking a 5 minutes break and repeating the cycle until the task is completed.
-Motivation It was the beginning of January this year when I decided to use the Pomodoro technique to help me study for my finals.</description>
-    </item>
-    
-    <item>
-      <title>The One Year Old Bug</title>
-      <link>https://aonemd.github.io/posts/the-one-year-bug/</link>
-      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/the-one-year-bug/</guid>
-      <description>I&amp;rsquo;ve been revisiting my old repositories on GitHub recently to make sure they are still relevant and to clean up the code. One of the projects I looked into was margopher which I started back in August 2015. I only removed some unused code, and updated the README page after which I decided to follow the usage instructions just to make sure everything was okay. This was when I found out that when I created and used a margopher object one time, I could not use it any more.</description>
-    </item>
-    
-    <item>
-      <title>The Dotfiles</title>
-      <link>https://aonemd.github.io/posts/the-dotfiles/</link>
-      <pubDate>Wed, 06 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/the-dotfiles/</guid>
-      <description>One of the three great virtues of a programmer is laziness and it&amp;rsquo;s actually culturally acceptable that programmers are lazy by nature (not judging). Programmers write software to replace mundane and repetitive tasks and let their computers work for them instead, and that&amp;rsquo;s why, programmers have ever since created so many frameworks [aframeworkeveryday.js], libraries, and even practices only to avoid repeating work (or doing it altogether).
-And in this realm of eternal laziness, programmers make backups of their system settings and coding environment, and write scripts to bootstrap and link their configuration files so they can easily setup and share them on other machines.</description>
-    </item>
-    
-    <item>
-      <title>And a Whale Said Let There Be Docker</title>
-      <link>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</link>
-      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</guid>
-      <description>Every time I had to work on a new machine or I wanted to try a new technology, I used to install a lot of packages and libraries to prepare my development environment. I always struggled to manage dependencies and different versions of packages. That mostly worked for me but I had to go over this hustle everytime. Besides, after some time the machine I was working on used to get a bit slower.</description>
-    </item>
-    
-    <item>
-      <title>Inserting Bulk Data into Postgres Using Ruby</title>
-      <link>https://aonemd.github.io/posts/inserting-bulk-data-into-pg/</link>
-      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/posts/inserting-bulk-data-into-pg/</guid>
-      <description>I had this task where it was required to generate a lot of data into a postgreSQL database and perform some queries on the generated data. So this is going to be some kind of a crash course on Ruby and postgreSQL (and some optimization).
-Requirements The database contained only two tables. The first one was:
- cup_matches(mid, round, year, num_ratings, rating) mid is the primary key for matches round is the cup round/level (e.</description>
-    </item>
-    
-    <item>
-      <title>Dev Tools</title>
-      <link>https://aonemd.github.io/talks/dev-tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/talks/dev-tools/</guid>
-      <description>An internal talk in which I discussed development tools in Unix-like environments and how to set them up. The notes can be found here.</description>
-    </item>
-    
-    <item>
-      <title>Git Serious</title>
-      <link>https://aonemd.github.io/talks/git-serious/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://aonemd.github.io/talks/git-serious/</guid>
-      <description>An advanced to medium Git targeted talk which covered various tips and tricks in Git. The notes can be found here.</description>
-    </item>
     
   </channel>
 </rss>

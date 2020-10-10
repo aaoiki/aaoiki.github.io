@@ -3,47 +3,17 @@
   <channel>
     <title>Vim on aonemd</title>
     <link>https://aonemd.github.io/categories/vim/</link>
-    <description>Recent content in Vim on aonemd</description>
+    <description>Recent content in Vim on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/categories/vim/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Handy Keymaps in Vim</title>
-      <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
-      <description>In my first two posts in this Vim series, I talked about finding files in Vim and having a minimal Vim setup. In this post I&amp;rsquo;m going to go over some useful keymaps and functions you can use in Vim to boost your text editing abilities and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include external plugins except for section #2 which will be about generating tags (I couldn&amp;rsquo;t leave this part without covering it).</description>
-    </item>
     
-    <item>
-      <title>Minimal Vim</title>
-      <link>https://aonemd.github.io/posts/minimal-vim/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
-      <description>In my previous blog post, I wrote about searching files in Vim. In the next five sections, I will go over creating a minimal Vim setup with a few dependencies. Although minimal does not necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast as possible.
-General Settings There are a few must-have settings that are necessary for modern text editing. Actually, while writing this blog post, I revisited my .</description>
-    </item>
     
-    <item>
-      <title>Finding Things in Vim</title>
-      <link>https://aonemd.github.io/posts/finding-things-in-vim/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/finding-things-in-vim/</guid>
-      <description>Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slow sometimes. In this post, I will go over different search tools and demonstrate how I replaced two different plugins with only a single plugin that rules them all.
-Finding Files by Content To search files, Vim has a :vimgrep command that finds files that contain a certain pattern.</description>
-    </item>
     
-    <item>
-      <title>How I Take Notes</title>
-      <link>https://aonemd.github.io/posts/how-i-take-notes/</link>
-      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/how-i-take-notes/</guid>
-      <description>I always advice every programmer to take notes of their work all the time. Taking notes has throughout the years become so indispensable for me. Instead of searching for something every time I forget it, I go back to my notes. It has also become helpful when I need to study for interviews. I also use those notes as a journal to keep and organize my thoughts when I&amp;rsquo;m working on a new feature or fixing a bug.</description>
-    </item>
     
   </channel>
 </rss>

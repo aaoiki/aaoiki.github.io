@@ -3,242 +3,57 @@
   <channel>
     <title>Posts on aonemd</title>
     <link>https://aonemd.github.io/posts/</link>
-    <description>Recent content in Posts on aonemd</description>
+    <description>Recent content in Posts on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My Desktop System Tools</title>
-      <link>https://aonemd.github.io/posts/my-desktop-system-tools/</link>
-      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/my-desktop-system-tools/</guid>
-      <description>In this post, I will go over how I setup my desktop system for programming and general media usage. Please note that this setup is heavily keyboard driven since I rarely use the touchpad or the mouse except maybe for web browsing or graphics software.
-Machine My main machine is a 2017 Thinkpad X1 Carbon. I like it for it&amp;rsquo;s small size, light weight, and Linux support. It is mainly a programming machine for me.</description>
-    </item>
     
-    <item>
-      <title>Love and Fear</title>
-      <link>https://aonemd.github.io/posts/love-and-fear/</link>
-      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/love-and-fear/</guid>
-      <description>I remember once, in crossing the Atlantic, to have gone upon the deck of the ship at midnight, when a dense black cloud enveloped the sky, and the great deep was roaring madly under the lashes of demoniac winds. My feeling was not of danger or fear (which is a base surrender of the immortal soul), but of utter desolation and loneliness; a little speck of life shut in by a tremendous darkness.</description>
-    </item>
     
-    <item>
-      <title>Another Brick in the Wall</title>
-      <link>https://aonemd.github.io/posts/another-brick-in-the-wall/</link>
-      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/another-brick-in-the-wall/</guid>
-      <description>This post has been in my drafts since the beginning of 2016. I wanted to postpone releasing it until I have the full view. And now that I have just received the results of my last course at university, I think it&amp;rsquo;s time to finally publish this post. Since this comes from my own experience, I cannot remain objective in this post. Also, the first two drafts of this post has nothing to do with its current form.</description>
-    </item>
     
-    <item>
-      <title>Handy Keymaps in Vim</title>
-      <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
-      <description>In my first two posts in this Vim series, I talked about finding files in Vim and having a minimal Vim setup. In this post I&amp;rsquo;m going to go over some useful keymaps and functions you can use in Vim to boost your text editing abilities and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include external plugins except for section #2 which will be about generating tags (I couldn&amp;rsquo;t leave this part without covering it).</description>
-    </item>
     
-    <item>
-      <title>Action Cable: Rails 5 Most Anticipated Feature</title>
-      <link>https://aonemd.github.io/posts/intro-to-actioncable/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/intro-to-actioncable/</guid>
-      <description>Action Cable is a simple framework that introduces WebSocket support to Rails apps. It provides a server-side as well as a client-side integration with WebSocket&amp;hellip;
-This post was originally posted on Robusta Studio&amp;rsquo;s blog on 6 Septemper, 2016. To read the full article, please visit this link.</description>
-    </item>
     
-    <item>
-      <title>Minimal Vim</title>
-      <link>https://aonemd.github.io/posts/minimal-vim/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
-      <description>In my previous blog post, I wrote about searching files in Vim. In the next five sections, I will go over creating a minimal Vim setup with a few dependencies. Although minimal does not necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast as possible.
-General Settings There are a few must-have settings that are necessary for modern text editing. Actually, while writing this blog post, I revisited my .</description>
-    </item>
     
-    <item>
-      <title>Finding Things in Vim</title>
-      <link>https://aonemd.github.io/posts/finding-things-in-vim/</link>
-      <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/finding-things-in-vim/</guid>
-      <description>Vim is a very competent text editor and although it comes with tools to find files, these tools feel a little primitive for modern text editing and a bit slow sometimes. In this post, I will go over different search tools and demonstrate how I replaced two different plugins with only a single plugin that rules them all.
-Finding Files by Content To search files, Vim has a :vimgrep command that finds files that contain a certain pattern.</description>
-    </item>
     
-    <item>
-      <title>Extracting Text From Images Using Ruby</title>
-      <link>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</link>
-      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</guid>
-      <description>tldr; show me the code.
-I&amp;rsquo;m a great hoarder of memes. Seriously, I have a huge folder full of memes and GIFs. I collect my memes usually whenever I&amp;rsquo;m watching a movie or a series by taking a screenshot of the scene with subtitles enabled. The issue is, the program I use to take screenshots, names each new file by the date and time the screenshot was taken. I have a 1200 screenshot folder each named by date and time.</description>
-    </item>
     
-    <item>
-      <title>Making System Calls From Ruby</title>
-      <link>https://aonemd.github.io/posts/making-system-calls-from-ruby/</link>
-      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/making-system-calls-from-ruby/</guid>
-      <description>While I was reading about Linux system calls, I was curious about how to perform them in Ruby specially that Ruby isn&amp;rsquo;t considered a &amp;ldquo;system&amp;rdquo; programming language. However, It&amp;rsquo;s very possible to perform system calls using Ruby. In this post, I&amp;rsquo;m going to demonstrate the different ways to make system calls using Ruby. But first, let us define what system calls are. Simply put, a system call is a way to enter the system kernel, execute an operation, and then return from the kernel.</description>
-    </item>
     
-    <item>
-      <title>When YAML Bit Me</title>
-      <link>https://aonemd.github.io/posts/when-yaml-bit-me/</link>
-      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/when-yaml-bit-me/</guid>
-      <description>This is the story of a bug I encountered about 3 years ago. Basically, I had a model Book that contained a serialized object attribute called info and BooksController initially contained this search query:
-Book.where(&amp;#39;info LIKE ?&amp;#39;, &amp;#34;%ref: &amp;#39;#{params[:ref]}&amp;#39;&amp;#34;) The bug that surfaced at the time was that some books were not fetched when the search query contained alpha-numeric reference numbers (those that contains both digits and letters) as some reference numbers were pure digits and some were a mix of digits and alphabetical characters.</description>
-    </item>
     
-    <item>
-      <title>Computer Science Is Not About Programming</title>
-      <link>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</link>
-      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</guid>
-      <description>This is not yet another war post about the difference between this and that. In fact, what&amp;rsquo;s motivated me to write this post is a TA at my university who was shaming students who graduate university without learning how to program properly. This idea was intriguing to me as I thought to myself that computer science is not about programming!
-Actually, what I believe is that computer science is about computing.</description>
-    </item>
     
-    <item>
-      <title>How I Improved the Loading Speed of My Blog</title>
-      <link>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</guid>
-      <description>In this post I&amp;rsquo;m going to demonstrate the steps I took in order to improve the loading speed of my blog. First of all, this blog is generated by Jekyll, the static site generator. I only build my static files and deploy them to GitHub pages. I use Webpack to compile my assets and then I use Jekyll to build the whole blog.
-Around a year ago, I started on a mission to optimize the loading speed of my blog after feeling that it was slow and had some rendering issues.</description>
-    </item>
     
-    <item>
-      <title>On Writing</title>
-      <link>https://aonemd.github.io/posts/on-writing/</link>
-      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/on-writing/</guid>
-      <description>Why I write There maybe a lot of reasons for this. For starters, I think writing is a fun activity. I write mainly to improve my communication skills, written communication skills apparently. Another reason I write for is to give back to the communities I&amp;rsquo;m involved in and maybe benefit someone someday with something I wrote. Teaching is such a precious experience. Teaching and teaching through writing here does not only benefit the reader but also the writer cause when I write, I get to deepen and widen my knowledge base.</description>
-    </item>
     
-    <item>
-      <title>How I Take Notes</title>
-      <link>https://aonemd.github.io/posts/how-i-take-notes/</link>
-      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/how-i-take-notes/</guid>
-      <description>I always advice every programmer to take notes of their work all the time. Taking notes has throughout the years become so indispensable for me. Instead of searching for something every time I forget it, I go back to my notes. It has also become helpful when I need to study for interviews. I also use those notes as a journal to keep and organize my thoughts when I&amp;rsquo;m working on a new feature or fixing a bug.</description>
-    </item>
     
-    <item>
-      <title>Programming on Rails</title>
-      <link>https://aonemd.github.io/posts/programming-on-rails/</link>
-      <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/programming-on-rails/</guid>
-      <description>Ruby on Rails is a great web framework. It has changed the way web development is done and influenced other frameworks in other programming languages. Even admittedly, much of the major success of Ruby is due to the wide spread of Rails.
-Being the opinionated framework it is, Rails is built on top of a set of conventions and philosophies. It&amp;rsquo;s said to be Omakase (お任せ) or chef&amp;rsquo;s menu of choice (also, watch Rails is Omakase: A Dramatic Reading).</description>
-    </item>
     
-    <item>
-      <title>Bear Programming</title>
-      <link>https://aonemd.github.io/posts/bear-programming/</link>
-      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/bear-programming/</guid>
-      <description>According to Wikipedia, Pair Programming is an agile software development technique in which two programmers work together at one workstation.
-There&amp;rsquo;s also a term I call Bear programming that is not the opposite of pair programming. Bear programming is when a team of programmers that work together on a single project starts mauling the code and ripping its different parts apart like a group of bears.
-Let me clear this. The mauling here refers to writing code that is distinguishable to the code written by other team members.</description>
-    </item>
     
-    <item>
-      <title>Introducing Jack and a New Dark Theme</title>
-      <link>https://aonemd.github.io/posts/introducing-jack-and-dark-theme/</link>
-      <pubDate>Mon, 14 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/introducing-jack-and-dark-theme/</guid>
-      <description>This website is generated by Jekyll, the static site generator. For compiling assets (mainly Javascript and stylsheet files), I’ve been using Sprockets through Jekyll Assets gem. Although recently, and after I had updated the gems in Jekyll’s Gemfile, a new update for Jekyll asset was pushed. It appears they decided to change their entire interface. This rendered my whole project unusable and I needed to change every call to Jekyll Assets new interface in order to fix it.</description>
-    </item>
     
-    <item>
-      <title>التدريب في مصر</title>
-      <link>https://aonemd.github.io/posts/interning-in-egypt/</link>
-      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/interning-in-egypt/</guid>
-      <description>إذا كنت أحد طلاب كليات الحاسبات في مصر ، فأنت - على الأغلب - على علم بوضع الشركات المصرية اللي تقدم تدريباً - غالباً ما يكون في الإجازة الصيفية - لطلاب تلك الكليات.
-تُلزم كليات الحاسبات الطلاب قضاء مدة ثلاثة أشهر في إحدى الشركات قبل التخرج. ومن ذلك تقوم شركات البرمجيات المصرية بعملية أشبه بالمتاجرة بالطلاب حيث يتقدم الطالب لشركةٍ ما كمتدرب، ليتفاجئ أنه وباقي الموظفين في الشركة متدربون ولا يوجد موظفون أكثر خبرة اللهم إلا القليل.</description>
-    </item>
     
-    <item>
-      <title>Go for Competitive Programming</title>
-      <link>https://aonemd.github.io/posts/go-for-cp/</link>
-      <pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/go-for-cp/</guid>
-      <description>I first started writing Go during my time at UserTalk and have been using it occasionaly since then because of its minimal syntax and standard library that makes it a great language for writing almost any kind of software.
-Whenever I&amp;rsquo;m solving a competitive programming problem, I usually use C or C++ (whichever works best) to write the solution mainly because they are both supported by almost all online judges and programming contests.</description>
-    </item>
     
-    <item>
-      <title>I Took Some Time to Create a Time Tracker</title>
-      <link>https://aonemd.github.io/posts/panadoura/</link>
-      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/panadoura/</guid>
-      <description>In my quest of finding the ultimate productivity framework, I came across the Pomodoro technique. The basic idea behind it is to divide the work into equal chunks of time and take a small break after each set. Usually it goes by working for 25 minutes in complete concentration, taking a 5 minutes break and repeating the cycle until the task is completed.
-Motivation It was the beginning of January this year when I decided to use the Pomodoro technique to help me study for my finals.</description>
-    </item>
     
-    <item>
-      <title>The One Year Old Bug</title>
-      <link>https://aonemd.github.io/posts/the-one-year-bug/</link>
-      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/the-one-year-bug/</guid>
-      <description>I&amp;rsquo;ve been revisiting my old repositories on GitHub recently to make sure they are still relevant and to clean up the code. One of the projects I looked into was margopher which I started back in August 2015. I only removed some unused code, and updated the README page after which I decided to follow the usage instructions just to make sure everything was okay. This was when I found out that when I created and used a margopher object one time, I could not use it any more.</description>
-    </item>
     
-    <item>
-      <title>The Dotfiles</title>
-      <link>https://aonemd.github.io/posts/the-dotfiles/</link>
-      <pubDate>Wed, 06 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/the-dotfiles/</guid>
-      <description>One of the three great virtues of a programmer is laziness and it&amp;rsquo;s actually culturally acceptable that programmers are lazy by nature (not judging). Programmers write software to replace mundane and repetitive tasks and let their computers work for them instead, and that&amp;rsquo;s why, programmers have ever since created so many frameworks [aframeworkeveryday.js], libraries, and even practices only to avoid repeating work (or doing it altogether).
-And in this realm of eternal laziness, programmers make backups of their system settings and coding environment, and write scripts to bootstrap and link their configuration files so they can easily setup and share them on other machines.</description>
-    </item>
     
-    <item>
-      <title>And a Whale Said Let There Be Docker</title>
-      <link>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</link>
-      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/and-a-whale-said-let-there-be-docker/</guid>
-      <description>Every time I had to work on a new machine or I wanted to try a new technology, I used to install a lot of packages and libraries to prepare my development environment. I always struggled to manage dependencies and different versions of packages. That mostly worked for me but I had to go over this hustle everytime. Besides, after some time the machine I was working on used to get a bit slower.</description>
-    </item>
     
-    <item>
-      <title>Inserting Bulk Data into Postgres Using Ruby</title>
-      <link>https://aonemd.github.io/posts/inserting-bulk-data-into-pg/</link>
-      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/inserting-bulk-data-into-pg/</guid>
-      <description>I had this task where it was required to generate a lot of data into a postgreSQL database and perform some queries on the generated data. So this is going to be some kind of a crash course on Ruby and postgreSQL (and some optimization).
-Requirements The database contained only two tables. The first one was:
- cup_matches(mid, round, year, num_ratings, rating) mid is the primary key for matches round is the cup round/level (e.</description>
-    </item>
     
   </channel>
 </rss>

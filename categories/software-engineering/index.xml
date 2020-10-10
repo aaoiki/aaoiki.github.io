@@ -3,29 +3,13 @@
   <channel>
     <title>Software Engineering on aonemd</title>
     <link>https://aonemd.github.io/categories/software-engineering/</link>
-    <description>Recent content in Software Engineering on aonemd</description>
+    <description>Recent content in Software Engineering on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bear Programming</title>
-      <link>https://aonemd.github.io/posts/bear-programming/</link>
-      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/bear-programming/</guid>
-      <description>According to Wikipedia, Pair Programming is an agile software development technique in which two programmers work together at one workstation.
-There&amp;rsquo;s also a term I call Bear programming that is not the opposite of pair programming. Bear programming is when a team of programmers that work together on a single project starts mauling the code and ripping its different parts apart like a group of bears.
-Let me clear this. The mauling here refers to writing code that is distinguishable to the code written by other team members.</description>
-    </item>
     
-    <item>
-      <title>The One Year Old Bug</title>
-      <link>https://aonemd.github.io/posts/the-one-year-bug/</link>
-      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://aonemd.github.io/posts/the-one-year-bug/</guid>
-      <description>I&amp;rsquo;ve been revisiting my old repositories on GitHub recently to make sure they are still relevant and to clean up the code. One of the projects I looked into was margopher which I started back in August 2015. I only removed some unused code, and updated the README page after which I decided to follow the usage instructions just to make sure everything was okay. This was when I found out that when I created and used a margopher object one time, I could not use it any more.</description>
-    </item>
     
   </channel>
 </rss>
