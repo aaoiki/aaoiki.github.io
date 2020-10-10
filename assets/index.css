@@ -102,27 +102,44 @@ img {
   --latin-header-font: 'Merriweather', serif;
   --arabic-font:       'Amiri', serif;
   --monospace-font:    'Ubuntu Mono', monospace;
+
+  --main-font-size: 22px;
+  --h1-font-size:   38px;
+  --h2-font-size:   34px;
+  --h3-font-size:   30px;
+  --h4-font-size:   26px;
+  --h5-font-size:   22px;
+  --h6-font-size:   18px;
+
+  --desktop-main-font-size: 26px;
+  --desktop-h1-font-size:   44px;
+  --desktop-h2-font-size:   40px;
+  --desktop-h3-font-size:   36px;
+  --desktop-h4-font-size:   32px;
+  --desktop-h5-font-size:   28px;
+  --desktop-h6-font-size:   24px;
 }
 
 body {
-  font-size: 26px;
+  font-size: 22px;
+  font-size: var(--main-font-size);
   font-weight: normal;
   line-height: 34px;
   font-family: 'Open Sans', sans-serif;
   font-family: var(--latin-font);
 }
 
-h1 { font-size: 46px; }
+h1 { font-size: 38px; font-size: var(--h1-font-size); }
 
-h2 { font-size: 42px; }
+h2 { font-size: 34px; font-size: var(--h2-font-size); }
 
-h3 { font-size: 38px; }
+h3 { font-size: 30px; font-size: var(--h3-font-size); }
 
-h4 { font-size: 34px; }
+h4 { font-size: 26px; font-size: var(--h4-font-size); }
 
-h5 { font-size: 30px; }
+h5 { font-size: 22px; font-size: var(--h5-font-size); }
 
-h6 { font-size: 26px; }
+h6 { font-size: 18px; font-size: var(--h6-font-size); }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
@@ -132,6 +149,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 small { font-size: 30%; }
+
+@media only screen and (min-width: 640px) {
+  body {
+    font-size: 26px;
+    font-size: var(--desktop-main-font-size);
+    font-weight: normal;
+    line-height: 34px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: var(--latin-font);
+  }
+
+  h1 { font-size: 44px; font-size: var(--desktop-h1-font-size); }
+
+  h2 { font-size: 40px; font-size: var(--desktop-h2-font-size); }
+
+  h3 { font-size: 36px; font-size: var(--desktop-h3-font-size); }
+
+  h4 { font-size: 32px; font-size: var(--desktop-h4-font-size); }
+
+  h5 { font-size: 28px; font-size: var(--desktop-h5-font-size); }
+
+  h6 { font-size: 24px; font-size: var(--desktop-h6-font-size); }
+}
 
 blockquote {
   background-color: #eeeeee;
@@ -195,7 +235,7 @@ tbody tr:nth-child(odd) {
   text-align: right;
   font-family: 'Amiri', serif;
   font-family: var(--arabic-font);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: normal;
   line-height: 40px
 }
@@ -212,6 +252,12 @@ tbody tr:nth-child(odd) {
 :lang(ar) cite {
     font-size: 20px;
   }
+
+@media only screen and (min-width: 640px) {
+  :lang(ar) {
+    font-size: 30px;
+  }
+}
 
 :root {
   --height: 80px;
@@ -889,6 +935,16 @@ body.dark blockquote {
     border: 1px solid var(--lighter-dark);
   }
 
+body.dark .category-post .category-post__category a.hyperlink {
+        color: #f2f2f2;
+        color: var(--dark-foreground-color)
+      }
+
+body.dark .category-post .category-post__category a.hyperlink svg {
+          fill: #f2f2f2;
+          fill: var(--dark-foreground-color);
+        }
+
 a {
   color: #008cee;
   color: var(--secondary-color);
@@ -916,6 +972,10 @@ a:hover {
   color: var(--secondary-color);
 }
 
+.view-post__date {
+  font-size: 22px;
+}
+
 .view-post__en-title h3, .view-post__en-title small {
     font-family: 'Open Sans', sans-serif;
     font-family: var(--latin-font);
@@ -935,8 +995,21 @@ a:hover {
 }
 
 .category-post .category-post__category {
-    font-size: 18px;
+    font-size: 24px
   }
+
+.category-post .category-post__category a.hyperlink {
+      color: #22313F;
+      color: var(--foreground-color);
+      text-decoration: none
+    }
+
+.category-post .category-post__category a.hyperlink svg {
+        width:  18px;
+        height: 18px;
+        fill: #22313F;
+        fill: var(--foreground-color);
+      }
 
 .category-post .category-post__title {
     display: list-item;
