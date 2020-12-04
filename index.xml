@@ -6,7 +6,41 @@
     <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/index.xml" rel="self" type="application/rss+xml" />
+      
+      <item>
+        <title>بي سي</title>
+        <link>https://aonemd.github.io/posts/pc/</link>
+        <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.github.io/posts/pc/</guid>
+        <description>&lt;p&gt;من سيل الأفكار والمصطلحات التي تتسلل إلى المجتمع العربي بين الحين والآخر، انتشر
+مصطلح &amp;ldquo;Political Correctness&amp;rdquo; وكثر استخدامه في صفحات وسائل التواصل الاجتماعي.
+وهذا ليس بالأمر الغريب، فمن الطبيعي تقليد الأم المتقدمة واستيراد &amp;ldquo;مظاهر الحضارة&amp;rdquo;
+منها حتى لو أن مستخدم هذا المصطلح لا يمكنه اختيار رئيس البلدية في منطقته.&lt;/p&gt;
+&lt;p&gt;كلٌّ حرٌّ فيما يعتقد بالطبع لكن بالنسبة لي، التقليد الفارغ أو ما يسمى بال &amp;ldquo;Cargo
+Culting&amp;rdquo; ما هو سوى هروبٍ من مواجهة مشكلات الفرد والمجتمع الحقيقية أو على أفضل
+تقدير، بحثٌ عن حلولٍ لمشكلاتٍ غير موجودة.&lt;/p&gt;
+&lt;blockquote lang=&#34;ar&#34;&gt;
+  &lt;p&gt;
+    المغلوب مولع أبداً بالاقتداء بالغالب في شعاره وزيه و نحلته و سائر أحواله و عوائده.
+  &lt;/p&gt;
+  &lt;cite&gt;ابن خلدون&lt;/cite&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;الأمر الذي لفت انتباهي هو الترجمة الغريبة المنتشرة ــ وأعتقد الوحيدة
+المستخدمة ــ لهذا المصطلح ألا وهي &amp;ldquo;الصوابية السياسية&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;بدايةً، اتجهت للبحث عن كلمة &amp;ldquo;صوابية&amp;rdquo; في المعاجم العربية. فالكلمة &amp;ldquo;صوابية&amp;rdquo; تبدو
+غريبةً على العربية وتشعر أنه تم تلفيقها بفعل الترجمة الحرفية لتوافق كلمة
+&amp;ldquo;سياسية&amp;rdquo;. بالطبع، لم أجد ذكراً للكلمة في المعاجم كما توقعت. كما لم أجد استخداماً
+للكلمة في غير موضع &amp;ldquo;صوابية سياسية&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;يجدر بي أن أذكر أن &lt;a href=&#39;https://ar.wikipedia.org/wiki/%D8%B5%D9%88%D8%A7%D8%A8%D9%8A%D8%A9_%D8%B3%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9&#39; target=&#39;_blank&#39;&gt;مقال ويكيبيديا العربية عن مصطلح &amp;ldquo;Political Correctness&amp;rdquo;&lt;/a&gt;
+يجدُ ترجماتٍ مغايرة أعتقد أن أفضلها وصفاً للمعنى: &amp;ldquo;اللباقة الاجتماعية&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;في الواقع ليست لدي خبرة في الترجمة إلى العربية ــ للأسف ــ ولا أعلم كيف تتم
+عمليات ترجمة المصطلحات واعتمادها وانتشارها بين الناس، لكنّي كمتحدثٍ للعربية لا أرى
+وصفاً لتلك الترجمة سوى بأنها ترجمةٌ رديئة لمصلح أردأ.&lt;/p&gt;
+&lt;p&gt;اقرأ: &lt;a href=&#34;https://www.ida2at.com/what-is-political-correctness-why-it-causes-outrage/&#34;&gt;معركة قل ولا تقل: ما «الصوابية السياسية»؟&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
       
       <item>
         <title>My Desktop System Tools</title>
@@ -1291,57 +1325,6 @@ with the Dropbox app.&lt;/p&gt;
 &lt;p&gt;Also, until this point, I write and read my notes in Markdown. Although it&amp;rsquo;s
 possible to do more work and convert the notes into a more readable format such
 as PDF or HTML using something like &lt;code&gt;pandoc&lt;/code&gt;.&lt;/p&gt;
-</description>
-      </item>
-      
-      <item>
-        <title>Programming on Rails</title>
-        <link>https://aonemd.github.io/posts/programming-on-rails/</link>
-        <pubDate>Tue, 12 Jun 2018 00:00:00 +0000</pubDate>
-        
-        <guid>https://aonemd.github.io/posts/programming-on-rails/</guid>
-        <description>&lt;p&gt;Ruby on Rails is a great web framework. It has changed the way web development
-is done and influenced other frameworks in other programming languages. Even
-admittedly, much of the major success of Ruby is due to the wide spread of
-Rails.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/Ruby_On_Rails_Logo.png&#34; alt=&#34;Rails Logo&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Being the opinionated framework it is, Rails is built on top of a set of
-conventions and philosophies. It&amp;rsquo;s said to be
-&lt;a target=&#34;_blank&#34; href=&#34;http://david.heinemeierhansson.com/2012/rails-is-omakase.html&#34;&gt;Omakase (お任せ)&lt;/a&gt;
-or chef&amp;rsquo;s menu of choice (also, watch
-&lt;a target=&#34;_blank&#34; href=&#34;https://www.youtube.com/watch?v=E99FnoYqoII&#34;&gt;Rails is Omakase: A Dramatic Reading&lt;/a&gt;).
-Unlike Node&amp;rsquo;s ExpressJS for example, Rails comes preconfigured with all the
-stack you need to build your app. Its convenience over configuration led it to
-be one of the easiest and fastest ways to start building apps for the web
-today.&lt;/p&gt;
-&lt;p&gt;Of course, this convenience comes at a cost. Apart from the added difficulty to
-maintain when the app grows in complexity (which I won&amp;rsquo;t talk about in this
-post), the Rails way sets a fixated mindset about programming, namely, web
-programming. Your entire world view to programming is through Rails and the
-Rails way. For instance, the places where you can create your classes, the way
-you connect the backend with the view and the frontend, and the way you write
-helper functions or helper modules are all set by the framework, Rails. I&amp;rsquo;m not
-discussing here the architectural decisions made by Rails however, I&amp;rsquo;m
-pointing to the effect of those decisions on the programmer&amp;rsquo;s mindset.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve been doing Rails for around 4 years now. During this period, whenever I&amp;rsquo;m
-working on a task (be it Rails or non-Rails related), I often caught myself
-looking to identify a pattern; looking for the framework in it. It&amp;rsquo;s like my
-mind wants to see all programming as it sees tedious CRUD applications (which
-are totally fine as long as they are solving a problem). The issue here is
-restricting my thought process to only one way of thinking however,
-programming, or rather the creative thinking it requires, needs more
-imagination and less restriction.&lt;/p&gt;
-&lt;p&gt;Something I also noticed while working with interns is that more fresh minds
-tend to be more flexible than experienced developers. Their minds are not yet
-bloated with way of the framework and they tend be less following to the rules.&lt;/p&gt;
-&lt;p&gt;So you might ask what to do in order to free your mind from the Rails way. What
-I suggest is to rebel against Rails. Yes, try different Ruby web frameworks,
-different languages, new stacks, or even developing for platforms other than
-the web altogether. Also, try breaking, bending, and tweaking large, complex
-Rails apps to see how far you can get with Rails. Try a new architecture for
-your Rails app by dividing your business logic and classes into multiple
-layers. The world outside the Rails menu is so vast and diverse but you need to
-see that for yourself.&lt;/p&gt;
 </description>
       </item>
       
