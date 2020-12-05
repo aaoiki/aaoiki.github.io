@@ -240,6 +240,22 @@ tbody tr:nth-child(odd) {
   line-height: 40px
 }
 
+:lang(ar) h1, :lang(ar) h2, :lang(ar) h3, :lang(ar) h4, :lang(ar) h5, :lang(ar) h6 {
+    font-weight: 700;
+  }
+
+:lang(ar) h1 { font-size: 38px; font-size: var(--h1-font-size); }
+
+:lang(ar) h2 { font-size: 34px; font-size: var(--h2-font-size); }
+
+:lang(ar) h3 { font-size: 30px; font-size: var(--h3-font-size); }
+
+:lang(ar) h4 { font-size: 26px; font-size: var(--h4-font-size); }
+
+:lang(ar) h5 { font-size: 22px; font-size: var(--h5-font-size); }
+
+:lang(ar) h6 { font-size: 18px; font-size: var(--h6-font-size); }
+
 :lang(ar) code {
     direction: ltr;
     float: left;
@@ -255,8 +271,15 @@ tbody tr:nth-child(odd) {
 
 @media only screen and (min-width: 640px) {
   :lang(ar) {
-    font-size: 30px;
+    font-size: 30px
   }
+
+    :lang(ar) h1 { font-size: 44px; font-size: var(--desktop-h1-font-size); }
+    :lang(ar) h2 { font-size: 40px; font-size: var(--desktop-h2-font-size); }
+    :lang(ar) h3 { font-size: 36px; font-size: var(--desktop-h3-font-size); }
+    :lang(ar) h4 { font-size: 32px; font-size: var(--desktop-h4-font-size); }
+    :lang(ar) h5 { font-size: 28px; font-size: var(--desktop-h5-font-size); }
+    :lang(ar) h6 { font-size: 24px; font-size: var(--desktop-h6-font-size); }
 }
 
 :root {
