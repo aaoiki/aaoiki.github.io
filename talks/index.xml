@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks on aonemd</title>
-    <link>https://aonemd.github.io/talks/</link>
+    <link>https://aonemd.me/talks/</link>
     <description>Recent content in Talks on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://aonemd.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://aonemd.me/talks/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

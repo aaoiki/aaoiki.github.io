@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aonemd</title>
-    <link>https://aonemd.github.io/</link>
+    <link>https://aonemd.me/</link>
     <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
       
       <item>
         <title>بـي سـي</title>
-        <link>https://aonemd.github.io/posts/pc/</link>
+        <link>https://aonemd.me/posts/pc/</link>
         <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/pc/</guid>
+        <guid>https://aonemd.me/posts/pc/</guid>
         <description>&lt;p&gt;من سيل الأفكار والمصطلحات التي تتسلل إلى المجتمع العربي بين الحين والآخر، انتشر
 مصطلح &amp;ldquo;Political Correctness&amp;rdquo; (يُختصر PC) وكثُر استخدامه في صفحات وسائل التواصل الاجتماعي.
 وهذا ليس بالأمر الغريب؛ فمن الطبيعي تقليد الأمم المتقدمة واستيراد &amp;ldquo;مظاهر الحضارة&amp;rdquo;
@@ -52,10 +52,10 @@
       
       <item>
         <title>My Desktop System Tools</title>
-        <link>https://aonemd.github.io/posts/my-desktop-system-tools/</link>
+        <link>https://aonemd.me/posts/my-desktop-system-tools/</link>
         <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/my-desktop-system-tools/</guid>
+        <guid>https://aonemd.me/posts/my-desktop-system-tools/</guid>
         <description>&lt;p&gt;In this post, I will go over how I setup my desktop system for programming and
 general media usage. Please note that this setup is heavily keyboard driven
 since I rarely use the touchpad or the mouse except maybe for web browsing or
@@ -133,7 +133,7 @@ is &lt;a href=&#39;https://sw.kovidgoyal.net/kitty/&#39; target=&#39;_blank&#39;
 the capabilities of Visual Studio Code recently, I always go for Vim for its
 minimal text editing workflow and the ability to run it inside a terminal
 emulator session so it&amp;rsquo;s usable everywhere, be it the desktop or the server.  I
-have written &lt;a href=&#34;https://aonemd.github.io/categories#vim&#34;&gt;a small series of posts&lt;/a&gt; about configuring Vim.&lt;/p&gt;
+have written &lt;a href=&#34;https://aonemd.me/categories#vim&#34;&gt;a small series of posts&lt;/a&gt; about configuring Vim.&lt;/p&gt;
 &lt;h3 id=&#34;file-manager&#34;&gt;File manager&lt;/h3&gt;
 &lt;p&gt;Since I started with a keyboard driven setup, my file manager should be
 keyboard driven as well.  There are many good CLI file managers. I have been
@@ -167,10 +167,10 @@ files on GitHub&lt;/a&gt;.&lt;/p&gt;
       
       <item>
         <title>Love and Fear</title>
-        <link>https://aonemd.github.io/posts/love-and-fear/</link>
+        <link>https://aonemd.me/posts/love-and-fear/</link>
         <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/love-and-fear/</guid>
+        <guid>https://aonemd.me/posts/love-and-fear/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;I remember once, in crossing the Atlantic, to have gone upon the deck of the
 ship at midnight, when a dense black cloud enveloped the sky, and the great
@@ -242,10 +242,10 @@ self-contempt.
       
       <item>
         <title>Another Brick in the Wall</title>
-        <link>https://aonemd.github.io/posts/another-brick-in-the-wall/</link>
+        <link>https://aonemd.me/posts/another-brick-in-the-wall/</link>
         <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/another-brick-in-the-wall/</guid>
+        <guid>https://aonemd.me/posts/another-brick-in-the-wall/</guid>
         <description>&lt;p&gt;This post has been in my drafts since the beginning of 2016. I wanted to
 postpone releasing it until I have the full view. And now that I have just
 received the results of my last course at university, I think it&amp;rsquo;s time to
@@ -257,7 +257,7 @@ degree in 2012, hated every living second of it, decided to focus on
 self-learning instead, got myself a few positions as a software engineer,
 neglected my studies, decided to finish university anyway, and finally I
 graduated!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/another_brick_in_the_wall-plan.png&#34; alt=&#34;My 5-year plan&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.me/images/another_brick_in_the_wall-plan.png&#34; alt=&#34;My 5-year plan&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You and I might as well ask why I would go back and finish university after I
 got an actual paying job. I went as far as leaving my job at the time in order
 to focus on my studies. Well, I believe I had two reasons. First of all, I
@@ -319,12 +319,12 @@ forward.&lt;/p&gt;
       
       <item>
         <title>Handy Keymaps in Vim</title>
-        <link>https://aonemd.github.io/posts/handy-keymaps-in-vim/</link>
+        <link>https://aonemd.me/posts/handy-keymaps-in-vim/</link>
         <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/handy-keymaps-in-vim/</guid>
-        <description>&lt;p&gt;In my first two posts in this Vim series, I talked about &lt;a href=&#34;https://aonemd.github.io/blog/finding-things-in-vim&#34;&gt;finding files in
-Vim&lt;/a&gt; and &lt;a href=&#34;https://aonemd.github.io/blog/minimal-vim&#34;&gt;having a minimal Vim
+        <guid>https://aonemd.me/posts/handy-keymaps-in-vim/</guid>
+        <description>&lt;p&gt;In my first two posts in this Vim series, I talked about &lt;a href=&#34;https://aonemd.me/blog/finding-things-in-vim&#34;&gt;finding files in
+Vim&lt;/a&gt; and &lt;a href=&#34;https://aonemd.me/blog/minimal-vim&#34;&gt;having a minimal Vim
 setup&lt;/a&gt;.  In this post I&amp;rsquo;m going to go over some useful
 keymaps and functions you can use in Vim to boost your text editing abilities
 and to master the Vim wizardry. I will only cover keymaps that don&amp;rsquo;t include
@@ -463,10 +463,10 @@ repository on GitHub. You can check it out
       
       <item>
         <title>Action Cable: Rails 5 Most Anticipated Feature</title>
-        <link>https://aonemd.github.io/posts/intro-to-actioncable/</link>
+        <link>https://aonemd.me/posts/intro-to-actioncable/</link>
         <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/intro-to-actioncable/</guid>
+        <guid>https://aonemd.me/posts/intro-to-actioncable/</guid>
         <description>&lt;p&gt;Action Cable is a simple framework that introduces WebSocket support to
 Rails apps. It provides a server-side as well as a client-side integration
 with WebSocket&amp;hellip;&lt;/p&gt;
@@ -478,11 +478,11 @@ blog on 6 Septemper, 2016. To read the full article, please visit
       
       <item>
         <title>Minimal Vim</title>
-        <link>https://aonemd.github.io/posts/minimal-vim/</link>
+        <link>https://aonemd.me/posts/minimal-vim/</link>
         <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/minimal-vim/</guid>
-        <description>&lt;p&gt;In my previous &lt;a href=&#34;https://aonemd.github.io/blog/finding-things-in-vim&#34;&gt;blog post&lt;/a&gt;, I wrote about
+        <guid>https://aonemd.me/posts/minimal-vim/</guid>
+        <description>&lt;p&gt;In my previous &lt;a href=&#34;https://aonemd.me/blog/finding-things-in-vim&#34;&gt;blog post&lt;/a&gt;, I wrote about
 searching files in Vim. In the next five sections, I will go over creating a
 minimal Vim setup with a few dependencies. Although minimal does not
 necessarily mean faster, I&amp;rsquo;ll keep in mind making Vim perform and open as fast
@@ -562,7 +562,7 @@ Vim. More plugins also means more dependencies to manage.&lt;/p&gt;
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/hyiltiz/vim-plugins-profile&#34;&gt;vim-plugins-profile&lt;/a&gt;,
 the next screenshot shows the top 10 plugins that are taking most of Vim&amp;rsquo;s
 startup time for me:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/minimal_vim-profile.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/minimal_vim-profile.png&#34; alt=&#34;Vim plugins profiled&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/minimal_vim-profile.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/minimal_vim-profile.png&#34; alt=&#34;Vim plugins profiled&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;After profiling Vim&amp;rsquo;s startup time, I replaced
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/tomtom/tcomment_vim&#34;&gt;tcomment_vim&lt;/a&gt; with
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/tpope/vim-commentary&#34;&gt;vim-commentary&lt;/a&gt; and
@@ -607,7 +607,7 @@ Vim. Here&amp;rsquo;s how I currently configure my status line:&lt;/p&gt;
 &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;modifiedflag, charcount, filepercent, filepath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;statusline&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;%&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;%&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;\ %&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;\ %&lt;span class=&#34;nx&#34;&gt;P&lt;/span&gt;\ %&lt;span class=&#34;nx&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And this is how it looks like:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/minimal_vim-statusline.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/minimal_vim-statusline.png&#34; alt=&#34;Minimal statuline&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/minimal_vim-statusline.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/minimal_vim-statusline.png&#34; alt=&#34;Minimal statuline&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;file-explorer&#34;&gt;File Explorer&lt;/h3&gt;
 &lt;p&gt;I see a lot of Vim users put the plugin
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/scrooloose/nerdtree&#34;&gt;&lt;em&gt;NERDTree&lt;/em&gt;&lt;/a&gt; in their
@@ -621,7 +621,7 @@ with using Vim in general, the more you use it, the more you realize that you
 know nothing about it. As of writing this post, I&amp;rsquo;ve learned more features that
 I didn&amp;rsquo;t know existed in netrw. You can always learn about the commands and key
 maps of netrw using &lt;code&gt;:h netrw&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/minimal_vim-netrw.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/minimal_vim-netrw.png&#34; alt=&#34;netrw preview&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/minimal_vim-netrw.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/minimal_vim-netrw.png&#34; alt=&#34;netrw preview&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Just like NERDTree, You can manipulate files and directories (browse, execute,
 rename, delete, &amp;hellip;) from inside netrw.  Moreover, you can configure it to
 behave exactly like NERDTree. Here are the relevant settings in my .vimrc:&lt;/p&gt;
@@ -640,10 +640,10 @@ redundant settings. You can find my full .vimrc file in my
       
       <item>
         <title>Finding Things in Vim</title>
-        <link>https://aonemd.github.io/posts/finding-things-in-vim/</link>
+        <link>https://aonemd.me/posts/finding-things-in-vim/</link>
         <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/finding-things-in-vim/</guid>
+        <guid>https://aonemd.me/posts/finding-things-in-vim/</guid>
         <description>&lt;p&gt;Vim is a very competent text editor and although it comes with tools to find
 files, these tools feel a little primitive for modern text editing and a bit
 slow sometimes. In this post, I will go over different search tools and
@@ -723,7 +723,7 @@ install any external dependencies. However, I had to install it since it&amp;rsq
 dependency for this really cool command-line file manager,
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/mananapr/cfiles&#34;&gt;&lt;em&gt;cfiles&lt;/em&gt;&lt;/a&gt;. So I decided I&amp;rsquo;d
 give it a try anyway. I was mind blown!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/finding_files_in_vim-commit.png&#34; alt=&#34;aaku git commit&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.me/images/finding_files_in_vim-commit.png&#34; alt=&#34;aaku git commit&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Not only can you fuzzy search for your files in the terminal, &lt;em&gt;fzf&lt;/em&gt; also has a
 counterpart Vim plugin called
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/fzf.vim&#34;&gt;&lt;em&gt;fzf.vim&lt;/em&gt;&lt;/a&gt; which is a
@@ -756,17 +756,17 @@ it&amp;rsquo;s even better.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;fzf.vim&lt;/em&gt; also provides more useful commands such as &lt;code&gt;:GFiles?&lt;/code&gt; and &lt;code&gt;:Commits&lt;/code&gt;
 for Git users. You can learn more about its commands
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/fzf.vim#commands&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can find my vimrc in my &lt;a href=&#34;https://aonemd.github.io/blog/the-dotfiles&#34;&gt;dotfiles&lt;/a&gt; repository
+&lt;p&gt;You can find my vimrc in my &lt;a href=&#34;https://aonemd.me/blog/the-dotfiles&#34;&gt;dotfiles&lt;/a&gt; repository
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku&#34;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
       </item>
       
       <item>
         <title>Extracting Text From Images Using Ruby</title>
-        <link>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</link>
+        <link>https://aonemd.me/posts/extracting-text-from-images-using-ruby/</link>
         <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/extracting-text-from-images-using-ruby/</guid>
+        <guid>https://aonemd.me/posts/extracting-text-from-images-using-ruby/</guid>
         <description>&lt;p&gt;&lt;strong&gt;tldr;&lt;/strong&gt; &lt;a href=&#34;#the-script&#34;&gt;show me the code&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m a great hoarder of memes. Seriously, I have a huge folder full of memes and
 GIFs. I collect my memes usually whenever I&amp;rsquo;m watching a movie or a series by
@@ -823,9 +823,9 @@ image file) in my source directory and reads it as a grayscale image.&lt;/p&gt;
 &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s take the following screenshot as an example and feed it to the script.
 First, we load it normally:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/extracting_text_example.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/extracting_text_example.png&#34; alt=&#34;Example screenshot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/extracting_text_example.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/extracting_text_example.png&#34; alt=&#34;Example screenshot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;then we convert it to grayscale. This is what it looks like:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/extracting_text_example_grayscale.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/extracting_text_example_grayscale.png&#34; alt=&#34;Example screenshot grayscale&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/extracting_text_example_grayscale.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/extracting_text_example_grayscale.png&#34; alt=&#34;Example screenshot grayscale&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;cleaning-the-image&#34;&gt;Cleaning The Image&lt;/h3&gt;
 &lt;p&gt;The second part is where all the image processing happens. Basically, the
 script negates the image to black and white to remove all the noise. This
@@ -846,7 +846,7 @@ improves the ability of Tesseract to read the text in the image.&lt;/p&gt;
 details in the image are removed except for the vivid subtitles. This file is
 stored under the &lt;code&gt;TMP_DIR&lt;/code&gt; we defined earlier in the script. You can of course
 delete the &lt;code&gt;TMP_DIR&lt;/code&gt; safely or instrument the script to do it for you.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/extracting_text_example_negative.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/extracting_text_example_negative.png&#34; alt=&#34;Example screenshot negative&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/extracting_text_example_negative.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/extracting_text_example_negative.png&#34; alt=&#34;Example screenshot negative&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;recognizing-the-text&#34;&gt;Recognizing The Text&lt;/h3&gt;
 &lt;p&gt;In this part, we call Tesseract command on our image and get back our
 recognized text. We could have used a Ruby wrapper around Tesseract, and
@@ -907,10 +907,10 @@ my script as of yet; I want to get rid of duplicates anyway.&lt;/p&gt;
       
       <item>
         <title>Making System Calls From Ruby</title>
-        <link>https://aonemd.github.io/posts/making-system-calls-from-ruby/</link>
+        <link>https://aonemd.me/posts/making-system-calls-from-ruby/</link>
         <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/making-system-calls-from-ruby/</guid>
+        <guid>https://aonemd.me/posts/making-system-calls-from-ruby/</guid>
         <description>&lt;p&gt;While I was reading about Linux system calls, I was curious about how to
 perform them in Ruby specially that Ruby isn&amp;rsquo;t considered a &amp;ldquo;system&amp;rdquo;
 programming language. However, It&amp;rsquo;s very possible to perform system calls using
@@ -1013,10 +1013,10 @@ syscall function.&lt;/p&gt;
       
       <item>
         <title>When YAML Bit Me</title>
-        <link>https://aonemd.github.io/posts/when-yaml-bit-me/</link>
+        <link>https://aonemd.me/posts/when-yaml-bit-me/</link>
         <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/when-yaml-bit-me/</guid>
+        <guid>https://aonemd.me/posts/when-yaml-bit-me/</guid>
         <description>&lt;p&gt;This is the story of a bug I encountered about 3 years ago.  Basically, I had a
 model &lt;code&gt;Book&lt;/code&gt; that contained a serialized object attribute called &lt;code&gt;info&lt;/code&gt; and
 &lt;code&gt;BooksController&lt;/code&gt; initially contained this search query:&lt;/p&gt;
@@ -1070,16 +1070,16 @@ types of reference numbers:&lt;/p&gt;
       
       <item>
         <title>Computer Science Is Not About Programming</title>
-        <link>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</link>
+        <link>https://aonemd.me/posts/computer-science-is-not-about-programming/</link>
         <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/computer-science-is-not-about-programming/</guid>
+        <guid>https://aonemd.me/posts/computer-science-is-not-about-programming/</guid>
         <description>&lt;p&gt;This is not yet another war post about the difference between this and that. In
 fact, what&amp;rsquo;s motivated me to write this post is a TA at my university who was
 shaming students who graduate university without learning how to program
 properly. This idea was intriguing to me as I thought to myself that computer
 science is not about programming!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://aonemd.github.io/images/hamada_helal_hamada_helal.jpg&#34; alt=&#34;Hamada Helal, the king of obvious&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.me/images/hamada_helal_hamada_helal.jpg&#34; alt=&#34;Hamada Helal, the king of obvious&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Actually, what I believe is that computer science is about computing. According
 to Merriam-Webster, the definition of computer science is &amp;ldquo;a branch of science
 that deals with the theory of computation or the design of computers&amp;rdquo;.  On the
@@ -1126,10 +1126,10 @@ to do the computation.&lt;/p&gt;
       
       <item>
         <title>How I Improved the Loading Speed of My Blog</title>
-        <link>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</link>
+        <link>https://aonemd.me/posts/how-i-improved-the-loading-speed-of-my-blog/</link>
         <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/how-i-improved-the-loading-speed-of-my-blog/</guid>
+        <guid>https://aonemd.me/posts/how-i-improved-the-loading-speed-of-my-blog/</guid>
         <description>&lt;p&gt;In this post I&amp;rsquo;m going to demonstrate the steps I took in order to improve the
 loading speed of my blog. First of all, this blog is generated by
 &lt;a target=&#34;_blank&#34; href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;, the static site generator.  I
@@ -1139,9 +1139,9 @@ compile my assets and then I use Jekyll to build the whole blog.&lt;/p&gt;
 blog after feeling that it was slow and had some rendering issues. The next two
 screenshots demonstrate the difference in terms of loading time before and
 after the optimization:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/blog_performance_old.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/blog_performance_old.png&#34; alt=&#34;Old Blog Loading&#34;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/blog_performance_old.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/blog_performance_old.png&#34; alt=&#34;Old Blog Loading&#34;&gt;&lt;/a&gt;
 &amp;laquo; old blog loading in 3.56s in Chrome developer tools &amp;raquo;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.github.io/images/blog_performance_new.png&#34;&gt;&lt;img src=&#34;https://aonemd.github.io/images/blog_performance_new.png&#34; alt=&#34;New Blog Loading&#34;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/blog_performance_new.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/blog_performance_new.png&#34; alt=&#34;New Blog Loading&#34;&gt;&lt;/a&gt;
 &amp;laquo; new blog loading in 600ms in chrome developer tools &amp;raquo;&lt;/p&gt;
 &lt;p&gt;In the next few points, I will list the steps I took to make my blog load
 faster than it used to:&lt;/p&gt;
@@ -1179,7 +1179,7 @@ normally with or without Javascript. Removing Foundation was a big step in
 this direction because, with removing it, its Javascript depdencies were
 removed as well. I currently, use Javascript for exactly two functions; one
 for loading fonts using &lt;em&gt;Web Font Loader&lt;/em&gt;, and the other is for toggling
-between the light and the dark theme (Yes, there&amp;rsquo;s a &lt;a href=&#34;https://aonemd.github.io/blog/introducing-jack-and-dark-theme&#34;&gt;dark theme&lt;/a&gt; in this blog).
+between the light and the dark theme (Yes, there&amp;rsquo;s a &lt;a href=&#34;https://aonemd.me/blog/introducing-jack-and-dark-theme&#34;&gt;dark theme&lt;/a&gt; in this blog).
 Previously, two JS files were downloaded with a total size of 222KB and
 loaded in about 77ms.  Now, it&amp;rsquo;s just a single 20KB file that loads in ~20ms.
 Having Javascript files load asynchronously using &lt;code&gt;async&lt;/code&gt; to load the main
@@ -1193,10 +1193,10 @@ static websites such as blogs.&lt;/p&gt;
       
       <item>
         <title>On Writing</title>
-        <link>https://aonemd.github.io/posts/on-writing/</link>
+        <link>https://aonemd.me/posts/on-writing/</link>
         <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/on-writing/</guid>
+        <guid>https://aonemd.me/posts/on-writing/</guid>
         <description>&lt;h3 id=&#34;why-i-write&#34;&gt;Why I write&lt;/h3&gt;
 &lt;p&gt;There maybe a lot of reasons for this. For starters, I think writing is a fun
 activity. I write mainly to improve my communication skills, written
@@ -1240,10 +1240,10 @@ from writing or publishing an article.&lt;/p&gt;
       
       <item>
         <title>How I Take Notes</title>
-        <link>https://aonemd.github.io/posts/how-i-take-notes/</link>
+        <link>https://aonemd.me/posts/how-i-take-notes/</link>
         <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
         
-        <guid>https://aonemd.github.io/posts/how-i-take-notes/</guid>
+        <guid>https://aonemd.me/posts/how-i-take-notes/</guid>
         <description>&lt;p&gt;I always advice every programmer to take notes of their work all the time.
 Taking notes has throughout the years become so indispensable for me.  Instead
 of searching for something every time I forget it, I go back to my notes. It

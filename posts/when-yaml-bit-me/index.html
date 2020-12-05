@@ -15,7 +15,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aonemd.github.io/posts/when-yaml-bit-me/" />
+<meta property="og:url" content="https://aonemd.me/posts/when-yaml-bit-me/" />
 <meta property="og:site_name" content="aonemd" />
 <meta property="og:title" content="When YAML Bit Me" />
 <meta property="og:description" content="Code and Language" />
@@ -28,10 +28,10 @@
 <meta name="twitter:description" content="Code and Language" />
 
 
-  <meta itemprop="image"         content="https://aonemd.github.io/images/logo.png" />
-  <meta property="og:image"      content="https://aonemd.github.io/images/logo.png" />
-  <meta name="twitter:image"     content="https://aonemd.github.io/images/logo.png" />
-  <meta name="twitter:image:src" content="https://aonemd.github.io/images/logo.png" />
+  <meta itemprop="image"         content="https://aonemd.me/images/logo.png" />
+  <meta property="og:image"      content="https://aonemd.me/images/logo.png" />
+  <meta name="twitter:image"     content="https://aonemd.me/images/logo.png" />
+  <meta name="twitter:image:src" content="https://aonemd.me/images/logo.png" />
 
 </head>
 
@@ -51,31 +51,31 @@
   <div class="row empty-row"></div>
 
   <div class="menu">
-    <a href="/about" class="">
+    <a href="/about" class="" aria-label="About">
       about
     </a>
-    <a href="/talks" class="">
+    <a href="/talks" class="" aria-label="Talks">
       talks
     </a>
-    <a href="/categories" class="">
+    <a href="/categories" class="" aria-label="Categories">
       categories
     </a>
-    <a href="https://twitter.com/aonemd" target="_blank">
+    <a href="https://twitter.com/aonemd" target="_blank" aria-label="Twitter">
       <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
     </a>
-    <a href="https://github.com/aonemd" target="_blank">
+    <a href="https://github.com/aonemd" target="_blank" aria-label="Github">
       <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
     </a>
-    <a href="https://gitlab.com/aonemd" target="_blank">
+    <a href="https://gitlab.com/aonemd" target="_blank" aria-label="Gitlab">
       <svg><use xlink:href="/images/icons-sprite.svg#icon-gitlab"></use></svg>
     </a>
-    <a href="mailto:aonemdsaleh@gmail.com" target="_blank">
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank" aria-label="Email">
       <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
     </a>
-    <a href="/index.xml" target="_blank">
+    <a href="/index.xml" target="_blank" aria-label="RSS Feed">
       <svg><use xlink:href="/images/icons-sprite.svg#icon-rss-squared"></use></svg>
     </a>
-    <a href="javascript:void(0)" id="theme-toggler-element" class="inverted">
+    <a href="javascript:void(0)" id="theme-toggler-element" class="inverted" aria-label="Toggle Theme">
       <svg><use xlink:href="/images/icons-sprite.svg#icon-moon-fill"></use></svg>
     </a>
   </div>
@@ -144,22 +144,22 @@ types of reference numbers:</p>
         </div><div class="row">
   <div class="col-12 text-center">
     <div class="social">
-        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fwhen-yaml-bit-me%2f&text=When%20YAML%20Bit%20Me&hashtags=YAML%2cRails%2cPostgreSQL%2cbugs&via=aonemd" target="_blank">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.me%2fposts%2fwhen-yaml-bit-me%2f&text=When%20YAML%20Bit%20Me&hashtags=YAML%2cRails%2cPostgreSQL%2cbugs&via=aonemd" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
         </a>
-        <a id="facebook" href="https://facebook.com/share.php?u=https%3a%2f%2faonemd.github.io%2fposts%2fwhen-yaml-bit-me%2f" target="_blank">
+        <a id="facebook" href="https://facebook.com/share.php?u=https%3a%2f%2faonemd.me%2fposts%2fwhen-yaml-bit-me%2f" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-facebook"></use></svg>
         </a>
-        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.github.io%2fposts%2fwhen-yaml-bit-me%2f&title=When%20YAML%20Bit%20Me" target="_blank">
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.me%2fposts%2fwhen-yaml-bit-me%2f&title=When%20YAML%20Bit%20Me" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
         </a>
-        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=When%20YAML%20Bit%20Me&url=https%3a%2f%2faonemd.github.io%2fposts%2fwhen-yaml-bit-me%2f&&summary=This%20is%20the%20story%20of%20a%20bug%20I%20encountered%20about%203%20years%20ago.%20Basically%2c%20I%20had%20a%20model%20Book%20that%20contained%20a%20serialized%20object%20attribute%20called%20info%20and%20BooksController%20initially%20contained%20this%20search%20query%3a%0aBook.where%28%26%2339%3binfo%20LIKE%20%3f%26%2339%3b%2c%20%26%2334%3b%25ref%3a%20%26%2339%3b%23%7bparams%5b%3aref%5d%7d%26%2339%3b%26%2334%3b%29%20The%20bug%20that%20surfaced%20at%20the%20time%20was%20that%20some%20books%20were%20not%20fetched%20when%20the%20search%20query%20contained%20alpha-numeric%20reference%20numbers%20%28those%20that%20contains%20both%20digits%20and%20letters%29%20as%20some%20reference%20numbers%20were%20pure%20digits%20and%20some%20were%20a%20mix%20of%20digits%20and%20alphabetical%20characters.&source=https://aonemd.github.io" target="_blank">
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=When%20YAML%20Bit%20Me&url=https%3a%2f%2faonemd.me%2fposts%2fwhen-yaml-bit-me%2f&&summary=This%20is%20the%20story%20of%20a%20bug%20I%20encountered%20about%203%20years%20ago.%20Basically%2c%20I%20had%20a%20model%20Book%20that%20contained%20a%20serialized%20object%20attribute%20called%20info%20and%20BooksController%20initially%20contained%20this%20search%20query%3a%0aBook.where%28%26%2339%3binfo%20LIKE%20%3f%26%2339%3b%2c%20%26%2334%3b%25ref%3a%20%26%2339%3b%23%7bparams%5b%3aref%5d%7d%26%2339%3b%26%2334%3b%29%20The%20bug%20that%20surfaced%20at%20the%20time%20was%20that%20some%20books%20were%20not%20fetched%20when%20the%20search%20query%20contained%20alpha-numeric%20reference%20numbers%20%28those%20that%20contains%20both%20digits%20and%20letters%29%20as%20some%20reference%20numbers%20were%20pure%20digits%20and%20some%20were%20a%20mix%20of%20digits%20and%20alphabetical%20characters.&source=https://aonemd.me" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
         </a>
-        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.github.io%2fposts%2fwhen-yaml-bit-me%2f" target="_blank">
+        <a id="googleplus" href="https://plus.google.com/share?url=https%3a%2f%2faonemd.me%2fposts%2fwhen-yaml-bit-me%2f" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-googleplus"></use></svg>
         </a>
-        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.github.io%2fposts%2fwhen-yaml-bit-me%2f&title=When%20YAML%20Bit%20Me" target="_blank">
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.me%2fposts%2fwhen-yaml-bit-me%2f&title=When%20YAML%20Bit%20Me" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
         </a>
     </div>
