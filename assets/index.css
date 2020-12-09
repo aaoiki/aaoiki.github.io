@@ -258,12 +258,30 @@ tbody tr:nth-child(odd) {
 
 :lang(ar) code {
     direction: ltr;
-    float: left;
+    text-align: left;
+    font-size: 20px;
   }
 
 :lang(ar) .highlight {
-    text-align: left;
+    line-height: 28px;
+    text-align: left
   }
+
+:lang(ar) .highlight pre {
+      line-height: 28px;
+    }
+
+:lang(ar) .highlight code {
+      direction: ltr;
+      float: left;
+      text-align: left;
+      line-height: 28px
+    }
+
+:lang(ar) .highlight code * {
+        font-size: 20px;
+        line-height: 28px;
+      }
 
 :lang(ar) cite {
     font-size: 20px;
