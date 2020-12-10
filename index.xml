@@ -6,7 +6,52 @@
     <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+      
+      <item>
+        <title>للغة العربية Vim</title>
+        <link>https://aonemd.me/posts/vim-for-arabic/</link>
+        <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.me/posts/vim-for-arabic/</guid>
+        <description>&lt;p&gt;أستخدمُ محرر النصوص Vim حصراً في كتابة البرمجيات وأحاول استخدام آداة واحدة لكل
+وظيفة. فلذلك؛ لا يوجد على حاسوبي الشخصي أكثر من برنامج لآداء نفس الوظيفة. ومن ذلك
+المنطلق، أستخدمُ Vim في كتابة وتحرير المقالات على مدونتي ومنها المقالات باللغة
+العربية (المقال الذي تقرؤه الآن مكتوبٌ باستخدام Vim).&lt;/p&gt;
+&lt;p&gt;المشكلة أن الإعدادت الأساسية أو الافتراضية ل Vim غير معدّة للكتابة باللغة العربية.
+فمثلاً اتجاه النص في Vim يسري من الشِّمال إلى اليمين. الصورة التالية لشكل النص
+العربي في Vim حيث تظهر الحروف معكوسة:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/vim-for-arabic-ltr.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/vim-for-arabic-ltr.png&#34; alt=&#34;Vim ltr view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;الحل&#34;&gt;الحل؟&lt;/h3&gt;
+&lt;p&gt;يوجد في Vim طريقة أو إعداد لتغيير اتجاه النص ليتجه من اليمين إلى الشمال. الإعداد
+المقصود هو &lt;code&gt;leftright&lt;/code&gt; أو &lt;code&gt;rl&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;leftright&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;&amp;#34;OR :set lr&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;لتبديل اتجاه النص بين اليمين إلى الشمال والعكس، يمكن إضافة &lt;code&gt;!&lt;/code&gt; للقاعدة السابقة
+فتصبح:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;leftright&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;&amp;#34;OR :set lr!&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;الآن، يمكننا أن نضع اختصاراً لتبديل اتجاه النص بإضافة السطرين التاليين إلى ملف
+إعدادت Vim:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;~/.vimrc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;The Leader&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mapleader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;\&amp;lt;Space&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;toggle RTL mode&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;silent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;rl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;في Vim، يوجد ما يسمى بــ &amp;ldquo;Leader key&amp;rdquo; أو المفتاح الأساسي؛ وهو مفتاح يمكن إضافة
+مجموعة من المفاتيح الأخرى إليه  وتشكيل العديد من الاختصارات لآداء مختلف الوظائف.&lt;/p&gt;
+&lt;p&gt;بالنسبة لي، أفضّل استخدام مفتاح المسافة كمفتاحٍ أساسي في Vim لتوسطه لوحة المفاتيح
+ولسهولة الوصول إليه. لذلك فالاختصار السابق يمكننّا من تبديل اتجاه النص بالضغط على
+مفتاح المسافة مع مفتاح حرف &amp;ldquo;L&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;والنتيجة:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/vim-for-arabic-rtl.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/vim-for-arabic-rtl.png&#34; alt=&#34;Vim RTL view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;قد لا تكون النتيجة مرضية بشكلٍ كامل لعدم دعم Vim للنصوص متعددة الاتجاه
+(bidirectional text) أو لعدم دعم برنامج سطر الأوامر (Terminal client) للغة
+العربية من الأساس.&lt;/p&gt;
+&lt;p&gt;على أية حال، يمكنك الاطلاع على إعداداتي الخاصة ب Vim على
+&lt;a href=&#34;https://github.com/aonemd/aaku/blob/master/vim/vimrc&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
+      </item>
       
       <item>
         <title>بـي سـي</title>
@@ -1235,104 +1280,6 @@ year&amp;rsquo;s resolutions I may make, I never keep writing consistently as I 
 However recently, I&amp;rsquo;ve been writing every other week or so. I also want to
 write fearlessly. The fear of writing a bad article is what always stops me
 from writing or publishing an article.&lt;/p&gt;
-</description>
-      </item>
-      
-      <item>
-        <title>How I Take Notes</title>
-        <link>https://aonemd.me/posts/how-i-take-notes/</link>
-        <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
-        
-        <guid>https://aonemd.me/posts/how-i-take-notes/</guid>
-        <description>&lt;p&gt;I always advice every programmer to take notes of their work all the time.
-Taking notes has throughout the years become so indispensable for me.  Instead
-of searching for something every time I forget it, I go back to my notes. It
-has also become helpful when I need to study for interviews. I also use those
-notes as a journal to keep and organize my thoughts when I&amp;rsquo;m working on a new
-feature or fixing a bug.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There&amp;rsquo;s nothing better than a beautiful day at the beach, filled with sun,
-surf and diligent note-taking
-&lt;cite&gt;Pam Beesly, The Office&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;digital-notes&#34;&gt;Digital notes&lt;/h3&gt;
-&lt;p&gt;I started taking notes on small yellow sticky notes however, it wasn&amp;rsquo;t that
-efficient when I needed to access my notes when I&amp;rsquo;m not home or when I&amp;rsquo;m using
-my phone. Thus, I started taking digital notes on my computer and cellphone.&lt;/p&gt;
-&lt;p&gt;As I mentioned, I started with sticky notes and a pencil then I moved to
-digital notes. First, I tried multiple note taking apps but I couldn&amp;rsquo;t find
-something better than using my favorite text editor to take notes. Besides,
-each app has its own format to store notes. I was looking for something simple
-and with much control over my notes as possible.&lt;/p&gt;
-&lt;p&gt;Currently, I use a text editor, Markdown, and a small shell script to list and
-open notes. My text editor of choice is Vim. I use Vim in combination with
-&lt;code&gt;ctrlp&lt;/code&gt; for fuzzy file finding and &lt;code&gt;Ag&lt;/code&gt;, the silver searcher, to search across
-files. Of course, you can use your own text editor as most modern text editors
-implement these features out of the box. For tags and organizing the notes, I
-simply use folders to group them. Here&amp;rsquo;s the script I started with initially:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# .bashrc or .zshrc&lt;/span&gt;
-
-note &lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;notes_dir&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/path/to/notes&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; in
-    c&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-      &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
-    l&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-      ls &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
-    p&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-      &lt;span class=&#34;nb&#34;&gt;pushd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      &lt;span class=&#34;nv&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Regenerated at &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;date -u &lt;span class=&#34;s1&#34;&gt;&amp;#39;+%Y-%m-%d %H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; UTC&amp;#34;&lt;/span&gt;
-      git add .
-      git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$msg&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      git push origin master
-      &lt;span class=&#34;nb&#34;&gt;popd&lt;/span&gt;
-      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
-    *&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-      vim &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, you can call the function directly in your shell using:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ note l
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ note todo.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;syncing&#34;&gt;Syncing&lt;/h3&gt;
-&lt;p&gt;From the previous script, you can see that I used to use Git to keep and sync
-the notes between my machine and a Git repository. The issue with using Git is
-that I cannot sync and read the notes on my cellphone (as far as I know; I
-didn&amp;rsquo;t search how to use Git on my phone). To solve this issue, I moved my
-notes to Dropbox (you can use any other method for synchronization). Now it&amp;rsquo;s
-possible to sync them between my computer and my phone. Here&amp;rsquo;s the very simple
-script I currently use:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# .bashrc or .zshrc&lt;/span&gt;
-
-note &lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;notes_dir&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/Dropbox/notes&amp;#34;&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; in
-    c&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-      &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
-    l&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-      ls &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      &lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt;
-    *&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-      &lt;span class=&#34;nb&#34;&gt;pushd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$notes_dir&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$#&lt;/span&gt; -eq &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
-        vim &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-      &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
-        vim &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;.md
-      &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
-      &lt;span class=&#34;nb&#34;&gt;popd&lt;/span&gt;
-  &lt;span class=&#34;k&#34;&gt;esac&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;extras&#34;&gt;Extras&lt;/h3&gt;
-&lt;p&gt;For editing notes on the phone, there are multiple apps that I didn&amp;rsquo;t
-investigate. However, I&amp;rsquo;m currently using the default text editor that comes
-with the Dropbox app.&lt;/p&gt;
-&lt;p&gt;Also, until this point, I write and read my notes in Markdown. Although it&amp;rsquo;s
-possible to do more work and convert the notes into a more readable format such
-as PDF or HTML using something like &lt;code&gt;pandoc&lt;/code&gt;.&lt;/p&gt;
 </description>
       </item>
       

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>للغة العربية Vim | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.me/posts/vim-for-arabic/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="للغة العربية Vim" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="للغة العربية Vim" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  
+
+  <meta itemprop="image"         content="https://aonemd.me/images/vim-logo.png" />
+  <meta property="og:image"      content="https://aonemd.me/images/vim-logo.png" />
+  <meta name="twitter:image"     content="https://aonemd.me/images/vim-logo.png" />
+  <meta name="twitter:image:src" content="https://aonemd.me/images/vim-logo.png" />
+
+</head>
+
+  <body class="light">
+
+<nav>
+  <div class="title">
+    <a href="/">
+      <img src="/images/logo.png" class="logo">
+      <span>&nbsp; a<b>one</b>md</span>
+    </a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="row empty-row"></div>
+
+  <div class="menu">
+    <a href="/about" class="" aria-label="About">
+      about
+    </a>
+    <a href="/talks" class="" aria-label="Talks">
+      talks
+    </a>
+    <a href="/categories" class="" aria-label="Categories">
+      categories
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank" aria-label="Twitter">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank" aria-label="Github">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="https://gitlab.com/aonemd" target="_blank" aria-label="Gitlab">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-gitlab"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank" aria-label="Email">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="/index.xml" target="_blank" aria-label="RSS Feed">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss-squared"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element" class="inverted" aria-label="Toggle Theme">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-moon-fill"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__ar-title text-center center">
+          <h2>للغة العربية Vim <small class="view-post__category">Tools</small></h2>
+          <b><span class="view-post__date">December 10, 2020</span></b>
+        </div>
+
+        <br>
+
+        <div lang='ar'>
+          <p>أستخدمُ محرر النصوص Vim حصراً في كتابة البرمجيات وأحاول استخدام آداة واحدة لكل
+وظيفة. فلذلك؛ لا يوجد على حاسوبي الشخصي أكثر من برنامج لآداء نفس الوظيفة. ومن ذلك
+المنطلق، أستخدمُ Vim في كتابة وتحرير المقالات على مدونتي ومنها المقالات باللغة
+العربية (المقال الذي تقرؤه الآن مكتوبٌ باستخدام Vim).</p>
+<p>المشكلة أن الإعدادت الأساسية أو الافتراضية ل Vim غير معدّة للكتابة باللغة العربية.
+فمثلاً اتجاه النص في Vim يسري من الشِّمال إلى اليمين. الصورة التالية لشكل النص
+العربي في Vim حيث تظهر الحروف معكوسة:</p>
+<p><a href="/images/vim-for-arabic-ltr.png"><img src="/images/vim-for-arabic-ltr.png" alt="Vim ltr view"></a></p>
+<h3 id="الحل">الحل؟</h3>
+<p>يوجد في Vim طريقة أو إعداد لتغيير اتجاه النص ليتجه من اليمين إلى الشمال. الإعداد
+المقصود هو <code>leftright</code> أو <code>rl</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="p">:</span><span class="nx">set</span> <span class="nx">leftright</span>   <span class="c">&#34;OR :set lr</span><span class="err">
+</span></code></pre></div><p>لتبديل اتجاه النص بين اليمين إلى الشمال والعكس، يمكن إضافة <code>!</code> للقاعدة السابقة
+فتصبح:</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="p">:</span><span class="nx">set</span> <span class="nx">leftright</span><span class="p">!</span>   <span class="c">&#34;OR :set lr!</span><span class="err">
+</span></code></pre></div><p>الآن، يمكننا أن نضع اختصاراً لتبديل اتجاه النص بإضافة السطرين التاليين إلى ملف
+إعدادت Vim:</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="c">&#34;~/.vimrc</span><span class="err">
+</span><span class="err"></span><span class="c">
+</span><span class="c">&#34;The Leader</span><span class="err">
+</span><span class="err"></span><span class="k">let</span> <span class="nx">mapleader</span><span class="p">=</span><span class="s2">&#34;\&lt;Space&gt;&#34;</span><span class="err">
+</span><span class="err"></span><span class="c">
+</span><span class="c">&#34;toggle RTL mode</span><span class="err">
+</span><span class="err"></span><span class="nx">nnoremap</span> <span class="p">&lt;</span><span class="nx">silent</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">leader</span><span class="p">&gt;</span><span class="nx">l</span> :<span class="nx">set</span> <span class="nx">rl</span><span class="p">!&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span></code></pre></div><p>في Vim، يوجد ما يسمى بــ &ldquo;Leader key&rdquo; أو المفتاح الأساسي؛ وهو مفتاح يمكن إضافة
+مجموعة من المفاتيح الأخرى إليه  وتشكيل العديد من الاختصارات لآداء مختلف الوظائف.</p>
+<p>بالنسبة لي، أفضّل استخدام مفتاح المسافة كمفتاحٍ أساسي في Vim لتوسطه لوحة المفاتيح
+ولسهولة الوصول إليه. لذلك فالاختصار السابق يمكننّا من تبديل اتجاه النص بالضغط على
+مفتاح المسافة مع مفتاح حرف &ldquo;L&rdquo;.</p>
+<p>والنتيجة:</p>
+<p><a href="/images/vim-for-arabic-rtl.png"><img src="/images/vim-for-arabic-rtl.png" alt="Vim RTL view"></a></p>
+<p>قد لا تكون النتيجة مرضية بشكلٍ كامل لعدم دعم Vim للنصوص متعددة الاتجاه
+(bidirectional text) أو لعدم دعم برنامج سطر الأوامر (Terminal client) للغة
+العربية من الأساس.</p>
+<p>على أية حال، يمكنك الاطلاع على إعداداتي الخاصة ب Vim على
+<a href="https://github.com/aonemd/aaku/blob/master/vim/vimrc">Github</a>.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.me%2fposts%2fvim-for-arabic%2f&text=%d9%84%d9%84%d8%ba%d8%a9%20%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9%20Vim&hashtags=software%2cdevelopment%2ctools%2cvim%2c%d8%a8%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="facebook" href="https://facebook.com/share.php?u=https%3a%2f%2faonemd.me%2fposts%2fvim-for-arabic%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-facebook"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.me%2fposts%2fvim-for-arabic%2f&title=%d9%84%d9%84%d8%ba%d8%a9%20%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9%20Vim" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=%d9%84%d9%84%d8%ba%d8%a9%20%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9%20Vim&url=https%3a%2f%2faonemd.me%2fposts%2fvim-for-arabic%2f&&summary=%d8%a3%d8%b3%d8%aa%d8%ae%d8%af%d9%85%d9%8f%20%d9%85%d8%ad%d8%b1%d8%b1%20%d8%a7%d9%84%d9%86%d8%b5%d9%88%d8%b5%20Vim%20%d8%ad%d8%b5%d8%b1%d8%a7%d9%8b%20%d9%81%d9%8a%20%d9%83%d8%aa%d8%a7%d8%a8%d8%a9%20%d8%a7%d9%84%d8%a8%d8%b1%d9%85%d8%ac%d9%8a%d8%a7%d8%aa%20%d9%88%d8%a3%d8%ad%d8%a7%d9%88%d9%84%20%d8%a7%d8%b3%d8%aa%d8%ae%d8%af%d8%a7%d9%85%20%d8%a2%d8%af%d8%a7%d8%a9%20%d9%88%d8%a7%d8%ad%d8%af%d8%a9%20%d9%84%d9%83%d9%84%20%d9%88%d8%b8%d9%8a%d9%81%d8%a9.%20%d9%81%d9%84%d8%b0%d9%84%d9%83%d8%9b%20%d9%84%d8%a7%20%d9%8a%d9%88%d8%ac%d8%af%20%d8%b9%d9%84%d9%89%20%d8%ad%d8%a7%d8%b3%d9%88%d8%a8%d9%8a%20%d8%a7%d9%84%d8%b4%d8%ae%d8%b5%d9%8a%20%d8%a3%d9%83%d8%ab%d8%b1%20%d9%85%d9%86%20%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac%20%d9%84%d8%a2%d8%af%d8%a7%d8%a1%20%d9%86%d9%81%d8%b3%20%d8%a7%d9%84%d9%88%d8%b8%d9%8a%d9%81%d8%a9.%20%d9%88%d9%85%d9%86%20%d8%b0%d9%84%d9%83%20%d8%a7%d9%84%d9%85%d9%86%d8%b7%d9%84%d9%82%d8%8c%20%d8%a3%d8%b3%d8%aa%d8%ae%d8%af%d9%85%d9%8f%20Vim%20%d9%81%d9%8a%20%d9%83%d8%aa%d8%a7%d8%a8%d8%a9%20%d9%88%d8%aa%d8%ad%d8%b1%d9%8a%d8%b1%20%d8%a7%d9%84%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa%20%d8%b9%d9%84%d9%89%20%d9%85%d8%af%d9%88%d9%86%d8%aa%d9%8a%20%d9%88%d9%85%d9%86%d9%87%d8%a7%20%d8%a7%d9%84%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa%20%d8%a8%d8%a7%d9%84%d9%84%d8%ba%d8%a9%20%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9%20%28%d8%a7%d9%84%d9%85%d9%82%d8%a7%d9%84%20%d8%a7%d9%84%d8%b0%d9%8a%20%d8%aa%d9%82%d8%b1%d8%a4%d9%87%20%d8%a7%d9%84%d8%a2%d9%86%20%d9%85%d9%83%d8%aa%d9%88%d8%a8%d9%8c%20%d8%a8%d8%a7%d8%b3%d8%aa%d8%ae%d8%af%d8%a7%d9%85%20Vim%29.%0a%d8%a7%d9%84%d9%85%d8%b4%d9%83%d9%84%d8%a9%20%d8%a3%d9%86%20%d8%a7%d9%84%d8%a5%d8%b9%d8%af%d8%a7%d8%af%d8%aa%20%d8%a7%d9%84%d8%a3%d8%b3%d8%a7%d8%b3%d9%8a%d8%a9%20%d8%a3%d9%88%20%d8%a7%d9%84%d8%a7%d9%81%d8%aa%d8%b1%d8%a7%d8%b6%d9%8a%d8%a9%20%d9%84%20Vim%20%d8%ba%d9%8a%d8%b1%20%d9%85%d8%b9%d8%af%d9%91%d8%a9%20%d9%84%d9%84%d9%83%d8%aa%d8%a7%d8%a8%d8%a9%20%d8%a8%d8%a7%d9%84%d9%84%d8%ba%d8%a9%20%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9.%20%d9%81%d9%85%d8%ab%d9%84%d8%a7%d9%8b%20%d8%a7%d8%aa%d8%ac%d8%a7%d9%87%20%d8%a7%d9%84%d9%86%d8%b5%20%d9%81%d9%8a%20Vim%20%d9%8a%d8%b3%d8%b1%d9%8a%20%d9%85%d9%86%20%d8%a7%d9%84%d8%b4%d9%91%d9%90%d9%85%d8%a7%d9%84%20%d8%a5%d9%84%d9%89%20%d8%a7%d9%84%d9%8a%d9%85%d9%8a%d9%86.&source=https://aonemd.me" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        
+        
+        
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.me%2fposts%2fvim-for-arabic%2f&title=%d9%84%d9%84%d8%ba%d8%a9%20%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9%20Vim" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>
