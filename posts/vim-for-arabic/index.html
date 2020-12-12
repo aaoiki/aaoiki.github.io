@@ -123,7 +123,24 @@
 <p>بالنسبة لي، أفضّل استخدام مفتاح المسافة كمفتاحٍ أساسي في Vim لتوسطه لوحة المفاتيح
 ولسهولة الوصول إليه. لذلك فالاختصار السابق يمكننّا من تبديل اتجاه النص بالضغط على
 مفتاح المسافة مع مفتاح حرف &ldquo;L&rdquo;.</p>
-<p>والنتيجة:</p>
+<p>ينبغي أن أنوّه بوجود إعدادٍ بديٍل ل <code>leftright</code> وهو <code>arabic</code>. في الواقع، الخيار
+<code>arabic</code> يقوم بتفعيل <code>rightleft</code> بالإضافة إلى خياراتٍ أخرى. راجع صفحة الإعداد في
+Vim:</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="p">:</span><span class="nx">h</span> <span class="nx">arabic</span><span class="err">
+</span></code></pre></div><p>الإعداد <code>arabic</code> يقوم بتغيير لوحة المفاتيح إلى العربية كما يسمح باستخدام حركات
+Vim مع لوحة المفاتيح العربية. لذلك، فلا حاجة للتغير إلى الإنجليزية من أجل الدخول
+في وضع الكتابة (Insert mode) ثم التغيير إلى العربية مرة أخرى لبدء الكتابة. كما
+يسمح Vim بالتبديل بين العربية والإنجليزية من خلال الضغط على CTRL + ^ (مفتاح رقم
+٦).</p>
+<p>يمكننا تغيير القاعدة السابقة واستبدالها بالتالي:</p>
+<div class="highlight"><pre class="chroma"><code class="language-vim" data-lang="vim"><span class="c">&#34;~/.vimrc</span><span class="err">
+</span><span class="err"></span><span class="c">
+</span><span class="c">&#34;The Leader</span><span class="err">
+</span><span class="err"></span><span class="k">let</span> <span class="nx">mapleader</span><span class="p">=</span><span class="s2">&#34;\&lt;Space&gt;&#34;</span><span class="err">
+</span><span class="err"></span><span class="c">
+</span><span class="c">&#34;toggle Arabic mode</span><span class="err">
+</span><span class="err"></span><span class="nx">nnoremap</span> <span class="p">&lt;</span><span class="nx">silent</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nx">leader</span><span class="p">&gt;</span><span class="nx">l</span> :<span class="nx">set</span> <span class="nx">arabic</span><span class="p">!&lt;</span><span class="nx">cr</span><span class="p">&gt;</span><span class="err">
+</span></code></pre></div><p>والنتيجة:</p>
 <p><a href="/images/vim-for-arabic-rtl.png"><img src="/images/vim-for-arabic-rtl.png" alt="Vim RTL view"></a></p>
 <p>قد لا تكون النتيجة مرضية بشكلٍ كامل لعدم دعم Vim للنصوص متعددة الاتجاه
 (bidirectional text) أو لعدم دعم برنامج سطر الأوامر (Terminal client) للغة

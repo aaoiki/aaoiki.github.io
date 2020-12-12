@@ -43,7 +43,24 @@
 &lt;p&gt;بالنسبة لي، أفضّل استخدام مفتاح المسافة كمفتاحٍ أساسي في Vim لتوسطه لوحة المفاتيح
 ولسهولة الوصول إليه. لذلك فالاختصار السابق يمكننّا من تبديل اتجاه النص بالضغط على
 مفتاح المسافة مع مفتاح حرف &amp;ldquo;L&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;والنتيجة:&lt;/p&gt;
+&lt;p&gt;ينبغي أن أنوّه بوجود إعدادٍ بديٍل ل &lt;code&gt;leftright&lt;/code&gt; وهو &lt;code&gt;arabic&lt;/code&gt;. في الواقع، الخيار
+&lt;code&gt;arabic&lt;/code&gt; يقوم بتفعيل &lt;code&gt;rightleft&lt;/code&gt; بالإضافة إلى خياراتٍ أخرى. راجع صفحة الإعداد في
+Vim:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arabic&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;الإعداد &lt;code&gt;arabic&lt;/code&gt; يقوم بتغيير لوحة المفاتيح إلى العربية كما يسمح باستخدام حركات
+Vim مع لوحة المفاتيح العربية. لذلك، فلا حاجة للتغير إلى الإنجليزية من أجل الدخول
+في وضع الكتابة (Insert mode) ثم التغيير إلى العربية مرة أخرى لبدء الكتابة. كما
+يسمح Vim بالتبديل بين العربية والإنجليزية من خلال الضغط على CTRL + ^ (مفتاح رقم
+٦).&lt;/p&gt;
+&lt;p&gt;يمكننا تغيير القاعدة السابقة واستبدالها بالتالي:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;~/.vimrc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;The Leader&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mapleader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;\&amp;lt;Space&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&amp;#34;toggle Arabic mode&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;silent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arabic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;والنتيجة:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/vim-for-arabic-rtl.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/vim-for-arabic-rtl.png&#34; alt=&#34;Vim RTL view&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;قد لا تكون النتيجة مرضية بشكلٍ كامل لعدم دعم Vim للنصوص متعددة الاتجاه
 (bidirectional text) أو لعدم دعم برنامج سطر الأوامر (Terminal client) للغة
