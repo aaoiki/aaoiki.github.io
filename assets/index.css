@@ -263,11 +263,12 @@ tbody tr:nth-child(odd) {
   }
 
 :lang(ar) .highlight {
-    line-height: 28px;
-    text-align: left
+    text-align: left;
+    line-height: 28px
   }
 
 :lang(ar) .highlight pre {
+      direction: ltr;
       line-height: 28px;
     }
 
