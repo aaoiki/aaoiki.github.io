@@ -48,7 +48,7 @@
 Vim:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arabic&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;الإعداد &lt;code&gt;arabic&lt;/code&gt; يقوم بتغيير لوحة المفاتيح إلى العربية كما يسمح باستخدام حركات
-Vim مع لوحة المفاتيح العربية. لذلك، فلا حاجة للتغير إلى الإنجليزية من أجل الدخول
+Vim مع لوحة المفاتيح العربية. لذلك، فلا حاجة للتغيير إلى الإنجليزية من أجل الدخول
 في وضع الكتابة (Insert mode) ثم التغيير إلى العربية مرة أخرى لبدء الكتابة. كما
 يسمح Vim بالتبديل بين العربية والإنجليزية من خلال الضغط على CTRL + ^ (مفتاح رقم
 ٦).&lt;/p&gt;
