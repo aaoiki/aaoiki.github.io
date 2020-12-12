@@ -43,7 +43,7 @@
 &lt;p&gt;بالنسبة لي، أفضّل استخدام مفتاح المسافة كمفتاحٍ أساسي في Vim لتوسطه لوحة المفاتيح
 ولسهولة الوصول إليه. لذلك فالاختصار السابق يمكننّا من تبديل اتجاه النص بالضغط على
 مفتاح المسافة مع مفتاح حرف &amp;ldquo;L&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;ينبغي أن أنوّه بوجود إعدادٍ بديٍل ل &lt;code&gt;leftright&lt;/code&gt; وهو &lt;code&gt;arabic&lt;/code&gt;. في الواقع، الخيار
+&lt;p&gt;ينبغي أن أنوّه عن وجود إعدادٍ بديٍل ل &lt;code&gt;leftright&lt;/code&gt; وهو &lt;code&gt;arabic&lt;/code&gt;. في الواقع، الخيار
 &lt;code&gt;arabic&lt;/code&gt; يقوم بتفعيل &lt;code&gt;rightleft&lt;/code&gt; بالإضافة إلى خياراتٍ أخرى. راجع صفحة الإعداد في
 Vim:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arabic&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
