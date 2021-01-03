@@ -6,7 +6,79 @@
     <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+      
+      <item>
+        <title>Ruby: How Can Something So Beautiful Become So Ugly</title>
+        <link>https://aonemd.me/posts/ruby-how-can-something-so-beautiful-become-so-ugly/</link>
+        <pubDate>Mon, 04 Jan 2021 00:00:00 +0200</pubDate>
+        
+        <guid>https://aonemd.me/posts/ruby-how-can-something-so-beautiful-become-so-ugly/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: this is a rant.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve been using Ruby since 2013 and for most of my study and career, Ruby was
+may main, go-to programming language for almost everything.&lt;/p&gt;
+&lt;p&gt;Ruby&amp;rsquo;s syntax decisions make so much sense than most other languages. Although,
+it&amp;rsquo;s often argued against making programming languages like natural languages,
+Ruby programs flow like natural English.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+  &lt;span class=&#34;nb&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ruby is also very well suited to be a tool for teaching programming as well as
+a very good pseudo-code language. I know Python has the lead in that role,
+however; I do not think Python syntax would make much sense to beginners; it
+would just raise so many unnecessary questions in their minds. Ruby on the
+other hand, does not have that problem. It has other kinds of problems.&lt;/p&gt;
+&lt;p&gt;Although I have wanted to write about this for sometime, the main motivation
+behind writing this post, finally, is the latest Ruby 3.0 release which was on
+the 25th December, 2020. This release is considered the most important release
+of Ruby so far and it&amp;rsquo;s been looked forward to for a long time. However, to me,
+it is the most disappointing.&lt;/p&gt;
+&lt;p&gt;Well, my biggest pet peeve with Ruby is that it is bloated and is getting even
+more bloated with every release by the addition of useless functions and
+operators to match Rails&#39; ActiveSupport utilities.&lt;/p&gt;
+&lt;p&gt;The straw that broke the camel&amp;rsquo;s back was when types were introduced in the 3.0
+release. This feature was the one I personally was most looking forward to.
+Adding static type analysis to the language is a great step to help find and
+mitigate type related errors in Ruby programs.&lt;/p&gt;
+&lt;p&gt;However, unlike &lt;a
+href=&#34;https://www.php.net/manual/en/language.types.declarations.php&#34;
+target=&#34;blank&#34;&gt;PHP&lt;/a&gt; and &lt;a
+href=&#34;https://docs.python.org/3/library/typing.html&#34; target=&#34;blank&#34;&gt;Python&lt;/a&gt;
+(Ruby&amp;rsquo;s most famous contenders) where types are built into the language
+directly via type annotations, types in Ruby were added in the form of a new
+language called &lt;code&gt;RBS&lt;/code&gt;, meaning; one would have to maintain separate &lt;code&gt;.rbs&lt;/code&gt;
+files for type definitions. And now instead of writing the structure of a
+program once, it has to be written twice!&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a small example of how it looks like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# messenger.rb&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Messenger&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;initialize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;medium&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;vi&#34;&gt;@medium&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;medium&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;deliver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;You have a new message: &amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# messenger.rbs&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Messenger&lt;/span&gt;
+  &lt;span class=&#34;vi&#34;&gt;@medium&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;Symbol&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;initialize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;Symbol&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;medium&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;void&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;deliver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;msg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Maintaining the same structure twice is not an easy task in large software
+specially that static analysis is not enforced nor required by the language;
+thus, making writing types an annoying afterthought.  &lt;a
+href=&#34;https://news.ycombinator.com/item?id=25535455&#34; target=&#34;blank&#34;&gt;Some have
+already voiced their opinions on this matter&lt;/a&gt;, however; I find it weird that
+the Ruby community is not talking about this.&lt;/p&gt;
+&lt;p&gt;I know that no language is perfect and that each language has its use cases,
+however; I see that Ruby is tiptoeing around Rails; thus, it is cornered in the
+Rails web development area.&lt;/p&gt;
+</description>
+      </item>
       
       <item>
         <title>للغة العربية Vim</title>
@@ -1250,53 +1322,6 @@ index.js file also helped a lot in the total loading time of the blog.&lt;/p&gt;
 &lt;p&gt;Having fewer files for the browser to download, and fewer resources that
 access the network help greatly in speeding the page load specially for
 static websites such as blogs.&lt;/p&gt;
-</description>
-      </item>
-      
-      <item>
-        <title>On Writing</title>
-        <link>https://aonemd.me/posts/on-writing/</link>
-        <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
-        
-        <guid>https://aonemd.me/posts/on-writing/</guid>
-        <description>&lt;h3 id=&#34;why-i-write&#34;&gt;Why I write&lt;/h3&gt;
-&lt;p&gt;There maybe a lot of reasons for this. For starters, I think writing is a fun
-activity. I write mainly to improve my communication skills, written
-communication skills apparently. Another reason I write for is to give back to
-the communities I&amp;rsquo;m involved in and maybe benefit someone someday with
-something I wrote. Teaching is such a precious experience. Teaching and
-teaching through writing here does not only benefit the reader but also the
-writer cause when I write, I get to deepen and widen my knowledge base.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Teach and you shall learn.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;writing-is-hard&#34;&gt;Writing is hard&lt;/h3&gt;
-&lt;p&gt;Seriously, this is the first thing that came to my mind when I thought of
-writing this article. Although it might be fun to write, it&amp;rsquo;s very difficult to
-put a good article together. The biggest issue for me is when I have a fairly
-good idea and I can barely write about it at length. Although I believe in
-quality not quantity, some articles can be understood from only the title and a
-title alone cannot make an article. Some other articles feel superficial to me
-after writing them thus I keep writing articles and deleting (or sometimes,
-constantly editing) them.&lt;/p&gt;
-&lt;h3 id=&#34;marketing-is-also-hard&#34;&gt;Marketing is also hard&lt;/h3&gt;
-&lt;p&gt;Between the downvotes and the harsh comments on Reddit and Hacker News,
-marketing an article is as hard as writing it. Currently, I use Twitter and
-Reddit to share my articles. The downvotes and the harsh comments with no
-constructive feedback are a bit frustrating sometimes even though I believe I
-don&amp;rsquo;t write for everyone. What I mean by I don&amp;rsquo;t write for everyone is that the
-targeted audience for each article might differ thus building an audience for the blog is difficult.&lt;/p&gt;
-&lt;h3 id=&#34;how-i-write&#34;&gt;How I write&lt;/h3&gt;
-&lt;p&gt;Currently the way I write is as follows:&lt;/p&gt;
-&lt;p&gt;First, I come up with an idea and/or a title, generate a page for the article,
-and fire up a text editor. I start by writing the main headlines in the
-article. I then start filling the main points as fast as possible without
-editing them. Afterwards, I edit the article, and fix the typos.&lt;/p&gt;
-&lt;p&gt;How I want to write though is writing consistently. No matter how many new
-year&amp;rsquo;s resolutions I may make, I never keep writing consistently as I want to.
-However recently, I&amp;rsquo;ve been writing every other week or so. I also want to
-write fearlessly. The fear of writing a bad article is what always stops me
-from writing or publishing an article.&lt;/p&gt;
 </description>
       </item>
       

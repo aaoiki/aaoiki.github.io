@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>Ruby: How Can Something So Beautiful Become So Ugly | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="Code and Language">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.me/posts/ruby-how-can-something-so-beautiful-become-so-ugly/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Ruby: How Can Something So Beautiful Become So Ugly" />
+<meta property="og:description" content="Code and Language" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Ruby: How Can Something So Beautiful Become So Ugly" />
+<meta name="twitter:description" content="Code and Language" />
+
+
+  
+
+  <meta itemprop="image"         content="https://aonemd.me/images/ruby.png" />
+  <meta property="og:image"      content="https://aonemd.me/images/ruby.png" />
+  <meta name="twitter:image"     content="https://aonemd.me/images/ruby.png" />
+  <meta name="twitter:image:src" content="https://aonemd.me/images/ruby.png" />
+
+</head>
+
+  <body class="light">
+
+<nav>
+  <div class="title">
+    <a href="/">
+      <img src="/images/logo.png" class="logo">
+      <span>&nbsp; a<b>one</b>md</span>
+    </a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="row empty-row"></div>
+
+  <div class="menu">
+    <a href="/about" class="" aria-label="About">
+      about
+    </a>
+    <a href="/talks" class="" aria-label="Talks">
+      talks
+    </a>
+    <a href="/categories" class="" aria-label="Categories">
+      categories
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank" aria-label="Twitter">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank" aria-label="Github">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="https://gitlab.com/aonemd" target="_blank" aria-label="Gitlab">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-gitlab"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank" aria-label="Email">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="/index.xml" target="_blank" aria-label="RSS Feed">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss-squared"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element" class="inverted" aria-label="Toggle Theme">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-moon-fill"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>Ruby: How Can Something So Beautiful Become So Ugly <small class="view-post__category">Ruby</small></h2>
+          <b><span class="view-post__date">January 04, 2021</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p><strong>TL;DR</strong>: this is a rant.</p>
+<p>I&rsquo;ve been using Ruby since 2013 and for most of my study and career, Ruby was
+may main, go-to programming language for almost everything.</p>
+<p>Ruby&rsquo;s syntax decisions make so much sense than most other languages. Although,
+it&rsquo;s often argued against making programming languages like natural languages,
+Ruby programs flow like natural English.</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">number</span><span class="o">*</span><span class="n">number</span>
+<span class="k">end</span>
+</code></pre></div><p>Ruby is also very well suited to be a tool for teaching programming as well as
+a very good pseudo-code language. I know Python has the lead in that role,
+however; I do not think Python syntax would make much sense to beginners; it
+would just raise so many unnecessary questions in their minds. Ruby on the
+other hand, does not have that problem. It has other kinds of problems.</p>
+<p>Although I have wanted to write about this for sometime, the main motivation
+behind writing this post, finally, is the latest Ruby 3.0 release which was on
+the 25th December, 2020. This release is considered the most important release
+of Ruby so far and it&rsquo;s been looked forward to for a long time. However, to me,
+it is the most disappointing.</p>
+<p>Well, my biggest pet peeve with Ruby is that it is bloated and is getting even
+more bloated with every release by the addition of useless functions and
+operators to match Rails' ActiveSupport utilities.</p>
+<p>The straw that broke the camel&rsquo;s back was when types were introduced in the 3.0
+release. This feature was the one I personally was most looking forward to.
+Adding static type analysis to the language is a great step to help find and
+mitigate type related errors in Ruby programs.</p>
+<p>However, unlike <a
+href="https://www.php.net/manual/en/language.types.declarations.php"
+target="blank">PHP</a> and <a
+href="https://docs.python.org/3/library/typing.html" target="blank">Python</a>
+(Ruby&rsquo;s most famous contenders) where types are built into the language
+directly via type annotations, types in Ruby were added in the form of a new
+language called <code>RBS</code>, meaning; one would have to maintain separate <code>.rbs</code>
+files for type definitions. And now instead of writing the structure of a
+program once, it has to be written twice!</p>
+<p>Here&rsquo;s a small example of how it looks like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="c1"># messenger.rb</span>
+<span class="k">class</span> <span class="nc">Messenger</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">medium</span><span class="p">)</span>
+    <span class="vi">@medium</span> <span class="o">=</span> <span class="n">medium</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">deliver</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="s2">&#34;You have a new message: &#34;</span> <span class="o">+</span> <span class="n">msg</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># messenger.rbs</span>
+<span class="k">class</span> <span class="nc">Messenger</span>
+  <span class="vi">@medium</span><span class="p">:</span> <span class="no">Symbol</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">:</span> <span class="p">(</span><span class="no">Symbol</span> <span class="n">medium</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">void</span>
+  <span class="k">def</span> <span class="nf">deliver</span><span class="p">:</span> <span class="p">(</span><span class="nb">String</span> <span class="n">msg</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">String</span>
+<span class="k">end</span>
+</code></pre></div><p>Maintaining the same structure twice is not an easy task in large software
+specially that static analysis is not enforced nor required by the language;
+thus, making writing types an annoying afterthought.  <a
+href="https://news.ycombinator.com/item?id=25535455" target="blank">Some have
+already voiced their opinions on this matter</a>, however; I find it weird that
+the Ruby community is not talking about this.</p>
+<p>I know that no language is perfect and that each language has its use cases,
+however; I see that Ruby is tiptoeing around Rails; thus, it is cornered in the
+Rails web development area.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f&text=Ruby%3a%20How%20Can%20Something%20So%20Beautiful%20Become%20So%20Ugly&hashtags=ruby%2cprogramming%2clanguage&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="facebook" href="https://facebook.com/share.php?u=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-facebook"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f&title=Ruby%3a%20How%20Can%20Something%20So%20Beautiful%20Become%20So%20Ugly" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Ruby%3a%20How%20Can%20Something%20So%20Beautiful%20Become%20So%20Ugly&url=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f&&summary=TL%3bDR%3a%20this%20is%20a%20rant.%0aI%26rsquo%3bve%20been%20using%20Ruby%20since%202013%20and%20for%20most%20of%20my%20study%20and%20career%2c%20Ruby%20was%20may%20main%2c%20go-to%20programming%20language%20for%20almost%20everything.%0aRuby%26rsquo%3bs%20syntax%20decisions%20make%20so%20much%20sense%20than%20most%20other%20languages.%20Although%2c%20it%26rsquo%3bs%20often%20argued%20against%20making%20programming%20languages%20like%20natural%20languages%2c%20Ruby%20programs%20flow%20like%20natural%20English.%0a%281..10%29.each%20do%20%7cnumber%7c%20puts%20number%2anumber%20end%20Ruby%20is%20also%20very%20well%20suited%20to%20be%20a%20tool%20for%20teaching%20programming%20as%20well%20as%20a%20very%20good%20pseudo-code%20language.&source=https://aonemd.me" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        
+        
+        
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f&title=Ruby%3a%20How%20Can%20Something%20So%20Beautiful%20Become%20So%20Ugly" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="28">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>
