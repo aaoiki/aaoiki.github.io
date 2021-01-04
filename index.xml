@@ -21,13 +21,13 @@ may main, go-to programming language for almost everything.&lt;/p&gt;
 it&amp;rsquo;s often argued against making programming languages like natural languages,
 Ruby programs flow like natural English.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;..&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;each&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
-  &lt;span class=&#34;nb&#34;&gt;puts&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;
+  &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;number&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;number&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ruby is also very well suited to be a tool for teaching programming as well as
 a very good pseudo-code language. I know Python has the lead in that role,
 however; I do not think Python syntax would make much sense to beginners; it
-would just raise so many unnecessary questions in their minds. Ruby on the
-other hand, does not have that problem. It has other kinds of problems.&lt;/p&gt;
+would just raise so many unnecessary questions. Ruby on the other hand, does
+not have that problem. It has other kinds of problems.&lt;/p&gt;
 &lt;p&gt;Although I have wanted to write about this for sometime, the main motivation
 behind writing this post, finally, is the latest Ruby 3.0 release which was on
 the 25th December, 2020. This release is considered the most important release
@@ -35,9 +35,9 @@ of Ruby so far and it&amp;rsquo;s been looked forward to for a long time. Howeve
 it is the most disappointing.&lt;/p&gt;
 &lt;p&gt;Well, my biggest pet peeve with Ruby is that it is bloated and is getting even
 more bloated with every release by the addition of useless functions and
-operators to match Rails&#39; ActiveSupport utilities.&lt;/p&gt;
+operators to match Rails&#39; ActiveSupport utilities ¯\_( ͠° ͟ʖ ͠°)_/¯.&lt;/p&gt;
 &lt;p&gt;The straw that broke the camel&amp;rsquo;s back was when types were introduced in the 3.0
-release. This feature was the one I personally was most looking forward to.
+release. This feature is the one I personally was most looking forward to.
 Adding static type analysis to the language is a great step to help find and
 mitigate type related errors in Ruby programs.&lt;/p&gt;
 &lt;p&gt;However, unlike &lt;a
@@ -70,10 +70,12 @@ program once, it has to be written twice!&lt;/p&gt;
 &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Maintaining the same structure twice is not an easy task in large software
 specially that static analysis is not enforced nor required by the language;
-thus, making writing types an annoying afterthought.  &lt;a
-href=&#34;https://news.ycombinator.com/item?id=25535455&#34; target=&#34;blank&#34;&gt;Some have
-already voiced their opinions on this matter&lt;/a&gt;, however; I find it weird that
-the Ruby community is not talking about this.&lt;/p&gt;
+thus, making writing types an annoying afterthought. The issue is, I don&amp;rsquo;t see
+why this is the chosen solution except that maybe to avoid rewriting Rails and
+instead, add new files for type definitions.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://news.ycombinator.com/item?id=25535455&#34; target=&#34;blank&#34;&gt;Some
+have already voiced their opinions on this matter&lt;/a&gt;, however; I find it weird
+that the Ruby community is not talking about this.&lt;/p&gt;
 &lt;p&gt;I know that no language is perfect and that each language has its use cases,
 however; I see that Ruby is tiptoeing around Rails; thus, it is cornered in the
 Rails web development area.&lt;/p&gt;

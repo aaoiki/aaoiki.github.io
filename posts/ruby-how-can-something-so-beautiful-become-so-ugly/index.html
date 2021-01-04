@@ -101,13 +101,13 @@ may main, go-to programming language for almost everything.</p>
 it&rsquo;s often argued against making programming languages like natural languages,
 Ruby programs flow like natural English.</p>
 <div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="n">number</span><span class="o">*</span><span class="n">number</span>
+  <span class="nb">print</span> <span class="n">number</span> <span class="o">*</span> <span class="n">number</span>
 <span class="k">end</span>
 </code></pre></div><p>Ruby is also very well suited to be a tool for teaching programming as well as
 a very good pseudo-code language. I know Python has the lead in that role,
 however; I do not think Python syntax would make much sense to beginners; it
-would just raise so many unnecessary questions in their minds. Ruby on the
-other hand, does not have that problem. It has other kinds of problems.</p>
+would just raise so many unnecessary questions. Ruby on the other hand, does
+not have that problem. It has other kinds of problems.</p>
 <p>Although I have wanted to write about this for sometime, the main motivation
 behind writing this post, finally, is the latest Ruby 3.0 release which was on
 the 25th December, 2020. This release is considered the most important release
@@ -115,9 +115,9 @@ of Ruby so far and it&rsquo;s been looked forward to for a long time. However, t
 it is the most disappointing.</p>
 <p>Well, my biggest pet peeve with Ruby is that it is bloated and is getting even
 more bloated with every release by the addition of useless functions and
-operators to match Rails' ActiveSupport utilities.</p>
+operators to match Rails' ActiveSupport utilities ¯\_( ͠° ͟ʖ ͠°)_/¯.</p>
 <p>The straw that broke the camel&rsquo;s back was when types were introduced in the 3.0
-release. This feature was the one I personally was most looking forward to.
+release. This feature is the one I personally was most looking forward to.
 Adding static type analysis to the language is a great step to help find and
 mitigate type related errors in Ruby programs.</p>
 <p>However, unlike <a
@@ -150,10 +150,12 @@ program once, it has to be written twice!</p>
 <span class="k">end</span>
 </code></pre></div><p>Maintaining the same structure twice is not an easy task in large software
 specially that static analysis is not enforced nor required by the language;
-thus, making writing types an annoying afterthought.  <a
-href="https://news.ycombinator.com/item?id=25535455" target="blank">Some have
-already voiced their opinions on this matter</a>, however; I find it weird that
-the Ruby community is not talking about this.</p>
+thus, making writing types an annoying afterthought. The issue is, I don&rsquo;t see
+why this is the chosen solution except that maybe to avoid rewriting Rails and
+instead, add new files for type definitions.</p>
+<p><a href="https://news.ycombinator.com/item?id=25535455" target="blank">Some
+have already voiced their opinions on this matter</a>, however; I find it weird
+that the Ruby community is not talking about this.</p>
 <p>I know that no language is perfect and that each language has its use cases,
 however; I see that Ruby is tiptoeing around Rails; thus, it is cornered in the
 Rails web development area.</p>
@@ -170,7 +172,7 @@ Rails web development area.</p>
         <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f&title=Ruby%3a%20How%20Can%20Something%20So%20Beautiful%20Become%20So%20Ugly" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
         </a>
-        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Ruby%3a%20How%20Can%20Something%20So%20Beautiful%20Become%20So%20Ugly&url=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f&&summary=TL%3bDR%3a%20this%20is%20a%20rant.%0aI%26rsquo%3bve%20been%20using%20Ruby%20since%202013%20and%20for%20most%20of%20my%20study%20and%20career%2c%20Ruby%20was%20may%20main%2c%20go-to%20programming%20language%20for%20almost%20everything.%0aRuby%26rsquo%3bs%20syntax%20decisions%20make%20so%20much%20sense%20than%20most%20other%20languages.%20Although%2c%20it%26rsquo%3bs%20often%20argued%20against%20making%20programming%20languages%20like%20natural%20languages%2c%20Ruby%20programs%20flow%20like%20natural%20English.%0a%281..10%29.each%20do%20%7cnumber%7c%20puts%20number%2anumber%20end%20Ruby%20is%20also%20very%20well%20suited%20to%20be%20a%20tool%20for%20teaching%20programming%20as%20well%20as%20a%20very%20good%20pseudo-code%20language.&source=https://aonemd.me" target="_blank">
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Ruby%3a%20How%20Can%20Something%20So%20Beautiful%20Become%20So%20Ugly&url=https%3a%2f%2faonemd.me%2fposts%2fruby-how-can-something-so-beautiful-become-so-ugly%2f&&summary=TL%3bDR%3a%20this%20is%20a%20rant.%0aI%26rsquo%3bve%20been%20using%20Ruby%20since%202013%20and%20for%20most%20of%20my%20study%20and%20career%2c%20Ruby%20was%20may%20main%2c%20go-to%20programming%20language%20for%20almost%20everything.%0aRuby%26rsquo%3bs%20syntax%20decisions%20make%20so%20much%20sense%20than%20most%20other%20languages.%20Although%2c%20it%26rsquo%3bs%20often%20argued%20against%20making%20programming%20languages%20like%20natural%20languages%2c%20Ruby%20programs%20flow%20like%20natural%20English.%0a%281..10%29.each%20do%20%7cnumber%7c%20print%20number%20%2a%20number%20end%20Ruby%20is%20also%20very%20well%20suited%20to%20be%20a%20tool%20for%20teaching%20programming%20as%20well%20as%20a%20very%20good%20pseudo-code%20language.&source=https://aonemd.me" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
         </a>
         
