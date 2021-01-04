@@ -79,6 +79,26 @@ that the Ruby community is not talking about this.&lt;/p&gt;
 &lt;p&gt;I know that no language is perfect and that each language has its use cases,
 however; I see that Ruby is tiptoeing around Rails; thus, it is cornered in the
 Rails web development area.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EDIT&lt;/strong&gt;: here are parts of a comment I made replying to the backward
+compatibility point and other points made:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I see the backward compatibility point of view and it&amp;rsquo;s valid and actually an
+easy solution now. But my concern is maintaining software on the long run and
+having to keep track of two points of truth.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;And the talk about using IDEs
+doesn&amp;rsquo;t make sense to me. I don&amp;rsquo;t need to use a specific tool to use the
+language.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I write C more than Ruby nowadays and I use header files but in this case, this
+is the best we&amp;rsquo;ve got, otherwise let&amp;rsquo;s use Go or Rust or whatever newer xD.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;my point in the end is that Ruby deserves better tooling and more sane
+choices.&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
       </item>
       
