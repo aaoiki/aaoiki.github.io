@@ -84,20 +84,32 @@ compatibility point and other points made:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I see the backward compatibility point of view and it&amp;rsquo;s valid and actually an
 easy solution now. But my concern is maintaining software on the long run and
-having to keep track of two points of truth.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;And the talk about using IDEs
+having to keep track of two points of truth.
+&lt;br&gt;
+&lt;br&gt;
+And the talk about using IDEs
 doesn&amp;rsquo;t make sense to me. I don&amp;rsquo;t need to use a specific tool to use the
-language.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I write C more than Ruby nowadays and I use header files but in this case, this
-is the best we&amp;rsquo;ve got, otherwise let&amp;rsquo;s use Go or Rust or whatever newer xD.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;my point in the end is that Ruby deserves better tooling and more sane
+language.
+&lt;br&gt;
+&lt;br&gt;
+I write C more than Ruby nowadays and I use header files but in this case, this
+is the best we&amp;rsquo;ve got, otherwise let&amp;rsquo;s use Go or Rust or whatever newer xD.
+&lt;br&gt;
+&lt;br&gt;
+My point in the end is that Ruby deserves better tooling and more sane
 choices.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I want to end this with a quote by /u/mashatg on Reddit:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is not only about this particular decision but disconcerted development
+and language&amp;rsquo;s direction in general. Incapability to learn from past mistakes
+and get inspired from more successful.
+&lt;br&gt;
+&lt;br&gt;
+It is so sad to watch how an original and elegant design with lot of
+progressive ideas got butchered and ended up in current diffuse mess. It does
+not look like an attitude to fight back declining relevance. It looks like
+towel thrown into a ring and waiting referee to notice.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
       </item>
