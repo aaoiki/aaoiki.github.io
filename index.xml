@@ -172,7 +172,7 @@ Vim مع لوحة المفاتيح العربية. لذلك، فلا حاجة ل
 (bidirectional text) أو لعدم دعم برنامج سطر الأوامر (Terminal client) للغة
 العربية من الأساس.&lt;/p&gt;
 &lt;p&gt;على أية حال، يمكنك الاطلاع على إعداداتي الخاصة ب Vim على
-&lt;a href=&#34;https://github.com/aonemd/aaku/blob/master/vim/vimrc&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://github.com/aonemd/aaku-dev/blob/master/vim/vimrc&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 </description>
       </item>
       
@@ -625,7 +625,7 @@ keys to perform different functionalities in Vim that makes your text editing
 easier.&lt;/p&gt;
 &lt;p&gt;All the code in this post is taken from my .vimrc file in my dotfiles
 repository on GitHub. You can check it out
-&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku-dev&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
       </item>
       
@@ -748,7 +748,7 @@ event.&lt;/p&gt;
 slow Vim down while executing it. As I mentioned above, I only have a few
 functions in my ~/.vimrc file. So, I profiled them and got the result using
 Vim&amp;rsquo;s profile command. Here&amp;rsquo;s an example on how to profile the function
-&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku/blob/master/vim/vimrc#L143&#34;&gt;&lt;em&gt;WinMove(key)&lt;/em&gt;&lt;/a&gt;
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku-dev/blob/master/vim/vimrc#L143&#34;&gt;&lt;em&gt;WinMove(key)&lt;/em&gt;&lt;/a&gt;
 using Vim&amp;rsquo;s profile command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;nx&#34;&gt;vim&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cmd&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;profile start vimrc.profile&amp;#39;&lt;/span&gt; \&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cmd&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;profile! file ~/.vimrc&amp;#39;&lt;/span&gt; \&lt;span class=&#34;err&#34;&gt;
@@ -802,7 +802,8 @@ behave exactly like NERDTree. Here are the relevant settings in my .vimrc:&lt;/p
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nnoremap&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;leader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; :&lt;span class=&#34;nx&#34;&gt;Lexplore&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;My .vimrc file is now exactly 149 lines after I removed unused plugins and
 redundant settings. You can find my full .vimrc file in my
-&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku&#34;&gt;dotfiles](/blog/the-dotfiles) repository [on GitHub&lt;/a&gt;. Thanks for reading!&lt;/p&gt;
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku-dev&#34;&gt;dotfiles repository on GitHub&lt;/a&gt;.
+Thanks for reading!&lt;/p&gt;
 </description>
       </item>
       
@@ -925,7 +926,7 @@ it&amp;rsquo;s even better.&lt;/p&gt;
 for Git users. You can learn more about its commands
 &lt;a target=&#34;_blank&#34; href=&#34;https://github.com/junegunn/fzf.vim#commands&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can find my vimrc in my &lt;a href=&#34;https://aonemd.me/blog/the-dotfiles&#34;&gt;dotfiles&lt;/a&gt; repository
-&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku&#34;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/aonemd/aaku-dev&#34;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
       </item>
       
