@@ -6,7 +6,73 @@
     <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+      
+      <item>
+        <title>A Micro Framework for Learning</title>
+        <link>https://aonemd.me/posts/a-micro-framework-for-learning/</link>
+        <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.me/posts/a-micro-framework-for-learning/</guid>
+        <description>&lt;p&gt;Software engineering as a field is notoriously known for the reputation of the
+need of constant learning. This is true to some degree. I mean, who can keep up
+with the infinite number of Javascript libraries! Although, a software engineer
+can get by without staying up to date with technology in some cases (such as
+working on a stable or rather old technology). However, to be hire-able or at
+least relevant, one needs to at least have an idea about what&amp;rsquo;s going on in the
+world of technology.&lt;/p&gt;
+&lt;p&gt;I have to say that although learning is vital here, the constant state of
+always learning is not a sustainable way to live, or so I have learned! Living
+to learn and study languages and frameworks and tools, etc. everyday,
+eventually, will lead to burnout and numerous physical health issues.&lt;/p&gt;
+&lt;p&gt;What I think is most suitable to keep up and still have a normal human life is
+to study in small chunks. Most importantly, not for a very long time. You can
+for example, study before preparing for interviews, or learn a certain tool
+for a project at work. That&amp;rsquo;s a good way to keep up and not burn yourself out.&lt;/p&gt;
+&lt;p&gt;I have a theory that given proper resources (most importantly time), learning
+new skills or achieving goals is attainable to us human beings. As long as you
+have the patience to keep going and the pace does not matter so much. A
+feedback loop is of great importance here, mainly, for keeping motivation and
+correcting your path. The feedback loop is also very important to measure your
+progress; be it positive or negative.&lt;/p&gt;
+&lt;p&gt;That was a long introduction! The following very few points are what I call a
+micro framework for learning:&lt;/p&gt;
+&lt;h3 id=&#34;practice&#34;&gt;Practice&lt;/h3&gt;
+&lt;p&gt;For technical skills, practice is key. When it comes to learning though,
+practice is mentioned a lot yet ignored so often. If you&amp;rsquo;re, for example,
+taking a video course or reading an online tutorial to learn a new language,
+you cannot say you&amp;rsquo;ve learned the material without writing it yourself. It must
+be engraved by your own fingers to form the muscle memory and connections
+needed later on. When I was younger and had difficulty learning something, my
+father always used to tell me to write it down. Luckily, our job as software
+engineers is mostly all about writing.&lt;/p&gt;
+&lt;h3 id=&#34;imitate&#34;&gt;Imitate&lt;/h3&gt;
+&lt;p&gt;This one is a form of practice. My advice is to devour whatever material you
+can get your hands on and imitate it. If you&amp;rsquo;re learning the Go programming
+language and someone made a 2-hour video building a project in Go, watch it and
+write the code along with the video. I know that writing a to-do app may sound
+silly but try it in your new technology, you might hit something you didn&amp;rsquo;t
+know you didn&amp;rsquo;t know. It doesn&amp;rsquo;t have to be authentic, this is merely for
+practice. Although, you can always add your personal touch and make changes to
+what you&amp;rsquo;re building.&lt;/p&gt;
+&lt;h3 id=&#34;take-notes&#34;&gt;Take notes&lt;/h3&gt;
+&lt;p&gt;I always advocate for taking notes. I even &lt;a href=&#34;https://aonemd.me/posts/how-i-take-notes&#34;&gt;wrote a
+post&lt;/a&gt; about how I take notes. I have seen opinions
+that are against taking notes and instead prefer searching every time you need
+to learn something but I don&amp;rsquo;t agree. Taking notes is a great exercise to write
+what you learn in your own words. Your notes become kind of a reference that
+you can go back to anytime. They are also great for preparing for interviews.
+Taking notes doesn&amp;rsquo;t have to be complicated though.  I use &lt;a target=&#34;_blank&#34;
+href=&#34;https://www.markdownguide.org/getting-started/&#34;&gt;Markdown&lt;/a&gt;, a text
+editor, and Dropbox to sync them to my phone and that&amp;rsquo;s it. For inspiration,
+you can take a look at this &lt;a href=&#34;https://github.com/jbranchaud/til&#34;&gt;TIL
+repository&lt;/a&gt;.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;In the end, I&amp;rsquo;d like to add that in theory, things may seem perfect but in
+practice, they are really not. It&amp;rsquo;s better to be practical and realistic about
+your goals than being perfect and not achieving anything.&lt;/p&gt;
+</description>
+      </item>
       
       <item>
         <title>Ruby: How Can Something So Beautiful Become So Ugly</title>
@@ -1290,73 +1356,6 @@ to do the computation.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.freecodecamp.org/is-it-computer-science-or-programming-c01383dacc9c&#34;&gt;Is It “Computer Science” or “Programming”?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://softwareengineering.stackexchange.com/questions/137103/whats-the-difference-between-computer-science-and-programming&#34;&gt;What&amp;rsquo;s the difference between computer science and programming?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-      </item>
-      
-      <item>
-        <title>How I Improved the Loading Speed of My Blog</title>
-        <link>https://aonemd.me/posts/how-i-improved-the-loading-speed-of-my-blog/</link>
-        <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
-        
-        <guid>https://aonemd.me/posts/how-i-improved-the-loading-speed-of-my-blog/</guid>
-        <description>&lt;p&gt;In this post I&amp;rsquo;m going to demonstrate the steps I took in order to improve the
-loading speed of my blog. First of all, this blog is generated by
-&lt;a target=&#34;_blank&#34; href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;, the static site generator.  I
-only build my static files and deploy them to GitHub pages. I use Webpack to
-compile my assets and then I use Jekyll to build the whole blog.&lt;/p&gt;
-&lt;p&gt;Around a year ago, I started on a mission to optimize the loading speed of my
-blog after feeling that it was slow and had some rendering issues. The next two
-screenshots demonstrate the difference in terms of loading time before and
-after the optimization:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/blog_performance_old.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/blog_performance_old.png&#34; alt=&#34;Old Blog Loading&#34;&gt;&lt;/a&gt;
-&amp;laquo; old blog loading in 3.56s in Chrome developer tools &amp;raquo;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://aonemd.me/images/blog_performance_new.png&#34;&gt;&lt;img src=&#34;https://aonemd.me/images/blog_performance_new.png&#34; alt=&#34;New Blog Loading&#34;&gt;&lt;/a&gt;
-&amp;laquo; new blog loading in 600ms in chrome developer tools &amp;raquo;&lt;/p&gt;
-&lt;p&gt;In the next few points, I will list the steps I took to make my blog load
-faster than it used to:&lt;/p&gt;
-&lt;h3 id=&#34;1-zurb-foundation&#34;&gt;1. Zurb Foundation&lt;/h3&gt;
-&lt;p&gt;The first thing I started with was completely removing Zurb Foundation, the
-CSS framework. I was using Foundation mainly for its grid system but I never
-really used most of its other components. In spite of that, I was,
-unknowingly, importing all its components into my main SCSS file (which, of
-course, was atrocious). I totally removed Foundation and replaced it with
-vanilla CSS (compiled PostCSS, actually). My main &lt;code&gt;index.css&lt;/code&gt; file was 242KB
-in size. Now, it&amp;rsquo;s a 6.3KB file.&lt;/p&gt;
-&lt;h3 id=&#34;2-font-awesome--font-icons&#34;&gt;2. Font Awesome &amp;amp; Font Icons&lt;/h3&gt;
-&lt;p&gt;This was based on an advice from the great frontend guru &lt;a target=&#34;_blank&#34; href=&#34;https://twitter.com/ahmadalfy&#34;&gt;Ahmad Alfy&lt;/a&gt;:
-replacing Font Awesome with SVGs. There are already many
-&lt;a target=&#34;_blank&#34; href=&#34;https://css-tricks.com/icon-fonts-vs-svg/&#34;&gt;articles&lt;/a&gt; that
-discuss the case for using SVGs instead of font icons. For me, having a
-smaller file size to download by specifically adding only the icons I need to
-the sprite file, and not seeing empty squares when the file is yet to be
-downloaded are two great advantages of using SVGs.&lt;/p&gt;
-&lt;h3 id=&#34;3-google-analytics&#34;&gt;3. Google Analytics&lt;/h3&gt;
-&lt;p&gt;Although it might be useful to some, I didn&amp;rsquo;t really use analytics that much.
-For me, the added download time did not justify using Google Analytics
-specially that the uncached &lt;code&gt;analytics.js&lt;/code&gt; file alone loads from Google
-servers in about 200ms.&lt;/p&gt;
-&lt;h3 id=&#34;4-disqus-comments&#34;&gt;4. Disqus Comments&lt;/h3&gt;
-&lt;p&gt;I believe enabling comments in my blog is essential for opening a two-way
-channel of feedback. However, &lt;a target=&#34;_blank&#34; href=&#34;http://donw.io/post/github-comments/#whats-wrong-with-disqus&#34;&gt;the biggest issue with disqus&lt;/a&gt;
-is that it loads too many files and makes API calls to different servers for
-tracking and analytics. I have recently worked on an implementation of blog
-comments backed by GitHub issues but I haven&amp;rsquo;t deployed it yet.&lt;/p&gt;
-&lt;h3 id=&#34;5-javascript&#34;&gt;5. Javascript&lt;/h3&gt;
-&lt;p&gt;When I started working on this optimization, I wanted a Javascript-free
-experience in my blog. That is, I wanted to have every functionality working
-normally with or without Javascript. Removing Foundation was a big step in
-this direction because, with removing it, its Javascript depdencies were
-removed as well. I currently, use Javascript for exactly two functions; one
-for loading fonts using &lt;em&gt;Web Font Loader&lt;/em&gt;, and the other is for toggling
-between the light and the dark theme (Yes, there&amp;rsquo;s a &lt;a href=&#34;https://aonemd.me/blog/introducing-jack-and-dark-theme&#34;&gt;dark theme&lt;/a&gt; in this blog).
-Previously, two JS files were downloaded with a total size of 222KB and
-loaded in about 77ms.  Now, it&amp;rsquo;s just a single 20KB file that loads in ~20ms.
-Having Javascript files load asynchronously using &lt;code&gt;async&lt;/code&gt; to load the main
-index.js file also helped a lot in the total loading time of the blog.&lt;/p&gt;
-&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Having fewer files for the browser to download, and fewer resources that
-access the network help greatly in speeding the page load specially for
-static websites such as blogs.&lt;/p&gt;
 </description>
       </item>
       
