@@ -6,7 +6,274 @@
     <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+      
+      <item>
+        <title>Let&#39;s Build a Binary Clock in Node.js</title>
+        <link>https://aonemd.me/posts/let-s-build-a-binary-clock-in-node-js/</link>
+        <pubDate>Sat, 08 May 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://aonemd.me/posts/let-s-build-a-binary-clock-in-node-js/</guid>
+        <description>&lt;p&gt;I&amp;rsquo;m always on the lookout for fun programming exercises suitable for beginners.
+Recently, I came across this
+&lt;a href=&#39;https://www.youtube.com/watch?v=aYwJr3qmfBc&#39; target=&#39;_blank&#39;&gt;video on YouTube&lt;/a&gt;
+where the poster builds a binary clock in Javascript, HTML, and
+CSS. It was my first time coming across the idea of binary blocks and I thought
+it could be a fun exercise!&lt;/p&gt;
+&lt;p&gt;This is going to be my first tutorial-style post directed towards beginner so I&amp;rsquo;m
+still figuring out a proper format. One thing though, I&amp;rsquo;m not very fond of
+doing frontend and writing CSS so I decided to make this into a Node.js app.
+Another thing, I&amp;rsquo;m going to to use TypeScript for the code in this post. It&amp;rsquo;s
+JavaScript with some added features and it
+&lt;a href=&#39;https://stackoverflow.com/questions/44931479/compiling-vs-transpiling&#39; target=&#39;_blank&#39;&gt;transpiles&lt;/a&gt;
+to JavaScript in the end. With that out of the way, let&amp;rsquo;s build a binary clock!&lt;/p&gt;
+&lt;h3 id=&#34;pre-requisites&#34;&gt;Pre-requisites&lt;/h3&gt;
+&lt;p&gt;First, you need a quick tour over what the binary numbering system is. Here are
+some videos from Khan Academy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;https://www.youtube.com/watch?v=ku4KOFQ-bB4&#39; target=&#39;_blank&#39;&gt;Introduction to number systems and binary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#39;https://www.youtube.com/playlist?list=PLS---sZ5WJJvsjaAQZKwTwxl910xUdO98&#39; target=&#39;_blank&#39;&gt;Here&amp;rsquo;s the rest of the playlist on YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Secondly, you need to know how a binary clock works. Here&amp;rsquo;s a
+&lt;a href=&#39;https://www.reddit.com/r/explainlikeimfive/comments/sdt04/eli5_how_do_binary_clocks_work/&#39; target=&#39;_blank&#39;&gt;great explanation on Reddit&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, let&amp;rsquo;s install the required software:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Any text editor. I advice to start with &lt;a href=&#39;https://code.visualstudio.com/&#39; target=&#39;_blank&#39;&gt;VSCode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#39;https://nodejs.org/en/&#39; target=&#39;_blank&#39;&gt;Node.js&lt;/a&gt;:
+a way to run JavaScript without a browser. I usually use
+&lt;a href=&#39;https://github.com/nvm-sh/nvm#installing-and-updating&#39; target=&#39;_blank&#39;&gt;NVM&lt;/a&gt; as a way to
+install multiple Node.js versions my machine. After you install &lt;code&gt;NVM&lt;/code&gt;, run
+this &lt;code&gt;nvm install --lts&lt;/code&gt; to install a long-term supported version of
+Node.js&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#39;https://yarnpkg.com/getting-started/install&#39; target=&#39;_blank&#39;&gt;Yarn&lt;/a&gt;: a package manager to install our dependencies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-code&#34;&gt;The Code&lt;/h3&gt;
+&lt;p&gt;The full code is on &lt;a href=&#39;https://github.com/aonemd/binary-clock.ts&#39; target=&#39;_blank&#39;&gt;GitHub&lt;/a&gt;. You
+can follow along with how the code progresses over time using the
+&lt;a href=&#39;https://github.com/aonemd/binary-clock.ts/commits/master&#39; target=&#39;_blank&#39;&gt;Git commits&lt;/a&gt;.
+I also advice to not copy the code and instead, type everything yourself. Keep
+this with you in your learning journey.&lt;/p&gt;
+&lt;h4 id=&#34;i-setting-up-a-new-project&#34;&gt;I. Setting up a new project&lt;/h4&gt;
+&lt;p&gt;We will start first by creating a new project. In a terminal, we create a new
+folder using:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;mkdir binary-clock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we move to that folder using:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; binary-clock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, we declare the folder as a JavaScript project using:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yarn init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You&amp;rsquo;ll be prompted to answer a few questions regarding the project and then
+you&amp;rsquo;ll find a file named &lt;code&gt;pacakge.json&lt;/code&gt; in the current folder. This file
+contains the configurations and dependencies of your project.&lt;/p&gt;
+&lt;p&gt;Now, let&amp;rsquo;s setup TypeScript by running the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yarn add -D typescript @types/node
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You&amp;rsquo;ll find two changes in the current directory. The file &lt;code&gt;package.json&lt;/code&gt;
+contains new lines under &lt;code&gt;devDependencies&lt;/code&gt; and there&amp;rsquo;s a new folder named
+&lt;code&gt;node-modules&lt;/code&gt; that holds the actual code of those dependencies.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s add a new file named &lt;code&gt;tsconfig.json&lt;/code&gt; which will hold our TypeScript
+configurations with the following content:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;#34;compilerOptions&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;target&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ESNext&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ESNext&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;lib&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;ESNext&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;moduleResolution&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;node&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;strict&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;outDir&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;dist&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;rootDir&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;declaration&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;#34;allowSyntheticDefaultImports&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;#34;exclude&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;./node_modules&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;./dist&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;#34;include&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;./src/**/*.ts&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: I don&amp;rsquo;t really know what all those options do. I have them copied
+from one project to the other. There&amp;rsquo;s an online
+&lt;a href=&#39;https://www.staging-typescript.org/tsconfig&#39; target=&#39;_blank&#39;&gt;reference&lt;/a&gt; for those.&lt;/p&gt;
+&lt;p&gt;The last step is to make building and running the project easier. Let&amp;rsquo;s add the
+following to &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;#34;build&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;tsc&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;#34;start&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;node dist/src/index.js&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, we can create the &lt;code&gt;src&lt;/code&gt; folder:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;mkdir src
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Inside &lt;code&gt;src&lt;/code&gt;, we can create our main entry point file, &lt;code&gt;index.ts&lt;/code&gt; (index is
+used by convention). The following command creates a new file under &lt;code&gt;src&lt;/code&gt;
+directory:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;touch src/index.ts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add this to &lt;code&gt;src/index.ts&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To build and run the project:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yarn build &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;ii-getting-the-current-time&#34;&gt;II. Getting the current time&lt;/h4&gt;
+&lt;p&gt;Our goal is to convert the current time into the binary format so we start by
+reading the current time. JavaScript provides a &lt;code&gt;Date&lt;/code&gt; object that holds the
+current date and time. Since we only care about hours, minutes, and seconds, we
+use some methods defined on the &lt;code&gt;Date&lt;/code&gt; object to extract this information:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// in src/index.ts
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// read current date and time
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;// extract time information
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getHours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMinutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getSeconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s wrap this into a function:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSections&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getHours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMinutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getSeconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The previous function takes nothing in its arguments and returns an array of
+elements of type &lt;code&gt;number&lt;/code&gt;. That&amp;rsquo;s where TypeScript comes into play: the type
+system. JavaScript is a
+&lt;a href=&#39;https://stackoverflow.com/a/787253/4352712&#39; target=&#39;_blank&#39;&gt;dynamic&lt;/a&gt;,
+&lt;a href=&#39;https://stackoverflow.com/questions/964910/is-javascript-an-untyped-language&#39; target=&#39;_blank&#39;&gt;weakly typed&lt;/a&gt;
+language. TypeScript, on the other hand, adds optional static typing to our
+programs. In fact, we can further annotate each variable with its
+&lt;a href=&#39;https://www.typescriptlang.org/docs/handbook/2/everyday-types.html&#39; target=&#39;_blank&#39;&gt;type&lt;/a&gt;
+like so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSections&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getHours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMinutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getSeconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Now, since it&amp;rsquo;s declared/typed as a &lt;code&gt;number&lt;/code&gt;, the compiler will complain if you
+tried to assign a &lt;code&gt;string&lt;/code&gt; to the &lt;code&gt;hours&lt;/code&gt; variable.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// ERROR!
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: the name of the function starts with an &lt;code&gt;_&lt;/code&gt;. This is a habit I picked
+from writing JavaScript since it does not have a notion of private functions,
+officially anyway. However, TypeScript does have a &lt;code&gt;private&lt;/code&gt; keyword by
+default.&lt;/p&gt;
+&lt;h4 id=&#34;iii-converting-the-time-to-binary&#34;&gt;III. Converting the time to binary&lt;/h4&gt;
+&lt;p&gt;In this section, we will do two tasks: extract each section (hours, minutes,
+and seconds) into two components (tens and ones) and convert each component to
+binary. Let&amp;rsquo;s start by extracting section components:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// in src/index.ts
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSecionComponents&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;section&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;section&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here we take a time section as a number, &lt;code&gt;hours&lt;/code&gt; for example, and extract into
+two components: tens and ones. For example, if it&amp;rsquo;s currently &lt;code&gt;21&lt;/code&gt;, we get an
+array of two elements: &lt;code&gt;[&#39;2&#39;, &#39;1&#39;]&lt;/code&gt;. The call to &lt;code&gt;padStart()&lt;/code&gt; function adds a
+zero to the right if the hour is only one digit. For example, &lt;code&gt;4&lt;/code&gt; should be
+&lt;code&gt;04&lt;/code&gt; and thus, we get: &lt;code&gt;[&#39;0&#39;, &#39;4&#39;]&lt;/code&gt;. The &lt;code&gt;splits()&lt;/code&gt; function splits the string
+into an array. For example, &lt;code&gt;&#39;12&#39;.split(&amp;quot;&amp;quot;)&lt;/code&gt; will return &lt;code&gt;[&#39;1&#39;, &#39;2&#39;]&lt;/code&gt;. Note
+that these functions work only on strings and that&amp;rsquo;s why we first called the
+&lt;code&gt;toString()&lt;/code&gt; function on the section.&lt;/p&gt;
+&lt;p&gt;The second task is where we convert each component of each section into binary:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// in src/index.ts
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_convertComponentsToBinary&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;component&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;component&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;map()&lt;/code&gt; function is sort of like a for-loop except that it loops over some
+items/array and returns another array after applying a function on the given
+array. It sounded complicated writing this. Let&amp;rsquo;s take our example: given this
+&lt;code&gt;[&#39;1&#39;, &#39;2&#39;]&lt;/code&gt; as the components array, we use map to loop over each element of
+this array and apply the following logic on each one:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;component&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;component&lt;/code&gt; is a variable that holds each element in the array. Let&amp;rsquo;s replace
+the variable with a value:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So &lt;code&gt;Number()&lt;/code&gt; will convert the string element into a number, &lt;code&gt;toString(2)&lt;/code&gt; will
+convert the number into the binary format as a string, and &lt;code&gt;padStart(4, &#39;0&#39;)&lt;/code&gt;
+will pad the result with up to 4 0&amp;rsquo;s (since each column in a binary clock has 4
+rows).&lt;/p&gt;
+&lt;h4 id=&#34;vi-printing-the-output&#34;&gt;VI. Printing the output&lt;/h4&gt;
+&lt;p&gt;Here&amp;rsquo;s the function that prints the output to the terminal:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// in src/index.ts
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_printToConsole&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;clear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// tens component
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// ones component
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;row&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It takes an array of components (each component is an array of strings [in
+binary format] in itself, &lt;code&gt;[&#39;0000&#39;, &#39;0001&#39;]&lt;/code&gt;). The function starts first by
+clearing the terminal so we always have only the current time in the output.
+Then, it prints each row from each component. We have 4 rows, that&amp;rsquo;s the first
+loop. Then we have 3 sections * 2 components = 6 components in total, that&amp;rsquo;s
+the inner loop. We append the row elements into the &lt;code&gt;row&lt;/code&gt; variable. Finally, we
+print each row after the inner loop.&lt;/p&gt;
+&lt;h4 id=&#34;v-ticking-the-clock&#34;&gt;V. Ticking the clock&lt;/h4&gt;
+&lt;p&gt;Last but not least, let&amp;rsquo;s run our clock. We will use a JavaScript function
+named &lt;code&gt;setInterval()&lt;/code&gt;. This function is used to execute some logic every
+defined number of seconds. It takes two arguments: a function containing the
+logic to execute, and the number of milliseconds that define the frequency. We
+use the functions we defined previously here, and pass 1000 milliseconds as the
+frequency to tick our clock every 1 second:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// in src/index.ts
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;setInterval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSections&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hourComponents&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSecionComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;minuteComponents&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSecionComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;secondComponents&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSecionComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hourBinaryComponents&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_convertComponentsToBinary&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;hourComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;minuteBinaryComponents&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_convertComponentsToBinary&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;minuteComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;secondBinaryComponents&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_convertComponentsToBinary&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;secondComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+  &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;hourBinaryComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;minuteBinaryComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;secondBinaryComponents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+
+  &lt;span class=&#34;nx&#34;&gt;_printToConsole&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;components&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;vi-extra-improvements&#34;&gt;VI. Extra: improvements&lt;/h4&gt;
+&lt;p&gt;This is an extra part. You can take it as a homework, although, you&amp;rsquo;ll find the
+improvements in the final code on GitHub. A first improvement is to move the
+ticking logic inside &lt;code&gt;setInterval()&lt;/code&gt; into a separate function. Another one is
+wrap our functions inside a &lt;code&gt;BinaryClock&lt;/code&gt; class and deal with it as an object.
+This is part of the object oriented programming capabilities provided by
+TypeScript. Here&amp;rsquo;s the
+&lt;a href=&#39;https://www.typescriptlang.org/docs/handbook/2/classes.html&#39; target=&#39;_blank&#39;&gt;documentation of classes and objects&lt;/a&gt;
+from TypeScript documentation page.&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;That&amp;rsquo;s the end of our tutorial. If you have any problems following along or any
+general comments, please do not hesitate to comment below or contact me.&lt;/p&gt;
+</description>
+      </item>
       
       <item>
         <title>A Micro Framework for Learning</title>
@@ -1300,62 +1567,6 @@ types of reference numbers:&lt;/p&gt;
 
 &lt;span class=&#34;no&#34;&gt;Book&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;info LIKE ?&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%ref: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it for now. Thanks for reading!&lt;/p&gt;
-</description>
-      </item>
-      
-      <item>
-        <title>Computer Science Is Not About Programming</title>
-        <link>https://aonemd.me/posts/computer-science-is-not-about-programming/</link>
-        <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
-        
-        <guid>https://aonemd.me/posts/computer-science-is-not-about-programming/</guid>
-        <description>&lt;p&gt;This is not yet another war post about the difference between this and that. In
-fact, what&amp;rsquo;s motivated me to write this post is a TA at my university who was
-shaming students who graduate university without learning how to program
-properly. This idea was intriguing to me as I thought to myself that computer
-science is not about programming!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://aonemd.me/images/hamada_helal_hamada_helal.jpg&#34; alt=&#34;Hamada Helal, the king of obvious&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Actually, what I believe is that computer science is about computing. According
-to Merriam-Webster, the definition of computer science is &amp;ldquo;a branch of science
-that deals with the theory of computation or the design of computers&amp;rdquo;.  On the
-other hand, programming is merely one way to do computation, supposedly, in a
-short period of time using a big calculator that is a computer (I know, cell
-phones exist!). Having computers do calculations for us is just an extra
-privilege.&lt;/p&gt;
-&lt;p&gt;More so, computations don&amp;rsquo;t have to be done on a computer. An A4 sheet of paper
-and a pencil could be used as a computer, although this is much slower and many
-times harder to follow and keep track of compared to a regular computer.  There
-are indeed many ways to do computations without a programming language. A
-theoretical model of computation is a model which describes how a set of
-outputs are computed given a set of inputs. One of the most famous models of
-computation is the &lt;a target=&#34;_blank&#34; href=&#34;https://www.wikiwand.com/en/Turing_machine&#34;&gt;&lt;em&gt;Turing machine&lt;/em&gt;&lt;/a&gt;.
-A Turing machine is an abstract computer that has an infinite memory and can
-sequentially traverse this memory as needed. It resembles a program which takes
-an input and computes an output (in terms of accepting or rejecting the input)
-but has access to an infinite memory.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Computer science is about computing.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I have seen many students who were excellent students but were poor programmers
-and that&amp;rsquo;s totally fine. Those students, if they want to, can pick up academia
-and research for example, become computer scientists and excel at that.  In
-contrast, I consider myself a fairly good programmer, however; I also consider
-myself a not-so-good student. It doesn&amp;rsquo;t have to be a choice between either of
-this or that; of course, this is not a general rule. One can be a good academic
-and a good programmer at the same time.&lt;/p&gt;
-&lt;p&gt;The thing about degrees is that computer science students expect that their
-major should include more &amp;ldquo;programming&amp;rdquo; courses and they blame their degrees
-for the lack of computer programming classes (I used to think that way when I
-started my degree). However, what they are missing here is what computer
-science is actually concerned with —namely, the theory behind computation.&lt;/p&gt;
-&lt;p&gt;In conclusion, computer programming is only one form of doing computation.
-Understanding the theory behind computation is different from writing programs
-to do the computation.&lt;/p&gt;
-&lt;h3 id=&#34;things-i-read-on-the-topic&#34;&gt;Things I read on the topic&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.freecodecamp.org/is-it-computer-science-or-programming-c01383dacc9c&#34;&gt;Is It “Computer Science” or “Programming”?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://softwareengineering.stackexchange.com/questions/137103/whats-the-difference-between-computer-science-and-programming&#34;&gt;What&amp;rsquo;s the difference between computer science and programming?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
       </item>
       

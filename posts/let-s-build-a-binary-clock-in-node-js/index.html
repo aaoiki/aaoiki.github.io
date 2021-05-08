@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1b1918">
+
+    <title>Let&#39;s Build a Binary Clock in Node.js | aonemd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logo.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/logo.png" />
+
+    <link rel="stylesheet" href="/assets/index.css"><meta name="description" content="I&#39;m always on the lookout for fun programming exercises suitable for beginners. This is my first beginner directed tutorial where I take you to build a binary clock in Node.js and TypeScript.">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aonemd.me/posts/let-s-build-a-binary-clock-in-node-js/" />
+<meta property="og:site_name" content="aonemd" />
+<meta property="og:title" content="Let&#39;s Build a Binary Clock in Node.js" />
+<meta property="og:description" content="I&#39;m always on the lookout for fun programming exercises suitable for beginners. This is my first beginner directed tutorial where I take you to build a binary clock in Node.js and TypeScript." />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@aonemd" />
+<meta name="twitter:creator" content="@aonemd" />
+<meta name="twitter:title" content="Let&#39;s Build a Binary Clock in Node.js" />
+<meta name="twitter:description" content="I&#39;m always on the lookout for fun programming exercises suitable for beginners. This is my first beginner directed tutorial where I take you to build a binary clock in Node.js and TypeScript." />
+
+
+  <meta itemprop="image"         content="https://aonemd.me/images/logo.png" />
+  <meta property="og:image"      content="https://aonemd.me/images/logo.png" />
+  <meta name="twitter:image"     content="https://aonemd.me/images/logo.png" />
+  <meta name="twitter:image:src" content="https://aonemd.me/images/logo.png" />
+
+</head>
+
+  <body class="light">
+
+<nav>
+  <div class="title">
+    <a href="/">
+      <img src="/images/logo-circle.png" class="logo">
+      <span>&nbsp; aonemd</span>
+    </a>
+  </div>
+
+  <label for="toggle">&#9776;</label>
+  <input type="checkbox" id="toggle">
+
+  <div class="row empty-row"></div>
+
+  <div class="menu">
+    <a href="/projects" class="" aria-label="Projects">
+      projects
+    </a>
+    <a href="/categories" class="" aria-label="Categories">
+      categories
+    </a>
+    <a href="/about" class="" aria-label="About">
+      about
+    </a>
+    <a href="https://twitter.com/aonemd" target="_blank" aria-label="Twitter">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+    </a>
+    <a href="https://github.com/aonemd" target="_blank" aria-label="Github">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-github"></use></svg>
+    </a>
+    <a href="https://gitlab.com/aonemd" target="_blank" aria-label="Gitlab">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-gitlab"></use></svg>
+    </a>
+    <a href="mailto:aonemdsaleh@gmail.com" target="_blank" aria-label="Email">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-mail"></use></svg>
+    </a>
+    <a href="/index.xml" target="_blank" aria-label="RSS Feed">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-rss-squared"></use></svg>
+    </a>
+    <a href="javascript:void(0)" id="theme-toggler-element" class="inverted" aria-label="Toggle Theme">
+      <svg><use xlink:href="/images/icons-sprite.svg#icon-moon-fill"></use></svg>
+    </a>
+  </div>
+</nav>
+
+  <article>
+    <div class="row">
+      <div class="col-6 col-m-12 center">
+        <div class="view-post__en-title text-center center">
+          <h2>Let&#39;s Build a Binary Clock in Node.js <small class="view-post__category">Learning</small></h2>
+          <b><span class="view-post__date">May 08, 2021</span></b>
+        </div>
+
+        <br>
+
+        <div lang='en'>
+          <p>I&rsquo;m always on the lookout for fun programming exercises suitable for beginners.
+Recently, I came across this
+<a href='https://www.youtube.com/watch?v=aYwJr3qmfBc' target='_blank'>video on YouTube</a>
+where the poster builds a binary clock in Javascript, HTML, and
+CSS. It was my first time coming across the idea of binary blocks and I thought
+it could be a fun exercise!</p>
+<p>This is going to be my first tutorial-style post directed towards beginner so I&rsquo;m
+still figuring out a proper format. One thing though, I&rsquo;m not very fond of
+doing frontend and writing CSS so I decided to make this into a Node.js app.
+Another thing, I&rsquo;m going to to use TypeScript for the code in this post. It&rsquo;s
+JavaScript with some added features and it
+<a href='https://stackoverflow.com/questions/44931479/compiling-vs-transpiling' target='_blank'>transpiles</a>
+to JavaScript in the end. With that out of the way, let&rsquo;s build a binary clock!</p>
+<h3 id="pre-requisites">Pre-requisites</h3>
+<p>First, you need a quick tour over what the binary numbering system is. Here are
+some videos from Khan Academy:</p>
+<ul>
+<li><a href='https://www.youtube.com/watch?v=ku4KOFQ-bB4' target='_blank'>Introduction to number systems and binary</a></li>
+<li><a href='https://www.youtube.com/playlist?list=PLS---sZ5WJJvsjaAQZKwTwxl910xUdO98' target='_blank'>Here&rsquo;s the rest of the playlist on YouTube</a></li>
+</ul>
+<p>Secondly, you need to know how a binary clock works. Here&rsquo;s a
+<a href='https://www.reddit.com/r/explainlikeimfive/comments/sdt04/eli5_how_do_binary_clocks_work/' target='_blank'>great explanation on Reddit</a>.</p>
+<p>Finally, let&rsquo;s install the required software:</p>
+<ul>
+<li>Any text editor. I advice to start with <a href='https://code.visualstudio.com/' target='_blank'>VSCode</a></li>
+<li><a href='https://nodejs.org/en/' target='_blank'>Node.js</a>:
+a way to run JavaScript without a browser. I usually use
+<a href='https://github.com/nvm-sh/nvm#installing-and-updating' target='_blank'>NVM</a> as a way to
+install multiple Node.js versions my machine. After you install <code>NVM</code>, run
+this <code>nvm install --lts</code> to install a long-term supported version of
+Node.js</li>
+<li><a href='https://yarnpkg.com/getting-started/install' target='_blank'>Yarn</a>: a package manager to install our dependencies</li>
+</ul>
+<h3 id="the-code">The Code</h3>
+<p>The full code is on <a href='https://github.com/aonemd/binary-clock.ts' target='_blank'>GitHub</a>. You
+can follow along with how the code progresses over time using the
+<a href='https://github.com/aonemd/binary-clock.ts/commits/master' target='_blank'>Git commits</a>.
+I also advice to not copy the code and instead, type everything yourself. Keep
+this with you in your learning journey.</p>
+<h4 id="i-setting-up-a-new-project">I. Setting up a new project</h4>
+<p>We will start first by creating a new project. In a terminal, we create a new
+folder using:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mkdir binary-clock
+</code></pre></div><p>Then we move to that folder using:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> binary-clock
+</code></pre></div><p>Finally, we declare the folder as a JavaScript project using:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">yarn init
+</code></pre></div><p>You&rsquo;ll be prompted to answer a few questions regarding the project and then
+you&rsquo;ll find a file named <code>pacakge.json</code> in the current folder. This file
+contains the configurations and dependencies of your project.</p>
+<p>Now, let&rsquo;s setup TypeScript by running the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">yarn add -D typescript @types/node
+</code></pre></div><p>You&rsquo;ll find two changes in the current directory. The file <code>package.json</code>
+contains new lines under <code>devDependencies</code> and there&rsquo;s a new folder named
+<code>node-modules</code> that holds the actual code of those dependencies.</p>
+<p>Let&rsquo;s add a new file named <code>tsconfig.json</code> which will hold our TypeScript
+configurations with the following content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;compilerOptions&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;target&#34;</span><span class="p">:</span> <span class="s2">&#34;ESNext&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;module&#34;</span><span class="p">:</span> <span class="s2">&#34;ESNext&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;lib&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;ESNext&#34;</span><span class="p">],</span>
+    <span class="nt">&#34;moduleResolution&#34;</span><span class="p">:</span> <span class="s2">&#34;node&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;strict&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&#34;outDir&#34;</span><span class="p">:</span> <span class="s2">&#34;dist&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;rootDir&#34;</span><span class="p">:</span> <span class="s2">&#34;.&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;declaration&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&#34;allowSyntheticDefaultImports&#34;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;exclude&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;./node_modules&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;./dist&#34;</span>
+  <span class="p">],</span>
+  <span class="nt">&#34;include&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&#34;./src/**/*.ts&#34;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><p><strong>Note</strong>: I don&rsquo;t really know what all those options do. I have them copied
+from one project to the other. There&rsquo;s an online
+<a href='https://www.staging-typescript.org/tsconfig' target='_blank'>reference</a> for those.</p>
+<p>The last step is to make building and running the project easier. Let&rsquo;s add the
+following to <code>package.json</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;tsc&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;node dist/src/index.js&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Now, we can create the <code>src</code> folder:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">mkdir src
+</code></pre></div><p>Inside <code>src</code>, we can create our main entry point file, <code>index.ts</code> (index is
+used by convention). The following command creates a new file under <code>src</code>
+directory:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">touch src/index.ts
+</code></pre></div><p>Add this to <code>src/index.ts</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Hello, world!&#34;</span><span class="p">);</span>
+</code></pre></div><p>To build and run the project:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">yarn build <span class="o">&amp;&amp;</span> yarn start
+</code></pre></div><h4 id="ii-getting-the-current-time">II. Getting the current time</h4>
+<p>Our goal is to convert the current time into the binary format so we start by
+reading the current time. JavaScript provides a <code>Date</code> object that holds the
+current date and time. Since we only care about hours, minutes, and seconds, we
+use some methods defined on the <code>Date</code> object to extract this information:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
+</span><span class="c1"></span>
+<span class="c1">// read current date and time
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="c1">// extract time information
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">hours</span>   <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+</code></pre></div><p>Let&rsquo;s wrap this into a function:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kr">const</span> <span class="nx">_getTimeSections</span> <span class="o">=</span> <span class="p">()</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">number</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+  <span class="kd">let</span> <span class="nx">hours</span>   <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="p">[</span>
+    <span class="nx">hours</span><span class="p">,</span>
+    <span class="nx">minutes</span><span class="p">,</span>
+    <span class="nx">seconds</span>
+  <span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div><p>The previous function takes nothing in its arguments and returns an array of
+elements of type <code>number</code>. That&rsquo;s where TypeScript comes into play: the type
+system. JavaScript is a
+<a href='https://stackoverflow.com/a/787253/4352712' target='_blank'>dynamic</a>,
+<a href='https://stackoverflow.com/questions/964910/is-javascript-an-untyped-language' target='_blank'>weakly typed</a>
+language. TypeScript, on the other hand, adds optional static typing to our
+programs. In fact, we can further annotate each variable with its
+<a href='https://www.typescriptlang.org/docs/handbook/2/everyday-types.html' target='_blank'>type</a>
+like so:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kr">const</span> <span class="nx">_getTimeSections</span> <span class="o">=</span> <span class="p">()</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">number</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">date</span>: <span class="kt">Date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+  <span class="kd">let</span> <span class="nx">hours</span>: <span class="kt">number</span>   <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">minutes</span>: <span class="kt">number</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">seconds</span>: <span class="kt">number</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="p">[</span>
+    <span class="nx">hours</span><span class="p">,</span>
+    <span class="nx">minutes</span><span class="p">,</span>
+    <span class="nx">seconds</span>
+  <span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div><blockquote>
+<p>Now, since it&rsquo;s declared/typed as a <code>number</code>, the compiler will complain if you
+tried to assign a <code>string</code> to the <code>hours</code> variable.</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kd">let</span> <span class="nx">hours</span>: <span class="kt">number</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="nx">hours</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span><span class="p">;</span>  <span class="c1">// ERROR!
+</span></code></pre></div></blockquote>
+<p><strong>Note</strong>: the name of the function starts with an <code>_</code>. This is a habit I picked
+from writing JavaScript since it does not have a notion of private functions,
+officially anyway. However, TypeScript does have a <code>private</code> keyword by
+default.</p>
+<h4 id="iii-converting-the-time-to-binary">III. Converting the time to binary</h4>
+<p>In this section, we will do two tasks: extract each section (hours, minutes,
+and seconds) into two components (tens and ones) and convert each component to
+binary. Let&rsquo;s start by extracting section components:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">_getTimeSecionComponents</span> <span class="o">=</span> <span class="p">(</span><span class="nx">section</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">section</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Here we take a time section as a number, <code>hours</code> for example, and extract into
+two components: tens and ones. For example, if it&rsquo;s currently <code>21</code>, we get an
+array of two elements: <code>['2', '1']</code>. The call to <code>padStart()</code> function adds a
+zero to the right if the hour is only one digit. For example, <code>4</code> should be
+<code>04</code> and thus, we get: <code>['0', '4']</code>. The <code>splits()</code> function splits the string
+into an array. For example, <code>'12'.split(&quot;&quot;)</code> will return <code>['1', '2']</code>. Note
+that these functions work only on strings and that&rsquo;s why we first called the
+<code>toString()</code> function on the section.</p>
+<p>The second task is where we convert each component of each section into binary:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">_convertComponentsToBinary</span> <span class="o">=</span> <span class="p">(</span><span class="nx">components</span>: <span class="kt">Array</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;)</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">components</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">component</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">component</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div><p>The <code>map()</code> function is sort of like a for-loop except that it loops over some
+items/array and returns another array after applying a function on the given
+array. It sounded complicated writing this. Let&rsquo;s take our example: given this
+<code>['1', '2']</code> as the components array, we use map to loop over each element of
+this array and apply the following logic on each one:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nb">Number</span><span class="p">(</span><span class="nx">component</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</code></pre></div><p><code>component</code> is a variable that holds each element in the array. Let&rsquo;s replace
+the variable with a value:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</code></pre></div><p>So <code>Number()</code> will convert the string element into a number, <code>toString(2)</code> will
+convert the number into the binary format as a string, and <code>padStart(4, '0')</code>
+will pad the result with up to 4 0&rsquo;s (since each column in a binary clock has 4
+rows).</p>
+<h4 id="vi-printing-the-output">VI. Printing the output</h4>
+<p>Here&rsquo;s the function that prints the output to the terminal:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">_printToConsole</span> <span class="o">=</span> <span class="p">(</span><span class="nx">components</span>: <span class="kt">Array</span><span class="p">&lt;</span><span class="nt">Array</span><span class="err">&lt;</span><span class="na">string</span><span class="p">&gt;</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">row</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">row</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">components</span><span class="p">[</span><span class="nx">j</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="p">);</span>  <span class="c1">// tens component
+</span><span class="c1"></span>      <span class="nx">row</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">components</span><span class="p">[</span><span class="nx">j</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span><span class="p">);</span>  <span class="c1">// ones component
+</span><span class="c1"></span>    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>It takes an array of components (each component is an array of strings [in
+binary format] in itself, <code>['0000', '0001']</code>). The function starts first by
+clearing the terminal so we always have only the current time in the output.
+Then, it prints each row from each component. We have 4 rows, that&rsquo;s the first
+loop. Then we have 3 sections * 2 components = 6 components in total, that&rsquo;s
+the inner loop. We append the row elements into the <code>row</code> variable. Finally, we
+print each row after the inner loop.</p>
+<h4 id="v-ticking-the-clock">V. Ticking the clock</h4>
+<p>Last but not least, let&rsquo;s run our clock. We will use a JavaScript function
+named <code>setInterval()</code>. This function is used to execute some logic every
+defined number of seconds. It takes two arguments: a function containing the
+logic to execute, and the number of milliseconds that define the frequency. We
+use the functions we defined previously here, and pass 1000 milliseconds as the
+frequency to tick our clock every 1 second:</p>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
+</span><span class="c1"></span>
+<span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">hours</span><span class="p">,</span> <span class="nx">minutes</span><span class="p">,</span> <span class="nx">seconds</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_getTimeSections</span><span class="p">();</span>
+
+  <span class="kd">let</span> <span class="nx">hourComponents</span>   <span class="o">=</span> <span class="nx">_getTimeSecionComponents</span><span class="p">(</span><span class="nx">hours</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">minuteComponents</span> <span class="o">=</span> <span class="nx">_getTimeSecionComponents</span><span class="p">(</span><span class="nx">minutes</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">secondComponents</span> <span class="o">=</span> <span class="nx">_getTimeSecionComponents</span><span class="p">(</span><span class="nx">seconds</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">hourBinaryComponents</span>   <span class="o">=</span> <span class="nx">_convertComponentsToBinary</span><span class="p">(</span><span class="nx">hourComponents</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">minuteBinaryComponents</span> <span class="o">=</span> <span class="nx">_convertComponentsToBinary</span><span class="p">(</span><span class="nx">minuteComponents</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">secondBinaryComponents</span> <span class="o">=</span> <span class="nx">_convertComponentsToBinary</span><span class="p">(</span><span class="nx">secondComponents</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">components</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nx">hourBinaryComponents</span><span class="p">,</span>
+    <span class="nx">minuteBinaryComponents</span><span class="p">,</span>
+    <span class="nx">secondBinaryComponents</span><span class="p">,</span>
+  <span class="p">];</span>
+
+  <span class="nx">_printToConsole</span><span class="p">(</span><span class="nx">components</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div><h4 id="vi-extra-improvements">VI. Extra: improvements</h4>
+<p>This is an extra part. You can take it as a homework, although, you&rsquo;ll find the
+improvements in the final code on GitHub. A first improvement is to move the
+ticking logic inside <code>setInterval()</code> into a separate function. Another one is
+wrap our functions inside a <code>BinaryClock</code> class and deal with it as an object.
+This is part of the object oriented programming capabilities provided by
+TypeScript. Here&rsquo;s the
+<a href='https://www.typescriptlang.org/docs/handbook/2/classes.html' target='_blank'>documentation of classes and objects</a>
+from TypeScript documentation page.</p>
+<br>
+<p>That&rsquo;s the end of our tutorial. If you have any problems following along or any
+general comments, please do not hesitate to comment below or contact me.</p>
+
+        </div><div class="row">
+  <div class="col-12 text-center">
+    <div class="social">
+        <a id="twitter" href="https://twitter.com/share?url=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f&text=Let%27s%20Build%20a%20Binary%20Clock%20in%20Node.js&hashtags=learning%2cjavascript%2ctypescript%2cnodejs&via=aonemd" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-twitter"></use></svg>
+        </a>
+        <a id="facebook" href="https://facebook.com/share.php?u=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-facebook"></use></svg>
+        </a>
+        <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f&title=Let%27s%20Build%20a%20Binary%20Clock%20in%20Node.js" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Let%27s%20Build%20a%20Binary%20Clock%20in%20Node.js&url=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f&&summary=I%26rsquo%3bm%20always%20on%20the%20lookout%20for%20fun%20programming%20exercises%20suitable%20for%20beginners.%20Recently%2c%20I%20came%20across%20this%20video%20on%20YouTube%20where%20the%20poster%20builds%20a%20binary%20clock%20in%20Javascript%2c%20HTML%2c%20and%20CSS.%20It%20was%20my%20first%20time%20coming%20across%20the%20idea%20of%20binary%20blocks%20and%20I%20thought%20it%20could%20be%20a%20fun%20exercise%21%0aThis%20is%20going%20to%20be%20my%20first%20tutorial-style%20post%20directed%20towards%20beginner%20so%20I%26rsquo%3bm%20still%20figuring%20out%20a%20proper%20format.&source=https://aonemd.me" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
+        </a>
+        
+        
+        
+        <a id="pocket" href="https://getpocket.com/save?url=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f&title=Let%27s%20Build%20a%20Binary%20Clock%20in%20Node.js" target="_blank">
+          <svg><use xlink:href="/images/icons-sprite.svg#icon-pocket"></use></svg>
+        </a>
+    </div>
+  </div>
+</div>
+<hr>
+
+<input type="hidden" id="issueId" value="30">
+<div id="comments"></div>
+
+<link rel="stylesheet" href="/assets/comments.css">
+<script type="text/javascript" src="/assets/comments.js" async>
+</script>
+</div>
+    </div>
+  </article>
+
+
+    <script async type="text/javascript" src="/assets/index.js" charset="utf-8"></script>
+  </body>
+</html>
