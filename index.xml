@@ -42,9 +42,10 @@ some videos from Khan Academy:&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#39;https://nodejs.org/en/&#39; target=&#39;_blank&#39;&gt;Node.js&lt;/a&gt;:
 a way to run JavaScript without a browser. I usually use
 &lt;a href=&#39;https://github.com/nvm-sh/nvm#installing-and-updating&#39; target=&#39;_blank&#39;&gt;NVM&lt;/a&gt; as a way to
-install multiple Node.js versions my machine. After you install &lt;code&gt;NVM&lt;/code&gt;, run
-this &lt;code&gt;nvm install --lts&lt;/code&gt; to install a long-term supported version of
-Node.js&lt;/li&gt;
+install multiple Node.js versions my machine
+(for &lt;a href=&#39;https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows&#39; target=&#39;_blank&#39;&gt;Windows&lt;/a&gt;).
+After you install &lt;code&gt;NVM&lt;/code&gt;, run &lt;code&gt;nvm install --lts&lt;/code&gt; to install a long-term
+supported version of Node.js&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#39;https://yarnpkg.com/getting-started/install&#39; target=&#39;_blank&#39;&gt;Yarn&lt;/a&gt;: a package manager to install our dependencies&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;the-code&#34;&gt;The Code&lt;/h3&gt;
