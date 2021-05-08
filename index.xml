@@ -138,7 +138,9 @@ use some methods defined on the &lt;code&gt;Date&lt;/code&gt; object to extract 
     &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt;
   &lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The previous function takes nothing in its arguments and returns an array of
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;a href=&#39;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions&#39; target=&#39;_blank&#39;&gt;There are multiple ways to create functions in JavaScript&lt;/a&gt;.
+The above is called an arrow function.&lt;/p&gt;
+&lt;p&gt;The previous function takes nothing in its arguments and returns an array of
 elements of type &lt;code&gt;number&lt;/code&gt;. That&amp;rsquo;s where TypeScript comes into play: the type
 system. JavaScript is a
 &lt;a href=&#39;https://stackoverflow.com/a/787253/4352712&#39; target=&#39;_blank&#39;&gt;dynamic&lt;/a&gt;,
