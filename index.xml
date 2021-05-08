@@ -20,8 +20,8 @@ Recently, I came across this
 where the poster builds a binary clock in Javascript, HTML, and
 CSS. It was my first time coming across the idea of binary blocks and I thought
 it could be a fun exercise!&lt;/p&gt;
-&lt;p&gt;This is going to be my first tutorial-style post directed towards beginner so I&amp;rsquo;m
-still figuring out a proper format. One thing though, I&amp;rsquo;m not very fond of
+&lt;p&gt;This is going to be my first tutorial-style post directed towards beginners so
+I&amp;rsquo;m still figuring out a proper format. One thing though, I&amp;rsquo;m not very fond of
 doing frontend and writing CSS so I decided to make this into a Node.js app.
 Another thing, I&amp;rsquo;m going to to use TypeScript for the code in this post. It&amp;rsquo;s
 JavaScript with some added features and it
@@ -97,7 +97,7 @@ from one project to the other. There&amp;rsquo;s an online
 &lt;p&gt;The last step is to make building and running the project easier. Let&amp;rsquo;s add the
 following to &lt;code&gt;package.json&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;build&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;tsc&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;#34;compile&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;tsc&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
   &lt;span class=&#34;nt&#34;&gt;&amp;#34;start&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;node dist/src/index.js&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, we can create the &lt;code&gt;src&lt;/code&gt; folder:&lt;/p&gt;
@@ -109,7 +109,7 @@ directory:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add this to &lt;code&gt;src/index.ts&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello, world!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To build and run the project:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yarn build &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn start
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;yarn compile &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;ii-getting-the-current-time&#34;&gt;II. Getting the current time&lt;/h4&gt;
 &lt;p&gt;Our goal is to convert the current time into the binary format so we start by
 reading the current time. JavaScript provides a &lt;code&gt;Date&lt;/code&gt; object that holds the
@@ -124,7 +124,7 @@ use some methods defined on the &lt;code&gt;Date&lt;/code&gt; object to extract 
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;   &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getHours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
 &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;minutes&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getMinutes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
 &lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;seconds&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getSeconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s wrap this into a function:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let&amp;rsquo;s wrap this in a function:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSections&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Date&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
 
@@ -181,12 +181,12 @@ binary. Let&amp;rsquo;s start by extracting section components:&lt;/p&gt;
 &lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_getTimeSecionComponents&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;section&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;section&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;split&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here we take a time section as a number, &lt;code&gt;hours&lt;/code&gt; for example, and extract into
-two components: tens and ones. For example, if it&amp;rsquo;s currently &lt;code&gt;21&lt;/code&gt;, we get an
-array of two elements: &lt;code&gt;[&#39;2&#39;, &#39;1&#39;]&lt;/code&gt;. The call to &lt;code&gt;padStart()&lt;/code&gt; function adds a
-zero to the right if the hour is only one digit. For example, &lt;code&gt;4&lt;/code&gt; should be
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here we take a time section as a number, &lt;code&gt;hours&lt;/code&gt; for example, and extract it
+into two components: tens and ones. For example, if it&amp;rsquo;s currently &lt;code&gt;21&lt;/code&gt;, we get
+an array of two elements: &lt;code&gt;[&#39;2&#39;, &#39;1&#39;]&lt;/code&gt;. The call to &lt;code&gt;padStart()&lt;/code&gt; function adds
+a zero to the right if the hour is only one digit. For example, &lt;code&gt;4&lt;/code&gt; should be
 &lt;code&gt;04&lt;/code&gt; and thus, we get: &lt;code&gt;[&#39;0&#39;, &#39;4&#39;]&lt;/code&gt;. The &lt;code&gt;splits()&lt;/code&gt; function splits the string
-into an array. For example, &lt;code&gt;&#39;12&#39;.split(&amp;quot;&amp;quot;)&lt;/code&gt; will return &lt;code&gt;[&#39;1&#39;, &#39;2&#39;]&lt;/code&gt;. Note
+into an array. For example, &lt;code&gt;&#39;12&#39;.split(&amp;quot;&amp;quot;)&lt;/code&gt; will return &lt;code&gt;[&#39;1&#39;, &#39;2&#39;]&lt;/code&gt;. Notice
 that these functions work only on strings and that&amp;rsquo;s why we first called the
 &lt;code&gt;toString()&lt;/code&gt; function on the section.&lt;/p&gt;
 &lt;p&gt;The second task is where we convert each component of each section into binary:&lt;/p&gt;
@@ -200,16 +200,22 @@ that these functions work only on strings and that&amp;rsquo;s why we first call
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;map()&lt;/code&gt; function is sort of like a for-loop except that it loops over some
 items/array and returns another array after applying a function on the given
 array. It sounded complicated writing this. Let&amp;rsquo;s take our example: given this
-&lt;code&gt;[&#39;1&#39;, &#39;2&#39;]&lt;/code&gt; as the components array, we use map to loop over each element of
+&lt;code&gt;[&#39;2&#39;, &#39;1&#39;]&lt;/code&gt; as the components array, we use map to loop over each element of
 this array and apply the following logic on each one:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;component&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;component&lt;/code&gt; is a variable that holds each element in the array. Let&amp;rsquo;s replace
 the variable with a value:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So &lt;code&gt;Number()&lt;/code&gt; will convert the string element into a number, &lt;code&gt;toString(2)&lt;/code&gt; will
 convert the number into the binary format as a string, and &lt;code&gt;padStart(4, &#39;0&#39;)&lt;/code&gt;
 will pad the result with up to 4 0&amp;rsquo;s (since each column in a binary clock has 4
-rows).&lt;/p&gt;
+rows). Applying all three functions on &lt;code&gt;&#39;2&#39;&lt;/code&gt; will give us =&amp;gt; &lt;code&gt;&#39;0010&#39;&lt;/code&gt; (2 is 10
+in binary).&lt;/p&gt;
+&lt;p&gt;The newly aquired value &lt;code&gt;&#39;0010&#39;&lt;/code&gt; will be appended to an array and the iteration
+will move to the next value, &lt;code&gt;&#39;1&#39;&lt;/code&gt;. The new iteration will apply the same three
+functions and return &lt;code&gt;&#39;0001&#39;&lt;/code&gt;. This will be added to the array as well. Now
+that the iteration is done, the whole array, &lt;code&gt;[&#39;0010&#39;, &#39;0001]&lt;/code&gt; will be returned
+from the &lt;code&gt;map()&lt;/code&gt; function call and that&amp;rsquo;s our final return value.&lt;/p&gt;
 &lt;h4 id=&#34;vi-printing-the-output&#34;&gt;VI. Printing the output&lt;/h4&gt;
 &lt;p&gt;Here&amp;rsquo;s the function that prints the output to the terminal:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// in src/index.ts
@@ -237,10 +243,10 @@ print each row after the inner loop.&lt;/p&gt;
 &lt;h4 id=&#34;v-ticking-the-clock&#34;&gt;V. Ticking the clock&lt;/h4&gt;
 &lt;p&gt;Last but not least, let&amp;rsquo;s run our clock. We will use a JavaScript function
 named &lt;code&gt;setInterval()&lt;/code&gt;. This function is used to execute some logic every
-defined number of seconds. It takes two arguments: a function containing the
-logic to execute, and the number of milliseconds that define the frequency. We
-use the functions we defined previously here, and pass 1000 milliseconds as the
-frequency to tick our clock every 1 second:&lt;/p&gt;
+defined number of milliseconds. It takes two arguments: a function containing
+the logic to execute, and the number of milliseconds that define the frequency.
+We use the functions we defined previously here, and pass 1000 milliseconds as
+the frequency to tick our clock every 1 second:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// in src/index.ts
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;nx&#34;&gt;setInterval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -266,9 +272,9 @@ frequency to tick our clock every 1 second:&lt;/p&gt;
 &lt;p&gt;This is an extra part. You can take it as a homework, although, you&amp;rsquo;ll find the
 improvements in the final code on GitHub. A first improvement is to move the
 ticking logic inside &lt;code&gt;setInterval()&lt;/code&gt; into a separate function. Another one is
-wrap our functions inside a &lt;code&gt;BinaryClock&lt;/code&gt; class and deal with it as an object.
-This is part of the object oriented programming capabilities provided by
-TypeScript. Here&amp;rsquo;s the
+to wrap our functions inside a &lt;code&gt;BinaryClock&lt;/code&gt; class and deal with it as an
+object.  This is part of the object oriented programming capabilities provided
+by TypeScript. Here&amp;rsquo;s the
 &lt;a href=&#39;https://www.typescriptlang.org/docs/handbook/2/classes.html&#39; target=&#39;_blank&#39;&gt;documentation of classes and objects&lt;/a&gt;
 from TypeScript documentation page.&lt;/p&gt;
 &lt;br&gt;

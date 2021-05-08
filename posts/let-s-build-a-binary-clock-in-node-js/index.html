@@ -98,8 +98,8 @@ Recently, I came across this
 where the poster builds a binary clock in Javascript, HTML, and
 CSS. It was my first time coming across the idea of binary blocks and I thought
 it could be a fun exercise!</p>
-<p>This is going to be my first tutorial-style post directed towards beginner so I&rsquo;m
-still figuring out a proper format. One thing though, I&rsquo;m not very fond of
+<p>This is going to be my first tutorial-style post directed towards beginners so
+I&rsquo;m still figuring out a proper format. One thing though, I&rsquo;m not very fond of
 doing frontend and writing CSS so I decided to make this into a Node.js app.
 Another thing, I&rsquo;m going to to use TypeScript for the code in this post. It&rsquo;s
 JavaScript with some added features and it
@@ -175,7 +175,7 @@ from one project to the other. There&rsquo;s an online
 <p>The last step is to make building and running the project easier. Let&rsquo;s add the
 following to <code>package.json</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
-  <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;tsc&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;compile&#34;</span><span class="p">:</span> <span class="s2">&#34;tsc&#34;</span><span class="p">,</span>
   <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;node dist/src/index.js&#34;</span>
 <span class="p">}</span>
 </code></pre></div><p>Now, we can create the <code>src</code> folder:</p>
@@ -187,7 +187,7 @@ directory:</p>
 </code></pre></div><p>Add this to <code>src/index.ts</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Hello, world!&#34;</span><span class="p">);</span>
 </code></pre></div><p>To build and run the project:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">yarn build <span class="o">&amp;&amp;</span> yarn start
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">yarn compile <span class="o">&amp;&amp;</span> yarn start
 </code></pre></div><h4 id="ii-getting-the-current-time">II. Getting the current time</h4>
 <p>Our goal is to convert the current time into the binary format so we start by
 reading the current time. JavaScript provides a <code>Date</code> object that holds the
@@ -202,7 +202,7 @@ use some methods defined on the <code>Date</code> object to extract this informa
 </span><span class="c1"></span><span class="kd">let</span> <span class="nx">hours</span>   <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
 <span class="kd">let</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
 <span class="kd">let</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
-</code></pre></div><p>Let&rsquo;s wrap this into a function:</p>
+</code></pre></div><p>Let&rsquo;s wrap this in a function:</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kr">const</span> <span class="nx">_getTimeSections</span> <span class="o">=</span> <span class="p">()</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">number</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kr">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
 
@@ -259,12 +259,12 @@ binary. Let&rsquo;s start by extracting section components:</p>
 <span class="kr">const</span> <span class="nx">_getTimeSecionComponents</span> <span class="o">=</span> <span class="p">(</span><span class="nx">section</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">section</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div><p>Here we take a time section as a number, <code>hours</code> for example, and extract into
-two components: tens and ones. For example, if it&rsquo;s currently <code>21</code>, we get an
-array of two elements: <code>['2', '1']</code>. The call to <code>padStart()</code> function adds a
-zero to the right if the hour is only one digit. For example, <code>4</code> should be
+</code></pre></div><p>Here we take a time section as a number, <code>hours</code> for example, and extract it
+into two components: tens and ones. For example, if it&rsquo;s currently <code>21</code>, we get
+an array of two elements: <code>['2', '1']</code>. The call to <code>padStart()</code> function adds
+a zero to the right if the hour is only one digit. For example, <code>4</code> should be
 <code>04</code> and thus, we get: <code>['0', '4']</code>. The <code>splits()</code> function splits the string
-into an array. For example, <code>'12'.split(&quot;&quot;)</code> will return <code>['1', '2']</code>. Note
+into an array. For example, <code>'12'.split(&quot;&quot;)</code> will return <code>['1', '2']</code>. Notice
 that these functions work only on strings and that&rsquo;s why we first called the
 <code>toString()</code> function on the section.</p>
 <p>The second task is where we convert each component of each section into binary:</p>
@@ -278,16 +278,22 @@ that these functions work only on strings and that&rsquo;s why we first called t
 </code></pre></div><p>The <code>map()</code> function is sort of like a for-loop except that it loops over some
 items/array and returns another array after applying a function on the given
 array. It sounded complicated writing this. Let&rsquo;s take our example: given this
-<code>['1', '2']</code> as the components array, we use map to loop over each element of
+<code>['2', '1']</code> as the components array, we use map to loop over each element of
 this array and apply the following logic on each one:</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nb">Number</span><span class="p">(</span><span class="nx">component</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
 </code></pre></div><p><code>component</code> is a variable that holds each element in the array. Let&rsquo;s replace
 the variable with a value:</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
 </code></pre></div><p>So <code>Number()</code> will convert the string element into a number, <code>toString(2)</code> will
 convert the number into the binary format as a string, and <code>padStart(4, '0')</code>
 will pad the result with up to 4 0&rsquo;s (since each column in a binary clock has 4
-rows).</p>
+rows). Applying all three functions on <code>'2'</code> will give us =&gt; <code>'0010'</code> (2 is 10
+in binary).</p>
+<p>The newly aquired value <code>'0010'</code> will be appended to an array and the iteration
+will move to the next value, <code>'1'</code>. The new iteration will apply the same three
+functions and return <code>'0001'</code>. This will be added to the array as well. Now
+that the iteration is done, the whole array, <code>['0010', '0001]</code> will be returned
+from the <code>map()</code> function call and that&rsquo;s our final return value.</p>
 <h4 id="vi-printing-the-output">VI. Printing the output</h4>
 <p>Here&rsquo;s the function that prints the output to the terminal:</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
@@ -315,10 +321,10 @@ print each row after the inner loop.</p>
 <h4 id="v-ticking-the-clock">V. Ticking the clock</h4>
 <p>Last but not least, let&rsquo;s run our clock. We will use a JavaScript function
 named <code>setInterval()</code>. This function is used to execute some logic every
-defined number of seconds. It takes two arguments: a function containing the
-logic to execute, and the number of milliseconds that define the frequency. We
-use the functions we defined previously here, and pass 1000 milliseconds as the
-frequency to tick our clock every 1 second:</p>
+defined number of milliseconds. It takes two arguments: a function containing
+the logic to execute, and the number of milliseconds that define the frequency.
+We use the functions we defined previously here, and pass 1000 milliseconds as
+the frequency to tick our clock every 1 second:</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
 </span><span class="c1"></span>
 <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -344,9 +350,9 @@ frequency to tick our clock every 1 second:</p>
 <p>This is an extra part. You can take it as a homework, although, you&rsquo;ll find the
 improvements in the final code on GitHub. A first improvement is to move the
 ticking logic inside <code>setInterval()</code> into a separate function. Another one is
-wrap our functions inside a <code>BinaryClock</code> class and deal with it as an object.
-This is part of the object oriented programming capabilities provided by
-TypeScript. Here&rsquo;s the
+to wrap our functions inside a <code>BinaryClock</code> class and deal with it as an
+object.  This is part of the object oriented programming capabilities provided
+by TypeScript. Here&rsquo;s the
 <a href='https://www.typescriptlang.org/docs/handbook/2/classes.html' target='_blank'>documentation of classes and objects</a>
 from TypeScript documentation page.</p>
 <br>
@@ -365,7 +371,7 @@ general comments, please do not hesitate to comment below or contact me.</p>
         <a id="reddit" href="https://reddit.com/submit?url=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f&title=Let%27s%20Build%20a%20Binary%20Clock%20in%20Node.js" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-reddit"></use></svg>
         </a>
-        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Let%27s%20Build%20a%20Binary%20Clock%20in%20Node.js&url=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f&&summary=I%26rsquo%3bm%20always%20on%20the%20lookout%20for%20fun%20programming%20exercises%20suitable%20for%20beginners.%20Recently%2c%20I%20came%20across%20this%20video%20on%20YouTube%20where%20the%20poster%20builds%20a%20binary%20clock%20in%20Javascript%2c%20HTML%2c%20and%20CSS.%20It%20was%20my%20first%20time%20coming%20across%20the%20idea%20of%20binary%20blocks%20and%20I%20thought%20it%20could%20be%20a%20fun%20exercise%21%0aThis%20is%20going%20to%20be%20my%20first%20tutorial-style%20post%20directed%20towards%20beginner%20so%20I%26rsquo%3bm%20still%20figuring%20out%20a%20proper%20format.&source=https://aonemd.me" target="_blank">
+        <a id="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&title=Let%27s%20Build%20a%20Binary%20Clock%20in%20Node.js&url=https%3a%2f%2faonemd.me%2fposts%2flet-s-build-a-binary-clock-in-node-js%2f&&summary=I%26rsquo%3bm%20always%20on%20the%20lookout%20for%20fun%20programming%20exercises%20suitable%20for%20beginners.%20Recently%2c%20I%20came%20across%20this%20video%20on%20YouTube%20where%20the%20poster%20builds%20a%20binary%20clock%20in%20Javascript%2c%20HTML%2c%20and%20CSS.%20It%20was%20my%20first%20time%20coming%20across%20the%20idea%20of%20binary%20blocks%20and%20I%20thought%20it%20could%20be%20a%20fun%20exercise%21%0aThis%20is%20going%20to%20be%20my%20first%20tutorial-style%20post%20directed%20towards%20beginners%20so%20I%26rsquo%3bm%20still%20figuring%20out%20a%20proper%20format.&source=https://aonemd.me" target="_blank">
           <svg><use xlink:href="/images/icons-sprite.svg#icon-linkedin"></use></svg>
         </a>
         
