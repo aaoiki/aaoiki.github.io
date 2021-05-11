@@ -259,7 +259,7 @@ and seconds) into two components (tens and ones) and convert each component to
 binary. Let&rsquo;s start by extracting section components:</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="c1">// in src/index.ts
 </span><span class="c1"></span>
-<span class="kr">const</span> <span class="nx">_getTimeSecionComponents</span> <span class="o">=</span> <span class="p">(</span><span class="nx">section</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="kr">const</span> <span class="nx">_getTimeSectionComponents</span> <span class="o">=</span> <span class="p">(</span><span class="nx">section</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">section</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div><p>Here we take a time section as a number, <code>hours</code> for example, and extract it
@@ -333,9 +333,9 @@ the frequency to tick our clock every 1 second:</p>
 <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="p">[</span><span class="nx">hours</span><span class="p">,</span> <span class="nx">minutes</span><span class="p">,</span> <span class="nx">seconds</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_getTimeSections</span><span class="p">();</span>
 
-  <span class="kd">let</span> <span class="nx">hourComponents</span>   <span class="o">=</span> <span class="nx">_getTimeSecionComponents</span><span class="p">(</span><span class="nx">hours</span><span class="p">);</span>
-  <span class="kd">let</span> <span class="nx">minuteComponents</span> <span class="o">=</span> <span class="nx">_getTimeSecionComponents</span><span class="p">(</span><span class="nx">minutes</span><span class="p">);</span>
-  <span class="kd">let</span> <span class="nx">secondComponents</span> <span class="o">=</span> <span class="nx">_getTimeSecionComponents</span><span class="p">(</span><span class="nx">seconds</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">hourComponents</span>   <span class="o">=</span> <span class="nx">_getTimeSectionComponents</span><span class="p">(</span><span class="nx">hours</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">minuteComponents</span> <span class="o">=</span> <span class="nx">_getTimeSectionComponents</span><span class="p">(</span><span class="nx">minutes</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">secondComponents</span> <span class="o">=</span> <span class="nx">_getTimeSectionComponents</span><span class="p">(</span><span class="nx">seconds</span><span class="p">);</span>
 
   <span class="kd">let</span> <span class="nx">hourBinaryComponents</span>   <span class="o">=</span> <span class="nx">_convertComponentsToBinary</span><span class="p">(</span><span class="nx">hourComponents</span><span class="p">);</span>
   <span class="kd">let</span> <span class="nx">minuteBinaryComponents</span> <span class="o">=</span> <span class="nx">_convertComponentsToBinary</span><span class="p">(</span><span class="nx">minuteComponents</span><span class="p">);</span>
