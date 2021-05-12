@@ -186,7 +186,7 @@ binary. Let&amp;rsquo;s start by extracting section components:&lt;/p&gt;
 into two components: tens and ones. For example, if it&amp;rsquo;s currently &lt;code&gt;21&lt;/code&gt;, we get
 an array of two elements: &lt;code&gt;[&#39;2&#39;, &#39;1&#39;]&lt;/code&gt;. The call to &lt;code&gt;padStart()&lt;/code&gt; function adds
 a zero to the right if the hour is only one digit. For example, &lt;code&gt;4&lt;/code&gt; should be
-&lt;code&gt;04&lt;/code&gt; and thus, we get: &lt;code&gt;[&#39;0&#39;, &#39;4&#39;]&lt;/code&gt;. The &lt;code&gt;splits()&lt;/code&gt; function splits the string
+&lt;code&gt;04&lt;/code&gt; and thus, we get: &lt;code&gt;[&#39;0&#39;, &#39;4&#39;]&lt;/code&gt;. The &lt;code&gt;split()&lt;/code&gt; function splits the string
 into an array. For example, &lt;code&gt;&#39;12&#39;.split(&amp;quot;&amp;quot;)&lt;/code&gt; will return &lt;code&gt;[&#39;1&#39;, &#39;2&#39;]&lt;/code&gt;. Notice
 that these functions work only on strings and that&amp;rsquo;s why we first called the
 &lt;code&gt;toString()&lt;/code&gt; function on the section.&lt;/p&gt;
