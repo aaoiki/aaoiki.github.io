@@ -6,7 +6,54 @@
     <description>Recent content on Code and Language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://aonemd.me/index.xml" rel="self" type="application/rss+xml" />
+      
+      <item>
+        <title>Blocked!</title>
+        <link>https://aonemd.me/posts/blocked/</link>
+        <pubDate>Tue, 20 Jul 2021 00:00:00 +0200</pubDate>
+        
+        <guid>https://aonemd.me/posts/blocked/</guid>
+        <description>&lt;p&gt;Since this whole week is an official holiday in the country (Egypt) and I got
+nothing to share, I thought I&amp;rsquo;d write this post about basically nothing!&lt;/p&gt;
+&lt;p&gt;I have been getting myself into multiple side projects and plans (in the back
+of my head), however, I reached a point where I don&amp;rsquo;t want to work on them
+anymore. I work on my projects to a half-baked state and then I lose the
+motivation to continue them (side projects, right?). For example, I started a blog post that I wanted
+to publish more than three months ago, and to this day, I haven&amp;rsquo;t finished it
+yet. The main issue is, you get this itch that there&amp;rsquo;s always something that
+you should be doing and yet, you&amp;rsquo;re not!&lt;/p&gt;
+&lt;p&gt;This may seem like a state of burnout (and it could be) but I don&amp;rsquo;t think it is
+(since it&amp;rsquo;s not my first encounter with burnout). I believe I was on the edge
+of burnout (from work) a few weeks ago and I took some time off after talking
+with my colleagues at &lt;a href=&#34;https://swvl.io&#34;&gt;Swvl&lt;/a&gt; ❤️ and everything was fine afterwards.&lt;/p&gt;
+&lt;p&gt;I think the issue is I have been hassling more than the usual and I got a case
+of &lt;em&gt;programmer&amp;rsquo;s block&lt;/em&gt;. &lt;em&gt;Programmer&amp;rsquo;s block&lt;/em&gt; is stolen from &lt;em&gt;writer&amp;rsquo;s block&lt;/em&gt;,
+of course, and it&amp;rsquo;s the state where the programmer&amp;rsquo;s mind totally freezes and
+stops thinking. This is what goes into my mind when I get into a infinite
+recursion and stare into my screen endlessly (do human brains have stack
+overflows?).&lt;/p&gt;
+&lt;p&gt;I found this blog post, &lt;a href=&#34;https://blog.doist.com/side-projects/&#34;&gt;The 4 Secrets to Successful Side
+Projects&lt;/a&gt;, by chance, while wanting to
+(let&amp;rsquo;s say) kill some time while also trying to find a solution to my block. It
+may sound like one of those cheesy posts from those (let&amp;rsquo;s say) &amp;ldquo;edgy&amp;rdquo; blogs
+with arbitrary numbers in the title but it actually contains some sound advice.&lt;/p&gt;
+&lt;p&gt;One of the points that I think inspired me to write this post is to talk about
+your projects with anyone who would listen. Although, this post is not about a
+specific project of mine. I believe this is to make sort of a commitment to
+other people when you share and talk about your projects. Anyway, I don&amp;rsquo;t think
+I work that way.&lt;/p&gt;
+&lt;p&gt;A great point the blog post made is to know that it&amp;rsquo;s okay to quit your
+project.  I normally get too attached to my projects and start acting like a
+mad scientist which now, seems counter-productive to say the least. Also, the
+post talked about how important it is to have regular checks for your project
+and evaluate their state and the value for you and whether it&amp;rsquo;s worthy to
+continue them or not.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aonemd.me/images/blocked-mad_scientist.jpg&#34; alt=&#34;i-am-mad-scientist&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Since I didn&amp;rsquo;t promise anything useful from the beginning, I will end here.
+Tschüss!&lt;/p&gt;
+</description>
+      </item>
       
       <item>
         <title>Let&#39;s Build a Binary Clock in Node.js</title>
@@ -1519,63 +1566,6 @@ capable of going low level and performing system calls in more than one way.
 All the methods delegate the system call  to C syscall function in a way or
 another.  The most secure, most scalable method is using Ruby-ffi to invoke C
 syscall function.&lt;/p&gt;
-</description>
-      </item>
-      
-      <item>
-        <title>When YAML Bit Me</title>
-        <link>https://aonemd.me/posts/when-yaml-bit-me/</link>
-        <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
-        
-        <guid>https://aonemd.me/posts/when-yaml-bit-me/</guid>
-        <description>&lt;p&gt;This is the story of a bug I encountered about 3 years ago.  Basically, I had a
-model &lt;code&gt;Book&lt;/code&gt; that contained a serialized object attribute called &lt;code&gt;info&lt;/code&gt; and
-&lt;code&gt;BooksController&lt;/code&gt; initially contained this search query:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;no&#34;&gt;Book&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;info LIKE ?&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%ref: &amp;#39;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The bug that surfaced at the time was that some books were not fetched when the
-search query contained alpha-numeric reference numbers (those that contains
-both digits and letters) as some reference numbers were pure digits and some
-were a mix of digits and alphabetical characters.&lt;/p&gt;
-&lt;p&gt;The main issue with the previous search query is that it assumes that the value
-of &lt;code&gt;ref&lt;/code&gt; is always stored wrapped in single quotes, i.e. &lt;code&gt;ref: &#39;123&#39;&lt;/code&gt; as in the
-case with integer reference numbers, however; alpha-numeric reference numbers
-were stored in the database without the single quotes!&lt;/p&gt;
-&lt;p&gt;My initial solution was to provide two search queries for each type of
-reference numbers because, at the time, I thought the issue was with the way
-the object was stored in PostgreSQL. However, and after further investigation,
-the problem turned out to be with YAML.&lt;/p&gt;
-&lt;p&gt;As it turns out, the main issue was with how YAML (or Psych in Ruby) dumps
-integers and strings differently. Checkout the following code snippet and see
-for yourself:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;nb&#34;&gt;require&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;psych&amp;#39;&lt;/span&gt;
-
-&lt;span class=&#34;no&#34;&gt;Psych&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#34;--- &amp;#39;123&amp;#39;\n&amp;#34;&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;## vs.&lt;/span&gt;
-
-&lt;span class=&#34;no&#34;&gt;Psych&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#34;--- hello\n&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is not a bug in Psych. In fact, the same behavior is found in Python
-implementation, PyYAML:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;yaml&lt;/span&gt;
-
-&lt;span class=&#34;n&#34;&gt;yaml&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#34;&amp;#39;123&amp;#39;\n&amp;#34;&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;## vs.&lt;/span&gt;
-
-&lt;span class=&#34;n&#34;&gt;yaml&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# =&amp;gt; &amp;#39;hello\n...\n&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It&amp;rsquo;s weird to me why YAML doesn&amp;rsquo;t treat all strings equally and keep or remove
-the quotes all together. This just adds up to the list of &lt;a target=&#34;_blank&#34; href=&#34;https://arp242.net/weblog/yaml_probably_not_so_great_after_all.html&#34;&gt;weird behavior of YAML&lt;/a&gt;.
-Although to be fair, it might be a way to differentiate between integers and
-integers wrapped in quotes when they are dumped and reloaded (I&amp;rsquo;m not waging a
-war on YAML, I swear).&lt;/p&gt;
-&lt;p&gt;Eventually, to work around this issue, I had to explicitly convert
-&lt;code&gt;params[:ref]&lt;/code&gt; to an integer iff it could be cast into an integer. This way, we
-can write a single search query and remove the wrapping single quotes for all
-types of reference numbers:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span class=&#34;n&#34;&gt;ref&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;rescue&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:ref&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-
-&lt;span class=&#34;no&#34;&gt;Book&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;info LIKE ?&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%ref: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;#{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ref&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it for now. Thanks for reading!&lt;/p&gt;
 </description>
       </item>
       
